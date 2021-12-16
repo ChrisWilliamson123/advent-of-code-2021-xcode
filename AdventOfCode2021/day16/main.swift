@@ -29,28 +29,31 @@ private func readPacket(_ packet: String, limit: Int? = nil) -> (packets: [Packe
     while index < packet.count && (packet.count - index > 10) && packets.count < (limit ?? Int.max) {
         let packetVersion = getDecimal(from: packet[index..<index+3])
         let typeID = getDecimal(from: packet[index+3..<index+6])
+        index += 6
 
         if typeID == 4 {
-            let literalValueResult = decodeLiteralValue(packet[index+6..<packet.count])
-            index += (6 + literalValueResult.length)
+            let literalValueResult = decodeLiteralValue(packet[index..<packet.count])
+            index += literalValueResult.length
             packets.append(.init(version: packetVersion, typeID: typeID, value: literalValueResult.literalValue, subPackets: []))
         } else {
-            let lengthTypeID: String = packet[index+6]
-
+            let lengthTypeID: String = packet[index]
+            index += 1
             if lengthTypeID == "0" {
                 /// Next 15 bits are a number that represents the total length in bits of the sub-packets contained by this packet
-                let subPacketsTotalLength = getDecimal(from: packet[index+7..<index+22])
-                let subPacketsTotalString = packet[index+22..<index+22+subPacketsTotalLength]
+                let subPacketsTotalLength = getDecimal(from: packet[index..<index+15])
+                index += 15
+                let subPacketsTotalString = packet[index..<index+subPacketsTotalLength]
                 let packet = readPacket(subPacketsTotalString).packets
                 packets.append(.init(version: packetVersion, typeID: typeID, value: getPacketValue(subPackets: packet, id: typeID), subPackets: packet))
-                index += (6 + 1 + 15 + subPacketsTotalLength)
+                index += subPacketsTotalLength
             } else {
                 /// Next 11 bits are a number that represents the number of sub-packets immediately contained by this packet.
-                let numberOfSubpackets = getDecimal(from: packet[index+7..<index+18])
-                let subPacketsString = packet[index+18..<packet.count]
+                let numberOfSubpackets = getDecimal(from: packet[index..<index+11])
+                index += 11
+                let subPacketsString = packet[index..<packet.count]
                 let packet = readPacket(subPacketsString, limit: numberOfSubpackets)
                 packets.append(.init(version: packetVersion, typeID: typeID, value: getPacketValue(subPackets: packet.packets, id: typeID), subPackets: packet.packets))
-                index += (6 + 1 + 11 + packet.end)
+                index += packet.end
             }
         }
     }
@@ -83,8 +86,8 @@ private func decodeLiteralValue(_ input: String) -> (literalValue: Int, length: 
     var end = 0
     for i in stride(from: 0, to: input.count-1, by: 5) {
         let bits = input[i..<i+5]
-
         binaryString += bits[1..<5]
+
         if bits[0] == "0" {
             end = i + 5
             break
