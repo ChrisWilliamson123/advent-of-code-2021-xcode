@@ -7,6 +7,7 @@ func readInput<T: StringInitialisable>(fromTestFile: Bool, separator: String = "
 
     do {
         let contents = try String(contentsOfFile: url.path, encoding: .utf8)
+        print(contents)
         return Array(contents.components(separatedBy: separator)).map({ T(String($0))! })
     }
     catch let error {
