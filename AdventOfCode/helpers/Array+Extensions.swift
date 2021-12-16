@@ -28,7 +28,7 @@ extension Array where Element: Equatable {
 
         var combinations: [[Element]] = []
 
-        for i in (0..<count) {
+        for i in (0..<self.count) {
             for j in (0..<previousCombinations.count) where !previousCombinations[j].contains(self[i]) {
                 combinations.append(previousCombinations[j] + [self[i]])
             }
