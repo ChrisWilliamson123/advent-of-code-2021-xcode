@@ -1,13 +1,9 @@
 import Foundation
 
-func main() throws {
+func main(turns: Int, part: Int) throws {
     let input: [String] = try readInput(fromTestFile: false)
 
     let numbers: [Int] = input[0].split(separator: ",").map({Int($0)!})
-
-    print(numbers)
-
-    let turns = 30000000
 
     var numbersSpoken: [Int: (prevPrev: Int?, prev: Int)] = [:]
     var lastNumberSpoken: Int = 0
@@ -40,8 +36,9 @@ func main() throws {
 
     }
 
-    print(lastNumberSpoken)
+    print("Part \(part):", lastNumberSpoken)
 }
 
-try main()
+try main(turns: 2020, part: 1)
+try main(turns: 30000000, part: 1)
 
