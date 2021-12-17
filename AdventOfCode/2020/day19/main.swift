@@ -27,6 +27,18 @@ func main() throws {
 //    print(ruleTree)
 
     func expandRule(tree: [Int: String], rule: Int) -> String {
+        if rule == 8 {
+            return "(?:\(expandRule(tree: tree, rule: 42))+)"
+        } else if rule == 11 {
+            var ruleString = ""
+            let rule42 = expandRule(tree: tree, rule: 42)
+            let rule31 = expandRule(tree: tree, rule: 31)
+            for i in 1..<30 {
+                ruleString += "(?:\(rule42){\(i)}\(rule31){\(i)})|"
+            }
+
+            return "(?:\(ruleString.prefix(ruleString.count-1)))"
+        }
         let ruleValue = tree[rule]!
         let numberRegex = Regex("\\d+")
         let matches = numberRegex.getMatches(in: ruleValue)
@@ -54,24 +66,27 @@ func main() throws {
 
         return result.replacingOccurrences(of: "\"", with: "")
     }
-
+    print(expandRule(tree: ruleTree, rule: 0))
+//    print(expandRule(tree: ruleTree, rule: 0))
+//
     let rule = expandRule(tree: ruleTree, rule: 0)
     let regex = Regex(rule)
-
+//
     let fullMatches = messages.filter({
         let matches = regex.getMatches(in: $0, includeFullLengthMatch: true)
+        print($0, matches)
         return matches.count == 1 && matches[0].count == $0.count
     })
-
-    let notFullMatches = messages.filter({
-        let matches = regex.getMatches(in: $0, includeFullLengthMatch: true)
-        return !(matches.count == 1 && matches[0].count == $0.count)
-    })
-    print(fullMatches)
-
-    print("\n\n")
-
-    print(notFullMatches)
+//
+//    let notFullMatches = messages.filter({
+//        let matches = regex.getMatches(in: $0, includeFullLengthMatch: true)
+//        return !(matches.count == 1 && matches[0].count == $0.count)
+//    })
+    print(fullMatches.count)
+//
+//    print("\n\n")
+//
+//    print(notFullMatches)
 }
 
 try main()
