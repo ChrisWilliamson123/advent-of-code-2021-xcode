@@ -25,11 +25,22 @@ struct Coordinate: Hashable {
         return adjacents
     }
 
-    func getAdjacents(in grid: [[Any]]) -> [Coordinate] {
+    func getAdjacentsIncludingSelf() -> [Coordinate] {
+        var adjacents: [Coordinate] = []
+        for y in y-1...y+1 {
+            for x in x-1...x+1 {
+                adjacents.append(Coordinate(x, y))
+            }
+        }
+
+        return adjacents
+    }
+
+    func getAdjacents(in grid: [[Any]], includingSelf: Bool = false) -> [Coordinate] {
         var adjacents: [Coordinate] = []
         for x in x-1...x+1 where x >= 0 && x < grid[0].count {
             for y in y-1...y+1 where y >= 0 && y < grid.count {
-                if x == self.x && y == self.y { continue }
+                if x == self.x && y == self.y && !includingSelf { continue }
                 adjacents.append(Coordinate(x, y))
             }
         }
