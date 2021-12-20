@@ -177,27 +177,46 @@ private func test3DMatchingScanners() {
 
     var allBeacons: Set<simd_float4> = []
 
-    var base = scanners[0]
-    var nonBase = scanners[1]
-
-    var matching = getMatchingBeaconsBetween(baseScanner: base, nonBaseScanner: nonBase)
-    for c in matching!.allTransformedNonBaseCoordsIntoBaseSpace {
-        allBeacons.insert(c)
-    }
-    print("Scanner 1 is at inverse \(matching!.baseScannerPositionRelativeToNonBase) to 0")
-
-    base = matching!.allTransformedNonBaseCoordsIntoBaseSpace
-    for nonBaseIndex in 2..<scanners.count {
-        nonBase = scanners[nonBaseIndex]
-        if let matching = getMatchingBeaconsBetween(baseScanner: base, nonBaseScanner: nonBase) {
-            for c in matching.allTransformedNonBaseCoordsIntoBaseSpace {
-                allBeacons.insert(c)
+    var scannerCoordsInZeroSpace: [Int: [simd_float4]] = [0:scanners[0]]
+    var done: Set<Int> = []
+    while scannerCoordsInZeroSpace.count != scanners.count {
+        let next = scannerCoordsInZeroSpace.filter({ !done.contains($0.key) }).first!
+        print("Attempting to get overlapping scanner for base scanner \(next.key)")
+        for nbIndex in 0..<scanners.count where nbIndex != next.key {
+            if let matching = getMatchingBeaconsBetween(baseScanner: next.value, nonBaseScanner: scanners[nbIndex]) {
+                scannerCoordsInZeroSpace[nbIndex] = matching.allTransformedNonBaseCoordsIntoBaseSpace
+                done.insert(next.key)
+                for c in matching.allTransformedNonBaseCoordsIntoBaseSpace {
+                    allBeacons.insert(c)
+                }
+                print("Scanner \(nbIndex) is at inverse \(matching.baseScannerPositionRelativeToNonBase) to 0")
+            } else {
+                print("Scanner \(nbIndex) does not overlap with scanner \(next.key)")
             }
-            print("Scanner \(nonBaseIndex) is at inverse \(matching.baseScannerPositionRelativeToNonBase) to 0")
-        } else {
-            print("Scanner \(nonBaseIndex) does not overlap with scanner 1")
         }
     }
+
+//    var base = scanners[0]
+//    var nonBase = scanners[1]
+//
+//    var matching = getMatchingBeaconsBetween(baseScanner: base, nonBaseScanner: nonBase)
+//    for c in matching!.allTransformedNonBaseCoordsIntoBaseSpace {
+//        allBeacons.insert(c)
+//    }
+//    print("Scanner 1 is at inverse \(matching!.baseScannerPositionRelativeToNonBase) to 0")
+//
+//    base = matching!.allTransformedNonBaseCoordsIntoBaseSpace
+//    for nonBaseIndex in 2..<scanners.count {
+//        nonBase = scanners[nonBaseIndex]
+//        if let matching = getMatchingBeaconsBetween(baseScanner: base, nonBaseScanner: nonBase) {
+//            for c in matching.allTransformedNonBaseCoordsIntoBaseSpace {
+//                allBeacons.insert(c)
+//            }
+//            print("Scanner \(nonBaseIndex) is at inverse \(matching.baseScannerPositionRelativeToNonBase) to 0")
+//        } else {
+//            print("Scanner \(nonBaseIndex) does not overlap with scanner 1")
+//        }
+//    }
 
     print(allBeacons.count)
 
