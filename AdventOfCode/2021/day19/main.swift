@@ -175,52 +175,54 @@ private func test3DMatchingScanners() {
         }))
     }
 
-    print(scanners)
+//    print(scanners)
 
     let baseScanner = scanners[0]
     let scannerToCheck = scanners[1]
 
     // We need to go through all rotations and check whether the rotation ends up matching the coords
-    let scannerToCheckRotated = getAllRotatedCoords(using: RotationMatrixStore.allRotationMatrices[10], on: scannerToCheck)
-//    for rotationMatrix in RotationMatrixStore.allRotationMatrices {
-//
-//    }
-    // Want to know if scanner 1 overlaps scanner 0
-    // Need to get all pairs of coordinates [(a, b)] where a is scanner 1 coord and b is scanner 0 coord
+    for (rotationIndex, rotationMatrix) in RotationMatrixStore.allRotationMatrices.enumerated() {
+        let scannerToCheckWithRotatedCoords = getAllRotatedCoords(using: rotationMatrix, on: scannerToCheck)
 
-    var pairs: [(simd_float4, simd_float4)] = []
-    for a in scannerToCheckRotated {
-        for b in baseScanner {
-            pairs.append((a, b))
-        }
-    }
+        // Want to know if scanner 1 with it's rotation overlaps scanner 0
+        // Need to get all pairs of coordinates [(a, b)] where a is scanner 1 coord and b is scanner 0 coord
 
-    for p in pairs {
-        print("Pair: \(p)")
-        let xDiff = p.1.x - p.0.x
-        let yDiff = p.1.y - p.0.y
-        let zDiff = p.1.z - p.0.z
-        print("\tDifference: \(xDiff) \(yDiff) \(zDiff)")
-
-        var matchingCoordCount = 0
-        var matchingCoords: [simd_float4] = []
-        // For each coordinate in the non-base scanner, translate it by the difference.
-        // If the translated coord is in the base scanner's coord set, increase the count
-        for nonBaseCoord in scannerToCheckRotated {
-            let translated = perform3DTranslation(origin: nonBaseCoord, tx: xDiff, ty: yDiff, tz: zDiff)
-            print("\t\tTranslated: \(nonBaseCoord) -> \(translated)")
-            if baseScanner.contains(translated) {
-                matchingCoordCount += 1
-                matchingCoords.append(scannerToCheck[scannerToCheckRotated.firstIndex(of: nonBaseCoord)!])
+        var pairs: [(simd_float4, simd_float4)] = []
+        for a in scannerToCheckWithRotatedCoords {
+            for b in baseScanner {
+                pairs.append((a, b))
             }
         }
 
-//        print("\tOverlapping coord count: \(matchingCoordCount)")
-        if matchingCoordCount >= 12 {
-            for m in matchingCoords { print(m) }
-            let nonBaseScannerPosition = simd_float4(x: xDiff, y: yDiff, z: zDiff, w: 1)
-            print("Non-base scanner pos relative to base scanner: ", nonBaseScannerPosition)
-            assert(false)
+        for p in pairs {
+//            print("Pair: \(p)")
+            let xDiff = p.1.x - p.0.x
+            let yDiff = p.1.y - p.0.y
+            let zDiff = p.1.z - p.0.z
+//            print("\tDifference: \(xDiff) \(yDiff) \(zDiff)")
+
+            var matchingCoordCount = 0
+            var matchingCoords: [simd_float4] = []
+            // For each coordinate in the non-base scanner, translate it by the difference.
+            // If the translated coord is in the base scanner's coord set, increase the count
+            for nonBaseCoord in scannerToCheckWithRotatedCoords {
+                let translated = perform3DTranslation(origin: nonBaseCoord, tx: xDiff, ty: yDiff, tz: zDiff)
+//                print("\t\tTranslated: \(nonBaseCoord) -> \(translated)")
+                if baseScanner.contains(translated) {
+                    matchingCoordCount += 1
+                    matchingCoords.append(scannerToCheck[scannerToCheckWithRotatedCoords.firstIndex(of: nonBaseCoord)!])
+                }
+            }
+
+            //        print("\tOverlapping coord count: \(matchingCoordCount)")
+            if matchingCoordCount >= 12 {
+                print("Match found with rotation index", rotationIndex)
+                print("Matching coords relative to base:")
+                for m in matchingCoords { print("\t", m) }
+                let nonBaseScannerPosition = simd_float4(x: xDiff, y: yDiff, z: zDiff, w: 1)
+                print("Non-base scanner pos relative to base scanner: ", nonBaseScannerPosition)
+                assert(false)
+            }
         }
     }
 }
