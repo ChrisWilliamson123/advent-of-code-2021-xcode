@@ -1,9 +1,9 @@
 import simd
 
 func main() throws {
-    testTranslationsAndRotations()
+//    testTranslationsAndRotations()
 //    test2DMatchingScanners()
-//    test3DMatchingScanners()
+    test3DMatchingScanners()
     
 }
 
@@ -175,103 +175,68 @@ private func test3DMatchingScanners() {
         }))
     }
 
+    var allBeacons: Set<simd_float4> = []
+
+    var base = scanners[0]
+    var nonBase = scanners[1]
+
+    var matching = getMatchingBeaconsBetween(baseScanner: base, nonBaseScanner: nonBase)
+    for c in matching!.allTransformedNonBaseCoordsIntoBaseSpace {
+        allBeacons.insert(c)
+    }
+    print("Scanner 1 is at inverse \(matching!.baseScannerPositionRelativeToNonBase) to 0")
+
+    base = matching!.allTransformedNonBaseCoordsIntoBaseSpace
+    for nonBaseIndex in 2..<scanners.count {
+        nonBase = scanners[nonBaseIndex]
+        if let matching = getMatchingBeaconsBetween(baseScanner: base, nonBaseScanner: nonBase) {
+            for c in matching.allTransformedNonBaseCoordsIntoBaseSpace {
+                allBeacons.insert(c)
+            }
+            print("Scanner \(nonBaseIndex) is at inverse \(matching.baseScannerPositionRelativeToNonBase) to 0")
+        } else {
+            print("Scanner \(nonBaseIndex) does not overlap with scanner 1")
+        }
+    }
+
+    print(allBeacons.count)
+
+
+
     /*
      Loop through all scanners as a base scanner.
         Loop through all higher scanners as non-base scanners.
             If match is found, add relative scanner position to dict
      */
-    struct ScannerIndexPair: Hashable, CustomStringConvertible {
-        let baseScannerIndex: Int
-        let nonBaseScannerIndex: Int
-
-        var description: String {
-            "\(nonBaseScannerIndex) rel to \(baseScannerIndex)"
-        }
-    }
-    var relativeScannerPositionsAndRotations: [ScannerIndexPair: (nonBasePosition: simd_float4, rotationAppliedToNonBase: simd_float4x4)] = [:]
-
-    for i in 0..<scanners.count-1 {
-        for j in i+1..<scanners.count {
-            let matching = getMatchingBeaconsBetween(baseScanner: scanners[i], nonBaseScanner: scanners[j])
-            if let matching = matching {
-                let nonBaseScannerPositionRelativeToBase = matching.nonBaseScannerPosition
-                let pair = ScannerIndexPair(baseScannerIndex: i, nonBaseScannerIndex: j)
-                relativeScannerPositionsAndRotations[pair] = (nonBaseScannerPositionRelativeToBase, matching.rotationAppliedToNonBase)
-            }
-        }
-    }
-
-    print(relativeScannerPositionsAndRotations)
-
-
-
-
+//    struct ScannerIndexPair: Hashable, CustomStringConvertible {
+//        let baseScannerIndex: Int
+//        let nonBaseScannerIndex: Int
 //
-//    // List returned here are the scanner 1 coords relative to zero
-//    let matchingBetweenZeroAndOne = getMatchingBeaconsBetween(baseScanner: scanners[0], nonBaseScanner: scanners[1])
-//    let scannerOnePositionRelativeToScannerZero = matchingBetweenZeroAndOne!.nonBaseScannerPosition
-//    print("scannerOnePositionRelativeToScannerZero", scannerOnePositionRelativeToScannerZero)
-////    let translationToGoFromAScannerOneCoordToAScannerZeroCoord = simd_float4(x: -scannerOnePositionRelativeToScannerZero.x,
-////                                                                             y: -scannerOnePositionRelativeToScannerZero.y,
-////                                                                             z: -scannerOnePositionRelativeToScannerZero.z,
-////                                                                             w: 1)
-//    print("scannerOneRotationRelativeToScannerZero", matchingBetweenZeroAndOne!.rotationAppliedToNonBase)
-////    print("scannerFourRotationRelativeToScannerOne", matchingBetweenOneAndFour!.rotationAppliedToNonBase.columns)
-//    print(scannerOnePositionRelativeToScannerZero)
-//    // List returned here are the scanner 4 coords relative to one
-//    let matchingBetweenOneAndFour = getMatchingBeaconsBetween(baseScanner: scanners[1], nonBaseScanner: scanners[4])
-//    let scannerFourPositionRelativeToScannerOne = matchingBetweenOneAndFour!.nonBaseScannerPosition
-//    print("scannerFourPositionRelativeToScannerOne", scannerFourPositionRelativeToScannerOne)
-//    print("scannerFourRotationRelativeToScannerOne", matchingBetweenOneAndFour!.rotationAppliedToNonBase.columns)
-////    let rotation = matchingBetweenOneAndFour!.rotationAppliedToNonBase
-//    let reverseRotation = matchingBetweenZeroAndOne!.rotationAppliedToNonBase.inverse
-//    print(reverseRotation)
-////
-////    let rotationallyReversed = scannerFourPositionRelativeToScannerOne
-//    print("Scanner four position relative to zero",  perform3DTranslation(origin: scannerFourPositionRelativeToScannerOne,
-//                                                                         tx: -scannerOnePositionRelativeToScannerZero.x,
-//                                                                         ty: -scannerOnePositionRelativeToScannerZero.y,
-//                                                                         tz: -scannerOnePositionRelativeToScannerZero.z))
-//    let translationToGoFromAScannerFourCoordToAScannerOneCoord = simd_float4(x: -scannerFourPositionRelativeToScannerOne.x,
-//                                                                             y: -scannerFourPositionRelativeToScannerOne.y,
-//                                                                             z: -scannerFourPositionRelativeToScannerOne.z,
-//                                                                             w: 1)
-
-//    let fourToZeroCoords = matchingBetweenOneAndFour!.matchingBeaconsRelativeToBase.map({ perform3DTranslation(origin: $0,
-//                                                                                                               tx: translationToGoFromAScannerOneCoordToAScannerZeroCoord.x,
-//                                                                                                               ty: translationToGoFromAScannerOneCoordToAScannerZeroCoord.y,
-//                                                                                                               tz: translationToGoFromAScannerOneCoordToAScannerZeroCoord.z) })
-//    for x in fourToZeroCoords { print(x) }
-
-//    var baseScannerIndex = 0
-//    var baseScanner = scanners[baseScannerIndex]
-//    var nonBaseIndex = 1
-//    var allBeacons: [simd_float4] = []
-////    var nonBaseScanner = scanners[nonBaseIndex]
-//    var scannerIndexToBaseTranslationMap: [Int: simd_float4] = [:]
-//    while nonBaseIndex < scanners.count {
-//        var nonBaseScanner = scanners[nonBaseIndex]
-//        // Try to get matching beacons for the current index
-//        let matchingBeacons = getMatchingBeaconsBetween(baseScanner: baseScanner, nonBaseScanner: nonBaseScanner)
-//        if matchingBeacons != nil {
-//            // If we've succeeded, change base scanner index and reset nonBaseIndex to base + 1
-//            print("Got match for base \(baseScannerIndex) and \(nonBaseIndex)")
-//            baseScannerIndex += 1
-//            nonBaseIndex = baseScannerIndex + 1
-//            scannerIndexToBaseTranslationMap[nonBaseIndex-1] = matchingBeacons!
-//            baseScanner = scanners[baseScannerIndex].map({ perform3DTranslation(origin: $0, tx: matchingBeacons!.x, ty: matchingBeacons!.y, tz: matchingBeacons!.z) })
-//        } else {
-//            nonBaseIndex += 1
+//        var description: String {
+//            "\(nonBaseScannerIndex) rel to \(baseScannerIndex)"
+//        }
+//    }
+//    var relativeScannerPositionsAndRotations: [ScannerIndexPair: (nonBasePosition: simd_float4, rotationAppliedToNonBase: simd_float4x4)] = [:]
+//
+//    for i in 0..<scanners.count-1 {
+//        for j in i+1..<scanners.count {
+//            let matching = getMatchingBeaconsBetween(baseScanner: scanners[i], nonBaseScanner: scanners[j])
+//            if let matching = matching {
+//                let nonBaseScannerPositionRelativeToBase = matching.nonBaseScannerPosition
+//                let pair = ScannerIndexPair(baseScannerIndex: i, nonBaseScannerIndex: j)
+//                relativeScannerPositionsAndRotations[pair] = (nonBaseScannerPositionRelativeToBase, matching.rotationAppliedToNonBase)
+//            }
 //        }
 //    }
 //
-//    print(scannerIndexToBaseTranslationMap)
+//    print(relativeScannerPositionsAndRotations)
 }
 
 /// Will optionally return a translation that describes how to get the nonBaseScanner to the base
-private func getMatchingBeaconsBetween(baseScanner: [simd_float4], nonBaseScanner: [simd_float4]) -> (matchingBeaconsRelativeToNonBase: [simd_float4],
-                                                                                                      nonBaseScannerPosition: simd_float4,
-                                                                                                      rotationAppliedToNonBase: simd_float4x4)? {
+private func getMatchingBeaconsBetween(baseScanner: [simd_float4], nonBaseScanner: [simd_float4]) -> (nonBaseBeaconPositionsRelativeToBase: [simd_float4],
+                                                                                                      baseScannerPositionRelativeToNonBase: simd_float4,
+                                                                                                      rotationAppliedToNonBase: simd_float4x4,
+                                                                                                      allTransformedNonBaseCoordsIntoBaseSpace: [simd_float4])? {
     // We need to go through all rotations and check whether the rotation ends up matching the coords
     for (rotationIndex, rotationMatrix) in RotationMatrixStore.allRotationMatrices.enumerated() {
         let scannerToCheckWithRotatedCoords = getAllRotatedCoords(using: rotationMatrix, on: nonBaseScanner)
@@ -316,7 +281,12 @@ private func getMatchingBeaconsBetween(baseScanner: [simd_float4], nonBaseScanne
 //
 //                print("Matching coords relative to base:")
 //                for m in matchingCoordsRelativeToBase { print("\t", m) }
-                return (matchingCoordsRelativeToNonBase, simd_float4(x: xDiff, y: yDiff, z: zDiff, w: 1), rotationMatrix)
+                let allNonBaseTransformed: [simd_float4] = nonBaseScanner.map({
+                    let rotated = rotationMatrix * $0
+                    let translated = perform3DTranslation(origin: rotated, tx: xDiff, ty: yDiff, tz: zDiff)
+                    return translated
+                })
+                return (matchingCoordsRelativeToBase, simd_float4(x: xDiff, y: yDiff, z: zDiff, w: 1), rotationMatrix, allNonBaseTransformed)
 
 
 
