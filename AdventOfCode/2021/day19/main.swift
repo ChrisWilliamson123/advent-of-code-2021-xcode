@@ -1,260 +1,91 @@
 import simd
-import Foundation
-
-extension simd_float4 {
-    var xyz: simd_float3 {
-        return simd_float3(x, y, z)
-    }
-
-//    init(_ vec3: float3, _ w: Float) {
-//        self = float4(vec3.x, vec3.y, vec3.z, w)
-//    }
-}
-
-extension simd_float3 {
-    var in4d: simd_float4 {
-        simd_float4(self, 1)
-    }
-}
-
 
 func main() throws {
-    let rotationMatrices: [float3x3] = [
-        float3x3(rows:[simd_float3(1,    0,    0),
-        simd_float3(0,    1,    0),
-        simd_float3(0,    0,    1)]),
-
-        float3x3(rows:[simd_float3(1,    0,    0),
-        simd_float3(0,    0,    -1),
-        simd_float3(0,    1,    0)]),
-
-        float3x3(rows:[simd_float3(1,    0,    0),
-        simd_float3(0,    -1,    0),
-        simd_float3(0,    0,    -1)]),
-
-        float3x3(rows:[simd_float3(1,    0,    0),
-        simd_float3(0,    0,    1),
-        simd_float3(0,    -1,    0)]),
-
-        float3x3(rows:[simd_float3(0,    -1,    0),
-        simd_float3(1,    0,    0),
-        simd_float3(0,    0,    1)]),
-
-        float3x3(rows:[simd_float3(0,    0,    1),
-        simd_float3(1,    0,    0),
-        simd_float3(0,    1,    0)]),
-
-        float3x3(rows:[simd_float3(0,    1,    0),
-        simd_float3(1,    0,    0),
-        simd_float3(0,    0,    -1)]),
-
-        float3x3(rows:[simd_float3(0,    0,    -1),
-        simd_float3(1,    0,    0),
-        simd_float3(0,    -1,    0)]),
-
-        float3x3(rows:[simd_float3(-1,    0,    0),
-        simd_float3(0,    -1,    0),
-        simd_float3(0,    0,    1)]),
-
-        float3x3(rows:[simd_float3(-1,    0,    0),
-        simd_float3(0,    0,    -1),
-        simd_float3(0,    -1,    0)]),
-
-        float3x3(rows:[simd_float3(-1,    0,    0),
-        simd_float3(0,    1,    0),
-        simd_float3(0,    0,    -1)]),
-
-        float3x3(rows:[simd_float3(-1,    0,    0),
-        simd_float3(0,    0,    1),
-        simd_float3(0,    1,    0)]),
-
-        float3x3(rows:[simd_float3(0,    1,    0),
-        simd_float3(-1,    0,    0),
-        simd_float3(0,    0,    1)]),
-
-        float3x3(rows:[simd_float3(0,    0,    1),
-        simd_float3(-1,    0,    0),
-        simd_float3(0,    -1,    0)]),
-
-        float3x3(rows:[simd_float3(0,    -1,    0),
-        simd_float3(-1,    0,    0),
-        simd_float3(0,    0,    -1)]),
-
-        float3x3(rows:[simd_float3(0,    0,    -1),
-        simd_float3(-1,    0,    0),
-        simd_float3(0,    1,    0)]),
-
-        float3x3(rows:[simd_float3(0,    0,    -1),
-        simd_float3(0,    1,    0),
-        simd_float3(1,    0,    0)]),
-
-        float3x3(rows:[simd_float3(0,    1,    0),
-        simd_float3(0,    0,    1),
-        simd_float3(1,    0,    0)]),
-
-        float3x3(rows:[simd_float3(0,    0,    1),
-        simd_float3(0,    -1,    0),
-        simd_float3(1,    0,    0)]),
-
-        float3x3(rows:[simd_float3(0,    -1,    0),
-        simd_float3(0,    0,    -1),
-        simd_float3(1,    0,    0)]),
-
-        float3x3(rows:[simd_float3(0,    0,    -1),
-        simd_float3(0,    -1,    0),
-        simd_float3(-1,    0,    0)]),
-
-        float3x3(rows:[simd_float3(0,    -1,    0),
-        simd_float3(0,    0,    1),
-        simd_float3(-1,    0,    0)]),
-
-        float3x3(rows:[simd_float3(0,    0,    1),
-        simd_float3(0,    1,    0),
-        simd_float3(-1,    0,    0)]),
-
-        float3x3(rows:[simd_float3(0,    1,    0),
-        simd_float3(0,    0,    -1),
-        simd_float3(-1,    0,    0)])
-    ]
-
     let input: [String] = try readInput(fromTestFile: false, separator: "\n\n")
-    let scanners: [[simd_float4]] = input.map({
-        let lineSplit = $0.split(separator: "\n")
-        return lineSplit[1..<lineSplit.count].map({ coordLine in
-            let coordSplit = coordLine.split(separator: ",")
-            return simd_float4(x: Float(coordSplit[0])!, y: Float(coordSplit[1])!, z: Float(coordSplit[2])!, w: 1)
-        })
-    })
-//    print(rotationMatrices)
-//    let secondRotation = rotationMatrices[1]
-//    for p in scanners[0] {
-//        print(secondRotation * p.xyz)
-//    }
-//    assert(false)
-    for r in rotationMatrices {
-        let originalRotated = scanners[0].map({ (r * $0.xyz).in4d })
-        let toCheckRotated = scanners[1].map({ (r * $0.xyz).in4d })
-        var allPairs: [(simd_float4, simd_float4)] = []
+    let scanners = buildInitialScanners(from: input)
 
-        for a in toCheckRotated {
-            for b in originalRotated {
-                allPairs.append((a, b))
-            }
-        }
-        for p in allPairs {
-    //        print(p)
-            let translation = makeTranslationMatrix(tx: p.1.x - p.0.x, ty: p.1.y - p.0.y, tz: p.1.z - p.0.z)
-    //        print(translation)
-            // Translate each coord in the non-zero set
-            var matches = 0
-            for coord in toCheckRotated {
-                // Translate the coord
-                let translated = translation * coord
-//                print(coord, translated)
-                if originalRotated.contains(translated) {
-                    matches += 1
-                }
-            }
-            print(matches)
+    /// Stores the beacons for each scanner (translated into beacon 0's coordinate space)
+    var scannerToBeaconsMap: [Int: Set<simd_float4>] = [0: scanners[0]]
+
+    var scannersCheckedForOverlaps: Set<Int> = []
+    var scannerPositions: Set<simd_float4> = []
+
+    let allScannersChecked = { return scannerToBeaconsMap.count == scanners.count }
+
+    while !allScannersChecked() {
+        /// Will get a random scanner that hasn't been checked yet
+        let nextScannerToCheck = scannerToBeaconsMap.first(where: { !scannersCheckedForOverlaps.contains($0.key) })!
+
+        /// Loop through scanners that are not the scanner being checked and that aren't scanners that have already been resolved
+        for otherScanner in 0..<scanners.count where otherScanner != nextScannerToCheck.key && !scannerToBeaconsMap.keys.contains(otherScanner) {
+            defer { scannersCheckedForOverlaps.insert(nextScannerToCheck.key) }
+
+            guard let matching = getMatchingBeaconsBetween(baseScanner: nextScannerToCheck.value, nonBaseScanner: Set(scanners[otherScanner])) else { continue }
+
+            scannerToBeaconsMap[otherScanner] = matching.allTransformedNonBaseCoordsIntoBaseSpace
+            scannerPositions.insert(matching.scannerPosition)
+
+            print("Scanner \(otherScanner) is at \(matching.scannerPosition)")
         }
     }
 
-    assert(false)
+    let allBeacons = Set(scannerToBeaconsMap.values.flatMap({ $0 }))
+    print("Part 1:", allBeacons.count)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//    let originalCoordList = scanners[0]
-//    let toCheckCoordList = scanners[1]
-//
-//    for rotationMatrix in rotationMatrices {
-////        print("\n")
-////        print(rotationMatrix)
-////        originalCoordList.forEach({ print($0 * rotationMatrix) })
-//
-//        let originalRotatedCoords = originalCoordList.map({ $0 * rotationMatrix })
-//        let toCheckRotatedCoords = toCheckCoordList.map({ $0 * rotationMatrix })
-//
-//        for aCoord in toCheckRotatedCoords {
-//            for bCoord in originalRotatedCoords {
-//                let translationMatrix = makeTranslationMatrix(tx: bCoord.x - aCoord.x, ty: bCoord.y - aCoord.y, tz: bCoord.z - aCoord.z)
-//                // Translate all the toCheck coords by the matrix, check if it's in original rotated
-//                var matched = 0
-//                for coord in toCheckRotatedCoords {
-//                    // translate it
-//                    let translated = coord * translationMatrix
-//                    if originalRotatedCoords.contains(translated) {
-//                        matched += 1
-//                    }
-//                }
-//
-//                if matched >= 12 {
-//                    print("Done with rotation: \(rotationMatrix) \(aCoord) \(bCoord)")
-//                    assert(false)
-//                }
-//
-//            }
-//        }
-//    }
+    let scannerPairs = Array(scannerPositions).combinations(count: 2)
+    let maxDistanceBetweenScanners: Float = scannerPairs.reduce(0, { max($0, abs($1[0].x - $1[1].x) + abs($1[0].y - $1[1].y) + abs($1[0].z - $1[1].z)) })
+    print("Part 2:", Int(maxDistanceBetweenScanners))
 }
 
-private func makeTranslationMatrix(tx: Float, ty: Float) -> simd_float3x3 {
-    var matrix = matrix_identity_float3x3
+/*
+ Will optionally return a tuple where:
+    item 0 is the relative scanners position from the base
+    item 1 is a set containing all of the relative scanner's beacons translated to the base scanner's coordinate space
+ */
+private func getMatchingBeaconsBetween(baseScanner: Set<simd_float4>, nonBaseScanner: Set<simd_float4>) -> (scannerPosition: simd_float4,
+                                                                                                            allTransformedNonBaseCoordsIntoBaseSpace: Set<simd_float4>)? {
+    // Loop through all possible orientations that a scanner can have
+    for rotationMatrix in RotationMatrixStore.allRotationMatrices {
+        let rotatedBeacons: Set<simd_float4> = nonBaseScanner.reduce(into: [], { $0.insert(rotationMatrix * $1) })
 
-    matrix[2, 0] = tx
-    matrix[2, 1] = ty
+        var pairs: [(simd_float4, simd_float4)] = []
+        for a in rotatedBeacons {
+            for b in baseScanner {
+                pairs.append((a, b))
+            }
+        }
 
-    return matrix
+        for p in pairs {
+            var translationMatrix = matrix_identity_float4x4
+            let translationColumn = simd_float4(arrayLiteral: p.1.x - p.0.x, p.1.y - p.0.y, p.1.z - p.0.z, 1)
+            translationMatrix[3] = translationColumn
+
+            let matchingCoordCount = rotatedBeacons.reduce(0, { baseScanner.contains(translationMatrix * $1) ? $0 + 1 : $0 })
+
+            if matchingCoordCount >= 12 {
+                var matrix = rotationMatrix
+                matrix[3] = translationColumn
+                let allNonBaseTransformed: Set<simd_float4> = nonBaseScanner.reduce(into: [], { $0.insert(matrix * $1) })
+                return (simd_float4(x: -translationColumn.x, y: -translationColumn.y, z: -translationColumn.z, w: 1), allNonBaseTransformed)
+            }
+        }
+    }
+
+    return nil
 }
 
-private func makeTranslationMatrix(tx: Float, ty: Float, tz: Float) -> simd_float4x4 {
-    var matrix = matrix_identity_float4x4
+private func buildInitialScanners(from input: [String]) -> [Set<simd_float4>] {
+    var scanners: [Set<simd_float4>] = []
 
-    matrix[3, 0] = tx
-    matrix[3, 1] = ty
-    matrix[3, 2] = tz
+    for text in input {
+        let coordsAsStrings = text.split(separator: "\n").suffix(from: 1)
+        scanners.append(Set(coordsAsStrings.map({ coord in
+            let coordSplit = coord.split(separator: ",")
+            return simd_float4(x: Float(coordSplit[0])!, y: Float(coordSplit[1])!, z: Float(coordSplit[2])!, w: 1)
+        })))
+    }
 
-    return matrix
+    return scanners
 }
-
-//private func scannersOverlap(originalCoordSet: Set<simd_float3>, translatableCoordSet: Set<simd_float3>, rotation: float3x3, threshold: Int) -> [simd_float3]? {
-//    let rotatedOriginalCoords = originalCoordSet.map({ $0 * rotation })
-//    let rotatedTranslatableCoords = translatableCoordSet.map({ $0 * rotation })
-//
-//    for aCoord in rotatedTranslatableCoords {
-//        for bCoord in rotatedOriginalCoords {
-//            let translationMatrix = makeTranslationMatrix(tx: bCoord.x - aCoord.x, ty: bCoord.y - aCoord.y, tz: bCoord.z - aCoord.z)
-//            var matched: [simd_float3] = []
-//            for coordToTranslate in rotatedTranslatableCoords {
-//                let translatedVector = translationMatrix * coordToTranslate
-//                if rotatedOriginalCoords.contains(translatedVector) {
-////                    print("match")
-//                    matched.append(translatedVector)
-//                }
-//            }
-////            print
-//            print(matched.count)
-//            if matched.count >= threshold {
-//                return matched
-//            }
-//        }
-//    }
-//
-//    return nil
-//}
 
 try main()
