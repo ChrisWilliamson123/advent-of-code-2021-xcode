@@ -10,7 +10,7 @@ func main() throws {
     var scannersCheckedForOverlaps: Set<Int> = []
     var scannerPositions: Set<simd_float4> = []
 
-    let allScannersChecked = { return scannerToBeaconsMap.count == scanners.count }
+    let allScannersChecked = { scannerToBeaconsMap.count == scanners.count }
 
     while !allScannersChecked() {
         /// Will get a random scanner that hasn't been checked yet
