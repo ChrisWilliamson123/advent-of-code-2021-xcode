@@ -456,6 +456,8 @@
 		65F90D02276B51C400F6C466 /* input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65F90C39276B510E00F6C466 /* input.txt */; };
 		65FFA3EC2770C67300D9E689 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FFA3EB2770C67300D9E689 /* main.swift */; };
 		65FFA3EE2770CBE900D9E689 /* RotationMatrixStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FFA3ED2770CBE900D9E689 /* RotationMatrixStore.swift */; };
+		65FFA3F327738F8700D9E689 /* full-grid.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65FFA3F127738EBA00D9E689 /* full-grid.txt */; };
+		65FFA3F427738F8900D9E689 /* example-full-grid.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65FFA3F227738ED400D9E689 /* example-full-grid.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -676,6 +678,8 @@
 			files = (
 				65CFA5C4276B8D7B00605910 /* test_input.txt in CopyFiles */,
 				65CFA5C5276B8D7B00605910 /* input.txt in CopyFiles */,
+				65FFA3F427738F8900D9E689 /* example-full-grid.txt in CopyFiles */,
+				65FFA3F327738F8700D9E689 /* full-grid.txt in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1215,6 +1219,8 @@
 		65F90CE7276B512700F6C466 /* 2021.25 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 2021.25; sourceTree = BUILT_PRODUCTS_DIR; };
 		65FFA3EB2770C67300D9E689 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		65FFA3ED2770CBE900D9E689 /* RotationMatrixStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationMatrixStore.swift; sourceTree = "<group>"; };
+		65FFA3F127738EBA00D9E689 /* full-grid.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "full-grid.txt"; sourceTree = "<group>"; };
+		65FFA3F227738ED400D9E689 /* example-full-grid.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "example-full-grid.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1821,6 +1827,8 @@
 				653DB326276B8AAA00BC53DF /* test_input.txt */,
 				653DB327276B8AAA00BC53DF /* input.txt */,
 				653DB328276B8AAA00BC53DF /* main.swift */,
+				65FFA3F127738EBA00D9E689 /* full-grid.txt */,
+				65FFA3F227738ED400D9E689 /* example-full-grid.txt */,
 			);
 			path = day20;
 			sourceTree = "<group>";

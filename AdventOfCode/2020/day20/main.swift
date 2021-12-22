@@ -1,47 +1,114 @@
 import Foundation
 
 func main() throws {
-    let input: [String] = try readInput(fromTestFile: true, separator: "\n\n")
-    var tiles: Set<Tile> = []
-    input.forEach({
-        let lineSplit = $0.split(separator: "\n")
-        let id = lineSplit[0].split(separator: " ")[1].prefix(4)
-        tiles.insert(.init(grid: lineSplit[1..<lineSplit.count].map({ [Character]($0) }), id: Int(id)!))
-    })
+//    let input: [String] = try readInput(fromTestFile: true, separator: "\n\n")
+//    var tiles: Set<Tile> = []
+//    input.forEach({
+//        let lineSplit = $0.split(separator: "\n")
+//        let id = lineSplit[0].split(separator: " ")[1].prefix(4)
+//        tiles.insert(.init(grid: lineSplit[1..<lineSplit.count].map({ [Character]($0) }), id: Int(id)!))
+//    })
+//
+//    print(tiles.count)
+    print(try findSeaMonsters(gridFileName: "full-grid.txt"))
 
-    print(tiles.count)
-
-    var cornerTileIDs: Set<Int> = []
-    var edgeTileIDs: Set<Int> = []
-    var middleTileIDs: Set<Int> = []
+//    var cornerTileIDs: Set<Int> = []
+//    var edgeTileIDs: Set<Int> = []
+//    var middleTileIDs: Set<Int> = []
 //    let cornerTileIDs: Set<Int> = [1789, 1187, 1889, 3121]
 //    let edgeTileIDs: Set<Int> = [2053, 2647, 2221, 2789, 1861, 3673, 1009, 1427, 1051, 1129, 1453, 1481, 3347, 2549, 2593, 1583, 2297, 1381, 3331, 1523, 1993, 3319, 1741, 3877, 1201, 3803, 3253, 2699, 1571, 1847, 1607, 3361, 2213, 3671, 1321, 2467, 1747, 2861, 3307, 3967]
 //    let middleTileIDs: Set<Int> = [2683, 3719, 1097, 2711, 2503, 3797, 1913, 1487, 2017, 2081, 1061, 2381, 2833, 2137, 1597, 2851, 1033, 2113, 3637, 2671, 2677, 3119, 3019, 3491, 3697, 3529, 2243, 2963, 3943, 1933, 2857, 3299, 3821, 1493, 1181, 2129, 1979, 1931, 3499, 2083, 1013, 2557, 2069, 2389, 1543, 3617, 1217, 1039, 1579, 3079, 1901, 3511, 3163, 1277, 2417, 1231, 2311, 2801, 2281, 3631, 1721, 1283, 3181, 1613, 3643, 2357, 2609, 3761, 2819, 2207, 1237, 3041, 1787, 3931, 3623, 3659, 2879, 2777, 3989, 1327, 2803, 2729, 1091, 2099, 1103, 3049, 3301, 1213, 2437, 2351, 1451, 2161, 2339, 3259, 2011, 3727, 1877, 3929, 3691, 2287]
+}
 
-    var edgeMap: [Int: [Edge: (tile: Tile, edge: Edge)]] = [:]
+private func findSeaMonsters(gridFileName: String) throws -> Int {
+    let input: [String] = try readInput(fileName: gridFileName)
+    let grid: [[Character]] = input.map({ [Character]($0) })
+    assert(grid.count == grid[0].count)
 
-    for tile in tiles {
+    let tile = Tile(grid: grid, id: 1)
 
-        let matches = findMatchesForEdges(of: tile, allTiles: tiles)
-        edgeMap[tile.id] = matches
-        let matchingEdges = matches.values
-//        print(matchingEdges)
-        assert(matchingEdges.count < 5 && matchingEdges.count > 1)
-        switch matchingEdges.count {
-        case 2: cornerTileIDs.insert(tile.id)
-        case 3: edgeTileIDs.insert(tile.id)
-        case 4: middleTileIDs.insert(tile.id)
-        default: break
+    /// Always assuming we're checking from a monster's head
+    func getIndexesToCheckForSeaMonster(root: Coordinate) -> [Coordinate]? {
+        // First, check if the area we're checking in is valid
+        let xRange = (root.x - 18)...(root.x+1)
+        if xRange.lowerBound < 0 || xRange.upperBound >= grid[0].count {
+            return nil
         }
+
+        let yRange = root.y...(root.y+2)
+        if yRange.lowerBound < 0 || yRange.upperBound >= grid.count {
+            return nil
+        }
+
+        var coords: [Coordinate] = []
+
+        coords.append(.init(root.x-18, root.y+1))
+        coords.append(.init(root.x-13, root.y+1))
+        coords.append(.init(root.x-12, root.y+1))
+        coords.append(.init(root.x-7, root.y+1))
+        coords.append(.init(root.x-6, root.y+1))
+        coords.append(.init(root.x-1, root.y+1))
+        coords.append(.init(root.x-0, root.y+1))
+        coords.append(.init(root.x+1, root.y+1))
+
+        coords.append(.init(root.x-17, root.y+2))
+        coords.append(.init(root.x-14, root.y+2))
+        coords.append(.init(root.x-11, root.y+2))
+        coords.append(.init(root.x-8, root.y+2))
+        coords.append(.init(root.x-5, root.y+2))
+        coords.append(.init(root.x-2, root.y+2))
+
+        return coords
     }
 
-//    print(cornerTileIDs.count)
-//    print(edgeTileIDs.count)
-//    print(middleTileIDs.count)
+    let calcWaterRoughness: (Int, [[Character]]) -> Int = { seaMonsterCount, grid in
+        return (grid.flatMap({ $0 }).reduce(0, { $1 == "#" ? $0 + 1 : $0 })) - (seaMonsterCount * 15)
+    }
+
+    for o in tile.allOrientations {
+        var seaMonstersFound = 0
+        for y in 0..<o.grid.count {
+            for x in 0..<o.grid[y].count {
+                let char = o.grid[y][x]
+                guard char == "#" else { continue }
+                let coord = Coordinate(x, y)
+                guard let otherCoordsToCheck = getIndexesToCheckForSeaMonster(root: coord) else { continue }
+                // If we find a . then continue
+                let firstDot = otherCoordsToCheck.first(where: { o.grid[$0.y][$0.x] == "." })
+                if firstDot != nil {
+                    continue
+                }
+                seaMonstersFound += 1
+            }
+        }
+        if seaMonstersFound > 0 {
+            return calcWaterRoughness(seaMonstersFound, o.grid)
+        }
+    }
+    return 0
+}
+
+private func buildGrid(tiles: Set<Tile>) {
+    var edgeMap: [Int: [Edge: (tile: Tile, edge: Edge)]] = [:]
+
+//    for tile in tiles {
+//
+//        let matches = findMatchesForEdges(of: tile, allTiles: tiles)
+//        edgeMap[tile.id] = matches
+//        let matchingEdges = matches.values
+//        assert(matchingEdges.count < 5 && matchingEdges.count > 1)
+//        switch matchingEdges.count {
+//        case 2: cornerTileIDs.insert(tile.id)
+//        case 3: edgeTileIDs.insert(tile.id)
+//        case 4: middleTileIDs.insert(tile.id)
+//        default: break
+//        }
+//    }
 
     // Get bottom and right for 1951, we want it top left so flip on x axis and get edges again
-    let flipped1951 = tiles.first(where: { $0.id == 1951 })!.flippedOnX
-    let newEdges = findMatchesForEdges(of: flipped1951, allTiles: tiles)
+//    let tile1889 = tiles.first(where: { $0.id == 1889 })!
+    let tile1889 = tiles.first(where: { $0.id == 1951 })!.flippedOnX
+    let newEdges = findMatchesForEdges(of: tile1889, allTiles: tiles)
 
     let matchings: [Edge: Edge] = [
         .top:    .bottom,
@@ -69,17 +136,20 @@ func main() throws {
 
     var finalMap: [[Tile?]] = Array(repeating: Array(repeating: nil, count: 3), count: 3)
 
-    finalMap[0][0] = flipped1951
+    finalMap[0][0] = tile1889
     var xRoot = 0
     var yRoot = 0
     for edge in newEdges {
         let indexChange = indexChange[edge.key]!
         let newX = xRoot + indexChange.x
         let newY = yRoot + indexChange.y
-        finalMap[newY][newX] = matchEdge(matchings[edge.key]!, to: flipped1951.allEdges[edge.key]!, tile: edge.value.tile)
+        finalMap[newY][newX] = matchEdge(matchings[edge.key]!, to: tile1889.allEdges[edge.key]!, tile: edge.value.tile)
     }
+    print(finalMap[0][1]!.gridString)
+    print(finalMap[1][0]!.gridString)
 
     for y in 0..<finalMap.count {
+        print(y)
         for x in 0..<finalMap[0].count {
             let edges = findMatchesForEdges(of: finalMap[y][x]!, allTiles: tiles)
             let xRoot = x
@@ -88,7 +158,9 @@ func main() throws {
                 let indexChange = indexChange[edge.key]!
                 let newX = xRoot + indexChange.x
                 let newY = yRoot + indexChange.y
-                finalMap[newY][newX] = matchEdge(matchings[edge.key]!, to: finalMap[y][x]!.allEdges[edge.key]!, tile: edge.value.tile)
+                if (newX >= 0 && newX < finalMap.count) && (newY >= 0 && newY < finalMap.count) {
+                    finalMap[newY][newX] = matchEdge(matchings[edge.key]!, to: finalMap[y][x]!.allEdges[edge.key]!, tile: edge.value.tile)
+                }
             }
         }
     }
