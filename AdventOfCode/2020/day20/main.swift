@@ -1,156 +1,150 @@
 import Foundation
 
 func main() throws {
-    let input: [String] = try readInput(fromTestFile: false, separator: "\n\n")
-    var tiles: [Tile] = []
+    let input: [String] = try readInput(fromTestFile: true, separator: "\n\n")
+    var tiles: Set<Tile> = []
     input.forEach({
         let lineSplit = $0.split(separator: "\n")
         let id = lineSplit[0].split(separator: " ")[1].prefix(4)
-        tiles.append(.init(grid: lineSplit[1..<lineSplit.count].map({ [Character]($0) }), id: Int(id)!))
+        tiles.insert(.init(grid: lineSplit[1..<lineSplit.count].map({ [Character]($0) }), id: Int(id)!))
     })
 
-    // This is our test base tile
-    let tile1427 = tiles.first(where: { $0.id == 1427 })!
-
-    let baseTileEdges = tile1427.allEdges
-
-    // Do the top edge first
-    let topEdge = baseTileEdges[.top]!
-
-    // Loop through all other tiles and try to find a matching edge
-
-    func findMatchingTileAndEdge(for tile: Tile, with edge: [Character]) -> (tile: Tile, edge: Edge)? {
-        let otherTiles = tiles.filter({ $0.id != tile.id })
-
-        for otherTile in otherTiles {
-            for otherTileOrientation in otherTile.allOrientations {
-                let otherTileEdges = otherTileOrientation.allEdges
-                for otherTileEdge in otherTileEdges {
-                    if otherTileEdge.value == edge {
-                        return (otherTile, otherTileEdge.key)
-                    }
-                }
-            }
-        }
-
-        return nil
-    }
-
-    func findMatchesForEdges(for tile: Tile) -> [Edge: (tile: Tile, edge: Edge)?] {
-        let baseTileEdges = tile.allEdges
-
-        var toReturn: [Edge: (tile: Tile, edge: Edge)?] = [:]
-        for edge in baseTileEdges {
-            toReturn[edge.key] = findMatchingTileAndEdge(for: tile, with: edge.value)
-        }
-        return toReturn
-    }
+    print(tiles.count)
 
     var cornerTileIDs: Set<Int> = []
-    var definitelyNotCornerTiles: Set<Int> = []
+    var edgeTileIDs: Set<Int> = []
+    var middleTileIDs: Set<Int> = []
+//    let cornerTileIDs: Set<Int> = [1789, 1187, 1889, 3121]
+//    let edgeTileIDs: Set<Int> = [2053, 2647, 2221, 2789, 1861, 3673, 1009, 1427, 1051, 1129, 1453, 1481, 3347, 2549, 2593, 1583, 2297, 1381, 3331, 1523, 1993, 3319, 1741, 3877, 1201, 3803, 3253, 2699, 1571, 1847, 1607, 3361, 2213, 3671, 1321, 2467, 1747, 2861, 3307, 3967]
+//    let middleTileIDs: Set<Int> = [2683, 3719, 1097, 2711, 2503, 3797, 1913, 1487, 2017, 2081, 1061, 2381, 2833, 2137, 1597, 2851, 1033, 2113, 3637, 2671, 2677, 3119, 3019, 3491, 3697, 3529, 2243, 2963, 3943, 1933, 2857, 3299, 3821, 1493, 1181, 2129, 1979, 1931, 3499, 2083, 1013, 2557, 2069, 2389, 1543, 3617, 1217, 1039, 1579, 3079, 1901, 3511, 3163, 1277, 2417, 1231, 2311, 2801, 2281, 3631, 1721, 1283, 3181, 1613, 3643, 2357, 2609, 3761, 2819, 2207, 1237, 3041, 1787, 3931, 3623, 3659, 2879, 2777, 3989, 1327, 2803, 2729, 1091, 2099, 1103, 3049, 3301, 1213, 2437, 2351, 1451, 2161, 2339, 3259, 2011, 3727, 1877, 3929, 3691, 2287]
+
+    var edgeMap: [Int: [Edge: (tile: Tile, edge: Edge)]] = [:]
 
     for tile in tiles {
 
-        let matchingEdges = findMatchesForEdges(for: tile).values.filter({ $0 != nil })
-        print(matchingEdges)
-        if matchingEdges.count == 2 {
-            cornerTileIDs.insert(tile.id)
+        let matches = findMatchesForEdges(of: tile, allTiles: tiles)
+        edgeMap[tile.id] = matches
+        let matchingEdges = matches.values
+//        print(matchingEdges)
+        assert(matchingEdges.count < 5 && matchingEdges.count > 1)
+        switch matchingEdges.count {
+        case 2: cornerTileIDs.insert(tile.id)
+        case 3: edgeTileIDs.insert(tile.id)
+        case 4: middleTileIDs.insert(tile.id)
+        default: break
         }
     }
 
-    print(Array(cornerTileIDs).multiply())
+//    print(cornerTileIDs.count)
+//    print(edgeTileIDs.count)
+//    print(middleTileIDs.count)
 
-//    for orientation in [tile1427.flippedOnX] {
-//        print(orientation.gridString)
-//        for edge in findMatchesForEdges(for: orientation).sorted(by: { $0.key.rawValue < $1.key.rawValue }) {
-//            print(edge)
-//        }
-//        print("\n")
-//    }
+    // Get bottom and right for 1951, we want it top left so flip on x axis and get edges again
+    let flipped1951 = tiles.first(where: { $0.id == 1951 })!.flippedOnX
+    let newEdges = findMatchesForEdges(of: flipped1951, allTiles: tiles)
 
-//    for orientation in tiles.first(where: { $0.id == 2729 })!.allOrientations {
-//        print(orientation.gridString)
-//        for edge in findMatchesForEdges(for: orientation).sorted(by: { $0.key.rawValue < $1.key.rawValue }) {
-//            print(edge)
-//        }
-//        print("\n")
-//    }
+    let matchings: [Edge: Edge] = [
+        .top:    .bottom,
+        .right:  .left,
+        .bottom: .top,
+        .left:   .right
+    ]
 
+    let indexChange: [Edge: (x: Int, y: Int)] = [
+        .top:    (0, -1),
+        .right:  (1, 0),
+        .bottom: (0, 1),
+        .left:   (-1, 0)
+    ]
 
-//    let matchingTileAndEdgeFor1427Top = findMatchingTileAndEdge(for: tile1427, with: baseTileEdges[.top]!)
-//    let matchingTileAndEdgeFor1427Right = findMatchingTileAndEdge(for: tile1427, with: baseTileEdges[.right]!)
-//    let matchingTileAndEdgeFor1427Bottom = findMatchingTileAndEdge(for: tile1427, with: baseTileEdges[.bottom]!)
-//    let matchingTileAndEdgeFor1427Left = findMatchingTileAndEdge(for: tile1427, with: baseTileEdges[.left]!)
-//
-//    print(matchingTileAndEdgeFor1427Top)
-//    print(matchingTileAndEdgeFor1427Right)
-//    print(matchingTileAndEdgeFor1427Bottom)
-//    print(matchingTileAndEdgeFor1427Left)
+    func matchEdge(_ edge: Edge, to edgeChars: [Character], tile: Tile) -> Tile {
+        // Lazy, try all orientations
+        for orientation in tile.allOrientations {
+            if orientation.allEdges[edge] == edgeChars {
+                return orientation
+            }
+        }
+        return tile
+    }
 
+    var finalMap: [[Tile?]] = Array(repeating: Array(repeating: nil, count: 3), count: 3)
 
-//    typealias EdgeMap = [Tile: [(baseEdge: Edge, neighbour: Tile, neighbourEdge: Edge)]]
-////    var attempts: [EdgeMap] = []
-//
-//    for orientationOf1427 in tile1427.allOrientations {
-//        var edgeMap: EdgeMap = [orientationOf1427: []]
-//
-//        var doneTiles: Set<Int> = []
-//        var incompleteTiles = edgeMap.filter({ !doneTiles.contains($0.key.id) }).keys
-//
-//        while incompleteTiles.count > 0 {
-//            let nextBaseTile = incompleteTiles.first!
-////            print("Doing tile \(nextBaseTile.id)")
-//
-//            let otherTiles = tiles.filter({ $0.id != nextBaseTile.id && !doneTiles.contains($0.id) })
-//
-//            let baseTileEdges = [nextBaseTile.top, nextBaseTile.right, nextBaseTile.bottom, nextBaseTile.left]
-//            for baseEdgeIndex in 0..<baseTileEdges.count {
-//                let baseEdgeChars = baseTileEdges[baseEdgeIndex]
-//                let baseEdgeType = Edge.all[baseEdgeIndex]
-//                var baseEdgeDone = false
-//                for otherTile in otherTiles {
-//                    // Get all orientations
-//                    let allViableOrientationsOfOtherTile: Set<Tile>
-////                    if let alreadyOrientedOtherTile = otherTile.allOrientations.first(where: { edgeMap.keys.contains($0) }) {
-////                        allViableOrientationsOfOtherTile = Set([alreadyOrientedOtherTile])
-////                    } else {
-////                    }
-//                    allViableOrientationsOfOtherTile = otherTile.allOrientations
-//
-//                    for orientation in allViableOrientationsOfOtherTile {
-//                        let edgesForOrientation = [orientation.top, orientation.right, orientation.bottom, orientation.left]
-//
-//                        for edgeIndex in 0..<edgesForOrientation.count {
-//                            let edgeChars = edgesForOrientation[edgeIndex]
-//                            let edgeType = Edge.all[edgeIndex]
-//                            if edgeChars == baseEdgeChars {
-////                                print("\tMatch found: \(otherTile.id)")
-//                                edgeMap[nextBaseTile] = (edgeMap[nextBaseTile] ?? []) + [(baseEdge: baseEdgeType, neighbour: orientation, neighbourEdge: edgeType)]
-//                                edgeMap[orientation] = (edgeMap[orientation] ?? []) + [(baseEdge: edgeType, neighbour: nextBaseTile, neighbourEdge: baseEdgeType)]
-//                                // GOING TO HAVE TO HAVE SOME SORT OF WAY TO CHECK THAT A TILE IS DONE SO I DONT CHECK AGAIN
-//                                baseEdgeDone = true
-//                                break
-//                            }
-//                        }
-//                        if baseEdgeDone { break }
-//                    }
-//
-//                    if baseEdgeDone { break }
-//                }
-//            }
-//
-//            doneTiles.insert(nextBaseTile.id)
-//            incompleteTiles = edgeMap.filter({ !doneTiles.contains($0.key.id) }).keys
-//        }
-//
-//        for e in edgeMap {
-//            print(e)
-//        }
-//
-//        print("\n")
-//
-////        attempts.append(edgeMap)
-//    }
+    finalMap[0][0] = flipped1951
+    var xRoot = 0
+    var yRoot = 0
+    for edge in newEdges {
+        let indexChange = indexChange[edge.key]!
+        let newX = xRoot + indexChange.x
+        let newY = yRoot + indexChange.y
+        finalMap[newY][newX] = matchEdge(matchings[edge.key]!, to: flipped1951.allEdges[edge.key]!, tile: edge.value.tile)
+    }
+
+    for y in 0..<finalMap.count {
+        for x in 0..<finalMap[0].count {
+            let edges = findMatchesForEdges(of: finalMap[y][x]!, allTiles: tiles)
+            let xRoot = x
+            let yRoot = y
+            for edge in edges {
+                let indexChange = indexChange[edge.key]!
+                let newX = xRoot + indexChange.x
+                let newY = yRoot + indexChange.y
+                finalMap[newY][newX] = matchEdge(matchings[edge.key]!, to: finalMap[y][x]!.allEdges[edge.key]!, tile: edge.value.tile)
+            }
+        }
+    }
+    printGrid(finalMap)
+}
+
+private func printGrid(_ grid: [[Tile?]]) {
+    for yTileIndex in 0..<grid.count {
+        var rowsToPrint: [String] = Array(repeating: "", count: 10)
+        for xTileIndex in 0..<grid[0].count {
+            if let tile = grid[yTileIndex][xTileIndex] {
+                for i in 0..<rowsToPrint.count {
+                    rowsToPrint[i] += " " + tile.grid[i] + " "
+                }
+            } else {
+                for i in 0..<rowsToPrint.count {
+                    rowsToPrint[i] += " XXXXXXXXXX "
+                }
+            }
+        }
+        for r in rowsToPrint {
+            print(r)
+        }
+        print("\n")
+//        print(row)
+    }
+}
+
+private func findMatchesForEdges(of tile: Tile, allTiles: Set<Tile>) -> [Edge: (tile: Tile, edge: Edge)] {
+    let baseTileEdges = tile.allEdges
+
+    var toReturn: [Edge: (tile: Tile, edge: Edge)] = [:]
+    for edge in baseTileEdges {
+        if let matchingTileAndEdge = findMatchingTileAndEdge(for: tile, with: edge.value, allTiles: allTiles) {
+            toReturn[edge.key] = matchingTileAndEdge
+        }
+    }
+    return toReturn
+}
+
+private func findMatchingTileAndEdge(for tile: Tile, with edge: [Character], allTiles: Set<Tile>) -> (tile: Tile, edge: Edge)? {
+    var otherTiles = allTiles
+    otherTiles.remove(tile)
+
+    for otherTile in otherTiles where otherTile.id != tile.id {
+        for otherTileOrientation in otherTile.allOrientations {
+            let otherTileEdges = otherTileOrientation.allEdges
+            for otherTileEdge in otherTileEdges {
+                if otherTileEdge.value == edge {
+                    return (otherTileOrientation, otherTileEdge.key)
+                }
+            }
+        }
+    }
+
+    return nil
 }
 
 struct Tile: CustomStringConvertible, Hashable {
@@ -197,6 +191,10 @@ struct Tile: CustomStringConvertible, Hashable {
         }
 
         return Tile(grid: newGrid, id: id)
+    }
+
+    var rotatedLeft: Tile {
+        rotatedRight.rotatedRight.rotatedRight
     }
 
     var flippedOnY: Tile {
