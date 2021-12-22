@@ -37,7 +37,7 @@ struct Cuboid: Hashable {
 }
 
 func main() throws {
-    let input: [String] = try readInput(fromTestFile: true)
+    let input: [String] = try readInput(fromTestFile: false)
     let instructions = buildInstructions(from: input)
 
     var totalLitVolume = 0
