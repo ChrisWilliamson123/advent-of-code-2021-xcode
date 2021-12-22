@@ -1,26 +1,10 @@
 import Foundation
 import simd
 
-//public extension ClosedRange where Element : Comparable {
-//
-//    @warn_unused_result
-//    public func intersect(other: ClosedRange<Element>) -> ClosedRange<Element> {
-//        guard endIndex > other.startIndex else {
-//            return endIndex...endIndex
-//        }
-//        guard other.endIndex > startIndex else {
-//            return startIndex...startIndex
-//        }
-//        let s = other.startIndex > startIndex ? other.startIndex : startIndex
-//        let e = other.endIndex < endIndex ? other.endIndex : endIndex
-//        return s...e
-//    }
-//}
-
 extension ClosedRange {
     public func intersect(_ other: ClosedRange<Bound>) -> ClosedRange<Bound>? {
-        let lowerBoundMax = max(self.lowerBound, other.lowerBound)
-        let upperBoundMin = min(self.upperBound, other.upperBound)
+        let lowerBoundMax = Swift.max(self.lowerBound, other.lowerBound)
+        let upperBoundMin = Swift.min(self.upperBound, other.upperBound)
 
         let lowerBeforeUpper = lowerBoundMax <= self.upperBound && lowerBoundMax <= other.upperBound
         let upperBeforeLower = upperBoundMin >= self.lowerBound && upperBoundMin >= other.lowerBound
@@ -33,120 +17,58 @@ extension ClosedRange {
     }
 }
 
+struct Cuboid: Hashable {
+    let xRange: ClosedRange<Int>
+    let yRange: ClosedRange<Int>
+    let zRange: ClosedRange<Int>
+
+    var volume: Int { (xRange.count) * (yRange.count) * (zRange.count) }
+
+    func getIntersectingCuboid(with cuboid2: Cuboid) -> Cuboid? {
+        let xRangeIntersection = self.xRange.intersect(cuboid2.xRange)
+        let yRangeIntersection = self.yRange.intersect(cuboid2.yRange)
+        let zRangeIntersection = self.zRange.intersect(cuboid2.zRange)
+
+        if let xRangeIntersection = xRangeIntersection, let yRangeIntersection = yRangeIntersection, let zRangeIntersection = zRangeIntersection  {
+            return Cuboid(xRange: xRangeIntersection, yRange: yRangeIntersection, zRange: zRangeIntersection)
+        }
+        return nil
+    }
+}
+
 func main() throws {
     let input: [String] = try readInput(fromTestFile: true)
     let instructions = buildInstructions(from: input)
 
-    var numberOfLitCubes = 27
-    var xRanges: [ClosedRange<Int>] = [10...12]
-    var yRanges: [ClosedRange<Int>] = [10...12]
-    var zRanges: [ClosedRange<Int>] = [10...12]
+    var totalLitVolume = 0
+    var onCuboids: [Cuboid] = []
+    var offCuboids: [Cuboid] = []
 
-    for i in instructions[0..<4] {
+    for i in instructions {
+        let cuboid = Cuboid(xRange: i.xRange, yRange: i.yRange, zRange: i.zRange)
+        let onLength = onCuboids.count
+        let offLength = offCuboids.count
+
         if i.turnOn {
-            let fullOnVolume = i.xRange.count * i.yRange.count * i.zRange.count
-
-            var xIntersects = 0
-            var yIntersects = 0
-            var zIntersects = 0
-
-            for index in 0..<xRanges.count {
-                let r = xRanges[index]
-                if let intersect = r.intersect(i.xRange) {
-                    xIntersects += intersect.count
-                    xRanges[index] = i.xRange
-                }
-            }
-            for index in 0..<yRanges.count {
-                let r = yRanges[index]
-                if let intersect = r.intersect(i.yRange) {
-                    yIntersects += intersect.count
-                    yRanges[index] = i.yRange
-                }
-            }
-            for index in 0..<zRanges.count {
-                let r = zRanges[index]
-                if let intersect = r.intersect(i.zRange) {
-                    zIntersects += intersect.count
-                    zRanges[index] = i.zRange
-                }
-            }
-            numberOfLitCubes += fullOnVolume - (xIntersects * yIntersects * zIntersects)
-        } else {
-            var startXRangeSize = i.xRange.count
-            var startYRangeSize = i.yRange.count
-            var startZRangeSize = i.zRange.count
-
-            for index in 0..<xRanges.count {
-                let r = xRanges[index]
-                if let intersect = r.intersect(i.xRange) {
-                    print("Off x intersect", intersect)
-                    startXRangeSize -= intersect.count
-                }
-            }
-            for index in 0..<yRanges.count {
-                let r = yRanges[index]
-                if let intersect = r.intersect(i.yRange) {
-//                    print("Off y intersect", intersect.count)
-                    startYRangeSize -= intersect.count
-                }
-            }
-            for index in 0..<zRanges.count {
-                let r = zRanges[index]
-                if let intersect = r.intersect(i.zRange) {
-//                    print("Off z intersect", intersect.count)
-                    startZRangeSize -= intersect.count
-                }
-            }
-            print(startXRangeSize, startYRangeSize, startZRangeSize)
-            numberOfLitCubes -= startXRangeSize * startYRangeSize * startZRangeSize
+            totalLitVolume += cuboid.volume
+            onCuboids.append(cuboid)
         }
-        print(numberOfLitCubes)
-        print("x ranges: ", xRanges)
-        print("y ranges: ", yRanges)
-        print("z ranges: ", zRanges)
+        for onCuboidIndex in 0..<onLength {
+            if let intersection = cuboid.getIntersectingCuboid(with: onCuboids[onCuboidIndex]) {
+                offCuboids.append(intersection)
+                totalLitVolume -= intersection.volume
+            }
+        }
+
+        for offCuboidIndex in 0..<offLength {
+            if let intersection = cuboid.getIntersectingCuboid(with: offCuboids[offCuboidIndex]) {
+                onCuboids.append(intersection)
+                totalLitVolume += intersection.volume
+            }
+        }
+
+        print(totalLitVolume)
     }
-
-
-
-//
-//    let partOneInstructions = instructions.filter({
-//        ($0.xRange.lowerBound >= -50 && $0.yRange.lowerBound >= -50 && $0.zRange.lowerBound >= -50) &&
-//        ($0.xRange.upperBound <= 50 && $0.yRange.upperBound <= 50 && $0.zRange.upperBound <= 50)
-//    })
-//    var onCubes: Set<simd_float3> = []
-//    for i in instructions {
-//        print("Executing instruction \(i)")
-//        for x in i.xRange {
-//            print(x)
-//            for y in i.yRange {
-//                for z in i.zRange {
-//                    let coord = simd_float3(x: Float(x), y: Float(y), z: Float(z))
-//                    if i.turnOn {
-////                        print("\tInserting \(coord)")
-//                        onCubes.insert(coord)
-//                    }
-//                    else {
-////                        print("\tRemoving \(coord)")
-//                        onCubes.remove(coord)
-//                    }
-//                }
-//            }
-//        }
-//
-////        print("\t\(onCubes.count)")
-//    }
-//    var onCubes: Set<simd_float3> = []
-//    for x in [10, 12, 13] {
-//        for y in [10, 12, 13] {
-//            for z in [10, 12, 13] {
-//                let coord = simd_float3(x: Float(x), y: Float(y), z: Float(z))
-//                onCubes.insert(coord)
-//            }
-//        }
-//    }
-//
-//    print(onCubes.count)
 }
 
 private func buildInstructions(from input: [String]) -> [Instruction] {
