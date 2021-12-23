@@ -1,6 +1,10 @@
-struct Coordinate: Hashable {
+struct Coordinate: Hashable, CustomStringConvertible {
     let x: Int
     let y: Int
+
+    var description: String {
+        "(\(x),\(y))"
+    }
 
     typealias FoldLine = (axis: Axis, location: Int)
 
@@ -58,5 +62,9 @@ struct Coordinate: Hashable {
         let newValue = currentValue - difference
 
         return Coordinate(foldLine.axis == .y ? x : newValue, foldLine.axis == .y ? newValue : y)
+    }
+
+    func getManhattanDistance(to other: Coordinate) -> Int {
+        abs(x - other.x) + abs(y - other.y)
     }
 }
