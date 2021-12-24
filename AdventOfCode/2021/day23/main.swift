@@ -13,8 +13,8 @@ func main() throws {
     let grid: [[Character]] = [
         [".", ".", ".", ".", ".", ".", ".", ".", ".", ".", "."],
         ["#", "#", "B", "#", "C", "#", "B", "#", "D", "#", "#"],
-        //        ["#", "#", "D", "#", "C", "#", "B", "#", "A", "#", "#"],
-        //        ["#", "#", "D", "#", "B", "#", "A", "#", "C", "#", "#"],
+        ["#", "#", "D", "#", "C", "#", "B", "#", "A", "#", "#"],
+        ["#", "#", "D", "#", "B", "#", "A", "#", "C", "#", "#"],
         ["#", "#", "A", "#", "D", "#", "C", "#", "A", "#", "#"]
     ]
     // COMPLETE GAME
@@ -32,9 +32,9 @@ func main() throws {
     var memo: Memo = [:]
 
     /// Takes a game and returns the minimum energy needed to complete the game
-    func playGame(game: Game, memo: inout Memo) -> Int? {
+    func playGame(game: Game, energyUsed: Int, memo: inout Memo) -> Int? {
         if let memoResult = memo[game] { return memoResult }
-        if game.finished { print("A game has finished"); return 0 }
+        if game.finished { print("A game has finished \(energyUsed)"); return 0 }
 
         var energyNeededForMoves: [Int] = []
 
@@ -42,7 +42,10 @@ func main() throws {
         let possibleMoves = game.possibleMoves
         if possibleMoves.count == 0 { memo[game] = nil; return nil }
         for m in possibleMoves {
-            if let nextResult = playGame(game: game.executeMove(m), memo: &memo) {
+            if let nextResult = playGame(game: game.executeMove(m), energyUsed: energyUsed + m.2, memo: &memo) {
+                if nextResult == 0 {
+                    print(m.2)
+                }
                 energyNeededForMoves.append(m.2 + nextResult)
             }
         }
@@ -53,12 +56,12 @@ func main() throws {
         return minimum
     }
 
-    print(playGame(game: game, memo: &memo))
+    print(playGame(game: game, energyUsed: 0, memo: &memo))
 }
 
 struct Game: Hashable {
-    let roomColumns = [2, 4, 6, 8]
-    let possibleCorridorStopColumns = [0, 1, 3, 5, 7, 9, 10]
+    let roomColumns = Set([2, 4, 6, 8])
+    let possibleCorridorStopColumns = Set([0, 1, 3, 5, 7, 9, 10])
     let SPACE: Character = "."
     let grid: [[Character]]
     var corridor: [Character] { grid[0] }
@@ -70,7 +73,7 @@ struct Game: Hashable {
     }
 
     var finished: Bool { isRoomComplete(2) && isRoomComplete(4) && isRoomComplete(6) && isRoomComplete(8) }
-    var populatedCorridorIndexes: [Int] { (0..<corridor.count).filter({ corridor[$0] != SPACE }) }
+    var populatedCorridorIndexes: Set<Int> { Set((0..<corridor.count).filter({ corridor[$0] != SPACE })) }
 
     func executeMove(_ move: Move) -> Game {
         var nextGrid = grid
@@ -87,6 +90,7 @@ struct Game: Hashable {
         var moves: [Move] = []
         // First, do the corridor, want to move an item in the corridor into a room
         moves.append(contentsOf: possibleMovesFromCorridor)
+        if moves.count > 0 { return moves }
         // Next, move from rooms to corridor
         moves.append(contentsOf: possibleMovesFromRooms)
 
@@ -160,44 +164,31 @@ struct Game: Hashable {
     private func doesRoomContainValidChars(_ room: [Character], roomIndex: Int) -> Bool {
         let expectedChar = getExpectedChar(for: roomIndex)
         // An unexpected char is one where it's not expected and it's not a space
-        if let unexpectedChar = room.first(where: { $0 != expectedChar && $0 != SPACE }) {
-            return false
-        }
-        return true
+        return room.first(where: { $0 != expectedChar && $0 != SPACE }) == nil
     }
 
     private func canMoveFrom(columnIndex: Int, to destinationColumnIndex: Int) -> Bool {
         let direction = columnIndex < destinationColumnIndex ? 1 : -1
-        let colsToMoveBetween = stride(from: columnIndex + direction, to: destinationColumnIndex + direction, by: direction)
+        let colsToMoveBetween = Set(stride(from: columnIndex + direction, to: destinationColumnIndex + direction, by: direction))
         let populatedCols = populatedCorridorIndexes
-//        print("can move from \(columnIndex) to \(destinationColumnIndex) pop \(populatedCols)")
-        for c in colsToMoveBetween {
-            if populatedCols.contains(c) {
-//                print("Returning false")
-                return false
-            }
-        }
-//        print("Returning true")
-        return true
+
+        return colsToMoveBetween.intersection(populatedCols).count == 0
     }
 
     private func isRoomFull(_ room: [Character]) -> Bool {
-        let spaces = room.filter({ $0 == SPACE })
-        return spaces.count == 0
+        // Room is not full if we experience a space at any point
+        room.first(where: { $0 == SPACE }) == nil
     }
 
     private func isRoomEmpty(_ room: [Character]) -> Bool {
-        let spaces = room.filter({ $0 == SPACE })
-        return spaces.count == roomSize
+        // Room is not empty if we don't experience a space
+        room.first(where: { $0 != SPACE}) == nil
     }
 
     private func isRoomComplete(_ roomColumnIndex: Int) -> Bool {
         let room = getRoom(roomColumnIndex)
         let expectedChar = getExpectedChar(for: roomColumnIndex)
-        if room.first(where: { $0 != expectedChar }) != nil {
-            return false
-        }
-        return true
+        return room.first(where: { $0 != expectedChar }) == nil
     }
 
     private func getRoom(_ roomColumnIndex: Int) -> [Character] {
