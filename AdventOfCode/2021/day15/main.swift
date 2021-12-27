@@ -4,11 +4,12 @@ func main() throws {
     let input: [String] = try readInput(fromTestFile: false)
 
     let partOne = buildCave(from: input)
-    let partOneResult = dijkstra(graph: partOne.coords,
-                          source: Coordinate(0, 0),
-                          target: Coordinate(partOne.cave.count-1, partOne.cave.count-1),
-                          getNeighbours: { $0.getAxialAdjacents(in: partOne.cave) },
-                          getDistanceBetween: { partOne.cave[$1.y][$1.x] })
+    let partOneResult = aStar(graph: partOne.coords,
+                              source: Coordinate(0, 0),
+                              target: Coordinate(partOne.cave.count-1, partOne.cave.count-1),
+                              getNeighbours: { $0.getAxialAdjacents(in: partOne.cave) },
+                              getDistanceBetween: { partOne.cave[$1.y][$1.x] },
+                              heuristicFunction: { $0.getManhattanDistance(to: $1) })
 
     print("Part one:", partOneResult.distances[Coordinate(partOne.cave.count-1, partOne.cave.count-1)]!)
 
@@ -52,49 +53,6 @@ private func buildCave(from input: [String], multiplier: Int = 1) -> (cave: [[In
     return (cave, coords)
 }
 
-func aStar(graph: [[Int]], source: Coordinate, end: Coordinate) -> Int {
-    var prev: [Coordinate: Coordinate?] = [:]
-    var dist: [Coordinate: Int] = [:]
-
-    for y in 0..<graph.count {
-        for x in 0..<graph[0].count {
-            let coord = Coordinate(x, y)
-            if coord != source {
-                dist[coord] = Int.max
-                prev[coord] = nil
-            }
-        }
-    }
-
-    dist[source] = 0
-
-    var fScore: [Coordinate: Double] = [:]
-    fScore[source] = euclidianDistance(source: source, end: end)
-    var queue = Heap(elements: [], priorityFunction: { fScore[$0]! < fScore[$1]! })
-    queue.enqueue(source)
-
-    while !queue.isEmpty {
-        let current = queue.dequeue()!
-        if current == end { return dist[current]! }
-
-        for n in current.getAxialAdjacents(in: graph) {
-            let tentativeGScore = dist[current]! + graph[n.y][n.x]
-            if tentativeGScore < dist[n]! {
-                prev[n] = current
-                dist[n] = tentativeGScore
-                fScore[n] = Double(tentativeGScore) + euclidianDistance(source: n, end: end)
-
-                if queue.indexMap[n] != nil {
-                    queue.changeElement(n, to: n)
-                } else {
-                    queue.enqueue(n)
-                }
-            }
-        }
-    }
-
-    return 0
-}
 
 func euclidianDistance(source: Coordinate, end: Coordinate) -> Double {
     let dx = end.x - source.x
