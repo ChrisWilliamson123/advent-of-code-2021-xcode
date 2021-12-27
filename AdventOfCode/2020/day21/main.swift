@@ -26,19 +26,22 @@ func main() throws {
         }
     }
 
-    print(allergensToPotentialIngredients)
     let allergenedIngredients: Set<String> = allergensToPotentialIngredients.reduce([], { $0.union($1.value) })
     let nonAllergenedIngredients = allIngredients.subtracting(allergenedIngredients)
-    print(nonAllergenedIngredients)
+//    print(nonAllergenedIngredients)
 
-    print(nonAllergenedIngredients.map({ allIngredientsCounts[$0]! }).sum())
+    print("Part one:", nonAllergenedIngredients.map({ allIngredientsCounts[$0]! }).sum())
 
-//    let singleValueItem = ingredientsToPotentialAllergens.first(where: { $0.value.count == 1 })!
-//    for (key, value) in ingredientsToPotentialAllergens where key != singleValueItem.key {
-//        ingredientsToPotentialAllergens[key] = value.filter({ $0 != singleValueItem.value[0] })
-//    }
-//
-//    print(ingredientsToPotentialAllergens)
+    var done: Set<String> = []
+    while done.count != allergensToPotentialIngredients.count {
+        let allergenWithOneIngredient = allergensToPotentialIngredients.first(where: { $0.value.count == 1 && !done.contains($0.key) })!
+        for (k, v) in allergensToPotentialIngredients where k != allergenWithOneIngredient.key {
+            allergensToPotentialIngredients[k] = v.subtracting([allergenWithOneIngredient.value.first!])
+        }
+        done.insert(allergenWithOneIngredient.key)
+    }
+
+    print("Part two:", allergensToPotentialIngredients.sorted(by: { $0.key < $1.key }).map({ $0.value.first! }).joined(separator: ","))
 }
 
 try main()
