@@ -28,7 +28,6 @@ func main() throws {
 
     let allergenedIngredients: Set<String> = allergensToPotentialIngredients.reduce([], { $0.union($1.value) })
     let nonAllergenedIngredients = allIngredients.subtracting(allergenedIngredients)
-//    print(nonAllergenedIngredients)
 
     print("Part one:", nonAllergenedIngredients.map({ allIngredientsCounts[$0]! }).sum())
 
