@@ -28,7 +28,7 @@ struct HeightMap {
         func dfs(_ coord: Coordinate) {
             explored.insert(coord)
 
-            let validAxialEdges = coord.getAdjacents(in: map).filter({ ($0.x == coord.x || $0.y == coord.y) && self.getHeight(for: $0) != 9 })
+            let validAxialEdges = coord.getAxialAdjacents(in: map).filter({ self.getHeight(for: $0) != 9 })
 
             for edge in validAxialEdges where !explored.contains(edge) {
                 dfs(edge)
