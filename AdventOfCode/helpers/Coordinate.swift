@@ -41,7 +41,7 @@ struct Coordinate: Hashable, CustomStringConvertible {
     }
 
     // TODO: Don't cast the grid to an [[Any]], use [[T]] instead
-    func getAdjacents(in grid: [[Any]], includingSelf: Bool = false) -> [Coordinate] {
+    func getAdjacents<T>(in grid: [[T]], includingSelf: Bool = false) -> [Coordinate] {
         var adjacents: [Coordinate] = []
         for x in x-1...x+1 where x >= 0 && x < grid[0].count {
             for y in y-1...y+1 where y >= 0 && y < grid.count {
