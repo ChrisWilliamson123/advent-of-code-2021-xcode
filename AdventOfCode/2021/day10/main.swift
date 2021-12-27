@@ -11,18 +11,18 @@ func main() throws {
     var closingsNeeded: [[Character]] = []
 
     for chunk in chunks {
-        var stack: [Character] = []
+        var stack = Stack<Character>()
         var isCorrupted = false
 
         for c in chunk {
             if openers.contains(c) {
-                stack.append(c)
+                stack.push(c)
             }
 
             if closers.contains(c) {
                 let expectedOpener = getOpener(for: c)
-                if stack[stack.count - 1] == expectedOpener {
-                    _ = stack.popLast()
+                if stack.peek() == expectedOpener {
+                    _ = stack.pop()
                 } else {
                     isCorrupted = true
                     illegals.append(c)
@@ -31,8 +31,8 @@ func main() throws {
             }
         }
 
-        if stack.count > 0 && !isCorrupted {
-            closingsNeeded.append(stack.reversed().map({ getCloser(for: $0) }))
+        if stack.peek() != nil && !isCorrupted {
+            closingsNeeded.append(stack.all.reversed().map({ getCloser(for: $0) }))
         }
     }
 

@@ -40,6 +40,7 @@ struct Coordinate: Hashable, CustomStringConvertible {
         return adjacents
     }
 
+    // TODO: Don't cast the grid to an [[Any]], use [[T]] instead
     func getAdjacents(in grid: [[Any]], includingSelf: Bool = false) -> [Coordinate] {
         var adjacents: [Coordinate] = []
         for x in x-1...x+1 where x >= 0 && x < grid[0].count {
@@ -52,8 +53,17 @@ struct Coordinate: Hashable, CustomStringConvertible {
         return adjacents
     }
 
-    func getAxialAdjacents(in grid: [[Any]]) -> [Coordinate] {
+    func getAxialAdjacents() -> [Coordinate] {
         [Coordinate(x-1, y), Coordinate(x+1, y), Coordinate(x, y-1), Coordinate(x, y+1)]
+    }
+
+    func getAxialAdjacents<T>(in grid: [[T]]) -> Set<Coordinate> {
+        [
+            Coordinate(max(0, x-1), y),
+            Coordinate(min(grid.count-1, x+1), y),
+            Coordinate(x, max(0, y-1)),
+            Coordinate(x, min(grid.count-1, y+1))
+        ]
     }
 
     func translate(along foldLine: FoldLine) -> Coordinate {

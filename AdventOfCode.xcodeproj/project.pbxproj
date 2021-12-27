@@ -157,6 +157,106 @@
 		653DB4DE276B8B3100BC53DF /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E46145276A37100006ACC9 /* Input.swift */; };
 		653DB4DF276B8B3100BC53DF /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E46190276A3EA60006ACC9 /* String+Extensions.swift */; };
 		653DB4E1276B8B3100BC53DF /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E4618E276A3E8A0006ACC9 /* Int+Extensions.swift */; };
+		65C779A02779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779A12779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779A22779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779A32779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779A42779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779A52779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779A62779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779A72779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779A82779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779A92779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779AA2779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779AB2779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779AC2779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779AD2779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779AE2779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779AF2779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779B02779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779B12779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779B22779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779B32779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779B42779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779B52779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779B62779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779B72779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779B82779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779B92779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779BA2779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779BB2779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779BC2779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779BD2779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779BE2779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779BF2779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779C02779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779C12779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779C22779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779C32779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779C42779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779C52779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779C62779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779C72779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779C82779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779C92779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779CA2779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779CB2779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779CC2779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779CD2779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779CE2779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779CF2779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779D02779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779D12779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
+		65C779D3277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779D4277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779D5277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779D6277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779D7277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779D8277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779D9277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779DA277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779DB277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779DC277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779DD277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779DE277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779DF277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779E0277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779E1277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779E2277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779E3277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779E4277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779E5277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779E6277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779E7277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779E8277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779E9277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779EA277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779EB277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779EC277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779ED277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779EE277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779EF277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779F0277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779F1277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779F2277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779F3277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779F4277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779F5277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779F6277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779F7277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779F8277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779F9277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779FA277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779FB277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779FC277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779FD277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779FE277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C779FF277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C77A00277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C77A01277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C77A02277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C77A03277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
+		65C77A04277904FD00C72EDA /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
 		65CFA58B276B8C6700605910 /* test_input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 653DB31E276B8AAA00BC53DF /* test_input.txt */; };
 		65CFA58C276B8C6700605910 /* input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 653DB31F276B8AAA00BC53DF /* input.txt */; };
 		65CFA58D276B8C6900605910 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653DB320276B8AAA00BC53DF /* main.swift */; };
@@ -249,6 +349,56 @@
 		65D23903276B5B9D000BE890 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D238F2276B5B86000BE890 /* main.swift */; };
 		65D23904276B5B9E000BE890 /* input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65D238F1276B5B86000BE890 /* input.txt */; };
 		65D23905276B5BA0000BE890 /* test_input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65D238F0276B5B86000BE890 /* test_input.txt */; };
+		65D635B627791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635B727791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635B827791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635B927791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635BA27791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635BB27791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635BC27791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635BD27791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635BE27791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635BF27791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635C027791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635C127791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635C227791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635C327791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635C427791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635C527791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635C627791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635C727791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635C827791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635C927791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635CA27791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635CB27791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635CC27791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635CD27791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635CE27791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635CF27791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635D027791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635D127791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635D227791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635D327791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635D427791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635D527791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635D627791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635D727791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635D827791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635D927791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635DA27791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635DB27791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635DC27791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635DD27791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635DE27791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635DF27791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635E027791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635E127791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635E227791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635E327791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635E427791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635E527791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635E627791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
+		65D635E727791F3A00BCC565 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
 		65E4617B276A3C000006ACC9 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E4613E276A358B0006ACC9 /* Coordinate.swift */; };
 		65E4617C276A3C000006ACC9 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E46143276A36D50006ACC9 /* Array+Extensions.swift */; };
 		65E4617D276A3C000006ACC9 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E46145276A37100006ACC9 /* Input.swift */; };
@@ -454,6 +604,56 @@
 		65F90D00276B51C000F6C466 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F90C3A276B510E00F6C466 /* main.swift */; };
 		65F90D01276B51C200F6C466 /* test_input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65F90C38276B510E00F6C466 /* test_input.txt */; };
 		65F90D02276B51C400F6C466 /* input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65F90C39276B510E00F6C466 /* input.txt */; };
+		65FD79CE27790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79CF27790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79D027790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79D127790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79D227790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79D327790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79D427790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79D527790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79D627790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79D727790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79D827790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79D927790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79DA27790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79DB27790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79DC27790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79DD27790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79DE27790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79DF27790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79E027790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79E127790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79E227790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79E327790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79E427790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79E527790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79E627790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79E727790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79E827790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79E927790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79EA27790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79EB27790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79EC27790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79ED27790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79EE27790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79EF27790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79F027790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79F127790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79F227790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79F327790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79F427790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79F527790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79F627790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79F727790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79F827790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79F927790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79FA27790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79FB27790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79FC27790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79FD27790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79FE27790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
+		65FD79FF27790CC3002D5096 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
 		65FFA3EC2770C67300D9E689 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FFA3EB2770C67300D9E689 /* main.swift */; };
 		65FFA3EE2770CBE900D9E689 /* RotationMatrixStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FFA3ED2770CBE900D9E689 /* RotationMatrixStore.swift */; };
 		65FFA3F327738F8700D9E689 /* full-grid.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65FFA3F127738EBA00D9E689 /* full-grid.txt */; };
@@ -1114,6 +1314,8 @@
 		653DB4C7276B8B3000BC53DF /* 2020.23 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 2020.23; sourceTree = BUILT_PRODUCTS_DIR; };
 		653DB4D8276B8B3000BC53DF /* 2020.24 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 2020.24; sourceTree = BUILT_PRODUCTS_DIR; };
 		653DB4E9276B8B3100BC53DF /* 2020.25 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 2020.25; sourceTree = BUILT_PRODUCTS_DIR; };
+		65C7799F2779011A00C72EDA /* Dijkstra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dijkstra.swift; sourceTree = "<group>"; };
+		65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sorted+Extensions.swift"; sourceTree = "<group>"; };
 		65D238DB276B5A0F000BE890 /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 		65D238DC276B5A0F000BE890 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		65D238EC276B5A18000BE890 /* 2021.1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 2021.1; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1121,6 +1323,7 @@
 		65D238F1276B5B86000BE890 /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 		65D238F2276B5B86000BE890 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		65D23902276B5B8C000BE890 /* 2021.3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 2021.3; sourceTree = BUILT_PRODUCTS_DIR; };
+		65D635B527791F3A00BCC565 /* Heap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
 		65E4613E276A358B0006ACC9 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		65E46143276A36D50006ACC9 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		65E46145276A37100006ACC9 /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
@@ -1217,6 +1420,7 @@
 		65F90CC5276B512700F6C466 /* 2021.23 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 2021.23; sourceTree = BUILT_PRODUCTS_DIR; };
 		65F90CD6276B512700F6C466 /* 2021.24 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 2021.24; sourceTree = BUILT_PRODUCTS_DIR; };
 		65F90CE7276B512700F6C466 /* 2021.25 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 2021.25; sourceTree = BUILT_PRODUCTS_DIR; };
+		65FD79CD27790CC3002D5096 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		65FFA3EB2770C67300D9E689 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		65FFA3ED2770CBE900D9E689 /* RotationMatrixStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationMatrixStore.swift; sourceTree = "<group>"; };
 		65FFA3F127738EBA00D9E689 /* full-grid.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "full-grid.txt"; sourceTree = "<group>"; };
@@ -1996,6 +2200,10 @@
 				65E4618E276A3E8A0006ACC9 /* Int+Extensions.swift */,
 				65E46190276A3EA60006ACC9 /* String+Extensions.swift */,
 				65E46196276A3EBA0006ACC9 /* Regex.swift */,
+				65C7799F2779011A00C72EDA /* Dijkstra.swift */,
+				65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */,
+				65FD79CD27790CC3002D5096 /* Stack.swift */,
+				65D635B527791F3A00BCC565 /* Heap.swift */,
 			);
 			path = helpers;
 			sourceTree = "<group>";
@@ -3167,9 +3375,13 @@
 			files = (
 				653DB343276B8B2400BC53DF /* Coordinate.swift in Sources */,
 				653DB344276B8B2400BC53DF /* Array+Extensions.swift in Sources */,
+				65D635CF27791F3A00BCC565 /* Heap.swift in Sources */,
 				65CFA58D276B8C6900605910 /* main.swift in Sources */,
 				653DB345276B8B2400BC53DF /* Regex.swift in Sources */,
 				653DB346276B8B2400BC53DF /* Input.swift in Sources */,
+				65C779B92779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79E727790CC3002D5096 /* Stack.swift in Sources */,
+				65C779EC277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				653DB347276B8B2400BC53DF /* String+Extensions.swift in Sources */,
 				653DB349276B8B2400BC53DF /* Int+Extensions.swift in Sources */,
 			);
@@ -3181,9 +3393,13 @@
 			files = (
 				653DB354276B8B2600BC53DF /* Coordinate.swift in Sources */,
 				653DB355276B8B2600BC53DF /* Array+Extensions.swift in Sources */,
+				65D635D027791F3A00BCC565 /* Heap.swift in Sources */,
 				653DB356276B8B2600BC53DF /* Regex.swift in Sources */,
 				65CFA590276B8CF800605910 /* main.swift in Sources */,
 				653DB357276B8B2600BC53DF /* Input.swift in Sources */,
+				65C779BA2779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79E827790CC3002D5096 /* Stack.swift in Sources */,
+				65C779ED277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				653DB358276B8B2600BC53DF /* String+Extensions.swift in Sources */,
 				653DB35A276B8B2600BC53DF /* Int+Extensions.swift in Sources */,
 			);
@@ -3195,9 +3411,13 @@
 			files = (
 				653DB365276B8B2600BC53DF /* Coordinate.swift in Sources */,
 				653DB366276B8B2600BC53DF /* Array+Extensions.swift in Sources */,
+				65D635D127791F3A00BCC565 /* Heap.swift in Sources */,
 				653DB367276B8B2600BC53DF /* Regex.swift in Sources */,
 				653DB368276B8B2600BC53DF /* Input.swift in Sources */,
 				65CFA593276B8CFE00605910 /* main.swift in Sources */,
+				65C779BB2779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79E927790CC3002D5096 /* Stack.swift in Sources */,
+				65C779EE277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				653DB369276B8B2600BC53DF /* String+Extensions.swift in Sources */,
 				653DB36B276B8B2600BC53DF /* Int+Extensions.swift in Sources */,
 			);
@@ -3209,9 +3429,13 @@
 			files = (
 				653DB376276B8B2700BC53DF /* Coordinate.swift in Sources */,
 				653DB377276B8B2700BC53DF /* Array+Extensions.swift in Sources */,
+				65D635D227791F3A00BCC565 /* Heap.swift in Sources */,
 				65CFA596276B8D0400605910 /* main.swift in Sources */,
 				653DB378276B8B2700BC53DF /* Regex.swift in Sources */,
 				653DB379276B8B2700BC53DF /* Input.swift in Sources */,
+				65C779BC2779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79EA27790CC3002D5096 /* Stack.swift in Sources */,
+				65C779EF277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				653DB37A276B8B2700BC53DF /* String+Extensions.swift in Sources */,
 				653DB37C276B8B2700BC53DF /* Int+Extensions.swift in Sources */,
 			);
@@ -3223,9 +3447,13 @@
 			files = (
 				653DB387276B8B2700BC53DF /* Coordinate.swift in Sources */,
 				653DB388276B8B2700BC53DF /* Array+Extensions.swift in Sources */,
+				65D635D327791F3A00BCC565 /* Heap.swift in Sources */,
 				65CFA599276B8D0A00605910 /* main.swift in Sources */,
 				653DB389276B8B2700BC53DF /* Regex.swift in Sources */,
 				653DB38A276B8B2700BC53DF /* Input.swift in Sources */,
+				65C779BD2779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79EB27790CC3002D5096 /* Stack.swift in Sources */,
+				65C779F0277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				653DB38B276B8B2700BC53DF /* String+Extensions.swift in Sources */,
 				653DB38D276B8B2700BC53DF /* Int+Extensions.swift in Sources */,
 			);
@@ -3237,9 +3465,13 @@
 			files = (
 				653DB398276B8B2800BC53DF /* Coordinate.swift in Sources */,
 				653DB399276B8B2800BC53DF /* Array+Extensions.swift in Sources */,
+				65D635D427791F3A00BCC565 /* Heap.swift in Sources */,
 				653DB39A276B8B2800BC53DF /* Regex.swift in Sources */,
 				653DB39B276B8B2800BC53DF /* Input.swift in Sources */,
 				65CFA59C276B8D1200605910 /* main.swift in Sources */,
+				65C779BE2779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79EC27790CC3002D5096 /* Stack.swift in Sources */,
+				65C779F1277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				653DB39C276B8B2800BC53DF /* String+Extensions.swift in Sources */,
 				653DB39E276B8B2800BC53DF /* Int+Extensions.swift in Sources */,
 			);
@@ -3251,9 +3483,13 @@
 			files = (
 				653DB3A9276B8B2800BC53DF /* Coordinate.swift in Sources */,
 				653DB3AA276B8B2800BC53DF /* Array+Extensions.swift in Sources */,
+				65D635D527791F3A00BCC565 /* Heap.swift in Sources */,
 				653DB3AB276B8B2800BC53DF /* Regex.swift in Sources */,
 				653DB3AC276B8B2800BC53DF /* Input.swift in Sources */,
 				653DB3AD276B8B2800BC53DF /* String+Extensions.swift in Sources */,
+				65C779BF2779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79ED27790CC3002D5096 /* Stack.swift in Sources */,
+				65C779F2277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				65CFA59F276B8D1900605910 /* main.swift in Sources */,
 				653DB3AF276B8B2800BC53DF /* Int+Extensions.swift in Sources */,
 			);
@@ -3265,9 +3501,13 @@
 			files = (
 				653DB3BA276B8B2900BC53DF /* Coordinate.swift in Sources */,
 				653DB3BB276B8B2900BC53DF /* Array+Extensions.swift in Sources */,
+				65D635D627791F3A00BCC565 /* Heap.swift in Sources */,
 				653DB3BC276B8B2900BC53DF /* Regex.swift in Sources */,
 				653DB3BD276B8B2900BC53DF /* Input.swift in Sources */,
 				653DB3BE276B8B2900BC53DF /* String+Extensions.swift in Sources */,
+				65C779C02779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79EE27790CC3002D5096 /* Stack.swift in Sources */,
+				65C779F3277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				653DB3C0276B8B2900BC53DF /* Int+Extensions.swift in Sources */,
 				65CFA5A2276B8D2100605910 /* main.swift in Sources */,
 			);
@@ -3279,9 +3519,13 @@
 			files = (
 				653DB3CB276B8B2900BC53DF /* Coordinate.swift in Sources */,
 				653DB3CC276B8B2900BC53DF /* Array+Extensions.swift in Sources */,
+				65D635D727791F3A00BCC565 /* Heap.swift in Sources */,
 				65CFA5A5276B8D2800605910 /* main.swift in Sources */,
 				653DB3CD276B8B2900BC53DF /* Regex.swift in Sources */,
 				653DB3CE276B8B2900BC53DF /* Input.swift in Sources */,
+				65C779C12779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79EF27790CC3002D5096 /* Stack.swift in Sources */,
+				65C779F4277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				653DB3CF276B8B2900BC53DF /* String+Extensions.swift in Sources */,
 				653DB3D1276B8B2900BC53DF /* Int+Extensions.swift in Sources */,
 			);
@@ -3293,9 +3537,13 @@
 			files = (
 				653DB3DC276B8B2900BC53DF /* Coordinate.swift in Sources */,
 				653DB3DD276B8B2900BC53DF /* Array+Extensions.swift in Sources */,
+				65D635D827791F3A00BCC565 /* Heap.swift in Sources */,
 				653DB3DE276B8B2900BC53DF /* Regex.swift in Sources */,
 				65CFA5A8276B8D3000605910 /* main.swift in Sources */,
 				653DB3DF276B8B2900BC53DF /* Input.swift in Sources */,
+				65C779C22779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79F027790CC3002D5096 /* Stack.swift in Sources */,
+				65C779F5277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				653DB3E0276B8B2900BC53DF /* String+Extensions.swift in Sources */,
 				653DB3E2276B8B2900BC53DF /* Int+Extensions.swift in Sources */,
 			);
@@ -3307,9 +3555,13 @@
 			files = (
 				653DB3ED276B8B2A00BC53DF /* Coordinate.swift in Sources */,
 				653DB3EE276B8B2A00BC53DF /* Array+Extensions.swift in Sources */,
+				65D635D927791F3A00BCC565 /* Heap.swift in Sources */,
 				653DB3EF276B8B2A00BC53DF /* Regex.swift in Sources */,
 				65CFA5AB276B8D3600605910 /* main.swift in Sources */,
 				653DB3F0276B8B2A00BC53DF /* Input.swift in Sources */,
+				65C779C32779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79F127790CC3002D5096 /* Stack.swift in Sources */,
+				65C779F6277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				653DB3F1276B8B2A00BC53DF /* String+Extensions.swift in Sources */,
 				653DB3F3276B8B2A00BC53DF /* Int+Extensions.swift in Sources */,
 			);
@@ -3321,9 +3573,13 @@
 			files = (
 				653DB3FE276B8B2A00BC53DF /* Coordinate.swift in Sources */,
 				653DB3FF276B8B2A00BC53DF /* Array+Extensions.swift in Sources */,
+				65D635DA27791F3A00BCC565 /* Heap.swift in Sources */,
 				653DB400276B8B2A00BC53DF /* Regex.swift in Sources */,
 				653DB401276B8B2A00BC53DF /* Input.swift in Sources */,
 				653DB402276B8B2A00BC53DF /* String+Extensions.swift in Sources */,
+				65C779C42779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79F227790CC3002D5096 /* Stack.swift in Sources */,
+				65C779F7277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				65CFA5AE276B8D3D00605910 /* main.swift in Sources */,
 				653DB404276B8B2A00BC53DF /* Int+Extensions.swift in Sources */,
 			);
@@ -3335,9 +3591,13 @@
 			files = (
 				653DB40F276B8B2B00BC53DF /* Coordinate.swift in Sources */,
 				653DB410276B8B2B00BC53DF /* Array+Extensions.swift in Sources */,
+				65D635DB27791F3A00BCC565 /* Heap.swift in Sources */,
 				653DB411276B8B2B00BC53DF /* Regex.swift in Sources */,
 				653DB412276B8B2B00BC53DF /* Input.swift in Sources */,
 				65CFA5B1276B8D4600605910 /* main.swift in Sources */,
+				65C779C52779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79F327790CC3002D5096 /* Stack.swift in Sources */,
+				65C779F8277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				653DB413276B8B2B00BC53DF /* String+Extensions.swift in Sources */,
 				653DB415276B8B2B00BC53DF /* Int+Extensions.swift in Sources */,
 			);
@@ -3349,9 +3609,13 @@
 			files = (
 				653DB420276B8B2B00BC53DF /* Coordinate.swift in Sources */,
 				653DB421276B8B2B00BC53DF /* Array+Extensions.swift in Sources */,
+				65D635DC27791F3A00BCC565 /* Heap.swift in Sources */,
 				653DB422276B8B2B00BC53DF /* Regex.swift in Sources */,
 				653DB423276B8B2B00BC53DF /* Input.swift in Sources */,
 				65CFA5B4276B8D4E00605910 /* main.swift in Sources */,
+				65C779C62779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79F427790CC3002D5096 /* Stack.swift in Sources */,
+				65C779F9277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				653DB424276B8B2B00BC53DF /* String+Extensions.swift in Sources */,
 				653DB426276B8B2B00BC53DF /* Int+Extensions.swift in Sources */,
 			);
@@ -3363,9 +3627,13 @@
 			files = (
 				653DB431276B8B2C00BC53DF /* Coordinate.swift in Sources */,
 				653DB432276B8B2C00BC53DF /* Array+Extensions.swift in Sources */,
+				65D635DD27791F3A00BCC565 /* Heap.swift in Sources */,
 				653DB433276B8B2C00BC53DF /* Regex.swift in Sources */,
 				65CFA5B7276B8D5600605910 /* main.swift in Sources */,
 				653DB434276B8B2C00BC53DF /* Input.swift in Sources */,
+				65C779C72779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79F527790CC3002D5096 /* Stack.swift in Sources */,
+				65C779FA277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				653DB435276B8B2C00BC53DF /* String+Extensions.swift in Sources */,
 				653DB437276B8B2C00BC53DF /* Int+Extensions.swift in Sources */,
 			);
@@ -3377,9 +3645,13 @@
 			files = (
 				653DB442276B8B2C00BC53DF /* Coordinate.swift in Sources */,
 				653DB443276B8B2C00BC53DF /* Array+Extensions.swift in Sources */,
+				65D635DE27791F3A00BCC565 /* Heap.swift in Sources */,
 				653DB444276B8B2C00BC53DF /* Regex.swift in Sources */,
 				653DB445276B8B2C00BC53DF /* Input.swift in Sources */,
 				65CFA5BA276B8D6000605910 /* main.swift in Sources */,
+				65C779C82779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79F627790CC3002D5096 /* Stack.swift in Sources */,
+				65C779FB277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				653DB446276B8B2C00BC53DF /* String+Extensions.swift in Sources */,
 				653DB448276B8B2C00BC53DF /* Int+Extensions.swift in Sources */,
 			);
@@ -3391,9 +3663,13 @@
 			files = (
 				653DB453276B8B2D00BC53DF /* Coordinate.swift in Sources */,
 				653DB454276B8B2D00BC53DF /* Array+Extensions.swift in Sources */,
+				65D635DF27791F3A00BCC565 /* Heap.swift in Sources */,
 				653DB455276B8B2D00BC53DF /* Regex.swift in Sources */,
 				65CFA5BD276B8D6600605910 /* main.swift in Sources */,
 				653DB456276B8B2D00BC53DF /* Input.swift in Sources */,
+				65C779C92779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79F727790CC3002D5096 /* Stack.swift in Sources */,
+				65C779FC277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				653DB457276B8B2D00BC53DF /* String+Extensions.swift in Sources */,
 				653DB459276B8B2D00BC53DF /* Int+Extensions.swift in Sources */,
 			);
@@ -3405,9 +3681,13 @@
 			files = (
 				653DB464276B8B2D00BC53DF /* Coordinate.swift in Sources */,
 				653DB465276B8B2D00BC53DF /* Array+Extensions.swift in Sources */,
+				65D635E027791F3A00BCC565 /* Heap.swift in Sources */,
 				653DB466276B8B2D00BC53DF /* Regex.swift in Sources */,
 				65CFA5C0276B8D6D00605910 /* main.swift in Sources */,
 				653DB467276B8B2D00BC53DF /* Input.swift in Sources */,
+				65C779CA2779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79F827790CC3002D5096 /* Stack.swift in Sources */,
+				65C779FD277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				653DB468276B8B2D00BC53DF /* String+Extensions.swift in Sources */,
 				653DB46A276B8B2D00BC53DF /* Int+Extensions.swift in Sources */,
 			);
@@ -3419,9 +3699,13 @@
 			files = (
 				653DB475276B8B2E00BC53DF /* Coordinate.swift in Sources */,
 				653DB476276B8B2E00BC53DF /* Array+Extensions.swift in Sources */,
+				65D635E127791F3A00BCC565 /* Heap.swift in Sources */,
 				653DB477276B8B2E00BC53DF /* Regex.swift in Sources */,
 				653DB478276B8B2E00BC53DF /* Input.swift in Sources */,
 				653DB479276B8B2E00BC53DF /* String+Extensions.swift in Sources */,
+				65C779CB2779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79F927790CC3002D5096 /* Stack.swift in Sources */,
+				65C779FE277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				653DB47B276B8B2E00BC53DF /* Int+Extensions.swift in Sources */,
 				65CFA5C3276B8D7700605910 /* main.swift in Sources */,
 			);
@@ -3433,9 +3717,13 @@
 			files = (
 				653DB486276B8B2E00BC53DF /* Coordinate.swift in Sources */,
 				653DB487276B8B2E00BC53DF /* Array+Extensions.swift in Sources */,
+				65D635E227791F3A00BCC565 /* Heap.swift in Sources */,
 				653DB488276B8B2E00BC53DF /* Regex.swift in Sources */,
 				653DB489276B8B2E00BC53DF /* Input.swift in Sources */,
 				653DB48A276B8B2E00BC53DF /* String+Extensions.swift in Sources */,
+				65C779CC2779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79FA27790CC3002D5096 /* Stack.swift in Sources */,
+				65C779FF277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				65CFA5C6276B8D7D00605910 /* main.swift in Sources */,
 				653DB48C276B8B2E00BC53DF /* Int+Extensions.swift in Sources */,
 			);
@@ -3447,9 +3735,13 @@
 			files = (
 				653DB497276B8B2F00BC53DF /* Coordinate.swift in Sources */,
 				653DB498276B8B2F00BC53DF /* Array+Extensions.swift in Sources */,
+				65D635E327791F3A00BCC565 /* Heap.swift in Sources */,
 				653DB499276B8B2F00BC53DF /* Regex.swift in Sources */,
 				653DB49A276B8B2F00BC53DF /* Input.swift in Sources */,
 				653DB49B276B8B2F00BC53DF /* String+Extensions.swift in Sources */,
+				65C779CD2779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79FB27790CC3002D5096 /* Stack.swift in Sources */,
+				65C77A00277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				65CFA5C9276B8D8700605910 /* main.swift in Sources */,
 				653DB49D276B8B2F00BC53DF /* Int+Extensions.swift in Sources */,
 			);
@@ -3461,9 +3753,13 @@
 			files = (
 				653DB4A8276B8B2F00BC53DF /* Coordinate.swift in Sources */,
 				653DB4A9276B8B2F00BC53DF /* Array+Extensions.swift in Sources */,
+				65D635E427791F3A00BCC565 /* Heap.swift in Sources */,
 				653DB4AA276B8B2F00BC53DF /* Regex.swift in Sources */,
 				65CFA5CC276B8D8C00605910 /* main.swift in Sources */,
 				653DB4AB276B8B2F00BC53DF /* Input.swift in Sources */,
+				65C779CE2779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79FC27790CC3002D5096 /* Stack.swift in Sources */,
+				65C77A01277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				653DB4AC276B8B2F00BC53DF /* String+Extensions.swift in Sources */,
 				653DB4AE276B8B2F00BC53DF /* Int+Extensions.swift in Sources */,
 			);
@@ -3475,9 +3771,13 @@
 			files = (
 				653DB4B9276B8B3000BC53DF /* Coordinate.swift in Sources */,
 				653DB4BA276B8B3000BC53DF /* Array+Extensions.swift in Sources */,
+				65D635E527791F3A00BCC565 /* Heap.swift in Sources */,
 				653DB4BB276B8B3000BC53DF /* Regex.swift in Sources */,
 				653DB4BC276B8B3000BC53DF /* Input.swift in Sources */,
 				653DB4BD276B8B3000BC53DF /* String+Extensions.swift in Sources */,
+				65C779CF2779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79FD27790CC3002D5096 /* Stack.swift in Sources */,
+				65C77A02277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				653DB4BF276B8B3000BC53DF /* Int+Extensions.swift in Sources */,
 				65CFA5CF276B8D9300605910 /* main.swift in Sources */,
 			);
@@ -3489,9 +3789,13 @@
 			files = (
 				653DB4CA276B8B3000BC53DF /* Coordinate.swift in Sources */,
 				653DB4CB276B8B3000BC53DF /* Array+Extensions.swift in Sources */,
+				65D635E627791F3A00BCC565 /* Heap.swift in Sources */,
 				653DB4CC276B8B3000BC53DF /* Regex.swift in Sources */,
 				653DB4CD276B8B3000BC53DF /* Input.swift in Sources */,
 				653DB4CE276B8B3000BC53DF /* String+Extensions.swift in Sources */,
+				65C779D02779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79FE27790CC3002D5096 /* Stack.swift in Sources */,
+				65C77A03277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				653DB4D0276B8B3000BC53DF /* Int+Extensions.swift in Sources */,
 				65CFA5D2276B8D9A00605910 /* main.swift in Sources */,
 			);
@@ -3503,9 +3807,13 @@
 			files = (
 				653DB4DB276B8B3100BC53DF /* Coordinate.swift in Sources */,
 				653DB4DC276B8B3100BC53DF /* Array+Extensions.swift in Sources */,
+				65D635E727791F3A00BCC565 /* Heap.swift in Sources */,
 				653DB4DD276B8B3100BC53DF /* Regex.swift in Sources */,
 				653DB4DE276B8B3100BC53DF /* Input.swift in Sources */,
 				653DB4DF276B8B3100BC53DF /* String+Extensions.swift in Sources */,
+				65C779D12779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79FF27790CC3002D5096 /* Stack.swift in Sources */,
+				65C77A04277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				653DB4E1276B8B3100BC53DF /* Int+Extensions.swift in Sources */,
 				65CFA5D5276B8DA000605910 /* main.swift in Sources */,
 			);
@@ -3517,9 +3825,13 @@
 			files = (
 				65D238DF276B5A18000BE890 /* String+Extensions.swift in Sources */,
 				65D238E0276B5A18000BE890 /* Array+Extensions.swift in Sources */,
+				65D635B627791F3A00BCC565 /* Heap.swift in Sources */,
 				65D238E1276B5A18000BE890 /* Coordinate.swift in Sources */,
 				65D238EE276B5A2C000BE890 /* main.swift in Sources */,
 				65D238E2276B5A18000BE890 /* Regex.swift in Sources */,
+				65C779A02779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79CE27790CC3002D5096 /* Stack.swift in Sources */,
+				65C779D3277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				65D238E4276B5A18000BE890 /* Int+Extensions.swift in Sources */,
 				65D238E5276B5A18000BE890 /* Input.swift in Sources */,
 			);
@@ -3531,9 +3843,13 @@
 			files = (
 				65D238F5276B5B8C000BE890 /* String+Extensions.swift in Sources */,
 				65D238F6276B5B8C000BE890 /* Array+Extensions.swift in Sources */,
+				65D635B827791F3A00BCC565 /* Heap.swift in Sources */,
 				65D238F7276B5B8C000BE890 /* Coordinate.swift in Sources */,
 				65D23903276B5B9D000BE890 /* main.swift in Sources */,
 				65D238F8276B5B8C000BE890 /* Regex.swift in Sources */,
+				65C779A22779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79D027790CC3002D5096 /* Stack.swift in Sources */,
+				65C779D5277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				65D238FA276B5B8C000BE890 /* Int+Extensions.swift in Sources */,
 				65D238FB276B5B8C000BE890 /* Input.swift in Sources */,
 			);
@@ -3545,9 +3861,13 @@
 			files = (
 				65E4617B276A3C000006ACC9 /* Coordinate.swift in Sources */,
 				65E4618B276A3C9D0006ACC9 /* main.swift in Sources */,
+				65D635B927791F3A00BCC565 /* Heap.swift in Sources */,
 				65E4617C276A3C000006ACC9 /* Array+Extensions.swift in Sources */,
 				65E46199276A3EBA0006ACC9 /* Regex.swift in Sources */,
 				65E4617D276A3C000006ACC9 /* Input.swift in Sources */,
+				65C779A32779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79D127790CC3002D5096 /* Stack.swift in Sources */,
+				65C779D6277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				65E46193276A3EA60006ACC9 /* String+Extensions.swift in Sources */,
 				65E4618F276A3E8A0006ACC9 /* Int+Extensions.swift in Sources */,
 			);
@@ -3559,9 +3879,13 @@
 			files = (
 				65E461B1276A3F000006ACC9 /* main.swift in Sources */,
 				65E461A2276A3EEF0006ACC9 /* Coordinate.swift in Sources */,
+				65D635BA27791F3A00BCC565 /* Heap.swift in Sources */,
 				65E461A4276A3EEF0006ACC9 /* Array+Extensions.swift in Sources */,
 				65E461A5276A3EEF0006ACC9 /* Regex.swift in Sources */,
 				65E461A6276A3EEF0006ACC9 /* Input.swift in Sources */,
+				65C779A42779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79D227790CC3002D5096 /* Stack.swift in Sources */,
+				65C779D7277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				65E461A7276A3EEF0006ACC9 /* String+Extensions.swift in Sources */,
 				65E461A8276A3EEF0006ACC9 /* Int+Extensions.swift in Sources */,
 			);
@@ -3573,9 +3897,13 @@
 			files = (
 				65E461CB276A3FE60006ACC9 /* main.swift in Sources */,
 				65E461BD276A3FDA0006ACC9 /* Coordinate.swift in Sources */,
+				65D635BB27791F3A00BCC565 /* Heap.swift in Sources */,
 				65E461BE276A3FDA0006ACC9 /* Array+Extensions.swift in Sources */,
 				65E461BF276A3FDA0006ACC9 /* Regex.swift in Sources */,
 				65E461C0276A3FDA0006ACC9 /* Input.swift in Sources */,
+				65C779A52779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79D327790CC3002D5096 /* Stack.swift in Sources */,
+				65C779D8277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				65E461C1276A3FDA0006ACC9 /* String+Extensions.swift in Sources */,
 				65E461C2276A3FDA0006ACC9 /* Int+Extensions.swift in Sources */,
 			);
@@ -3587,9 +3915,13 @@
 			files = (
 				65E461F5276A40520006ACC9 /* Coordinate.swift in Sources */,
 				65E461F6276A40520006ACC9 /* Array+Extensions.swift in Sources */,
+				65D635BC27791F3A00BCC565 /* Heap.swift in Sources */,
 				65E4628B276A407B0006ACC9 /* main.swift in Sources */,
 				65E461F7276A40520006ACC9 /* Regex.swift in Sources */,
 				65E461F8276A40520006ACC9 /* Input.swift in Sources */,
+				65C779A62779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79D427790CC3002D5096 /* Stack.swift in Sources */,
+				65C779D9277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				65E461F9276A40520006ACC9 /* String+Extensions.swift in Sources */,
 				65E461FA276A40520006ACC9 /* Int+Extensions.swift in Sources */,
 			);
@@ -3601,9 +3933,13 @@
 			files = (
 				65E46206276A40530006ACC9 /* Coordinate.swift in Sources */,
 				65E46207276A40530006ACC9 /* Array+Extensions.swift in Sources */,
+				65D635BD27791F3A00BCC565 /* Heap.swift in Sources */,
 				65E46208276A40530006ACC9 /* Regex.swift in Sources */,
 				65E46209276A40530006ACC9 /* Input.swift in Sources */,
 				65E4628E276A40B50006ACC9 /* main.swift in Sources */,
+				65C779A72779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79D527790CC3002D5096 /* Stack.swift in Sources */,
+				65C779DA277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				65E4620A276A40530006ACC9 /* String+Extensions.swift in Sources */,
 				65E4620B276A40530006ACC9 /* Int+Extensions.swift in Sources */,
 			);
@@ -3615,9 +3951,13 @@
 			files = (
 				65E46217276A40530006ACC9 /* Coordinate.swift in Sources */,
 				65E46218276A40530006ACC9 /* Array+Extensions.swift in Sources */,
+				65D635BE27791F3A00BCC565 /* Heap.swift in Sources */,
 				65E46219276A40530006ACC9 /* Regex.swift in Sources */,
 				65E4621A276A40530006ACC9 /* Input.swift in Sources */,
 				65E4621B276A40530006ACC9 /* String+Extensions.swift in Sources */,
+				65C779A82779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79D627790CC3002D5096 /* Stack.swift in Sources */,
+				65C779DB277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				65E46291276A40BC0006ACC9 /* main.swift in Sources */,
 				65E4621C276A40530006ACC9 /* Int+Extensions.swift in Sources */,
 			);
@@ -3629,9 +3969,13 @@
 			files = (
 				65E46228276A40540006ACC9 /* Coordinate.swift in Sources */,
 				65E46229276A40540006ACC9 /* Array+Extensions.swift in Sources */,
+				65D635BF27791F3A00BCC565 /* Heap.swift in Sources */,
 				65E4622A276A40540006ACC9 /* Regex.swift in Sources */,
 				65E4622B276A40540006ACC9 /* Input.swift in Sources */,
 				65E4622C276A40540006ACC9 /* String+Extensions.swift in Sources */,
+				65C779A92779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79D727790CC3002D5096 /* Stack.swift in Sources */,
+				65C779DC277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				65E46294276A40C20006ACC9 /* main.swift in Sources */,
 				65E4622D276A40540006ACC9 /* Int+Extensions.swift in Sources */,
 			);
@@ -3643,9 +3987,13 @@
 			files = (
 				65E46239276A40540006ACC9 /* Coordinate.swift in Sources */,
 				65E4623A276A40540006ACC9 /* Array+Extensions.swift in Sources */,
+				65D635C027791F3A00BCC565 /* Heap.swift in Sources */,
 				65E4623B276A40540006ACC9 /* Regex.swift in Sources */,
 				65E4623C276A40540006ACC9 /* Input.swift in Sources */,
 				65E46297276A40C80006ACC9 /* main.swift in Sources */,
+				65C779AA2779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79D827790CC3002D5096 /* Stack.swift in Sources */,
+				65C779DD277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				65E4623D276A40540006ACC9 /* String+Extensions.swift in Sources */,
 				65E4623E276A40540006ACC9 /* Int+Extensions.swift in Sources */,
 			);
@@ -3657,9 +4005,13 @@
 			files = (
 				65E4624A276A40540006ACC9 /* Coordinate.swift in Sources */,
 				65E4624B276A40540006ACC9 /* Array+Extensions.swift in Sources */,
+				65D635C127791F3A00BCC565 /* Heap.swift in Sources */,
 				65E4629A276A40CE0006ACC9 /* main.swift in Sources */,
 				65E4624C276A40540006ACC9 /* Regex.swift in Sources */,
 				65E4624D276A40540006ACC9 /* Input.swift in Sources */,
+				65C779AB2779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79D927790CC3002D5096 /* Stack.swift in Sources */,
+				65C779DE277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				65E4624E276A40540006ACC9 /* String+Extensions.swift in Sources */,
 				65E4624F276A40540006ACC9 /* Int+Extensions.swift in Sources */,
 			);
@@ -3671,9 +4023,13 @@
 			files = (
 				65E4625B276A40550006ACC9 /* Coordinate.swift in Sources */,
 				65E4625C276A40550006ACC9 /* Array+Extensions.swift in Sources */,
+				65D635C227791F3A00BCC565 /* Heap.swift in Sources */,
 				65E4625D276A40550006ACC9 /* Regex.swift in Sources */,
 				65E4625E276A40550006ACC9 /* Input.swift in Sources */,
 				65E4629D276A40DA0006ACC9 /* main.swift in Sources */,
+				65C779AC2779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79DA27790CC3002D5096 /* Stack.swift in Sources */,
+				65C779DF277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				65E4625F276A40550006ACC9 /* String+Extensions.swift in Sources */,
 				65E46260276A40550006ACC9 /* Int+Extensions.swift in Sources */,
 			);
@@ -3685,9 +4041,13 @@
 			files = (
 				65E4626C276A40550006ACC9 /* Coordinate.swift in Sources */,
 				65E4626D276A40550006ACC9 /* Array+Extensions.swift in Sources */,
+				65D635C327791F3A00BCC565 /* Heap.swift in Sources */,
 				65E4626E276A40550006ACC9 /* Regex.swift in Sources */,
 				65E4626F276A40550006ACC9 /* Input.swift in Sources */,
 				65E46270276A40550006ACC9 /* String+Extensions.swift in Sources */,
+				65C779AD2779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79DB27790CC3002D5096 /* Stack.swift in Sources */,
+				65C779E0277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				65E462A0276A40E00006ACC9 /* main.swift in Sources */,
 				65E46271276A40550006ACC9 /* Int+Extensions.swift in Sources */,
 			);
@@ -3699,9 +4059,13 @@
 			files = (
 				65E4627D276A40550006ACC9 /* Coordinate.swift in Sources */,
 				65E4627E276A40550006ACC9 /* Array+Extensions.swift in Sources */,
+				65D635C427791F3A00BCC565 /* Heap.swift in Sources */,
 				65E4627F276A40550006ACC9 /* Regex.swift in Sources */,
 				65E462A3276A40E80006ACC9 /* main.swift in Sources */,
 				65E46280276A40550006ACC9 /* Input.swift in Sources */,
+				65C779AE2779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79DC27790CC3002D5096 /* Stack.swift in Sources */,
+				65C779E1277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				65E46281276A40550006ACC9 /* String+Extensions.swift in Sources */,
 				65E46282276A40550006ACC9 /* Int+Extensions.swift in Sources */,
 			);
@@ -3713,9 +4077,13 @@
 			files = (
 				65E462AD276A41460006ACC9 /* String+Extensions.swift in Sources */,
 				65E462AE276A41460006ACC9 /* Array+Extensions.swift in Sources */,
+				65D635B727791F3A00BCC565 /* Heap.swift in Sources */,
 				65E462AF276A41460006ACC9 /* Coordinate.swift in Sources */,
 				65E462B0276A41460006ACC9 /* Regex.swift in Sources */,
 				65E462BB276A41520006ACC9 /* main.swift in Sources */,
+				65C779A12779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79CF27790CC3002D5096 /* Stack.swift in Sources */,
+				65C779D4277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				65E462B1276A41460006ACC9 /* Int+Extensions.swift in Sources */,
 				65E462B2276A41460006ACC9 /* Input.swift in Sources */,
 			);
@@ -3727,9 +4095,13 @@
 			files = (
 				65F90C16276B289F00F6C466 /* Coordinate.swift in Sources */,
 				65F90C17276B289F00F6C466 /* Array+Extensions.swift in Sources */,
+				65D635C527791F3A00BCC565 /* Heap.swift in Sources */,
 				65F90C18276B289F00F6C466 /* Regex.swift in Sources */,
 				65F90C1A276B289F00F6C466 /* Input.swift in Sources */,
 				65F90C25276B28A800F6C466 /* main.swift in Sources */,
+				65C779AF2779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79DD27790CC3002D5096 /* Stack.swift in Sources */,
+				65C779E2277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				65F90C1B276B289F00F6C466 /* String+Extensions.swift in Sources */,
 				65F90C1C276B289F00F6C466 /* Int+Extensions.swift in Sources */,
 			);
@@ -3741,9 +4113,13 @@
 			files = (
 				65F90C51276B511F00F6C466 /* Coordinate.swift in Sources */,
 				65F90C52276B511F00F6C466 /* Array+Extensions.swift in Sources */,
+				65D635C627791F3A00BCC565 /* Heap.swift in Sources */,
 				65F90C53276B511F00F6C466 /* Regex.swift in Sources */,
 				65F90CE8276B517E00F6C466 /* main.swift in Sources */,
 				65F90C54276B511F00F6C466 /* Input.swift in Sources */,
+				65C779B02779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79DE27790CC3002D5096 /* Stack.swift in Sources */,
+				65C779E3277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				65F90C56276B511F00F6C466 /* String+Extensions.swift in Sources */,
 				65F90C57276B511F00F6C466 /* Int+Extensions.swift in Sources */,
 			);
@@ -3755,9 +4131,13 @@
 			files = (
 				65F90C62276B512000F6C466 /* Coordinate.swift in Sources */,
 				65F90C63276B512000F6C466 /* Array+Extensions.swift in Sources */,
+				65D635C727791F3A00BCC565 /* Heap.swift in Sources */,
 				65F90C64276B512000F6C466 /* Regex.swift in Sources */,
 				65F90CED276B518A00F6C466 /* main.swift in Sources */,
 				65F90C65276B512000F6C466 /* Input.swift in Sources */,
+				65C779B12779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79DF27790CC3002D5096 /* Stack.swift in Sources */,
+				65C779E4277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				65F90C67276B512000F6C466 /* String+Extensions.swift in Sources */,
 				65F90C68276B512000F6C466 /* Int+Extensions.swift in Sources */,
 			);
@@ -3767,14 +4147,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65C779E5277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				65F90C73276B512100F6C466 /* Coordinate.swift in Sources */,
 				65F90C74276B512100F6C466 /* Array+Extensions.swift in Sources */,
+				65D635C827791F3A00BCC565 /* Heap.swift in Sources */,
 				65FFA3EE2770CBE900D9E689 /* RotationMatrixStore.swift in Sources */,
 				65FFA3EC2770C67300D9E689 /* main.swift in Sources */,
+				65FD79E027790CC3002D5096 /* Stack.swift in Sources */,
 				65F90C75276B512100F6C466 /* Regex.swift in Sources */,
 				65F90C76276B512100F6C466 /* Input.swift in Sources */,
 				65F90C78276B512100F6C466 /* String+Extensions.swift in Sources */,
 				65F90C79276B512100F6C466 /* Int+Extensions.swift in Sources */,
+				65C779B22779011A00C72EDA /* Dijkstra.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3784,9 +4168,13 @@
 			files = (
 				65F90C84276B512500F6C466 /* Coordinate.swift in Sources */,
 				65F90C85276B512500F6C466 /* Array+Extensions.swift in Sources */,
+				65D635C927791F3A00BCC565 /* Heap.swift in Sources */,
 				65F90C86276B512500F6C466 /* Regex.swift in Sources */,
 				65F90C87276B512500F6C466 /* Input.swift in Sources */,
 				65F90C89276B512500F6C466 /* String+Extensions.swift in Sources */,
+				65C779B32779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79E127790CC3002D5096 /* Stack.swift in Sources */,
+				65C779E6277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				65F90CF3276B519900F6C466 /* main.swift in Sources */,
 				65F90C8A276B512500F6C466 /* Int+Extensions.swift in Sources */,
 			);
@@ -3798,9 +4186,13 @@
 			files = (
 				65F90C95276B512500F6C466 /* Coordinate.swift in Sources */,
 				65F90C96276B512500F6C466 /* Array+Extensions.swift in Sources */,
+				65D635CA27791F3A00BCC565 /* Heap.swift in Sources */,
 				65F90C97276B512500F6C466 /* Regex.swift in Sources */,
 				65F90C98276B512500F6C466 /* Input.swift in Sources */,
 				65F90CF4276B519D00F6C466 /* main.swift in Sources */,
+				65C779B42779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79E227790CC3002D5096 /* Stack.swift in Sources */,
+				65C779E7277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				65F90C9A276B512500F6C466 /* String+Extensions.swift in Sources */,
 				65F90C9B276B512500F6C466 /* Int+Extensions.swift in Sources */,
 			);
@@ -3812,9 +4204,13 @@
 			files = (
 				65F90CA6276B512600F6C466 /* Coordinate.swift in Sources */,
 				65F90CA7276B512600F6C466 /* Array+Extensions.swift in Sources */,
+				65D635CB27791F3A00BCC565 /* Heap.swift in Sources */,
 				65F90CA8276B512600F6C466 /* Regex.swift in Sources */,
 				65F90CA9276B512600F6C466 /* Input.swift in Sources */,
 				65F90CAB276B512600F6C466 /* String+Extensions.swift in Sources */,
+				65C779B52779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79E327790CC3002D5096 /* Stack.swift in Sources */,
+				65C779E8277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				65F90CF7276B51A500F6C466 /* main.swift in Sources */,
 				65F90CAC276B512600F6C466 /* Int+Extensions.swift in Sources */,
 			);
@@ -3826,9 +4222,13 @@
 			files = (
 				65F90CB7276B512700F6C466 /* Coordinate.swift in Sources */,
 				65F90CB8276B512700F6C466 /* Array+Extensions.swift in Sources */,
+				65D635CC27791F3A00BCC565 /* Heap.swift in Sources */,
 				65F90CB9276B512700F6C466 /* Regex.swift in Sources */,
 				65F90CFA276B51AD00F6C466 /* main.swift in Sources */,
 				65F90CBA276B512700F6C466 /* Input.swift in Sources */,
+				65C779B62779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79E427790CC3002D5096 /* Stack.swift in Sources */,
+				65C779E9277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				65F90CBC276B512700F6C466 /* String+Extensions.swift in Sources */,
 				65F90CBD276B512700F6C466 /* Int+Extensions.swift in Sources */,
 			);
@@ -3840,9 +4240,13 @@
 			files = (
 				65F90CC8276B512700F6C466 /* Coordinate.swift in Sources */,
 				65F90CC9276B512700F6C466 /* Array+Extensions.swift in Sources */,
+				65D635CD27791F3A00BCC565 /* Heap.swift in Sources */,
 				65F90CCA276B512700F6C466 /* Regex.swift in Sources */,
 				65F90CCB276B512700F6C466 /* Input.swift in Sources */,
 				65F90CCD276B512700F6C466 /* String+Extensions.swift in Sources */,
+				65C779B72779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79E527790CC3002D5096 /* Stack.swift in Sources */,
+				65C779EA277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				65F90CFD276B51B500F6C466 /* main.swift in Sources */,
 				65F90CCE276B512700F6C466 /* Int+Extensions.swift in Sources */,
 			);
@@ -3854,9 +4258,13 @@
 			files = (
 				65F90CD9276B512700F6C466 /* Coordinate.swift in Sources */,
 				65F90CDA276B512700F6C466 /* Array+Extensions.swift in Sources */,
+				65D635CE27791F3A00BCC565 /* Heap.swift in Sources */,
 				65F90CDB276B512700F6C466 /* Regex.swift in Sources */,
 				65F90CDC276B512700F6C466 /* Input.swift in Sources */,
 				65F90CDE276B512700F6C466 /* String+Extensions.swift in Sources */,
+				65C779B82779011A00C72EDA /* Dijkstra.swift in Sources */,
+				65FD79E627790CC3002D5096 /* Stack.swift in Sources */,
+				65C779EB277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				65F90D00276B51C000F6C466 /* main.swift in Sources */,
 				65F90CDF276B512700F6C466 /* Int+Extensions.swift in Sources */,
 			);
