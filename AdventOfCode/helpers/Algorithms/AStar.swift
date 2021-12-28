@@ -42,4 +42,5 @@ func aStar<T: Hashable>(graph: Set<T>,
     }
 
     assert(false, "Destination node not found")
+    return (dist, prev)
 }
