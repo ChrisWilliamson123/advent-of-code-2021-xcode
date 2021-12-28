@@ -56,6 +56,18 @@ class CrabCups {
 
         return result
     }
+
+    class Node: CustomStringConvertible {
+        let value: Int
+        var next: Node? = nil
+
+        var description: String { "Value: \(value)" }
+
+        init(value: Int) {
+            self.value = value
+        }
+    }
+
 }
 
 func main() throws {
@@ -68,42 +80,5 @@ func main() throws {
     for _ in 0..<10000000 { partTwoGame.executeMove() }
     print("Part two:", partTwoGame.valuesToNodes[1]!.next!.value * partTwoGame.valuesToNodes[1]!.next!.next!.value)
 }
-
-func getOrder(after node: Node) -> String {
-    var seen: Set<Int> = []
-    var result = ""
-    var currentNode = node.next!
-    while !seen.contains(currentNode.value) && currentNode.value != node.value {
-        result += "\(currentNode.value)"
-        seen.insert(currentNode.value)
-        currentNode = currentNode.next!
-    }
-
-    return result
-}
-
-func printChain(from node: Node) {
-    var seen: Set<Int> = []
-    print(node)
-    seen.insert(node.value)
-    var currentNode = node.next
-    while currentNode != nil && !seen.contains(currentNode!.value) {
-        print(currentNode!)
-        seen.insert(currentNode!.value)
-        currentNode = currentNode!.next
-    }
-}
-
-class Node: CustomStringConvertible {
-    let value: Int
-    var next: Node? = nil
-
-    var description: String { "Value: \(value)" }
-
-    init(value: Int) {
-        self.value = value
-    }
-}
-
 
 try main()
