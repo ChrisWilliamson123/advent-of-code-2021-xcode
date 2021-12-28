@@ -325,7 +325,6 @@
 		6573A7C6277BACCD00964570 /* input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6573A6FD277BAC5200964570 /* input.txt */; };
 		6573A7C7277BACCE00964570 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6573A6FE277BAC5200964570 /* main.swift */; };
 		6573A7C8277BACD200964570 /* test_input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6573A6CC277BAC5100964570 /* test_input.txt */; };
-		6573A7C9277BACD400964570 /* input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6573A6B5277BAC5100964570 /* input.txt */; };
 		6573A7CA277BACE100964570 /* test_input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6573A6B4277BAC5100964570 /* test_input.txt */; };
 		6573A7CB277BACE300964570 /* input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6573A6B5277BAC5100964570 /* input.txt */; };
 		6573A7CC277BACE600964570 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6573A6B6277BAC5100964570 /* main.swift */; };
@@ -347,6 +346,8 @@
 		6573A7DC277BAD0A00964570 /* test_input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6573A6D4277BAC5200964570 /* test_input.txt */; };
 		6573A7DD277BAD0B00964570 /* input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6573A6D5277BAC5200964570 /* input.txt */; };
 		6573A7DE277BAD0D00964570 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6573A6D6277BAC5200964570 /* main.swift */; };
+		6573A7DF277BB24100964570 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6573A6CE277BAC5100964570 /* main.swift */; };
+		6573A7E0277BB24800964570 /* input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6573A6CD277BAC5100964570 /* input.txt */; };
 		65C779A02779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
 		65C779A12779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
 		65C779A22779011A00C72EDA /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7799F2779011A00C72EDA /* Dijkstra.swift */; };
@@ -1156,7 +1157,7 @@
 			dstSubfolderSpec = 16;
 			files = (
 				6573A7C8277BACD200964570 /* test_input.txt in CopyFiles */,
-				6573A7C9277BACD400964570 /* input.txt in CopyFiles */,
+				6573A7E0277BB24800964570 /* input.txt in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4848,6 +4849,7 @@
 				6573A71D277BAC5800964570 /* Dijkstra.swift in Sources */,
 				6573A71F277BAC5800964570 /* Stack.swift in Sources */,
 				6573A720277BAC5800964570 /* Sorted+Extensions.swift in Sources */,
+				6573A7DF277BB24100964570 /* main.swift in Sources */,
 				6573A721277BAC5800964570 /* AStar.swift in Sources */,
 				6573A722277BAC5800964570 /* Int+Extensions.swift in Sources */,
 			);
