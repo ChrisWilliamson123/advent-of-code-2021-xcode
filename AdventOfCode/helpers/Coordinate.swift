@@ -77,4 +77,8 @@ struct Coordinate: Hashable, CustomStringConvertible {
     func getManhattanDistance(to other: Coordinate) -> Int {
         abs(x - other.x) + abs(y - other.y)
     }
+
+    static func +(lhs: Coordinate, rhs: Coordinate) -> Coordinate {
+        Coordinate(lhs.x + rhs.x, lhs.y + rhs.y)
+    }
 }
