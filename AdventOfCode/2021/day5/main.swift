@@ -22,7 +22,7 @@ private func getOverlappedCoordCount(from vents: [Vent], onlyCheckAxialVents: Bo
 
     var coordCoverCounts: [Vent.Coordinate: Int] = [:]
     vents.forEach({
-        $0.coordsCovered.forEach({ coordCoverCounts[$0] = (coordCoverCounts[$0] ?? 0) + 1  })
+        $0.coordsCovered.forEach({ coordCoverCounts[$0] = coordCoverCounts[$0, default: 0] + 1  })
     })
 
     let coordsCoveredMoreThanOnce = coordCoverCounts.filter({ $1 > 1 })

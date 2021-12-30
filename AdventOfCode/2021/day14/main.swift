@@ -21,19 +21,19 @@ private func getExpansionResult(for inputPairs: [String], ticks: Int, insertionR
         var newCounts: [String: Int] = [:]
         for (pair, currentPairCount) in pairCounts {
             guard let insertion = insertionRules[pair] else {
-                newCounts[pair] = (newCounts[pair] ?? 0) + 1
+                newCounts[pair] = newCounts[pair, default: 0] + 1
                 continue
             }
 
             let firstNewPair = pair[0] + String(insertion)
             let secondNewPair = String(insertion) + pair[1]
 
-            newCounts[firstNewPair] = (newCounts[firstNewPair] ?? 0) + currentPairCount
-            newCounts[secondNewPair] = (newCounts[secondNewPair] ?? 0) + currentPairCount
+            newCounts[firstNewPair] = newCounts[firstNewPair, default: 0] + currentPairCount
+            newCounts[secondNewPair] = newCounts[secondNewPair, default: 0] + currentPairCount
         } 
         pairCounts = newCounts
     }
-    var finalCounts: [Character: Int] = pairCounts.reduce(into: [:], { $0[$1.0[1]] = ($0[$1.0[1]] ?? 0) + $1.1 })
+    var finalCounts: [Character: Int] = pairCounts.reduce(into: [:], { $0[$1.0[1]] = $0[$1.0[1], default: 0] + $1.1 })
     finalCounts[inputPairs[0][0]]! += 1
 
     let mostCommon = finalCounts.values.max()!
