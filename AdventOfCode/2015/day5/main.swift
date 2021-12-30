@@ -15,7 +15,7 @@ struct NString {
 
     var counts: [Character: Int]
     var vowelCount: Int {
-        ["a", "e", "i", "o", "u"].map({ counts[$0] ?? 0 }).sum()
+        ["a", "e", "i", "o", "u"].map({ counts[$0, default: 0] }).sum()
     }
     var containsDoubleLetter = false
     var containsInvalidString = false
@@ -39,7 +39,7 @@ struct NString {
                     self.containsInvalidString = true
                 }
             }
-            counts[char] = (counts[char] ?? 0) + 1
+            counts[char] = counts[char, default: 0] + 1
         }
         self.counts = counts
     }
@@ -52,7 +52,7 @@ struct NString2 {
     var containsRepeatedPair: Bool {
         var indexesOfPairs: [String: [Int]] = [:]
         for i in 0..<pairs.count {
-            indexesOfPairs[pairs[i]] = (indexesOfPairs[pairs[i]] ?? []) + [i]
+            indexesOfPairs[pairs[i]] = indexesOfPairs[pairs[i], default: []] + [i]
         }
 
         let validPairs = indexesOfPairs.filter({ $0.value.count > 1 && ($0.value.last! - $0.value.first!) > 1 })

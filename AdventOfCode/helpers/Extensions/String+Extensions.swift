@@ -29,6 +29,6 @@ extension String {
     }
 
     var characterCounts: [Character: Int] {
-        reduce(into: [:], { $0[$1] = ($0[$1] ?? 0) + 1 })
+        reduce(into: [:], { $0[$1] = $0[$1, default: 0] + 1 })
     }
 }

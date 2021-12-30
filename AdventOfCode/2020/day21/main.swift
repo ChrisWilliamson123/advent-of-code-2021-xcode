@@ -22,7 +22,7 @@ func main() throws {
 
         allIngredients = allIngredients.union(Set(ingredients))
         for i in ingredients {
-            allIngredientsCounts[i] = (allIngredientsCounts[i] ?? 0) + 1
+            allIngredientsCounts[i] = allIngredientsCounts[i, default: 0] + 1
         }
     }
 

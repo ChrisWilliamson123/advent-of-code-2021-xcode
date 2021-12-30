@@ -43,7 +43,7 @@ private func getPaths(graph: Graph, node: String, visitedSmalls: [String: Int], 
     
     var paths: [[String]] = []
     if node.isSmallCave {
-        visitedSmalls[node] = (visitedSmalls[node] ?? 0) + 1
+        visitedSmalls[node] = visitedSmalls[node, default: 0] + 1
     }
 
     for child in graph[node]! {

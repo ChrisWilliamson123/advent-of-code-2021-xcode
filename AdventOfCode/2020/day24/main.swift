@@ -17,7 +17,7 @@ func main() throws {
         }
         let final = Coordinate(current.0, current.1)
 
-        tileStates[final] = (tileStates[final] ?? 0) + 1
+        tileStates[final] = tileStates[final, default: 0] + 1
     }
 
     print("Part one:", tileStates.values.filter({ $0 % 2 != 0 }).count)
@@ -53,7 +53,7 @@ func main() throws {
                 let coord = Coordinate(x, y)
                 assert(abs(coord.x % 2) == abs(coord.y % 2))
 
-                let isWhite = (tileStates[coord] ?? 0) % 2 == 0
+                let isWhite = tileStates[coord, default: 0] % 2 == 0
                 let adj = getAdjacents(from: coord)
                 let adjacentBlacksCount = adj.filter({
                     if let adjTile = tileStates[$0] {

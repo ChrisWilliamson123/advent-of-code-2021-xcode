@@ -40,6 +40,6 @@ extension Array where Element: Equatable {
 
 extension Array where Element: Hashable {
     var counts: [Element: Int] {
-        reduce(into: [:], { $0[$1] = ($0[$1] ?? 0) + 1 })
+        reduce(into: [:], { $0[$1] = $0[$1, default: 0] + 1 })
     }
 }
