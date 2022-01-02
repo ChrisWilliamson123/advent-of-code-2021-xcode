@@ -40,11 +40,22 @@ struct Coordinate: Hashable, CustomStringConvertible {
         return adjacents
     }
 
-    // TODO: Don't cast the grid to an [[Any]], use [[T]] instead
     func getAdjacents<T>(in grid: [[T]], includingSelf: Bool = false) -> [Coordinate] {
         var adjacents: [Coordinate] = []
         for x in x-1...x+1 where x >= 0 && x < grid[0].count {
             for y in y-1...y+1 where y >= 0 && y < grid.count {
+                if x == self.x && y == self.y && !includingSelf { continue }
+                adjacents.append(Coordinate(x, y))
+            }
+        }
+
+        return adjacents
+    }
+
+    func getAdjacents(xBounds: ClosedRange<Int>, yBounds: ClosedRange<Int>, includingSelf: Bool = false) -> [Coordinate] {
+        var adjacents: [Coordinate] = []
+        for x in x-1...x+1 where x >= xBounds.lowerBound && x <= xBounds.upperBound {
+            for y in y-1...y+1 where y >= yBounds.lowerBound && y <= yBounds.upperBound {
                 if x == self.x && y == self.y && !includingSelf { continue }
                 adjacents.append(Coordinate(x, y))
             }
