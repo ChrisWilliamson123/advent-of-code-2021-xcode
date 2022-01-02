@@ -22,11 +22,6 @@ func main() throws {
         onLights = tick(lights: onLights)
     }
 
-    onLights.insert(Coordinate(0, 99))
-    onLights.insert(Coordinate(99, 0))
-    onLights.insert(Coordinate(0, 0))
-    onLights.insert(Coordinate(99, 99))
-
     print(onLights.count)
 }
 
