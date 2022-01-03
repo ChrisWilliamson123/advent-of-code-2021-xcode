@@ -27,7 +27,7 @@ func aStar<T: Hashable>(graph: Set<T>,
 
         for n in getNeighbours(current) {
             let tentativeGScore = dist[current]! + getDistanceBetween(current, n)
-            if tentativeGScore < dist[n]! {
+            if tentativeGScore < dist[n, default: Int.max] {
                 prev[n] = current
                 dist[n] = tentativeGScore
                 fScore[n] = tentativeGScore + heuristicFunction(n, target)

@@ -7,8 +7,8 @@ func main() throws {
     for i in input {
         let regex = Regex("(\\w+) to (\\w+) = (\\d+)")
         let groups = regex.getMatches(in: i)
-        journeys[groups[0]] = journeys[groups[0], default: []] + [(groups[1], Int(groups[2])!)]
-        journeys[groups[1]] = journeys[groups[1], default: []] + [(groups[0], Int(groups[2])!)]
+        journeys[groups[0], default: []] += [(groups[1], Int(groups[2])!)]
+        journeys[groups[1], default: []] += [(groups[0], Int(groups[2])!)]
     }
 
     let combinations = Set(Array(journeys.keys).combinations(count: journeys.keys.count))
