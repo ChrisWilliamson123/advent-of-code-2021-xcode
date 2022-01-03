@@ -27,7 +27,7 @@ func dijkstra<T: Hashable>(graph: Set<T>,
         for neighbour in neighbours where !visited.contains(neighbour) {
             let newDistance = dist[current]! + getDistanceBetween(current, neighbour)
 
-            if newDistance < dist[neighbour]! {
+            if newDistance < dist[neighbour, default: Int.max] {
                 dist[neighbour] = newDistance
                 prev[neighbour] = current
                 if heap.indexMap[neighbour] != nil {

@@ -52,7 +52,7 @@ struct NString2 {
     var containsRepeatedPair: Bool {
         var indexesOfPairs: [String: [Int]] = [:]
         for i in 0..<pairs.count {
-            indexesOfPairs[pairs[i]] = indexesOfPairs[pairs[i], default: []] + [i]
+            indexesOfPairs[pairs[i], default: []] += [i]
         }
 
         let validPairs = indexesOfPairs.filter({ $0.value.count > 1 && ($0.value.last! - $0.value.first!) > 1 })
