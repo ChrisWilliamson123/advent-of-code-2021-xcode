@@ -77,6 +77,7 @@
 		65215E6F2781FC4B002A082F /* Permutations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65215E2B2781FC4B002A082F /* Permutations.swift */; };
 		65215E702781FC4B002A082F /* Permutations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65215E2B2781FC4B002A082F /* Permutations.swift */; };
 		65215E712781FC4B002A082F /* Permutations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65215E2B2781FC4B002A082F /* Permutations.swift */; };
+		653BE480278457D80011A6FD /* factors.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 653BE47F2784572C0011A6FD /* factors.txt */; };
 		653DB343276B8B2400BC53DF /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E4613E276A358B0006ACC9 /* Coordinate.swift */; };
 		653DB344276B8B2400BC53DF /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E46143276A36D50006ACC9 /* Array+Extensions.swift */; };
 		653DB345276B8B2400BC53DF /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E46196276A3EBA0006ACC9 /* Regex.swift */; };
@@ -1555,6 +1556,7 @@
 			files = (
 				65A755122780B7A100D26B92 /* test_input.txt in CopyFiles */,
 				65A755132780B7A300D26B92 /* input.txt in CopyFiles */,
+				653BE480278457D80011A6FD /* factors.txt in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1835,6 +1837,7 @@
 
 /* Begin PBXFileReference section */
 		65215E2B2781FC4B002A082F /* Permutations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permutations.swift; sourceTree = "<group>"; };
+		653BE47F2784572C0011A6FD /* factors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = factors.txt; sourceTree = "<group>"; };
 		653DB2DE276B8AAA00BC53DF /* test_input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = test_input.txt; sourceTree = "<group>"; };
 		653DB2DF276B8AAA00BC53DF /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 		653DB2E0276B8AAA00BC53DF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -3132,6 +3135,7 @@
 				6573A6C8277BAC5100964570 /* test_input.txt */,
 				6573A6C9277BAC5100964570 /* input.txt */,
 				6573A6CA277BAC5100964570 /* main.swift */,
+				653BE47F2784572C0011A6FD /* factors.txt */,
 			);
 			path = day20;
 			sourceTree = "<group>";
