@@ -27,4 +27,9 @@ struct Regex {
             return String(text[substringRange])
         })
     }
+
+    func getGreedyMatches(in text: String) -> [String] {
+        let results = regex.matches(in: text, range: NSRange(text.startIndex..., in: text))
+        return results.map { String(text[Range($0.range, in: text)!]) }
+    }
 }
