@@ -2,17 +2,17 @@ import Foundation
 
 func main() throws {
     let input: [String] = try readInput(fromTestFile: false)
-    let partOneTriangles = input.map({ Triangle(sides: matches(for: "(\\d+)", in: $0).map({ Int($0)! })) })
+    let partOneTriangles = input.map({ Triangle(sides: Regex("(\\d+)").getGreedyMatches(in: $0).map({ Int($0)! })) })
     print("Part one:", partOneTriangles.reduce(0, { $1.isValid ? $0 + 1 : $0 }))
 
-    let allNumbers = input.map({ matches(for: "(\\d+)", in: $0).map({ Int($0)! }) }).flatMap({ $0 })
+    let allNumbers = input.map({ Regex("(\\d+)").getGreedyMatches(in: $0).map({ Int($0)! }) }).flatMap({ $0 })
     var partTwoTriangles = [Triangle]()
     for i in stride(from: 8, to: allNumbers.count, by: 9) {
         partTwoTriangles.append(Triangle(sides: [ allNumbers[i-8], allNumbers[i-5], allNumbers[i-2] ]))
         partTwoTriangles.append(Triangle(sides: [ allNumbers[i-7], allNumbers[i-4], allNumbers[i-1] ]))
         partTwoTriangles.append(Triangle(sides: [ allNumbers[i-6], allNumbers[i-3], allNumbers[i-0] ]))
     }
-    print("Part one:", partTwoTriangles.reduce(0, { $1.isValid ? $0 + 1 : $0 }))
+    print("Part two:", partTwoTriangles.reduce(0, { $1.isValid ? $0 + 1 : $0 }))
 }
 
 struct Triangle {
@@ -28,21 +28,6 @@ struct Triangle {
         }
 
         return true
-    }
-}
-
-private func matches(for regex: String, in text: String) -> [String] {
-
-    do {
-        let regex = try NSRegularExpression(pattern: regex)
-        let results = regex.matches(in: text,
-                                    range: NSRange(text.startIndex..., in: text))
-        return results.map {
-            String(text[Range($0.range, in: text)!])
-        }
-    } catch let error {
-        print("invalid regex: \(error.localizedDescription)")
-        return []
     }
 }
 
