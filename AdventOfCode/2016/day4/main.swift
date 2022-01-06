@@ -32,14 +32,14 @@ struct Room {
     }
 
     var decryptedName: String {
-        var decrypted = ""
-        for c in name {
-            if c == "-" { decrypted += " "; continue }
-            let index = Alphabet.charsToIndexes[c]!
-            let shiftedIndex = (index + sectorID) % 26
-            decrypted += Alphabet.indexesToChars[shiftedIndex]!
-        }
-        return decrypted
+        name.reduce("", { $0 + decryptCharacter($1) })
+    }
+
+    private func decryptCharacter(_ char: Character) -> String {
+        if char == "-" { return " " }
+        let index = Alphabet.charsToIndexes[char]!
+        let shiftedIndex = (index + sectorID) % 26
+        return Alphabet.indexesToChars[shiftedIndex]!
     }
 }
 
