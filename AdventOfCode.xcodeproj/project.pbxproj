@@ -976,7 +976,6 @@
 		65F666CC278495F4004AAB5F /* Sorted+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */; };
 		65F666CD278495F4004AAB5F /* AStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6573A5EC277A17E000964570 /* AStar.swift */; };
 		65F666CE278495F4004AAB5F /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E4618E276A3E8A0006ACC9 /* Int+Extensions.swift */; };
-		65F666D827849670004AAB5F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6573A6BA277BAC5100964570 /* main.swift */; };
 		65F666D927849679004AAB5F /* test_input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6573A6B8277BAC5100964570 /* test_input.txt */; };
 		65F666DA2784967B004AAB5F /* input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6573A6B9277BAC5100964570 /* input.txt */; };
 		65F666DB27849680004AAB5F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6573A6FA277BAC5200964570 /* main.swift */; };
@@ -6481,7 +6480,6 @@
 				65F666CC278495F4004AAB5F /* Sorted+Extensions.swift in Sources */,
 				65F666E427849699004AAB5F /* main.swift in Sources */,
 				65F666CD278495F4004AAB5F /* AStar.swift in Sources */,
-				65F666D827849670004AAB5F /* main.swift in Sources */,
 				65F666CE278495F4004AAB5F /* Int+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
