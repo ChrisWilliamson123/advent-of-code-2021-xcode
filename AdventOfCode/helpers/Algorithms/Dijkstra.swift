@@ -20,7 +20,11 @@ func dijkstra<T: Hashable>(graph: Set<T>,
 
     while !heap.isEmpty {
         let current = heap.dequeue()!
-        if let target = target, current == target { return (dist, prev) }
+        if let target = target, current == target {
+            print("Destination reached")
+            return (dist, prev)
+
+        }
         visited.insert(current)
 
         let neighbours = getNeighbours(current)
