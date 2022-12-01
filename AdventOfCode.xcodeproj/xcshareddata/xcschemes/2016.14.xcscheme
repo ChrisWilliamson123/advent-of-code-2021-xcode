@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "65E95B682788B5D8005E1AE4"
-               BuildableName = "2016.10 copy copy copy copy"
+               BuildableName = "2016.14"
                BlueprintName = "2016.14"
                ReferencedContainer = "container:AdventOfCode.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "65E95B682788B5D8005E1AE4"
-            BuildableName = "2016.10 copy copy copy copy"
+            BuildableName = "2016.14"
             BlueprintName = "2016.14"
             ReferencedContainer = "container:AdventOfCode.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "65E95B682788B5D8005E1AE4"
-            BuildableName = "2016.10 copy copy copy copy"
+            BuildableName = "2016.14"
             BlueprintName = "2016.14"
             ReferencedContainer = "container:AdventOfCode.xcodeproj">
          </BuildableReference>
