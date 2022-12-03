@@ -1609,6 +1609,106 @@
 		87258E482938A5EC00418B26 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87258D4B2938A47800418B26 /* main.swift */; };
 		87258E492938A5EE00418B26 /* test_input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 87258D2D2938A47500418B26 /* test_input.txt */; };
 		87258E4A2938A5F000418B26 /* input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 87258D2E2938A47500418B26 /* input.txt */; };
+		872A3415293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3416293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3417293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3418293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3419293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A341A293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A341B293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A341C293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A341D293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A341E293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A341F293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3420293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3421293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3422293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3423293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3424293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3425293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3426293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3427293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3428293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3429293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A342A293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A342B293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A342C293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A342D293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A342E293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A342F293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3430293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3431293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3432293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3433293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3434293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3435293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3436293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3437293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3438293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3439293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A343A293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A343B293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A343C293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A343D293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A343E293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A343F293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3440293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3441293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3442293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3443293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3444293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3445293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3446293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3447293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3448293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3449293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A344A293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A344B293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A344C293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A344D293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A344E293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A344F293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3450293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3451293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3452293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3453293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3454293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3455293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3456293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3457293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3458293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3459293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A345A293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A345B293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A345C293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A345D293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A345E293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A345F293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3460293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3461293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3462293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3463293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3464293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3465293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3466293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3467293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3468293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3469293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A346A293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A346B293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A346C293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A346D293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A346E293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A346F293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3470293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3471293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3472293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3473293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3474293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3475293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3476293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3477293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		872A3478293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -3206,6 +3306,7 @@
 		87258DFF2938A4EA00418B26 /* 2022.8 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 2022.8; sourceTree = BUILT_PRODUCTS_DIR; };
 		87258E172938A4EF00418B26 /* 2022.9 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 2022.9; sourceTree = BUILT_PRODUCTS_DIR; };
 		87258E2F2938A4F400418B26 /* 2022.10 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 2022.10; sourceTree = BUILT_PRODUCTS_DIR; };
+		872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StringProtocol+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -4236,6 +4337,7 @@
 				65C779D2277904FD00C72EDA /* Sorted+Extensions.swift */,
 				65E46190276A3EA60006ACC9 /* String+Extensions.swift */,
 				657CF4C92786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift */,
+				872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -7341,6 +7443,7 @@
 				65215E452781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635CF27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4E32786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A342E293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65CFA58D276B8C6900605910 /* main.swift in Sources */,
 				653DB345276B8B2400BC53DF /* Regex.swift in Sources */,
 				653DB346276B8B2400BC53DF /* Input.swift in Sources */,
@@ -7362,6 +7465,7 @@
 				65215E462781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635D027791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4E42786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A342F293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				653DB356276B8B2600BC53DF /* Regex.swift in Sources */,
 				65CFA590276B8CF800605910 /* main.swift in Sources */,
 				653DB357276B8B2600BC53DF /* Input.swift in Sources */,
@@ -7383,6 +7487,7 @@
 				65215E472781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635D127791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4E52786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3430293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				653DB367276B8B2600BC53DF /* Regex.swift in Sources */,
 				653DB368276B8B2600BC53DF /* Input.swift in Sources */,
 				65CFA593276B8CFE00605910 /* main.swift in Sources */,
@@ -7404,6 +7509,7 @@
 				65215E482781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635D227791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4E62786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3431293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65CFA596276B8D0400605910 /* main.swift in Sources */,
 				653DB378276B8B2700BC53DF /* Regex.swift in Sources */,
 				653DB379276B8B2700BC53DF /* Input.swift in Sources */,
@@ -7425,6 +7531,7 @@
 				65215E492781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635D327791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4E72786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3432293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65CFA599276B8D0A00605910 /* main.swift in Sources */,
 				653DB389276B8B2700BC53DF /* Regex.swift in Sources */,
 				653DB38A276B8B2700BC53DF /* Input.swift in Sources */,
@@ -7446,6 +7553,7 @@
 				65215E4A2781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635D427791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4E82786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3433293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				653DB39A276B8B2800BC53DF /* Regex.swift in Sources */,
 				653DB39B276B8B2800BC53DF /* Input.swift in Sources */,
 				65CFA59C276B8D1200605910 /* main.swift in Sources */,
@@ -7467,6 +7575,7 @@
 				65215E4B2781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635D527791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4E92786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3434293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				653DB3AB276B8B2800BC53DF /* Regex.swift in Sources */,
 				653DB3AC276B8B2800BC53DF /* Input.swift in Sources */,
 				653DB3AD276B8B2800BC53DF /* String+Extensions.swift in Sources */,
@@ -7488,6 +7597,7 @@
 				65215E4C2781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635D627791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4EA2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3435293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				653DB3BC276B8B2900BC53DF /* Regex.swift in Sources */,
 				653DB3BD276B8B2900BC53DF /* Input.swift in Sources */,
 				653DB3BE276B8B2900BC53DF /* String+Extensions.swift in Sources */,
@@ -7509,6 +7619,7 @@
 				65215E4D2781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635D727791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4EB2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3436293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65CFA5A5276B8D2800605910 /* main.swift in Sources */,
 				653DB3CD276B8B2900BC53DF /* Regex.swift in Sources */,
 				653DB3CE276B8B2900BC53DF /* Input.swift in Sources */,
@@ -7530,6 +7641,7 @@
 				65215E4E2781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635D827791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4EC2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3437293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				653DB3DE276B8B2900BC53DF /* Regex.swift in Sources */,
 				65CFA5A8276B8D3000605910 /* main.swift in Sources */,
 				653DB3DF276B8B2900BC53DF /* Input.swift in Sources */,
@@ -7551,6 +7663,7 @@
 				65215E4F2781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635D927791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4ED2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3438293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				653DB3EF276B8B2A00BC53DF /* Regex.swift in Sources */,
 				65CFA5AB276B8D3600605910 /* main.swift in Sources */,
 				653DB3F0276B8B2A00BC53DF /* Input.swift in Sources */,
@@ -7572,6 +7685,7 @@
 				65215E502781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635DA27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4EE2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3439293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				653DB400276B8B2A00BC53DF /* Regex.swift in Sources */,
 				653DB401276B8B2A00BC53DF /* Input.swift in Sources */,
 				653DB402276B8B2A00BC53DF /* String+Extensions.swift in Sources */,
@@ -7593,6 +7707,7 @@
 				65215E512781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635DB27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4EF2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A343A293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				653DB411276B8B2B00BC53DF /* Regex.swift in Sources */,
 				653DB412276B8B2B00BC53DF /* Input.swift in Sources */,
 				65CFA5B1276B8D4600605910 /* main.swift in Sources */,
@@ -7614,6 +7729,7 @@
 				65215E522781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635DC27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4F02786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A343B293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				653DB422276B8B2B00BC53DF /* Regex.swift in Sources */,
 				653DB423276B8B2B00BC53DF /* Input.swift in Sources */,
 				65CFA5B4276B8D4E00605910 /* main.swift in Sources */,
@@ -7635,6 +7751,7 @@
 				65215E532781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635DD27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4F12786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A343C293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				653DB433276B8B2C00BC53DF /* Regex.swift in Sources */,
 				65CFA5B7276B8D5600605910 /* main.swift in Sources */,
 				653DB434276B8B2C00BC53DF /* Input.swift in Sources */,
@@ -7656,6 +7773,7 @@
 				65215E542781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635DE27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4F22786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A343D293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				653DB444276B8B2C00BC53DF /* Regex.swift in Sources */,
 				653DB445276B8B2C00BC53DF /* Input.swift in Sources */,
 				65CFA5BA276B8D6000605910 /* main.swift in Sources */,
@@ -7677,6 +7795,7 @@
 				65215E552781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635DF27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4F32786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A343E293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				653DB455276B8B2D00BC53DF /* Regex.swift in Sources */,
 				65CFA5BD276B8D6600605910 /* main.swift in Sources */,
 				653DB456276B8B2D00BC53DF /* Input.swift in Sources */,
@@ -7698,6 +7817,7 @@
 				65215E562781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635E027791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4F42786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A343F293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				653DB466276B8B2D00BC53DF /* Regex.swift in Sources */,
 				65CFA5C0276B8D6D00605910 /* main.swift in Sources */,
 				653DB467276B8B2D00BC53DF /* Input.swift in Sources */,
@@ -7719,6 +7839,7 @@
 				65215E572781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635E127791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4F52786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3440293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				653DB477276B8B2E00BC53DF /* Regex.swift in Sources */,
 				653DB478276B8B2E00BC53DF /* Input.swift in Sources */,
 				653DB479276B8B2E00BC53DF /* String+Extensions.swift in Sources */,
@@ -7740,6 +7861,7 @@
 				65215E582781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635E227791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4F62786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3441293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				653DB488276B8B2E00BC53DF /* Regex.swift in Sources */,
 				653DB489276B8B2E00BC53DF /* Input.swift in Sources */,
 				653DB48A276B8B2E00BC53DF /* String+Extensions.swift in Sources */,
@@ -7761,6 +7883,7 @@
 				65215E592781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635E327791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4F72786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3442293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				653DB499276B8B2F00BC53DF /* Regex.swift in Sources */,
 				653DB49A276B8B2F00BC53DF /* Input.swift in Sources */,
 				653DB49B276B8B2F00BC53DF /* String+Extensions.swift in Sources */,
@@ -7782,6 +7905,7 @@
 				65215E5A2781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635E427791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4F82786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3443293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				653DB4AA276B8B2F00BC53DF /* Regex.swift in Sources */,
 				65CFA5CC276B8D8C00605910 /* main.swift in Sources */,
 				653DB4AB276B8B2F00BC53DF /* Input.swift in Sources */,
@@ -7803,6 +7927,7 @@
 				65215E5B2781FC4B002A082F /* Permutations.swift in Sources */,
 				653DB4BA276B8B3000BC53DF /* Array+Extensions.swift in Sources */,
 				657CF4F92786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3444293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65D635E527791F3A00BCC565 /* Heap.swift in Sources */,
 				653DB4BB276B8B3000BC53DF /* Regex.swift in Sources */,
 				653DB4BC276B8B3000BC53DF /* Input.swift in Sources */,
@@ -7824,6 +7949,7 @@
 				65215E5C2781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635E627791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4FA2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3445293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				653DB4CC276B8B3000BC53DF /* Regex.swift in Sources */,
 				653DB4CD276B8B3000BC53DF /* Input.swift in Sources */,
 				653DB4CE276B8B3000BC53DF /* String+Extensions.swift in Sources */,
@@ -7845,6 +7971,7 @@
 				65215E5D2781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635E727791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4FB2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3446293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				653DB4DD276B8B3100BC53DF /* Regex.swift in Sources */,
 				653DB4DE276B8B3100BC53DF /* Input.swift in Sources */,
 				653DB4DF276B8B3100BC53DF /* String+Extensions.swift in Sources */,
@@ -7866,6 +7993,7 @@
 				65215E5E2781FC4B002A082F /* Permutations.swift in Sources */,
 				6573A68A277BAB6400964570 /* Heap.swift in Sources */,
 				657CF4FC2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3447293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				6573A68B277BAB6400964570 /* Regex.swift in Sources */,
 				6573A68C277BAB6400964570 /* Input.swift in Sources */,
 				6573A68D277BAB6400964570 /* String+Extensions.swift in Sources */,
@@ -7887,6 +8015,7 @@
 				65215E5F2781FC4B002A082F /* Permutations.swift in Sources */,
 				6573A703277BAC5800964570 /* Heap.swift in Sources */,
 				657CF4FD2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3448293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				6573A704277BAC5800964570 /* Regex.swift in Sources */,
 				6573A705277BAC5800964570 /* Input.swift in Sources */,
 				6573A706277BAC5800964570 /* String+Extensions.swift in Sources */,
@@ -7908,6 +8037,7 @@
 				65215E602781FC4B002A082F /* Permutations.swift in Sources */,
 				6573A719277BAC5800964570 /* Heap.swift in Sources */,
 				657CF4FE2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3449293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				6573A71A277BAC5800964570 /* Regex.swift in Sources */,
 				6573A71B277BAC5800964570 /* Input.swift in Sources */,
 				6573A71C277BAC5800964570 /* String+Extensions.swift in Sources */,
@@ -7929,6 +8059,7 @@
 				65215E612781FC4B002A082F /* Permutations.swift in Sources */,
 				6573A72F277BAC5900964570 /* Heap.swift in Sources */,
 				657CF4FF2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A344A293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				6573A730277BAC5900964570 /* Regex.swift in Sources */,
 				6573A731277BAC5900964570 /* Input.swift in Sources */,
 				6573A732277BAC5900964570 /* String+Extensions.swift in Sources */,
@@ -7950,6 +8081,7 @@
 				65215E622781FC4B002A082F /* Permutations.swift in Sources */,
 				6573A745277BAC5A00964570 /* Heap.swift in Sources */,
 				657CF5002786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A344B293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				6573A746277BAC5A00964570 /* Regex.swift in Sources */,
 				6573A747277BAC5A00964570 /* Input.swift in Sources */,
 				6573A748277BAC5A00964570 /* String+Extensions.swift in Sources */,
@@ -7971,6 +8103,7 @@
 				65215E632781FC4B002A082F /* Permutations.swift in Sources */,
 				6573A75B277BAC5A00964570 /* Heap.swift in Sources */,
 				657CF5012786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A344C293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				6573A75C277BAC5A00964570 /* Regex.swift in Sources */,
 				6573A75D277BAC5A00964570 /* Input.swift in Sources */,
 				6573A75E277BAC5A00964570 /* String+Extensions.swift in Sources */,
@@ -7992,6 +8125,7 @@
 				65215E642781FC4B002A082F /* Permutations.swift in Sources */,
 				6573A771277BAC5A00964570 /* Heap.swift in Sources */,
 				657CF5022786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A344D293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				6573A772277BAC5A00964570 /* Regex.swift in Sources */,
 				6573A773277BAC5A00964570 /* Input.swift in Sources */,
 				6573A774277BAC5A00964570 /* String+Extensions.swift in Sources */,
@@ -8013,6 +8147,7 @@
 				65215E652781FC4B002A082F /* Permutations.swift in Sources */,
 				6573A787277BAC5B00964570 /* Heap.swift in Sources */,
 				657CF5032786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A344E293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				6573A788277BAC5B00964570 /* Regex.swift in Sources */,
 				6573A789277BAC5B00964570 /* Input.swift in Sources */,
 				6573A78A277BAC5B00964570 /* String+Extensions.swift in Sources */,
@@ -8034,6 +8169,7 @@
 				65215E662781FC4B002A082F /* Permutations.swift in Sources */,
 				6573A79D277BAC5C00964570 /* Heap.swift in Sources */,
 				657CF5042786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A344F293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				6573A79E277BAC5C00964570 /* Regex.swift in Sources */,
 				6573A79F277BAC5C00964570 /* Input.swift in Sources */,
 				6573A7A0277BAC5C00964570 /* String+Extensions.swift in Sources */,
@@ -8055,6 +8191,7 @@
 				65215E672781FC4B002A082F /* Permutations.swift in Sources */,
 				6573A7B3277BAC5C00964570 /* Heap.swift in Sources */,
 				657CF5052786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3450293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				6573A7B4277BAC5C00964570 /* Regex.swift in Sources */,
 				6573A7B5277BAC5C00964570 /* Input.swift in Sources */,
 				6573A7B6277BAC5C00964570 /* String+Extensions.swift in Sources */,
@@ -8076,6 +8213,7 @@
 				657CF3C92786F6DB00A8C23D /* Permutations.swift in Sources */,
 				657CF3CA2786F6DB00A8C23D /* Heap.swift in Sources */,
 				657CF5152786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3460293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				657CF3CB2786F6DB00A8C23D /* Regex.swift in Sources */,
 				657CF3CC2786F6DB00A8C23D /* Input.swift in Sources */,
 				657CF3CD2786F6DB00A8C23D /* String+Extensions.swift in Sources */,
@@ -8097,6 +8235,7 @@
 				657CF3E02786F6DC00A8C23D /* Permutations.swift in Sources */,
 				657CF3E12786F6DC00A8C23D /* Heap.swift in Sources */,
 				657CF5162786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3461293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				657CF3E22786F6DC00A8C23D /* Regex.swift in Sources */,
 				657CF3E32786F6DC00A8C23D /* Input.swift in Sources */,
 				657CF3E42786F6DC00A8C23D /* String+Extensions.swift in Sources */,
@@ -8118,6 +8257,7 @@
 				657CF3F72786F6DC00A8C23D /* Permutations.swift in Sources */,
 				657CF3F82786F6DC00A8C23D /* Heap.swift in Sources */,
 				657CF5172786F89600A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3462293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				657CF3F92786F6DC00A8C23D /* Regex.swift in Sources */,
 				657CF3FA2786F6DC00A8C23D /* Input.swift in Sources */,
 				657CF3FB2786F6DC00A8C23D /* String+Extensions.swift in Sources */,
@@ -8139,6 +8279,7 @@
 				657CF40E2786F6DD00A8C23D /* Permutations.swift in Sources */,
 				657CF40F2786F6DD00A8C23D /* Heap.swift in Sources */,
 				657CF5182786F89600A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3463293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				657CF4102786F6DD00A8C23D /* Regex.swift in Sources */,
 				657CF4112786F6DD00A8C23D /* Input.swift in Sources */,
 				657CF4122786F6DD00A8C23D /* String+Extensions.swift in Sources */,
@@ -8160,6 +8301,7 @@
 				657CF4252786F6DD00A8C23D /* Permutations.swift in Sources */,
 				657CF4262786F6DD00A8C23D /* Heap.swift in Sources */,
 				657CF5192786F89600A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3464293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				657CF4272786F6DD00A8C23D /* Regex.swift in Sources */,
 				657CF4282786F6DD00A8C23D /* Input.swift in Sources */,
 				657CF4292786F6DD00A8C23D /* String+Extensions.swift in Sources */,
@@ -8181,6 +8323,7 @@
 				657CF43C2786F6DE00A8C23D /* Permutations.swift in Sources */,
 				657CF43D2786F6DE00A8C23D /* Heap.swift in Sources */,
 				657CF51A2786F89600A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3465293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				657CF43E2786F6DE00A8C23D /* Regex.swift in Sources */,
 				657CF43F2786F6DE00A8C23D /* Input.swift in Sources */,
 				657CF4402786F6DE00A8C23D /* String+Extensions.swift in Sources */,
@@ -8202,6 +8345,7 @@
 				657CF4532786F6DE00A8C23D /* Permutations.swift in Sources */,
 				657CF4542786F6DE00A8C23D /* Heap.swift in Sources */,
 				657CF51B2786F89600A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3466293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				657CF4552786F6DE00A8C23D /* Regex.swift in Sources */,
 				657CF4562786F6DE00A8C23D /* Input.swift in Sources */,
 				657CF4572786F6DE00A8C23D /* String+Extensions.swift in Sources */,
@@ -8223,6 +8367,7 @@
 				657CF46A2786F6DE00A8C23D /* Permutations.swift in Sources */,
 				657CF46B2786F6DE00A8C23D /* Heap.swift in Sources */,
 				657CF51C2786F89600A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3467293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				657CF46C2786F6DE00A8C23D /* Regex.swift in Sources */,
 				657CF46D2786F6DE00A8C23D /* Input.swift in Sources */,
 				657CF46E2786F6DE00A8C23D /* String+Extensions.swift in Sources */,
@@ -8244,6 +8389,7 @@
 				657CF4812786F6DF00A8C23D /* Permutations.swift in Sources */,
 				657CF4822786F6DF00A8C23D /* Heap.swift in Sources */,
 				657CF51D2786F89600A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3468293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				657CF4832786F6DF00A8C23D /* Regex.swift in Sources */,
 				657CF4842786F6DF00A8C23D /* Input.swift in Sources */,
 				657CF4852786F6DF00A8C23D /* String+Extensions.swift in Sources */,
@@ -8265,6 +8411,7 @@
 				657CF4982786F6DF00A8C23D /* Permutations.swift in Sources */,
 				657CF4992786F6DF00A8C23D /* Heap.swift in Sources */,
 				657CF51E2786F89600A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3469293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				657CF49A2786F6DF00A8C23D /* Regex.swift in Sources */,
 				657CF49B2786F6DF00A8C23D /* Input.swift in Sources */,
 				657CF49C2786F6DF00A8C23D /* String+Extensions.swift in Sources */,
@@ -8286,6 +8433,7 @@
 				65215E682781FC4B002A082F /* Permutations.swift in Sources */,
 				65A7541F2780B6E800D26B92 /* Heap.swift in Sources */,
 				657CF5062786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3451293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65A754202780B6E800D26B92 /* Regex.swift in Sources */,
 				65A754212780B6E800D26B92 /* Input.swift in Sources */,
 				65A754222780B6E800D26B92 /* String+Extensions.swift in Sources */,
@@ -8307,6 +8455,7 @@
 				65215E692781FC4B002A082F /* Permutations.swift in Sources */,
 				65A754342780B6E900D26B92 /* Array+Extensions.swift in Sources */,
 				657CF5072786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3452293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65A754352780B6E900D26B92 /* Heap.swift in Sources */,
 				65A754362780B6E900D26B92 /* Regex.swift in Sources */,
 				65A754372780B6E900D26B92 /* Input.swift in Sources */,
@@ -8328,6 +8477,7 @@
 				65215E6A2781FC4B002A082F /* Permutations.swift in Sources */,
 				65A7544B2780B6E900D26B92 /* Heap.swift in Sources */,
 				657CF5082786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3453293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65A7544C2780B6E900D26B92 /* Regex.swift in Sources */,
 				65A7544D2780B6E900D26B92 /* Input.swift in Sources */,
 				65A7544E2780B6E900D26B92 /* String+Extensions.swift in Sources */,
@@ -8349,6 +8499,7 @@
 				65215E6B2781FC4B002A082F /* Permutations.swift in Sources */,
 				65A754612780B6EA00D26B92 /* Heap.swift in Sources */,
 				657CF5092786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3454293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65A754622780B6EA00D26B92 /* Regex.swift in Sources */,
 				65A754632780B6EA00D26B92 /* Input.swift in Sources */,
 				65A754642780B6EA00D26B92 /* String+Extensions.swift in Sources */,
@@ -8370,6 +8521,7 @@
 				65215E6C2781FC4B002A082F /* Permutations.swift in Sources */,
 				65A754772780B6EA00D26B92 /* Heap.swift in Sources */,
 				657CF50A2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3455293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65A754782780B6EA00D26B92 /* Regex.swift in Sources */,
 				65A754792780B6EA00D26B92 /* Input.swift in Sources */,
 				65A7547A2780B6EA00D26B92 /* String+Extensions.swift in Sources */,
@@ -8391,6 +8543,7 @@
 				65215E6D2781FC4B002A082F /* Permutations.swift in Sources */,
 				65A7548D2780B6F000D26B92 /* Heap.swift in Sources */,
 				657CF50B2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3456293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65A7548E2780B6F000D26B92 /* Regex.swift in Sources */,
 				65A7548F2780B6F000D26B92 /* Input.swift in Sources */,
 				65A754902780B6F000D26B92 /* String+Extensions.swift in Sources */,
@@ -8412,6 +8565,7 @@
 				65215E6E2781FC4B002A082F /* Permutations.swift in Sources */,
 				65A754A32780B6F000D26B92 /* Heap.swift in Sources */,
 				657CF50C2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3457293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65A754A42780B6F000D26B92 /* Regex.swift in Sources */,
 				65A754A52780B6F000D26B92 /* Input.swift in Sources */,
 				65A754A62780B6F000D26B92 /* String+Extensions.swift in Sources */,
@@ -8433,6 +8587,7 @@
 				65215E6F2781FC4B002A082F /* Permutations.swift in Sources */,
 				65A754B92780B6F000D26B92 /* Heap.swift in Sources */,
 				657CF50D2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3458293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65A754BA2780B6F000D26B92 /* Regex.swift in Sources */,
 				65A754BB2780B6F000D26B92 /* Input.swift in Sources */,
 				65A7550E2780B79600D26B92 /* main.swift in Sources */,
@@ -8454,6 +8609,7 @@
 				65215E702781FC4B002A082F /* Permutations.swift in Sources */,
 				65A754CF2780B6F100D26B92 /* Heap.swift in Sources */,
 				657CF50E2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3459293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65A754D02780B6F100D26B92 /* Regex.swift in Sources */,
 				65A754D12780B6F100D26B92 /* Input.swift in Sources */,
 				65A754D22780B6F100D26B92 /* String+Extensions.swift in Sources */,
@@ -8475,6 +8631,7 @@
 				65215E712781FC4B002A082F /* Permutations.swift in Sources */,
 				65A754E52780B6F100D26B92 /* Heap.swift in Sources */,
 				657CF50F2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A345A293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65A754E62780B6F100D26B92 /* Regex.swift in Sources */,
 				65A754E72780B6F100D26B92 /* Input.swift in Sources */,
 				65A754E82780B6F100D26B92 /* String+Extensions.swift in Sources */,
@@ -8496,6 +8653,7 @@
 				65215E2C2781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635B627791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4CA2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3415293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65D238E1276B5A18000BE890 /* Coordinate.swift in Sources */,
 				65D238EE276B5A2C000BE890 /* main.swift in Sources */,
 				65D238E2276B5A18000BE890 /* Regex.swift in Sources */,
@@ -8517,6 +8675,7 @@
 				65215E2E2781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635B827791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4CC2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3417293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65D238F7276B5B8C000BE890 /* Coordinate.swift in Sources */,
 				65D23903276B5B9D000BE890 /* main.swift in Sources */,
 				65D238F8276B5B8C000BE890 /* Regex.swift in Sources */,
@@ -8538,6 +8697,7 @@
 				65215E2F2781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635B927791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4CD2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3418293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65E4617C276A3C000006ACC9 /* Array+Extensions.swift in Sources */,
 				65E46199276A3EBA0006ACC9 /* Regex.swift in Sources */,
 				65E4617D276A3C000006ACC9 /* Input.swift in Sources */,
@@ -8559,6 +8719,7 @@
 				65215E302781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635BA27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4CE2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3419293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65E461A4276A3EEF0006ACC9 /* Array+Extensions.swift in Sources */,
 				65E461A5276A3EEF0006ACC9 /* Regex.swift in Sources */,
 				65E461A6276A3EEF0006ACC9 /* Input.swift in Sources */,
@@ -8580,6 +8741,7 @@
 				65215E312781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635BB27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4CF2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A341A293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65E461BE276A3FDA0006ACC9 /* Array+Extensions.swift in Sources */,
 				65E461BF276A3FDA0006ACC9 /* Regex.swift in Sources */,
 				65E461C0276A3FDA0006ACC9 /* Input.swift in Sources */,
@@ -8601,6 +8763,7 @@
 				65215E322781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635BC27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4D02786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A341B293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65E4628B276A407B0006ACC9 /* main.swift in Sources */,
 				65E461F7276A40520006ACC9 /* Regex.swift in Sources */,
 				65E461F8276A40520006ACC9 /* Input.swift in Sources */,
@@ -8622,6 +8785,7 @@
 				65215E332781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635BD27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4D12786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A341C293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65E46208276A40530006ACC9 /* Regex.swift in Sources */,
 				65E46209276A40530006ACC9 /* Input.swift in Sources */,
 				65E4628E276A40B50006ACC9 /* main.swift in Sources */,
@@ -8643,6 +8807,7 @@
 				65215E342781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635BE27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4D22786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A341D293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65E46219276A40530006ACC9 /* Regex.swift in Sources */,
 				65E4621A276A40530006ACC9 /* Input.swift in Sources */,
 				65E4621B276A40530006ACC9 /* String+Extensions.swift in Sources */,
@@ -8664,6 +8829,7 @@
 				65215E352781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635BF27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4D32786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A341E293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65E4622A276A40540006ACC9 /* Regex.swift in Sources */,
 				65E4622B276A40540006ACC9 /* Input.swift in Sources */,
 				65E4622C276A40540006ACC9 /* String+Extensions.swift in Sources */,
@@ -8685,6 +8851,7 @@
 				65215E362781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635C027791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4D42786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A341F293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65E4623B276A40540006ACC9 /* Regex.swift in Sources */,
 				65E4623C276A40540006ACC9 /* Input.swift in Sources */,
 				65E46297276A40C80006ACC9 /* main.swift in Sources */,
@@ -8706,6 +8873,7 @@
 				65215E372781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635C127791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4D52786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3420293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65E4629A276A40CE0006ACC9 /* main.swift in Sources */,
 				65E4624C276A40540006ACC9 /* Regex.swift in Sources */,
 				65E4624D276A40540006ACC9 /* Input.swift in Sources */,
@@ -8727,6 +8895,7 @@
 				65215E382781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635C227791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4D62786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3421293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65E4625D276A40550006ACC9 /* Regex.swift in Sources */,
 				65E4625E276A40550006ACC9 /* Input.swift in Sources */,
 				65E4629D276A40DA0006ACC9 /* main.swift in Sources */,
@@ -8748,6 +8917,7 @@
 				65215E392781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635C327791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4D72786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3422293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65E4626E276A40550006ACC9 /* Regex.swift in Sources */,
 				65E4626F276A40550006ACC9 /* Input.swift in Sources */,
 				65E46270276A40550006ACC9 /* String+Extensions.swift in Sources */,
@@ -8769,6 +8939,7 @@
 				65215E3A2781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635C427791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4D82786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3423293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65E4627F276A40550006ACC9 /* Regex.swift in Sources */,
 				65E462A3276A40E80006ACC9 /* main.swift in Sources */,
 				65E46280276A40550006ACC9 /* Input.swift in Sources */,
@@ -8790,6 +8961,7 @@
 				65215E2D2781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635B727791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4CB2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3416293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65E462AF276A41460006ACC9 /* Coordinate.swift in Sources */,
 				65E462B0276A41460006ACC9 /* Regex.swift in Sources */,
 				65E462BB276A41520006ACC9 /* main.swift in Sources */,
@@ -8811,6 +8983,7 @@
 				65E95B242788B5D7005E1AE4 /* Permutations.swift in Sources */,
 				65E95B252788B5D7005E1AE4 /* Heap.swift in Sources */,
 				65E95B262788B5D7005E1AE4 /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A346A293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65E95B272788B5D7005E1AE4 /* Regex.swift in Sources */,
 				65E95B282788B5D7005E1AE4 /* Input.swift in Sources */,
 				65E95B292788B5D7005E1AE4 /* String+Extensions.swift in Sources */,
@@ -8832,6 +9005,7 @@
 				65E95B3C2788B5D7005E1AE4 /* Permutations.swift in Sources */,
 				65E95B3D2788B5D7005E1AE4 /* Heap.swift in Sources */,
 				65E95B3E2788B5D7005E1AE4 /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A346B293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65E95B3F2788B5D7005E1AE4 /* Regex.swift in Sources */,
 				65E95B402788B5D7005E1AE4 /* Input.swift in Sources */,
 				65E95B412788B5D7005E1AE4 /* String+Extensions.swift in Sources */,
@@ -8853,6 +9027,7 @@
 				65E95B542788B5D8005E1AE4 /* Permutations.swift in Sources */,
 				65E95B552788B5D8005E1AE4 /* Heap.swift in Sources */,
 				65E95B562788B5D8005E1AE4 /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A346C293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65E95B572788B5D8005E1AE4 /* Regex.swift in Sources */,
 				65E95B582788B5D8005E1AE4 /* Input.swift in Sources */,
 				65E95B592788B5D8005E1AE4 /* String+Extensions.swift in Sources */,
@@ -8874,6 +9049,7 @@
 				65E95B6C2788B5D8005E1AE4 /* Permutations.swift in Sources */,
 				65E95B6D2788B5D8005E1AE4 /* Heap.swift in Sources */,
 				65E95BA32788B610005E1AE4 /* main.swift in Sources */,
+				872A346D293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65E95B6E2788B5D8005E1AE4 /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				65E95B6F2788B5D8005E1AE4 /* Regex.swift in Sources */,
 				65E95B702788B5D8005E1AE4 /* Input.swift in Sources */,
@@ -8895,6 +9071,7 @@
 				65E95B842788B5D9005E1AE4 /* Permutations.swift in Sources */,
 				65E95B852788B5D9005E1AE4 /* Heap.swift in Sources */,
 				65E95B862788B5D9005E1AE4 /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A346E293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65E95BA62788B618005E1AE4 /* main.swift in Sources */,
 				65E95B872788B5D9005E1AE4 /* Regex.swift in Sources */,
 				65E95B882788B5D9005E1AE4 /* Input.swift in Sources */,
@@ -8916,6 +9093,7 @@
 				65F66664278495F2004AAB5F /* Permutations.swift in Sources */,
 				65F66665278495F2004AAB5F /* Heap.swift in Sources */,
 				657CF5102786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A345B293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65F66666278495F2004AAB5F /* Regex.swift in Sources */,
 				65F66667278495F2004AAB5F /* Input.swift in Sources */,
 				65F66668278495F2004AAB5F /* String+Extensions.swift in Sources */,
@@ -8937,6 +9115,7 @@
 				65F6667C278495F2004AAB5F /* Permutations.swift in Sources */,
 				65F6667D278495F2004AAB5F /* Heap.swift in Sources */,
 				657CF5112786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A345C293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65F6667E278495F2004AAB5F /* Regex.swift in Sources */,
 				65F6667F278495F2004AAB5F /* Input.swift in Sources */,
 				65F66680278495F2004AAB5F /* String+Extensions.swift in Sources */,
@@ -8958,6 +9137,7 @@
 				65F66694278495F3004AAB5F /* Permutations.swift in Sources */,
 				65F66695278495F3004AAB5F /* Heap.swift in Sources */,
 				657CF5122786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A345D293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65F66696278495F3004AAB5F /* Regex.swift in Sources */,
 				65F66697278495F3004AAB5F /* Input.swift in Sources */,
 				65F66698278495F3004AAB5F /* String+Extensions.swift in Sources */,
@@ -8979,6 +9159,7 @@
 				65F666AC278495F3004AAB5F /* Permutations.swift in Sources */,
 				65F666AD278495F3004AAB5F /* Heap.swift in Sources */,
 				657CF5132786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A345E293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65F666AE278495F3004AAB5F /* Regex.swift in Sources */,
 				65F666AF278495F3004AAB5F /* Input.swift in Sources */,
 				65F666B0278495F3004AAB5F /* String+Extensions.swift in Sources */,
@@ -9000,6 +9181,7 @@
 				65F666C4278495F4004AAB5F /* Permutations.swift in Sources */,
 				65F666C5278495F4004AAB5F /* Heap.swift in Sources */,
 				657CF5142786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A345F293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65F666C6278495F4004AAB5F /* Regex.swift in Sources */,
 				65F666C7278495F4004AAB5F /* Input.swift in Sources */,
 				65F666C8278495F4004AAB5F /* String+Extensions.swift in Sources */,
@@ -9021,6 +9203,7 @@
 				65215E3B2781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635C527791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4D92786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3424293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65F90C18276B289F00F6C466 /* Regex.swift in Sources */,
 				65F90C1A276B289F00F6C466 /* Input.swift in Sources */,
 				65F90C25276B28A800F6C466 /* main.swift in Sources */,
@@ -9042,6 +9225,7 @@
 				65215E3C2781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635C627791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4DA2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3425293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65F90C53276B511F00F6C466 /* Regex.swift in Sources */,
 				65F90CE8276B517E00F6C466 /* main.swift in Sources */,
 				65F90C54276B511F00F6C466 /* Input.swift in Sources */,
@@ -9063,6 +9247,7 @@
 				65215E3D2781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635C727791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4DB2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3426293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65F90C64276B512000F6C466 /* Regex.swift in Sources */,
 				65F90CED276B518A00F6C466 /* main.swift in Sources */,
 				65F90C65276B512000F6C466 /* Input.swift in Sources */,
@@ -9093,6 +9278,7 @@
 				65F90C78276B512100F6C466 /* String+Extensions.swift in Sources */,
 				65F90C79276B512100F6C466 /* Int+Extensions.swift in Sources */,
 				65215E3E2781FC4B002A082F /* Permutations.swift in Sources */,
+				872A3427293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65C779B22779011A00C72EDA /* Dijkstra.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -9106,6 +9292,7 @@
 				65215E3F2781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635C927791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4DD2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3428293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65F90C86276B512500F6C466 /* Regex.swift in Sources */,
 				65F90C87276B512500F6C466 /* Input.swift in Sources */,
 				65F90C89276B512500F6C466 /* String+Extensions.swift in Sources */,
@@ -9127,6 +9314,7 @@
 				65215E402781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635CA27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4DE2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A3429293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65F90C97276B512500F6C466 /* Regex.swift in Sources */,
 				65F90C98276B512500F6C466 /* Input.swift in Sources */,
 				65F90CF4276B519D00F6C466 /* main.swift in Sources */,
@@ -9148,6 +9336,7 @@
 				65215E412781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635CB27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4DF2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A342A293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65F90CA8276B512600F6C466 /* Regex.swift in Sources */,
 				65F90CA9276B512600F6C466 /* Input.swift in Sources */,
 				65F90CAB276B512600F6C466 /* String+Extensions.swift in Sources */,
@@ -9169,6 +9358,7 @@
 				65215E422781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635CC27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4E02786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A342B293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65F90CB9276B512700F6C466 /* Regex.swift in Sources */,
 				65F90CFA276B51AD00F6C466 /* main.swift in Sources */,
 				65F90CBA276B512700F6C466 /* Input.swift in Sources */,
@@ -9190,6 +9380,7 @@
 				65215E432781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635CD27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4E12786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A342C293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65F90CCA276B512700F6C466 /* Regex.swift in Sources */,
 				65F90CCB276B512700F6C466 /* Input.swift in Sources */,
 				65F90CCD276B512700F6C466 /* String+Extensions.swift in Sources */,
@@ -9211,6 +9402,7 @@
 				65215E442781FC4B002A082F /* Permutations.swift in Sources */,
 				65D635CE27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4E22786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
+				872A342D293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				65F90CDB276B512700F6C466 /* Regex.swift in Sources */,
 				65F90CDC276B512700F6C466 /* Input.swift in Sources */,
 				65F90CDE276B512700F6C466 /* String+Extensions.swift in Sources */,
@@ -9232,6 +9424,7 @@
 				87258CEB2938A1AB00418B26 /* Permutations.swift in Sources */,
 				87258CEC2938A1AB00418B26 /* AStar.swift in Sources */,
 				87258CED2938A1AB00418B26 /* Dijkstra.swift in Sources */,
+				872A346F293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				87258CEE2938A1AC00418B26 /* Array+Extensions.swift in Sources */,
 				87258CEF2938A1AC00418B26 /* Int+Extensions.swift in Sources */,
 				87258CF02938A1AC00418B26 /* Sorted+Extensions.swift in Sources */,
@@ -9253,6 +9446,7 @@
 				87258D5C2938A4C600418B26 /* Permutations.swift in Sources */,
 				87258D5D2938A4C600418B26 /* AStar.swift in Sources */,
 				87258D5E2938A4C600418B26 /* Dijkstra.swift in Sources */,
+				872A3470293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				87258D5F2938A4C600418B26 /* Array+Extensions.swift in Sources */,
 				87258D602938A4C600418B26 /* Int+Extensions.swift in Sources */,
 				87258D612938A4C600418B26 /* Sorted+Extensions.swift in Sources */,
@@ -9274,6 +9468,7 @@
 				87258D742938A4CE00418B26 /* Permutations.swift in Sources */,
 				87258D752938A4CE00418B26 /* AStar.swift in Sources */,
 				87258D762938A4CE00418B26 /* Dijkstra.swift in Sources */,
+				872A3471293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				87258D772938A4CE00418B26 /* Array+Extensions.swift in Sources */,
 				87258D782938A4CE00418B26 /* Int+Extensions.swift in Sources */,
 				87258D792938A4CE00418B26 /* Sorted+Extensions.swift in Sources */,
@@ -9295,6 +9490,7 @@
 				87258D8C2938A4D700418B26 /* Permutations.swift in Sources */,
 				87258D8D2938A4D700418B26 /* AStar.swift in Sources */,
 				87258D8E2938A4D700418B26 /* Dijkstra.swift in Sources */,
+				872A3472293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				87258D8F2938A4D700418B26 /* Array+Extensions.swift in Sources */,
 				87258D902938A4D700418B26 /* Int+Extensions.swift in Sources */,
 				87258D912938A4D700418B26 /* Sorted+Extensions.swift in Sources */,
@@ -9316,6 +9512,7 @@
 				87258DA42938A4DC00418B26 /* Permutations.swift in Sources */,
 				87258DA52938A4DC00418B26 /* AStar.swift in Sources */,
 				87258DA62938A4DC00418B26 /* Dijkstra.swift in Sources */,
+				872A3473293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				87258DA72938A4DC00418B26 /* Array+Extensions.swift in Sources */,
 				87258DA82938A4DC00418B26 /* Int+Extensions.swift in Sources */,
 				87258DA92938A4DC00418B26 /* Sorted+Extensions.swift in Sources */,
@@ -9337,6 +9534,7 @@
 				87258DBC2938A4E000418B26 /* Permutations.swift in Sources */,
 				87258DBD2938A4E000418B26 /* AStar.swift in Sources */,
 				87258DBE2938A4E000418B26 /* Dijkstra.swift in Sources */,
+				872A3474293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				87258DBF2938A4E000418B26 /* Array+Extensions.swift in Sources */,
 				87258DC02938A4E000418B26 /* Int+Extensions.swift in Sources */,
 				87258DC12938A4E000418B26 /* Sorted+Extensions.swift in Sources */,
@@ -9358,6 +9556,7 @@
 				87258DD42938A4E500418B26 /* Permutations.swift in Sources */,
 				87258DD52938A4E500418B26 /* AStar.swift in Sources */,
 				87258DD62938A4E500418B26 /* Dijkstra.swift in Sources */,
+				872A3475293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				87258DD72938A4E500418B26 /* Array+Extensions.swift in Sources */,
 				87258DD82938A4E500418B26 /* Int+Extensions.swift in Sources */,
 				87258DD92938A4E500418B26 /* Sorted+Extensions.swift in Sources */,
@@ -9379,6 +9578,7 @@
 				87258DEC2938A4EA00418B26 /* Permutations.swift in Sources */,
 				87258DED2938A4EA00418B26 /* AStar.swift in Sources */,
 				87258DEE2938A4EA00418B26 /* Dijkstra.swift in Sources */,
+				872A3476293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				87258DEF2938A4EA00418B26 /* Array+Extensions.swift in Sources */,
 				87258DF02938A4EA00418B26 /* Int+Extensions.swift in Sources */,
 				87258DF12938A4EA00418B26 /* Sorted+Extensions.swift in Sources */,
@@ -9400,6 +9600,7 @@
 				87258E042938A4EF00418B26 /* Permutations.swift in Sources */,
 				87258E052938A4EF00418B26 /* AStar.swift in Sources */,
 				87258E062938A4EF00418B26 /* Dijkstra.swift in Sources */,
+				872A3477293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				87258E072938A4EF00418B26 /* Array+Extensions.swift in Sources */,
 				87258E082938A4EF00418B26 /* Int+Extensions.swift in Sources */,
 				87258E092938A4EF00418B26 /* Sorted+Extensions.swift in Sources */,
@@ -9421,6 +9622,7 @@
 				87258E1C2938A4F400418B26 /* Permutations.swift in Sources */,
 				87258E1D2938A4F400418B26 /* AStar.swift in Sources */,
 				87258E1E2938A4F400418B26 /* Dijkstra.swift in Sources */,
+				872A3478293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
 				87258E1F2938A4F400418B26 /* Array+Extensions.swift in Sources */,
 				87258E202938A4F400418B26 /* Int+Extensions.swift in Sources */,
 				87258E212938A4F400418B26 /* Sorted+Extensions.swift in Sources */,
