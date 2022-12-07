@@ -25,16 +25,16 @@ func main() throws {
     })
 
     for m in moves {
-        let moveFrom = m[1]
-        let moveTo = m[2]
+        let moveFrom = m[1]-1
+        let moveTo = m[2]-1
         let moveAmount = m[0]
 
         var toAppend: [String] = []
         for _ in 0..<moveAmount {
-            let current = stacks[moveFrom-1].popLast()!
+            let current = stacks[moveFrom].popLast()!
             toAppend.insert(current, at: 0)
         }
-        stacks[moveTo-1].append(contentsOf: toAppend)
+        stacks[moveTo].append(contentsOf: toAppend)
     }
 
     print(stacks.map({ $0[$0.count-1] }).joined())
