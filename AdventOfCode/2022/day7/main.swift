@@ -1,19 +1,5 @@
 import Foundation
 
-enum Command {
-    case upDir
-    case changeDir(name: String)
-    case list
-
-    static func initialise(string: String) -> Command {
-        if string.contains("..") { return .upDir }
-        if string.contains("cd") {
-            return .changeDir(name: String(string.split(separator: " ").last!))
-        }
-        return .list
-    }
-}
-
 func main() throws {
     let input: [String] = try readInput(fromTestFile: false)
 
@@ -47,6 +33,18 @@ func main() throws {
     let deletionNeeded = 30000000 - unusedSpace
     let deletionCandidates = sizes.filter({ $0 >= deletionNeeded })
     print(deletionCandidates.min()!)
+}
+
+enum Command {
+    case upDir
+    case changeDir(name: String)
+    case list
+
+    static func initialise(string: String) -> Command {
+        if string.contains("..") { return .upDir }
+        if string.contains("cd") { return .changeDir(name: String(string.split(separator: " ").last!)) }
+        return .list
+    }
 }
 
 protocol Entity {
