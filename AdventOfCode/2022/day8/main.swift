@@ -1,5 +1,3 @@
-import Foundation
-
 func main() throws {
     let input: [String] = try readInput(fromTestFile: false)
     let grid = input.map { line in line.map { Int($0)! } }
@@ -16,7 +14,7 @@ func main() throws {
 
             var viewingDistanceTotal = 1
             for b in [previousY, previousX, nextY, nextX] {
-                if treeIsVisible(value, blockers: b) {
+                if value > b.max() ?? 0 {
                     visible += 1
                     for b2 in [previousY, previousX, nextY, nextX] {
                         viewingDistanceTotal *= viewingDistance(value, blockers: b2)
@@ -33,16 +31,11 @@ func main() throws {
     print(bestVD)
 }
 
-private func treeIsVisible(_ tree: Int, blockers: [Int]) -> Bool {
-    !blockers.contains(where: { $0 >= tree })
-}
-
 private func viewingDistance(_ tree: Int, blockers: [Int]) -> Int {
-    if blockers.count == 0 { return 0 }
-    if let firstBlockerIndex = blockers.firstIndex(where: { $0 >= tree }) {
-        return firstBlockerIndex + 1
+    guard let firstBlockerIndex = blockers.firstIndex(where: { $0 >= tree }) else {
+        return blockers.count
     }
-    return blockers.count
+    return firstBlockerIndex + 1
 }
 
 try main()
