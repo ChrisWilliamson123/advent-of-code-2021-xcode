@@ -20,7 +20,7 @@ extension String {
         return self[0 ..< max(0, toIndex)]
     }
 
-    subscript (r: Range<Int>) -> String {
+    subscript(r: Range<Int>) -> String {
         let range = Range(uncheckedBounds: (lower: max(0, min(length, r.lowerBound)),
                                             upper: min(length, max(0, r.upperBound))))
         let start = index(startIndex, offsetBy: range.lowerBound)
@@ -28,9 +28,9 @@ extension String {
         return String(self[start ..< end])
     }
 
-    subscript (r: ClosedRange<Int>) -> String {
+    subscript(r: ClosedRange<Int>) -> String {
         let range = ClosedRange(uncheckedBounds: (lower: max(0, min(length, r.lowerBound)),
-                                            upper: min(length, max(0, r.upperBound))))
+                                                  upper: min(length, max(0, r.upperBound))))
         let start = index(startIndex, offsetBy: range.lowerBound)
         let end = index(start, offsetBy: range.upperBound - range.lowerBound)
         return String(self[start ... end])

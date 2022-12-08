@@ -40,6 +40,10 @@ struct Coordinate: Hashable, CustomStringConvertible {
         return adjacents
     }
 
+    /**
+     Gets the adjacent coordinates that exist within the bounds of the provided grid.
+     Can include the current coodinate if desired.
+     */
     func getAdjacents<T>(in grid: [[T]], includingSelf: Bool = false) -> [Coordinate] {
         var adjacents: [Coordinate] = []
         for x in x-1...x+1 where x >= 0 && x < grid[0].count {
@@ -52,6 +56,10 @@ struct Coordinate: Hashable, CustomStringConvertible {
         return adjacents
     }
 
+    /**
+     Gets the adjacent coordinates that exist within the provided closed range bounds.
+     Can include the current coodinate if desired.
+     */
     func getAdjacents(xBounds: ClosedRange<Int>, yBounds: ClosedRange<Int>, includingSelf: Bool = false) -> [Coordinate] {
         var adjacents: [Coordinate] = []
         for x in x-1...x+1 where x >= xBounds.lowerBound && x <= xBounds.upperBound {
@@ -64,10 +72,16 @@ struct Coordinate: Hashable, CustomStringConvertible {
         return adjacents
     }
 
+    /**
+     Gets the four axial adjacent coordinates
+     */
     func getAxialAdjacents() -> [Coordinate] {
         [Coordinate(x-1, y), Coordinate(x+1, y), Coordinate(x, y-1), Coordinate(x, y+1)]
     }
 
+    /**
+     Gets the four axial adjacent coordinates that exist within the bounds of the provided grid. Can include self if self is on a bound line.
+     */
     func getAxialAdjacents<T>(in grid: [[T]]) -> Set<Coordinate> {
         [
             Coordinate(max(0, x-1), y),
