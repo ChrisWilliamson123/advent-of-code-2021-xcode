@@ -16,7 +16,7 @@ func main() throws {
     for m in moves {
         let adjustment = adjustment[m[0]]!
         for _ in 0..<Int(m[1])! {
-            ropePositions[0] = ropePositions[0] + adjustment
+            ropePositions[0] += adjustment
 
             for j in 1..<ropePositions.count {
                 let adjacents = ropePositions[j-1].getAdjacentsIncludingSelf()
@@ -24,9 +24,8 @@ func main() throws {
                     let prev = ropePositions[j-1]
                     let curr = ropePositions[j]
                     let diff = Coordinate(prev.x - curr.x, prev.y - curr.y)
-                    let getNormalisedValue: ((Int) -> Int) = { $0 == 0 ? 0 : $0 / abs($0) }
-                    let normalised = Coordinate(getNormalisedValue(diff.x), getNormalisedValue(diff.y))
-                    ropePositions[j] = ropePositions[j] + normalised
+                    let normalised = diff.normalised
+                    ropePositions[j] += normalised
 
                     visited[j]?.insert(ropePositions[j])
                 }
