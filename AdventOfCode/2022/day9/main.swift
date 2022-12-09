@@ -4,37 +4,55 @@ func main() throws {
     let input: [String] = try readInput(fromTestFile: false)
     let moves = input.map { i in i.split(separator: " ").map { String($0) } }
 
-    var ropePositions: [Coordinate] = Array.init(repeating: Coordinate(0,0), count: 10)
     let adjustment = [
         "U": Coordinate(0, -1),
         "D": Coordinate(0, 1),
         "L": Coordinate(-1, 0),
         "R": Coordinate(1, 0),
     ]
-    var visited: [Int: Set<Coordinate>] = (1...9).reduce(into: [:], { $0[$1] = [Coordinate(0, 0)] })
 
-    for m in moves {
-        let adjustment = adjustment[m[0]]!
-        for _ in 0..<Int(m[1])! {
-            ropePositions[0] += adjustment
+    let rope = Rope()
 
-            for j in 1..<ropePositions.count {
-                let adjacents = ropePositions[j-1].getAdjacentsIncludingSelf()
-                if !adjacents.contains(ropePositions[j]) {
-                    let prev = ropePositions[j-1]
-                    let curr = ropePositions[j]
-                    let diff = Coordinate(prev.x - curr.x, prev.y - curr.y)
-                    let normalised = diff.normalised
-                    ropePositions[j] += normalised
+    moves.forEach({ rope.performMove(adjustment: adjustment[$0[0]]!, amount: Int($0[1])!) })
 
-                    visited[j]?.insert(ropePositions[j])
-                }
-            }
+    print(rope.getVisitedCoordinatesCount(for: 1))
+    print(rope.getVisitedCoordinatesCount(for: 9))
+}
+
+class Rope {
+    private var knotPositions = Array.init(repeating: Coordinate(0, 0), count: 10)
+    private var visitedCoordinates: [Int: Set<Coordinate>] = (1...9).reduce(into: [:], { $0[$1] = [Coordinate(0, 0)] })
+
+    func performMove(adjustment: Coordinate, amount: Int) {
+        for _ in 0..<amount {
+            knotPositions[0] += adjustment
+            moveKnots()
         }
     }
 
-    print(visited[1]!.count)
-    print(visited[9]!.count)
+    private func moveKnots() {
+        for knotIndex in 1..<knotPositions.count where shouldMoveKnot(index: knotIndex) {
+            moveKnot(at: knotIndex)
+        }
+    }
+
+    private func shouldMoveKnot(index: Int) -> Bool {
+        let previousKnotPositions = knotPositions[index-1]
+        return !previousKnotPositions.adjacents.contains(knotPositions[index])
+    }
+
+    private func moveKnot(at index: Int) {
+        let prev = knotPositions[index-1]
+        let curr = knotPositions[index]
+        let diff = Coordinate(prev.x - curr.x, prev.y - curr.y)
+        let normalised = diff.normalised
+        knotPositions[index] += normalised
+        visitedCoordinates[index]?.insert(knotPositions[index])
+    }
+
+    func getVisitedCoordinatesCount(for knotIndex: Int) -> Int {
+        visitedCoordinates[knotIndex]!.count
+    }
 }
 
 try main()
