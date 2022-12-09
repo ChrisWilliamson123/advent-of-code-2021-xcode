@@ -30,6 +30,10 @@ class Rope {
         }
     }
 
+    func getVisitedCoordinatesCount(for knotIndex: Int) -> Int {
+        visitedCoordinates[knotIndex]!.count
+    }
+
     private func moveKnots() {
         for knotIndex in 1..<knotPositions.count where shouldMoveKnot(index: knotIndex) {
             moveKnot(at: knotIndex)
@@ -48,10 +52,6 @@ class Rope {
         let normalised = diff.normalised
         knotPositions[index] += normalised
         visitedCoordinates[index]?.insert(knotPositions[index])
-    }
-
-    func getVisitedCoordinatesCount(for knotIndex: Int) -> Int {
-        visitedCoordinates[knotIndex]!.count
     }
 }
 
