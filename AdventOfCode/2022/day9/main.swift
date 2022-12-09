@@ -2,7 +2,7 @@ import Foundation
 
 func main() throws {
     let input: [String] = try readInput(fromTestFile: false)
-    let moves = input.map { i in i.split(separator: " ").map { String($0) } }
+    let moves = input.map { $0.components(separatedBy: " ") }
 
     let adjustment = [
         "U": Coordinate(0, -1),
