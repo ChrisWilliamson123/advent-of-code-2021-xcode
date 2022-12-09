@@ -18,6 +18,12 @@ struct Coordinate: Hashable, CustomStringConvertible {
         self.y = y
     }
 
+    /// Normalises a coordinate to contain either -1, 0 or 1 for x and y values
+    var normalised: Coordinate {
+        let getNormalisedValue: ((Int) -> Int) = { $0 == 0 ? 0 : $0 / abs($0) }
+        return Coordinate(getNormalisedValue(x), getNormalisedValue(y))
+    }
+
     var adjacents: [Coordinate] {
         var adjacents: [Coordinate] = []
         for x in x-1...x+1 {
@@ -105,5 +111,9 @@ struct Coordinate: Hashable, CustomStringConvertible {
 
     static func +(lhs: Coordinate, rhs: Coordinate) -> Coordinate {
         Coordinate(lhs.x + rhs.x, lhs.y + rhs.y)
+    }
+
+    static func +=(lhs: inout Coordinate, rhs: Coordinate) {
+        lhs = Coordinate(lhs.x + rhs.x, lhs.y + rhs.y)
     }
 }
