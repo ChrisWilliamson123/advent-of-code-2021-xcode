@@ -11,7 +11,7 @@ func main() throws {
         "L": Coordinate(-1, 0),
         "R": Coordinate(1, 0),
     ]
-    var visited: [Int: Set<Coordinate>] = (1...9).reduce(into: [:], { $0[$1] = [] })
+    var visited: [Int: Set<Coordinate>] = (1...9).reduce(into: [:], { $0[$1] = [Coordinate(0, 0)] })
 
     for m in moves {
         let adjustment = adjustment[m[0]]!
@@ -24,7 +24,8 @@ func main() throws {
                     let prev = ropePositions[j-1]
                     let curr = ropePositions[j]
                     let diff = Coordinate(prev.x - curr.x, prev.y - curr.y)
-                    let normalised = Coordinate(diff.x == 0 ? 0 :diff.x / abs(diff.x), diff.y == 0 ? 0 : diff.y / abs(diff.y))
+                    let getNormalisedValue: ((Int) -> Int) = { $0 == 0 ? 0 : $0 / abs($0) }
+                    let normalised = Coordinate(getNormalisedValue(diff.x), getNormalisedValue(diff.y))
                     ropePositions[j] = ropePositions[j] + normalised
 
                     visited[j]?.insert(ropePositions[j])
