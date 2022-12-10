@@ -1606,7 +1606,6 @@
 		87258E452938A5DE00418B26 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87258D4B2938A47800418B26 /* main.swift */; };
 		87258E462938A5E100418B26 /* test_input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 87258D492938A47800418B26 /* test_input.txt */; };
 		87258E472938A5E300418B26 /* input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 87258D4A2938A47800418B26 /* input.txt */; };
-		87258E482938A5EC00418B26 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87258D4B2938A47800418B26 /* main.swift */; };
 		87258E492938A5EE00418B26 /* test_input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 87258D2D2938A47500418B26 /* test_input.txt */; };
 		87258E4A2938A5F000418B26 /* input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 87258D2E2938A47500418B26 /* input.txt */; };
 		872A3415293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
@@ -1709,6 +1708,7 @@
 		872A3476293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
 		872A3477293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
 		872A3478293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
+		8742B28929448AC300F6F49F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87258D2F2938A47500418B26 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -9617,6 +9617,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8742B28929448AC300F6F49F /* main.swift in Sources */,
 				87258E1A2938A4F400418B26 /* Heap.swift in Sources */,
 				87258E1B2938A4F400418B26 /* Stack.swift in Sources */,
 				87258E1C2938A4F400418B26 /* Permutations.swift in Sources */,
@@ -9631,7 +9632,6 @@
 				87258E242938A4F400418B26 /* Coordinate.swift in Sources */,
 				87258E252938A4F400418B26 /* Input.swift in Sources */,
 				87258E262938A4F400418B26 /* Regex.swift in Sources */,
-				87258E482938A5EC00418B26 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
