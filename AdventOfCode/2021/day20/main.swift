@@ -97,5 +97,5 @@ private func getBoundsToCheck(from litPixels: Set<Coordinate>) -> (yBounds: Clos
     return ((minY-1)...(maxY+1),(minX-1)...(maxX+1))
 }
 
-try main()
+Timer.time(main)
 

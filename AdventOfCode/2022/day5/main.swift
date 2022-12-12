@@ -40,4 +40,4 @@ func main() throws {
     print(stacks.map({ $0[$0.count-1] }).joined())
 }
 
-try main()
+Timer.time(main)

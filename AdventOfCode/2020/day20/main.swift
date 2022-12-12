@@ -321,5 +321,5 @@ enum Edge: String, CustomStringConvertible {
     var description: String { self.rawValue }
 }
 
-try main()
+Timer.time(main)
 

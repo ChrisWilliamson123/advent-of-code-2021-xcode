@@ -81,5 +81,5 @@ func main() throws {
     print("Part 2:", result.max()!)
 }
 
-try main()
+Timer.time(main)
 

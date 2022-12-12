@@ -217,5 +217,5 @@ struct Game: Hashable {
     }
 }
 
-try main()
+Timer.time(main)
 

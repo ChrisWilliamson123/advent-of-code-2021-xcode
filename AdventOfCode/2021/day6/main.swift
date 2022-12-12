@@ -45,4 +45,4 @@ class FishGroup {
     }
 }
 
-try main()
+Timer.time(main)

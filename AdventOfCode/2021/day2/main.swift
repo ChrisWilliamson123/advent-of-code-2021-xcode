@@ -79,4 +79,4 @@ class Submarine {
     }
 }
 
-try main()
+Timer.time(main)

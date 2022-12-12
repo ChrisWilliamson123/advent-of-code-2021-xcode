@@ -55,4 +55,4 @@ struct Vent {
     }
 }
 
-try main()
+Timer.time(main)

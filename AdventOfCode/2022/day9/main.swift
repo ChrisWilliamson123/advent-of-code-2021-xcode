@@ -55,4 +55,4 @@ class Rope {
     }
 }
 
-try main()
+Timer.time(main)

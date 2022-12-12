@@ -17,4 +17,4 @@ func main() throws {
     print("Part one:", floor)
 }
 
-try main()
+Timer.time(main)

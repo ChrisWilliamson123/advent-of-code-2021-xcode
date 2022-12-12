@@ -35,4 +35,4 @@ private func tick(seq: [Int]) -> [Int] {
     return newSequence
 }
 
-try main()
+Timer.time(main)

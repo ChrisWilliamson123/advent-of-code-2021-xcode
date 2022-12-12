@@ -69,4 +69,4 @@ private func printPassword(_ password: [Int]) {
     print(password.map({ intToChar[$0]! }).joined())
 }
 
-try main()
+Timer.time(main)

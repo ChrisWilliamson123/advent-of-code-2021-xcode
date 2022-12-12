@@ -27,7 +27,7 @@ func main() throws {
     print("Part 2:", processor.accumulator)
 }
 
-try main()
+Timer.time(main)
 
 class Processor {
     typealias Instruction = (operation: String, value: Int)

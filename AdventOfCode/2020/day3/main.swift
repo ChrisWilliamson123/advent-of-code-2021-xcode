@@ -66,4 +66,4 @@ struct Coordinate: Hashable {
     let y: Int
 }
 
-try main()
+Timer.time(main)

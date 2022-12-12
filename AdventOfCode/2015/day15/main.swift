@@ -50,4 +50,4 @@ struct Ingredient {
     let calories: Int
 }
 
-try main()
+Timer.time(main)

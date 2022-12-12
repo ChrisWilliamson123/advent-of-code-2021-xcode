@@ -79,4 +79,4 @@ private func getMostCommonCharacter(from characters: [Character]) -> Character {
     return mostFrequent as! Character
 }
 
-try main()
+Timer.time(main)

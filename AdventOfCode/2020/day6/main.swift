@@ -47,4 +47,4 @@ class Group {
     }
 }
 
-try main()
+Timer.time(main)

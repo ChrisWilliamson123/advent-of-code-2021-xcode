@@ -134,4 +134,4 @@ class SegmentDecoder {
     }
 }
 
-try main()
+Timer.time(main)

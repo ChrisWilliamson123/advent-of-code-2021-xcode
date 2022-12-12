@@ -59,4 +59,4 @@ func main() throws {
     print(a, b)
 }
 
-try main()
+Timer.time(main)

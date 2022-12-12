@@ -40,4 +40,4 @@ private func getRanges(from pairs: [String]) -> [ClosedRange<Int>] {
     return ranges
 }
 
-try main()
+Timer.time(main)

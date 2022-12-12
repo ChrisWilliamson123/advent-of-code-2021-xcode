@@ -33,4 +33,4 @@ private func viewingDistance(_ tree: Int, blockers: [Int]) -> Int {
     return firstBlockerIndex + 1
 }
 
-try main()
+Timer.time(main)

@@ -43,4 +43,4 @@ struct Santa {
     }
 }
 
-try main()
+Timer.time(main)

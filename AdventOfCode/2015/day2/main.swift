@@ -29,4 +29,4 @@ struct Present {
     }
 }
 
-try main()
+Timer.time(main)

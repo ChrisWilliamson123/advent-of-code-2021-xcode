@@ -77,4 +77,4 @@ func main() throws {
     cpu.printScreen()
 }
 
-try main()
+Timer.time(main)

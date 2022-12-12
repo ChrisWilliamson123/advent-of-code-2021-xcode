@@ -97,4 +97,4 @@ class LightGrid {
     }
 }
 
-try main()
+Timer.time(main)

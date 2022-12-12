@@ -152,4 +152,4 @@ extension StringProtocol {
     var asciiValue: Int { asciiValues.first! }
 }
 
-try main()
+Timer.time(main)

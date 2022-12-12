@@ -21,4 +21,4 @@ func getIndexOfFirstUniqueChars(length: Int, stream: String) -> Int {
     return -1
 }
 
-try main()
+Timer.time(main)

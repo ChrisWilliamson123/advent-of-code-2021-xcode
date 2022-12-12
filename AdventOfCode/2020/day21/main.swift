@@ -43,5 +43,5 @@ func main() throws {
     print("Part two:", allergensToPotentialIngredients.sorted(by: { $0.key < $1.key }).map({ $0.value.first! }).joined(separator: ","))
 }
 
-try main()
+Timer.time(main)
 

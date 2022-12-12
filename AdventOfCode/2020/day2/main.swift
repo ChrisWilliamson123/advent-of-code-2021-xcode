@@ -83,4 +83,4 @@ extension Bool {
     }
 }
 
-try main()
+Timer.time(main)

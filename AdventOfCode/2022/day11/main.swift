@@ -88,4 +88,4 @@ private func buildMonkey(_ input: String) -> Monkey {
     return Monkey(items: items, operation: operation, test: test, trueTarget: trueTarget, falseTarget: falseTarget, divisor: divisor)
 }
 
-try main()
+Timer.time(main)

@@ -106,4 +106,4 @@ func main() throws {
     print("Part two:", recursive.getWinningScore())
 }
 
-try main()
+Timer.time(main)

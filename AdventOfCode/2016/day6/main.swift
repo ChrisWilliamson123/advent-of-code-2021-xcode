@@ -10,4 +10,4 @@ func main() throws {
     print("Part two:", String(counts.map({ $0.min(by: { $0.value < $1.value })!.key })))
 }
 
-try main()
+Timer.time(main)

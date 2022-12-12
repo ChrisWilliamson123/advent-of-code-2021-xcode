@@ -47,4 +47,4 @@ private func tick(lights: Set<Coordinate>) -> Set<Coordinate> {
     return new
 }
 
-try main()
+Timer.time(main)

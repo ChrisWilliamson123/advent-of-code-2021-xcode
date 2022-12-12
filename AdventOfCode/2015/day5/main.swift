@@ -76,4 +76,4 @@ struct NString2 {
     }
 }
 
-try main()
+Timer.time(main)

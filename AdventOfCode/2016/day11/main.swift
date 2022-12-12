@@ -190,4 +190,4 @@ struct Building: Hashable {
     }
 }
 
-try main()
+Timer.time(main)

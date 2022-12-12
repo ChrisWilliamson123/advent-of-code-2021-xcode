@@ -73,7 +73,7 @@ func main() throws {
     print(wizard.health, boss.health, manaSpent)
 }
 
-try main()
+Timer.time(main)
 
 class Effect: CustomStringConvertible {
     let type: EffectType
