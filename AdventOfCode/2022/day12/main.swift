@@ -1,7 +1,6 @@
 import Foundation
 
 func main() throws {
-//    let start = CFAbsoluteTimeGetCurrent()
     let input: [String] = try readInput(fromTestFile: false)
 
     var grid: [Coordinate: Character] = [:]
