@@ -122,4 +122,4 @@ private func buildBingoBoards(from input: [String]) -> [BingoBoard] {
     })
 }
 
-try main()
+Timer.time(main)

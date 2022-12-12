@@ -102,5 +102,5 @@ struct Instruction {
     let zRange: ClosedRange<Int>
 }
 
-try main()
+Timer.time(main)
 

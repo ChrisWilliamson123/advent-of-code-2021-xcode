@@ -20,4 +20,4 @@ func main() throws {
     print("Part two:", house)
 }
 
-try main()
+Timer.time(main)

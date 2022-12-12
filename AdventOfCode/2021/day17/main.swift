@@ -41,5 +41,5 @@ func main() throws {
     print("Part 2:", valids.count)
 }
 
-try main()
+Timer.time(main)
 

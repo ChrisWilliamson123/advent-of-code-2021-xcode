@@ -31,4 +31,4 @@ struct Triangle {
     }
 }
 
-try main()
+Timer.time(main)

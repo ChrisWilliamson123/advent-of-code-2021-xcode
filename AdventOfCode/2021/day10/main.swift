@@ -61,4 +61,4 @@ private func getPointsForCloser(_ character: Character) -> Int {
     [ ")": 1, "]": 2, "}": 3, ">": 4 ][character]!
 }
 
-try main()
+Timer.time(main)

@@ -11,4 +11,4 @@ func main() throws {
     print(topThreeSum)
 }
 
-try main()
+Timer.time(main)

@@ -41,4 +41,4 @@ private func getColumn(using columnString: String) -> Int {
     return Int(binaryString, radix: 2)!
 }
 
-try main()
+Timer.time(main)

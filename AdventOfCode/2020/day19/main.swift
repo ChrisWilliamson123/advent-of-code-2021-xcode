@@ -89,5 +89,5 @@ func main() throws {
 //    print(notFullMatches)
 }
 
-try main()
+Timer.time(main)
 

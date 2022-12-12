@@ -41,4 +41,4 @@ private func getExpansionResult(for inputPairs: [String], ticks: Int, insertionR
     return mostCommon - leastCommon
 }
 
-try main()
+Timer.time(main)

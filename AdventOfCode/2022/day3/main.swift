@@ -20,4 +20,4 @@ func getCommonValue(in rucksacks: [String]) -> Int {
     String(rucksacks[0].first(where: { rucksacks[1].contains($0) && rucksacks[2].contains($0) })!).asciiNormalised
 }
 
-try main()
+Timer.time(main)

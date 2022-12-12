@@ -111,4 +111,4 @@ struct Player: Equatable {
     }
 }
 
-try main()
+Timer.time(main)

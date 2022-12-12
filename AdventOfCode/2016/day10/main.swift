@@ -61,4 +61,4 @@ struct Instruction {
     }
 }
 
-try main()
+Timer.time(main)

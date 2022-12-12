@@ -33,4 +33,4 @@ func main() throws {
     print(expand(input: input, count: 1))
 }
 
-try main()
+Timer.time(main)

@@ -81,4 +81,4 @@ func main() throws {
     print("Part two:", partTwoGame.valuesToNodes[1]!.next!.value * partTwoGame.valuesToNodes[1]!.next!.next!.value)
 }
 
-try main()
+Timer.time(main)

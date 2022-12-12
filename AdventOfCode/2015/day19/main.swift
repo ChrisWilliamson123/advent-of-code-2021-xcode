@@ -80,4 +80,4 @@ extension String {
     }
 }
 
-try main()
+Timer.time(main)

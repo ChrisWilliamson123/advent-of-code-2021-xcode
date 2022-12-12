@@ -117,4 +117,4 @@ struct Instruction: Hashable {
     }
 }
 
-try main()
+Timer.time(main)

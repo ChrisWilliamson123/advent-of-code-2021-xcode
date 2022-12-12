@@ -114,5 +114,5 @@ private func matches(for regex: String, in text: String) -> [String] {
     }
 }
 
-try main()
+Timer.time(main)
 

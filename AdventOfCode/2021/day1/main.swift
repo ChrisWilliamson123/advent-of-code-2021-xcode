@@ -18,4 +18,4 @@ func main() throws {
     print("Part 2: \(increasesP2)")
 }
 
-try main()
+Timer.time(main)

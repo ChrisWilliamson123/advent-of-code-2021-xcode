@@ -90,5 +90,5 @@ private func getDirection(for char: Character) -> Coordinate {
     ][char]!
 }
 
-try main()
+Timer.time(main)
 

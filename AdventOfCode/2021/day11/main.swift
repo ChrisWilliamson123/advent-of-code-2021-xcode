@@ -80,4 +80,4 @@ class Game {
     }
 }
 
-try main()
+Timer.time(main)

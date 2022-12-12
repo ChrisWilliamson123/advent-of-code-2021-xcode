@@ -24,4 +24,4 @@ private func getIndex(x: Int, y: Int) -> Int {
     return base + x
 }
 
-try main()
+Timer.time(main)

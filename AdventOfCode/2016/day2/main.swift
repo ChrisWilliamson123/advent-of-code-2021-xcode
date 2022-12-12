@@ -64,4 +64,4 @@ private func getDigit(for position: (Int, Int)) -> String {
     "\((position.1 * 3) + position.0 + 1)"
 }
 
-try main()
+Timer.time(main)

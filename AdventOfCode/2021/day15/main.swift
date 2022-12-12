@@ -60,4 +60,4 @@ func euclidianDistance(source: Coordinate, end: Coordinate) -> Double {
     return sqrt(Double((dx*dx) + (dy*dy)))
 }
 
-try main()
+Timer.time(main)

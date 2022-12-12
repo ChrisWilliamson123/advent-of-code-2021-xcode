@@ -72,4 +72,4 @@ struct Reindeer {
     }
 }
 
-try main()
+Timer.time(main)

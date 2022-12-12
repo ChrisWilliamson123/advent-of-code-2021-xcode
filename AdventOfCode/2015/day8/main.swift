@@ -316,4 +316,4 @@ func main() throws {
     print(codeChars - stringChars)
 }
 
-try main()
+Timer.time(main)

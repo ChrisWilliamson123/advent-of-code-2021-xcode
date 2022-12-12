@@ -195,5 +195,5 @@ extension Array {
     }
 }
 
-try main()
+Timer.time(main)
 

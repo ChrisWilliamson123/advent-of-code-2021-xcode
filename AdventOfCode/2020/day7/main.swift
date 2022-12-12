@@ -101,4 +101,4 @@ private func buildInvertedGraph(_ input: [String]) -> Graph {
     return graph
 }
 
-try main()
+Timer.time(main)

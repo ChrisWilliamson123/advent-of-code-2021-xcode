@@ -64,4 +64,4 @@ struct Screen {
     }
 }
 
-try main()
+Timer.time(main)

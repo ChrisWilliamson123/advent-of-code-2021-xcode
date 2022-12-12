@@ -88,4 +88,4 @@ class Directory: Entity {
     }
 }
 
-try main()
+Timer.time(main)

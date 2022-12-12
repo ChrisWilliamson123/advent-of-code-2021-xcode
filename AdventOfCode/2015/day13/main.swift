@@ -35,4 +35,4 @@ func main() throws {
     print("Part one:", maxChange)
 }
 
-try main()
+Timer.time(main)

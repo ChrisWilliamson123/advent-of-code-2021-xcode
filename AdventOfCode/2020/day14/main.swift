@@ -103,4 +103,4 @@ func applyMemoryMask(_ mask: String, to input: String) -> [String] {
     return result
 }
 
-try main()
+Timer.time(main)

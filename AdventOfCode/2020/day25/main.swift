@@ -6,5 +6,5 @@ func main() throws {
     print(input)
 }
 
-try main()
+Timer.time(main)
 

@@ -78,4 +78,4 @@ class Ship {
     }
 }
 
-try main()
+Timer.time(main)

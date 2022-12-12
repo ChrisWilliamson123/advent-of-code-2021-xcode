@@ -28,4 +28,4 @@ func main() throws {
     print("Part two:", maximum)
 }
 
-try main()
+Timer.time(main)

@@ -91,4 +91,4 @@ private func buildGrid(from input: [String]) -> [[Character]] {
     return grid
 }
 
-try main()
+Timer.time(main)

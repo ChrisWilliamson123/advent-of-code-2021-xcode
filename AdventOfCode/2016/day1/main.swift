@@ -27,4 +27,4 @@ func main() throws {
     print("Part one:", abs(position.0) + abs(position.1))
 }
 
-try main()
+Timer.time(main)

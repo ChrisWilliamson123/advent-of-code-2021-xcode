@@ -14,4 +14,4 @@ private func getMatchingEntries(in expenseReport: [Int], numberOfEntriesToMatch:
     return matchingCombination?.multiply()
 }
 
-try main()
+Timer.time(main)

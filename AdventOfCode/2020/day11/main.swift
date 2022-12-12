@@ -99,4 +99,4 @@ struct Coordinate: Hashable {
     }
 }
 
-try main()
+Timer.time(main)

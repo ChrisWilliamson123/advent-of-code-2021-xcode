@@ -45,4 +45,4 @@ private func numWays(adapters: [Int], index: Int = 0, memo: inout [Int: Int]) ->
     return total
 }
 
-try main()
+Timer.time(main)

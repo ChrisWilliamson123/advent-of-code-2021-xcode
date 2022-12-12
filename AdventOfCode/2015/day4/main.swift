@@ -36,4 +36,4 @@ func main() throws {
     print(number)
 }
 
-try main()
+Timer.time(main)

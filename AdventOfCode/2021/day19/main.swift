@@ -88,4 +88,4 @@ private func buildInitialScanners(from input: [String]) -> [Set<simd_float4>] {
     return scanners
 }
 
-try main()
+Timer.time(main)

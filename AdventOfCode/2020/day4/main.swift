@@ -66,4 +66,4 @@ struct Passport {
 }
 
 
-try main()
+Timer.time(main)

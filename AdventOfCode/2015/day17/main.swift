@@ -34,4 +34,4 @@ struct Container: Hashable {
     let id: Int
 }
 
-try main()
+Timer.time(main)

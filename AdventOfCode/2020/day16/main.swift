@@ -79,5 +79,5 @@ struct Field {
     let validValues: Set<Int>
 }
 
-try main()
+Timer.time(main)
 

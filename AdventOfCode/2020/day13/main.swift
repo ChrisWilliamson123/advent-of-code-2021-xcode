@@ -33,4 +33,4 @@ func main() throws {
     print("Part 2:", time)
 }
 
-try main()
+Timer.time(main)

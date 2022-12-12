@@ -67,5 +67,5 @@ func main() throws {
 
 }
 
-try main()
+Timer.time(main)
 

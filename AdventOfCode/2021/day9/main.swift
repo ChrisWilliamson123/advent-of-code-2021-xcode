@@ -77,4 +77,4 @@ struct HeightMap {
     }
 }
 
-try main()
+Timer.time(main)

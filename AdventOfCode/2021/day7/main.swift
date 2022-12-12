@@ -33,4 +33,4 @@ private func calculateFuelNeeded(toMoveTo: Int, crabs: [Int]) -> Int {
     })
 }
 
-try main()
+Timer.time(main)
