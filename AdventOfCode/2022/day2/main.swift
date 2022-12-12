@@ -134,7 +134,6 @@ func main() throws {
         return Move(opponent: String(split[0]), me: String(split[1]))
     }
 
-    print(moves)
     let scores = moves.map { $0.score }
     let sum = scores.sum()
     print(sum)
@@ -145,11 +144,6 @@ func main() throws {
     }
     let calculatedMoves = predictedMoves.map { $0.move }
     print(calculatedMoves.map({ $0.score }).sum())
-}
-
-extension StringProtocol {
-    var asciiValues: [Int] { compactMap(\.asciiValue).map { Int($0) } }
-    var asciiValue: Int { asciiValues.first! }
 }
 
 Timer.time(main)
