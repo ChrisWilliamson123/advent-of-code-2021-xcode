@@ -1,6 +1,7 @@
 import Foundation
 
 func main() throws {
+//    let start = CFAbsoluteTimeGetCurrent()
     let input: [String] = try readInput(fromTestFile: false)
 
     var grid: [Coordinate: Character] = [:]
@@ -30,6 +31,7 @@ func main() throws {
             })
             return result
         }
+
         let result = dijkstra(graph: coords, source: $0, target: finalDestination, getNeighbours: getNeighbours, getDistanceBetween: { _, _ in 1 })
 
         let distance = result.distances[finalDestination]!
@@ -48,4 +50,4 @@ private func getCurrentLetter(grid: [Coordinate: Character], coord: Coordinate) 
     ][char] ?? char
 }
 
-try main()
+Timer.time(main)
