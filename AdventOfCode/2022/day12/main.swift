@@ -19,26 +19,22 @@ func main() throws {
         }
     }
 
-    let distances = startingPoints.map {
-        let getNeighbours: ((Coordinate) -> Set<Coordinate>) = { coordinate in
-            let adjacents = Set(coordinate.getAxialAdjacents())
+    let getNeighbours: ((Coordinate) -> Set<Coordinate>) = { coordinate in
+        let adjacents = Set(coordinate.getAxialAdjacents())
 
-            let currentLetter = getCurrentLetter(grid: grid, coord: coordinate)!
-            let result = adjacents.filter({
-                guard let char = getCurrentLetter(grid: grid, coord: $0) else { return false }
-                return char.asciiValue! <= currentLetter.asciiValue! + 1
-            })
-            return result
-        }
-
-        let result = dijkstra(graph: coords, source: $0, target: finalDestination, getNeighbours: getNeighbours, getDistanceBetween: { _, _ in 1 })
-
-        let distance = result.distances[finalDestination]!
-        if grid[$0] == "S" { print(distance) }
-        return distance
+        let currentLetter = getCurrentLetter(grid: grid, coord: coordinate)!
+        let result = adjacents.filter({
+            guard let char = getCurrentLetter(grid: grid, coord: $0) else { return false }
+            return char.asciiValue! <= currentLetter.asciiValue! + 1
+        })
+        return result
     }
 
-    print(distances.min()!)
+    let part1Start = startingPoints.first(where: { grid[$0] == "S" })!
+    let part1 = bfs(graph: coords, source: [part1Start], target: finalDestination, getNeighbours: getNeighbours, getDistanceBetween: { _, _ in 1})
+    print(part1)
+    let part2 = bfs(graph: coords, source: Array(startingPoints), target: finalDestination, getNeighbours: getNeighbours, getDistanceBetween: { _, _ in 1})
+    print(part2)
 }
 
 private func getCurrentLetter(grid: [Coordinate: Character], coord: Coordinate) -> Character? {
