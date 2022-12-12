@@ -21,7 +21,6 @@ func dijkstra<T: Hashable>(graph: Set<T>,
     while !heap.isEmpty {
         let current = heap.dequeue()!
         if let target = target, current == target {
-            print("Destination reached")
             return (dist, prev)
 
         }
