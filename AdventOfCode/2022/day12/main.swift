@@ -31,9 +31,9 @@ func main() throws {
     }
 
     let part1Start = startingPoints.first(where: { grid[$0] == "S" })!
-    let part1 = bfs(graph: coords, source: [part1Start], target: finalDestination, getNeighbours: getNeighbours, getDistanceBetween: { _, _ in 1})
+    let part1 = bfs(graph: coords, source: part1Start, target: finalDestination, getNeighbours: getNeighbours, getDistanceBetween: { _, _ in 1})
     print(part1)
-    let part2 = bfs(graph: coords, source: Array(startingPoints), target: finalDestination, getNeighbours: getNeighbours, getDistanceBetween: { _, _ in 1})
+    let part2 = bfs(graph: coords, source: startingPoints, target: finalDestination, getNeighbours: getNeighbours, getDistanceBetween: { _, _ in 1})
     print(part2)
 }
 
