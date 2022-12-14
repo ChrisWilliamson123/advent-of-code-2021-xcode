@@ -29,43 +29,43 @@ class Cave {
     func fillUntilAbyssReached() {
         var currentSandPosition = sandEntryPosition
         while populatedPositions.contains(where: { $0.x == currentSandPosition.x && $0.y > currentSandPosition.y }) {
-            let attemptedDestinations = [Coordinate(0, 1)+currentSandPosition, Coordinate(-1, 1)+currentSandPosition, Coordinate(1, 1)+currentSandPosition]
-            if let allowedDestination = attemptedDestinations.first(where: { !populatedPositions.contains($0) }) {
-                currentSandPosition = allowedDestination
+            if let destination = getValidDestination(for: currentSandPosition) {
+                currentSandPosition = destination
                 continue
+            } else {
+                addSandPosition(currentSandPosition)
+                currentSandPosition = sandEntryPosition
             }
 
-            populatedPositions.insert(currentSandPosition)
-            sandPositions.insert(currentSandPosition)
-            currentSandPosition = sandEntryPosition
         }
     }
 
     func fillUntilFull() {
         var currentSandPosition = sandEntryPosition
         while !sandPositions.contains(sandEntryPosition) {
-            if currentSandPosition.y == floorYPosition - 1 {
-                sandPositions.insert(currentSandPosition)
-                populatedPositions.insert(currentSandPosition)
-                currentSandPosition = sandEntryPosition
-                continue
+            if currentSandPosition.y < floorYPosition - 1, let destination = getValidDestination(for: currentSandPosition) {
+                currentSandPosition = destination
+            } else {
+                self.addSandPosition(currentSandPosition)
+                currentSandPosition = self.sandEntryPosition
             }
 
-            let attemptedDestinations = [Coordinate(0, 1)+currentSandPosition, Coordinate(-1, 1)+currentSandPosition, Coordinate(1, 1)+currentSandPosition]
-            if let allowedDestination = attemptedDestinations.first(where: { !populatedPositions.contains($0) }) {
-                currentSandPosition = allowedDestination
-                continue
-            }
-
-            populatedPositions.insert(currentSandPosition)
-            sandPositions.insert(currentSandPosition)
-            currentSandPosition = sandEntryPosition
         }
     }
 
     func reset() {
         sandPositions.removeAll()
         populatedPositions = rockPositions
+    }
+
+    private func getValidDestination(for grain: Coordinate) -> Coordinate? {
+        let attemptedDestinations = [Coordinate(0, 1)+grain, Coordinate(-1, 1)+grain, Coordinate(1, 1)+grain]
+        return attemptedDestinations.first(where: { !populatedPositions.contains($0) })
+    }
+
+    private func addSandPosition(_ position: Coordinate) {
+        sandPositions.insert(position)
+        populatedPositions.insert(position)
     }
 }
 
