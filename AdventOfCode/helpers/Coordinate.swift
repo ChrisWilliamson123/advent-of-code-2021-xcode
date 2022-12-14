@@ -116,4 +116,29 @@ struct Coordinate: Hashable, CustomStringConvertible {
     static func +=(lhs: inout Coordinate, rhs: Coordinate) {
         lhs = Coordinate(lhs.x + rhs.x, lhs.y + rhs.y)
     }
+
+    static func -(lhs: Coordinate, rhs: Coordinate) -> Coordinate {
+        Coordinate(lhs.x - rhs.x, lhs.y - rhs.y)
+    }
+
+    func getLineTo(_ other: Coordinate, includeEnds: Bool = true) -> Set<Coordinate>? {
+        let diff = other - self
+        if self.x != other.x && self.y != other.y && abs(diff.x) != abs(diff.y) { return nil }
+
+        let normalised = diff.normalised
+        var line = [Coordinate]()
+        line.append(self)
+
+        for _ in 0..<max(abs(diff.x), abs(diff.y)) {
+            let prev = line.last!
+            line.append(prev + normalised)
+        }
+
+        if !includeEnds {
+            line.remove(at: 0)
+        } else {
+            line.append(other)
+        }
+        return Set(line)
+    }
 }
