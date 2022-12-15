@@ -26,7 +26,7 @@ func main() throws {
         return Beacon(position: position, closestBeaconPosition: beacon, manhattanDistance: position.getManhattanDistance(to: beacon))
     }
 
-    let partOneBlockedRanges = beacons.compactMap({ $0.getYBlockedRange(for: 10) })
+    let partOneBlockedRanges = beacons.compactMap({ $0.getYBlockedRange(for: 2000000) })
     print(partOneBlockedRanges.map({ $0.upperBound }).max()! - partOneBlockedRanges.map({ $0.lowerBound }).min()!)
 
     let upperBound = 4000000
