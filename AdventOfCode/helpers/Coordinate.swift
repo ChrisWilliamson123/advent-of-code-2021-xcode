@@ -141,4 +141,22 @@ struct Coordinate: Hashable, CustomStringConvertible {
         }
         return Set(line)
     }
+
+    func getCoordsWithinDistance(_ distance: Int) -> Set<Coordinate> {
+        let minY = y - distance
+        let maxY = y + distance
+        let minX = x - distance
+        let maxX = x + distance
+        var set = Set<Coordinate>()
+        for y in minY...maxY {
+            for x in minX...maxX {
+                let position = Coordinate(x, y)
+                if getManhattanDistance(to: position) <= distance {
+                    set.insert(position)
+                }
+            }
+        }
+        print("Got coords within distance")
+        return set
+    }
 }
