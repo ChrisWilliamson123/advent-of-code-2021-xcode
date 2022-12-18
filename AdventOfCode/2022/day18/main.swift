@@ -4,6 +4,13 @@ func main() throws {
     let input: [String] = try readInput(fromTestFile: false)
     let cubes: Set<[Int]> = Set(input.map({ $0.components(separatedBy: ",").map({ Int($0)! }) }))
 
+    /**
+     For part one, loop through all cubes and get their adjacent cubes.
+     If an adjacent cube is not a lava cube, then add it to the dict with a value of one.
+     If it already exists in the dict, add one to it
+     The dict represents the number of solid neighbours that an air block has
+     After building the dict, add up all of the value to get the number of lava cube sides that touch air
+     */
     var numberOfCubeNeighboursPerAir: [[Int]: Int] = [:]
     for cube in cubes {
         let adjacents = getAdjacents(cube)
@@ -13,6 +20,10 @@ func main() throws {
     }
     print(numberOfCubeNeighboursPerAir.values.reduce(0, +))
 
+    /**
+     For part two, use DFS to get a set of cubes that are visitable. A cube is visitable if there is a path to it that is not blocked by a lava block.
+     Next, tot up the values from part one where the air block is in the visitable set.
+     */
     let maxDimension = cubes.flatMap({ $0 }).max()!
     let minDimension = cubes.flatMap({ $0 }).min()!
 
@@ -29,7 +40,6 @@ func main() throws {
         }
     }
 
-    // Now, add up all cubes from part one where it's in visited
     print(numberOfCubeNeighboursPerAir.filter({ visited.contains($0.key) }).values.reduce(0, +))
 }
 
