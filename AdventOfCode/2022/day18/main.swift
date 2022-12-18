@@ -24,18 +24,18 @@ func main() throws {
      For part two, use DFS to get a set of cubes that are visitable. A cube is visitable if there is a path to it that is not blocked by a lava block.
      Next, tot up the values from part one where the air block is in the visitable set.
      */
-    let maxDimension = cubes.flatMap({ $0 }).max()!
-    let minDimension = cubes.flatMap({ $0 }).min()!
+    let maxDimension = cubes.flatMap({ $0 }).max()! + 2
+    let minDimension = cubes.flatMap({ $0 }).min()! - 2
 
     var queue = [[0,0,0]]
     var visited: Set<[Int]> = []
     while !queue.isEmpty {
-        var current = queue.popLast()!
+        let current = queue.popLast()!
         visited.insert(current)
         for adjacent in getAdjacents(current) {
             if visited.contains(adjacent) { continue }
-            if adjacent.min()! < minDimension - 2 || adjacent.max()! > maxDimension + 2 { continue }
             if cubes.contains(adjacent) { continue }
+            if adjacent.min()! < minDimension || adjacent.max()! > maxDimension { continue }
             queue.append(adjacent)
         }
     }
