@@ -22,13 +22,13 @@ struct Blueprint {
 class RobotFactory {
     struct State: Hashable {
         var materialsAtEnd: [Material: Int]
-        var robotsAtEnd: [Material: [Robot]]
+        var robotsAtEnd: [Material: Int]
         let robotToBuild: Robot?
     }
 
     let blueprint: Blueprint
     var materialStore: [Material: Int] = Material.allCases.reduce(into: [:], { $0[$1] = 0 })
-    var robots: [Material: [Robot]]
+    var robots: [Material: Int]
     var currentBuild: Robot? = nil
     var currentState: State
 
@@ -36,24 +36,32 @@ class RobotFactory {
         self.blueprint = blueprint
 
         self.robots = [
-            .ore: [blueprint.robots[.ore]!],
-            .clay: [],
-            .obsidian: [],
-            .geode: []
+            .ore: 1,
+            .clay: 0,
+            .obsidian: 0,
+            .geode: 0
         ]
 
         currentState = State(materialsAtEnd: materialStore, robotsAtEnd: robots, robotToBuild: nil)
     }
 
-    private func getNextStates(from currentState: State) -> Set<State> {
+    private func getNextStates(from currentState: State, minsRemaining: Int) -> Set<State> {
         // Can only build one robot per minute
         var newRobots = currentState.robotsAtEnd
         if let newRobot = currentState.robotToBuild {
-            newRobots[newRobot.miningMaterial]?.append(newRobot)
+            newRobots[newRobot.miningMaterial]! += 1
         }
 //        print("FR:", finishedRobot)
+        var robotsToBuild: [Material] = [.obsidian, .geode]
+        if minsRemaining < 10 {
+            robotsToBuild.append(.ore)
+        }
+
+        if minsRemaining < 15 {
+            robotsToBuild.append(.clay)
+        }
         // Loop through all robots, and create a state where that is built (if we have resources
-        var states = Material.allCases.compactMap { material in
+        var states = robotsToBuild.compactMap { material in
             // Check if we have mats to build robot
             var currentMaterials = currentState.materialsAtEnd
             let oreNeeded = blueprint.robots[material]!.oreRequirement
@@ -81,64 +89,53 @@ class RobotFactory {
             }
         }
 
-        // Remove other states if we can build a geode robot
-        if let index = states.firstIndex(where: { $0.robotToBuild?.miningMaterial == .geode }) {
-            states = [states[index]]
-        }
-
-
         // Second, get the new materials from existing robots
         for i in 0..<states.count {
             var materialsAtEnd = states[i].materialsAtEnd
-            Material.allCases.forEach { materialsAtEnd[$0]! += currentState.robotsAtEnd[$0]!.count }
+            Material.allCases.forEach { materialsAtEnd[$0]! += newRobots[$0]! }
             states[i] = State(materialsAtEnd: materialsAtEnd, robotsAtEnd: newRobots, robotToBuild: states[i].robotToBuild)
+        }
+
+//        // Remove other states if we can build a geode robot
+        if let index = states.firstIndex(where: { $0.robotToBuild?.miningMaterial == .geode }) {
+            return [states[index]]
         }
 
         // Add the state where we just mine materials
         var materialsAtEnd = currentState.materialsAtEnd
-        Material.allCases.forEach { materialsAtEnd[$0]! += currentState.robotsAtEnd[$0]!.count }
+        Material.allCases.forEach { materialsAtEnd[$0]! += newRobots[$0]! }
         states.append(State(materialsAtEnd: materialsAtEnd, robotsAtEnd: newRobots, robotToBuild: nil))
         return Set(states)
     }
-    struct DPState: Hashable {
-        let state: State
-        let minutes: Int
-    }
-    var dp: [DPState: Int] = [:]
 
     func beginProduction() {
         func dfs(currentState: State, minutesElapsed: Int, geodesRetrieved: Int) -> Int {
-//            print(currentState.)
-//            print(minutesElapsed, geodesRetrieved)
             if minutesElapsed == 24 { return currentState.materialsAtEnd[.geode]! }
-            if let cached = dp[DPState(state: currentState, minutes: minutesElapsed)] {
-                return cached
-            }
-            let nextStates = getNextStates(from: currentState)
+            let nextStates = getNextStates(from: currentState, minsRemaining: minutesElapsed)
             var gr = 0
+//            var results: [Int] = []
+//            let queue = OperationQueue()
+//            print(nextStates.count)
+//            queue.maxConcurrentOperationCount = nextStates.count
             for state in nextStates {
+//                queue.addOperation(
+//                    BlockOperation(block: {
                 let result = dfs(currentState: state, minutesElapsed: minutesElapsed + 1, geodesRetrieved: state.materialsAtEnd[.geode]!)
-//                print(result)
-                gr = max(result, gr)
+                gr = max(gr, result)
+//                    })
+//                )
             }
-            dp[DPState(state: currentState, minutes: minutesElapsed)] = gr
+//            queue.waitUntilAllOperationsAreFinished()
+//            gr = results.max() ?? 0
             return gr
         }
         print(dfs(currentState: currentState, minutesElapsed: 0, geodesRetrieved: 0))
-//        for minute in 0..<3 {
-//            let nextStates = getNextStates(from: currentState)
-//            for state in nextStates {
-//                print(state)
-//            }
-//            currentState = nextStates.first!
-//        }
     }
 }
 
 func main() throws {
     let input: [String] = try readInput(fromTestFile: true)
     let blueprints = input.enumerated().map { (index, line) in createBlueprint(from: line, index: index) }
-//    print(blueprints)
     let factory = RobotFactory(blueprint: blueprints[0])
     factory.beginProduction()
 }
