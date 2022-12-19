@@ -52,14 +52,19 @@ class RobotFactory {
             newRobots[newRobot.miningMaterial]! += 1
         }
 //        print("FR:", finishedRobot)
-        var robotsToBuild: [Material] = [.obsidian, .geode]
-        if minsRemaining < 10 {
+        var robotsToBuild: [Material] = [.geode]
+        if minsRemaining < 5 {
             robotsToBuild.append(.ore)
         }
 
         if minsRemaining < 15 {
             robotsToBuild.append(.clay)
         }
+
+        if minsRemaining < 20 {
+            robotsToBuild.append(.obsidian)
+        }
+//        var robotsToBuild: [Material] = [.geode, .obsidian, .clay, .ore]
         // Loop through all robots, and create a state where that is built (if we have resources
         var states = robotsToBuild.compactMap { material in
             // Check if we have mats to build robot
@@ -105,10 +110,16 @@ class RobotFactory {
         var materialsAtEnd = currentState.materialsAtEnd
         Material.allCases.forEach { materialsAtEnd[$0]! += newRobots[$0]! }
         states.append(State(materialsAtEnd: materialsAtEnd, robotsAtEnd: newRobots, robotToBuild: nil))
+//        return Set(states.filter({
+//            if $0.robotsAtEnd.contains(where: { $0.value > 4 }) {
+//                return false
+//            }
+//            return true
+//        }))
         return Set(states)
     }
 
-    func beginProduction() {
+    func beginProduction() -> Int {
         func dfs(currentState: State, minutesElapsed: Int, geodesRetrieved: Int) -> Int {
             if minutesElapsed == 24 { return currentState.materialsAtEnd[.geode]! }
             let nextStates = getNextStates(from: currentState, minsRemaining: minutesElapsed)
@@ -129,15 +140,28 @@ class RobotFactory {
 //            gr = results.max() ?? 0
             return gr
         }
-        print(dfs(currentState: currentState, minutesElapsed: 0, geodesRetrieved: 0))
+        let result = dfs(currentState: currentState, minutesElapsed: 0, geodesRetrieved: 0)
+        print(result)
+        return result * blueprint.id
     }
 }
 
 func main() throws {
     let input: [String] = try readInput(fromTestFile: true)
     let blueprints = input.enumerated().map { (index, line) in createBlueprint(from: line, index: index) }
-    let factory = RobotFactory(blueprint: blueprints[0])
-    factory.beginProduction()
+    let queue = OperationQueue()
+    queue.maxConcurrentOperationCount = blueprints.count
+    var results: [Int] = []
+    for b in blueprints {
+        let factory = RobotFactory(blueprint: b)
+        queue.addOperation({
+            results.append(factory.beginProduction())
+        })
+    }
+
+    queue.waitUntilAllOperationsAreFinished()
+
+    print(results.sum())
 }
 
 private func createBlueprint(from line: String, index: Int) -> Blueprint {
