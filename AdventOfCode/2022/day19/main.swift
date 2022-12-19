@@ -31,6 +31,18 @@ class RobotFactory {
     var robots: [Material: Int]
     var currentBuild: Robot? = nil
     var currentState: State
+    private lazy var oreRobot: Robot = {
+        blueprint.robots[.ore]!
+    }()
+    private lazy var clayRobot: Robot = {
+        blueprint.robots[.clay]!
+    }()
+    private lazy var obsidianRobot: Robot = {
+        blueprint.robots[.obsidian]!
+    }()
+    private lazy var geodeRobot: Robot = {
+        blueprint.robots[.geode]!
+    }()
 
     init(blueprint: Blueprint) {
         self.blueprint = blueprint
@@ -46,113 +58,88 @@ class RobotFactory {
     }
 
     private func getNextStates(from currentState: State, minsRemaining: Int) -> Set<State> {
-        // Can only build one robot per minute
+        var states: Set<State> = []
         var newRobots = currentState.robotsAtEnd
-        if let newRobot = currentState.robotToBuild {
-            newRobots[newRobot.miningMaterial]! += 1
-        }
-//        print("FR:", finishedRobot)
-        var robotsToBuild: [Material] = [.geode]
-        if minsRemaining < 5 {
-            robotsToBuild.append(.ore)
-        }
+        // Add the new robot as it is now complete
+        currentState.robotToBuild.map { newRobots[$0.miningMaterial]! += 1 }
 
-        if minsRemaining < 15 {
-            robotsToBuild.append(.clay)
-        }
+        let newMaterials = currentState.materialsAtEnd.merging(newRobots, uniquingKeysWith: { $0 + $1 })
+        let currentOreAmount = currentState.materialsAtEnd[.ore]!
 
-        if minsRemaining < 20 {
-            robotsToBuild.append(.obsidian)
-        }
-//        var robotsToBuild: [Material] = [.geode, .obsidian, .clay, .ore]
-        // Loop through all robots, and create a state where that is built (if we have resources
-        var states = robotsToBuild.compactMap { material in
-            // Check if we have mats to build robot
-            var currentMaterials = currentState.materialsAtEnd
-            let oreNeeded = blueprint.robots[material]!.oreRequirement
-            let otherBuildMaterial = blueprint.robots[material]!.buildMaterial
-            let otherBuildMaterialRequired = blueprint.robots[material]!.buildMaterialRequirement
+        // Try to build a geode robot
+        if currentState.robotsAtEnd[.obsidian]! > 0 {
+            let oreRequiredForGeodeRobot = geodeRobot.oreRequirement
+            let obsidianRequired = geodeRobot.buildMaterialRequirement!
+            let currentObsidianAmount = currentState.materialsAtEnd[.obsidian]!
+            if currentOreAmount >= oreRequiredForGeodeRobot && currentObsidianAmount >= obsidianRequired {
+                let materialRemoval: [Material: Int] = [.ore: -oreRequiredForGeodeRobot, .obsidian: -obsidianRequired]
+                let geodeRobotCreationState = State(materialsAtEnd: newMaterials.merging(materialRemoval, uniquingKeysWith: { $0 + $1 }), robotsAtEnd: newRobots, robotToBuild: blueprint.robots[.geode]!)
+                //                states.insert(State(materialsAtEnd: newMaterials.merging(materialRemoval, uniquingKeysWith: { $0 + $1 }), robotsAtEnd: newRobots, robotToBuild: blueprint.robots[.geode]!))
 
-            // First case is if we need two mats to build robot
-            if let otherBuildMaterial = otherBuildMaterial {
-                if otherBuildMaterialRequired! <= currentMaterials[otherBuildMaterial]! && oreNeeded <= currentMaterials[.ore]! {
-                    currentMaterials[.ore]! -= oreNeeded
-                    currentMaterials[otherBuildMaterial]! -= blueprint.robots[material]!.buildMaterialRequirement!
-                    return State(materialsAtEnd: currentMaterials, robotsAtEnd: newRobots, robotToBuild: blueprint.robots[material]!)
-                } else {
-                    return nil
-                }
-            }
-            // Second case is if we just need ore
-            else if oreNeeded <= currentMaterials[.ore]! {
-                currentMaterials[.ore]! -= oreNeeded
-                return State(materialsAtEnd: currentMaterials, robotsAtEnd: newRobots, robotToBuild: blueprint.robots[material]!)
-            }
-            // Third case is if we don't match requirements to build robot
-            else {
-                return nil
+                // If we can build a geode robot, only return that state
+                return [geodeRobotCreationState]
             }
         }
 
-        // Second, get the new materials from existing robots
-        for i in 0..<states.count {
-            var materialsAtEnd = states[i].materialsAtEnd
-            Material.allCases.forEach { materialsAtEnd[$0]! += newRobots[$0]! }
-            states[i] = State(materialsAtEnd: materialsAtEnd, robotsAtEnd: newRobots, robotToBuild: states[i].robotToBuild)
+        // Try to build an obsidian robot (only build it if there's enough time to build a geode from it's result)
+        if currentState.robotsAtEnd[.clay]! > 0 {
+            let oreRequiredForObsidianRobot = obsidianRobot.oreRequirement
+            let clayRequired = obsidianRobot.buildMaterialRequirement!
+            let currentClayAmount = currentState.materialsAtEnd[.clay]!
+            if currentOreAmount >= oreRequiredForObsidianRobot && currentClayAmount >= clayRequired {
+                let materialRemoval: [Material: Int] = [.ore: -oreRequiredForObsidianRobot, .clay: -clayRequired]
+                let obsidianCreationState = State(materialsAtEnd: newMaterials.merging(materialRemoval, uniquingKeysWith: { $0 + $1 }), robotsAtEnd: newRobots, robotToBuild: blueprint.robots[.obsidian]!)
+                states.insert(obsidianCreationState)
+//                return [obsidianCreationState]
+            }
         }
 
-//        // Remove other states if we can build a geode robot
-        if let index = states.firstIndex(where: { $0.robotToBuild?.miningMaterial == .geode }) {
-            return [states[index]]
+        // Try to build a clay robot
+        let oreRequiredForClayRobot = clayRobot.oreRequirement
+        if currentOreAmount >= oreRequiredForClayRobot && minsRemaining < 18 {
+            let materialRemoval: [Material: Int] = [.ore: -oreRequiredForClayRobot]
+            states.insert(State(materialsAtEnd: newMaterials.merging(materialRemoval, uniquingKeysWith: { $0 + $1 }), robotsAtEnd: newRobots, robotToBuild: blueprint.robots[.clay]!))
         }
 
-        // Add the state where we just mine materials
-        var materialsAtEnd = currentState.materialsAtEnd
-        Material.allCases.forEach { materialsAtEnd[$0]! += newRobots[$0]! }
-        states.append(State(materialsAtEnd: materialsAtEnd, robotsAtEnd: newRobots, robotToBuild: nil))
-//        return Set(states.filter({
-//            if $0.robotsAtEnd.contains(where: { $0.value > 4 }) {
-//                return false
-//            }
-//            return true
-//        }))
-        return Set(states)
+        // Try to build an ore robot
+        let oreRequiredForOreRobot = oreRobot.oreRequirement
+        if currentOreAmount >= oreRequiredForOreRobot && minsRemaining < 12 {
+            let materialRemoval: [Material: Int] = [.ore: -oreRequiredForOreRobot]
+            states.insert(State(materialsAtEnd: newMaterials.merging(materialRemoval, uniquingKeysWith: { $0 + $1 }), robotsAtEnd: newRobots, robotToBuild: blueprint.robots[.ore]!))
+        }
+
+        // Build the state where we just mine new materials
+        states.insert(State(materialsAtEnd: newMaterials, robotsAtEnd: newRobots, robotToBuild: nil))
+        return states
     }
 
     func beginProduction() -> Int {
+        let materialRequired: Material = .geode
         func dfs(currentState: State, minutesElapsed: Int, geodesRetrieved: Int) -> Int {
-            if minutesElapsed == 24 { return currentState.materialsAtEnd[.geode]! }
+            if minutesElapsed == 24 { return currentState.materialsAtEnd[materialRequired]! }
             let nextStates = getNextStates(from: currentState, minsRemaining: minutesElapsed)
             var gr = 0
-//            var results: [Int] = []
-//            let queue = OperationQueue()
-//            print(nextStates.count)
-//            queue.maxConcurrentOperationCount = nextStates.count
+
             for state in nextStates {
-//                queue.addOperation(
-//                    BlockOperation(block: {
-                let result = dfs(currentState: state, minutesElapsed: minutesElapsed + 1, geodesRetrieved: state.materialsAtEnd[.geode]!)
+                let result = dfs(currentState: state, minutesElapsed: minutesElapsed + 1, geodesRetrieved: state.materialsAtEnd[materialRequired]!)
                 gr = max(gr, result)
-//                    })
-//                )
             }
-//            queue.waitUntilAllOperationsAreFinished()
-//            gr = results.max() ?? 0
+
             return gr
         }
         let result = dfs(currentState: currentState, minutesElapsed: 0, geodesRetrieved: 0)
-        print(result)
-        return result * blueprint.id
+        print("\(blueprint.id), \(result)")
+        return result
     }
 }
 
 func main() throws {
-    let input: [String] = try readInput(fromTestFile: true)
+    let input: [String] = try readInput(fromTestFile: false)
     let blueprints = input.enumerated().map { (index, line) in createBlueprint(from: line, index: index) }
     let queue = OperationQueue()
-    queue.maxConcurrentOperationCount = blueprints.count
+
     var results: [Int] = []
-    for b in blueprints {
+    for b in [blueprints[0], blueprints[1], blueprints[2]] {
         let factory = RobotFactory(blueprint: b)
         queue.addOperation({
             results.append(factory.beginProduction())
@@ -161,7 +148,7 @@ func main() throws {
 
     queue.waitUntilAllOperationsAreFinished()
 
-    print(results.sum())
+    print(results.multiply())
 }
 
 private func createBlueprint(from line: String, index: Int) -> Blueprint {
