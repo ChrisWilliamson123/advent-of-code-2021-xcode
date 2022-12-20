@@ -58,6 +58,7 @@ class RobotFactory {
     }
 
     private func getNextStates(from currentState: State, minsRemaining: Int) -> Set<State> {
+        let timeRemaining = 24 - minsRemaining
         var states: Set<State> = []
         var newRobots = currentState.robotsAtEnd
         // Add the new robot as it is now complete
@@ -82,7 +83,12 @@ class RobotFactory {
         }
 
         // Try to build an obsidian robot (only build it if there's enough time to build a geode from it's result)
-        if currentState.robotsAtEnd[.clay]! > 0 {
+        // No point building an obsidian robot if it can't produce enough to build a geode robot
+        let obsidianRequiredForGeode = geodeRobot.buildMaterialRequirement!
+        let currentObsidianAmount = currentState.materialsAtEnd[.obsidian]!
+        let obsidianRobots = newRobots[.obsidian]!
+        let canBuildGeodeIfBuildObsidian = (currentObsidianAmount + (obsidianRobots * timeRemaining) + (timeRemaining-1)) > obsidianRequiredForGeode
+        if currentState.robotsAtEnd[.clay]! > 0 && canBuildGeodeIfBuildObsidian {
             let oreRequiredForObsidianRobot = obsidianRobot.oreRequirement
             let clayRequired = obsidianRobot.buildMaterialRequirement!
             let currentClayAmount = currentState.materialsAtEnd[.clay]!
@@ -95,8 +101,14 @@ class RobotFactory {
         }
 
         // Try to build a clay robot
+        // No point building a clay robot if it can't produce enough to build an obsidian
+
+        let clayRequiredForObsidian = obsidianRobot.buildMaterialRequirement!
+        let currentClayAmount = currentState.materialsAtEnd[.clay]!
+        let clayRobots = newRobots[.clay]!
+        let canBuildObsidianIfBuildClay = (currentClayAmount + (clayRobots * timeRemaining) + (timeRemaining-1)) > clayRequiredForObsidian
         let oreRequiredForClayRobot = clayRobot.oreRequirement
-        if currentOreAmount >= oreRequiredForClayRobot && minsRemaining < 18 {
+        if currentOreAmount >= oreRequiredForClayRobot && canBuildObsidianIfBuildClay {
             let materialRemoval: [Material: Int] = [.ore: -oreRequiredForClayRobot]
             states.insert(State(materialsAtEnd: newMaterials.merging(materialRemoval, uniquingKeysWith: { $0 + $1 }), robotsAtEnd: newRobots, robotToBuild: blueprint.robots[.clay]!))
         }
