@@ -29,21 +29,17 @@ func main() throws {
     let input: [String] = try readInput(fromTestFile: false)
     let nodes = input.enumerated().map({ (index, number) in Node(value: Int(number)! * 811589153, index: index) })
     let count = nodes.count
-    var initialIndexes = [Int: Node]()
+
     for nodeIndex in 0..<nodes.count {
         let prev = nodeIndex - 1 >= 0 ? nodeIndex - 1 : nodes.count - 1
         let next = nodeIndex + 1 < nodes.count ? nodeIndex + 1 : 0
         let node = nodes[nodeIndex]
         node.next = nodes[next]
         node.prev = nodes[prev]
-        initialIndexes[nodeIndex] = node
     }
+
     for _ in 0..<10 {
-        for nodeIndex in 0..<count {
-            if nodeIndex % 1000 == 0 {
-                print(nodeIndex)
-            }
-            let nodeToMove = initialIndexes[nodeIndex]!
+        for nodeToMove in nodes {
             let amountToMove = nodeToMove.value
             let adjAmountToMove = amountToMove % (count - 1 )
 
