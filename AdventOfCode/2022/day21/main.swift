@@ -17,7 +17,7 @@ enum Shout {
             case "-": return lhsDep - rhsDep
             case "/": return lhsDep / rhsDep
             case "=":
-                // Going to return the difference between the rhs and lhs
+                // Going to return the difference between the rhs and lhs and use that to check equality
                 return rhsDep - lhsDep
             default: assert(false)
             }
@@ -38,7 +38,10 @@ func main() throws {
     })
     print(Int(instructions["root"]!.getDependencyValue(using: instructions)))
 
-    instructions["root"] = .operation(lhs: "brrs", rhs: "fcjl", sign: "=")
+    // Replace root entry with an equals operator
+    if case let .operation(lhs, rhs, _) = instructions["root"]! {
+        instructions["root"] = .operation(lhs: lhs, rhs: rhs, sign: "=")
+    }
 
     var lowerBound = 0
     var upperBound = Int.max
@@ -51,6 +54,7 @@ func main() throws {
             found = true
             break
         } else {
+            // Need to change this to < to get the example to pass
             if result > 0 {
                 upperBound = x
             } else {
