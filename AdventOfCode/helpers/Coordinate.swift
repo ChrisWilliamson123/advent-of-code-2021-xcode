@@ -25,14 +25,11 @@ struct Coordinate: Hashable, CustomStringConvertible {
     }
 
     var adjacents: [Coordinate] {
-        var adjacents: [Coordinate] = []
-        for x in x-1...x+1 {
-            for y in y-1...y+1  {
-                if x == self.x && y == self.y { continue }
-                adjacents.append(Coordinate(x, y))
-            }
-        }
-        return adjacents
+        return [
+            Coordinate(-1, -1), Coordinate(0, -1), Coordinate(1, -1),
+            Coordinate(-1, 0),                     Coordinate(1, 0),
+            Coordinate(-1, 1),   Coordinate(0, 1), Coordinate(1, 1),
+        ].map { $0 + self }
     }
 
     func getAdjacentsIncludingSelf() -> [Coordinate] {
