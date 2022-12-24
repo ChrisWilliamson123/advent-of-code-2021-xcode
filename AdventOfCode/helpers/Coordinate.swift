@@ -85,13 +85,18 @@ struct Coordinate: Hashable, CustomStringConvertible {
     /**
      Gets the four axial adjacent coordinates that exist within the bounds of the provided grid. Can include self if self is on a bound line.
      */
-    func getAxialAdjacents<T>(in grid: [[T]]) -> Set<Coordinate> {
-        [
+    func getAxialAdjacents<T>(in grid: [[T]], includingSelf: Bool = false) -> Set<Coordinate> {
+//        print(grid.count)
+        var toReturn: Set<Coordinate> = [
             Coordinate(max(0, x-1), y),
-            Coordinate(min(grid.count-1, x+1), y),
+            Coordinate(min(grid[0].count-1, x+1), y),
             Coordinate(x, max(0, y-1)),
             Coordinate(x, min(grid.count-1, y+1))
         ]
+        if includingSelf {
+            toReturn.insert(self)
+        }
+        return toReturn
     }
 
     func translate(along foldLine: FoldLine) -> Coordinate {
