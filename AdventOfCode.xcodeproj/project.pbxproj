@@ -1723,6 +1723,8 @@
 		87258E472938A5E300418B26 /* input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 87258D4A2938A47800418B26 /* input.txt */; };
 		87258E492938A5EE00418B26 /* test_input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 87258D2D2938A47500418B26 /* test_input.txt */; };
 		87258E4A2938A5F000418B26 /* input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 87258D2E2938A47500418B26 /* input.txt */; };
+		8729411C295659050051DF35 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 8729411B295659050051DF35 /* Algorithms */; };
+		87294121295659E10051DF35 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 87294120295659E10051DF35 /* Algorithms */; };
 		872A3415293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
 		872A3416293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
 		872A3417293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872A3414293B3C530004FB78 /* StringProtocol+Extensions.swift */; };
@@ -4366,6 +4368,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8729411C295659050051DF35 /* Algorithms in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4471,6 +4474,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87294121295659E10051DF35 /* Algorithms in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5723,6 +5727,7 @@
 			children = (
 				65E46134276A34680006ACC9 /* AdventOfCode */,
 				65E46133276A34680006ACC9 /* Products */,
+				8729411F295659E10051DF35 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -6385,6 +6390,13 @@
 				87258D572938A47900418B26 /* main.swift */,
 			);
 			path = day22;
+			sourceTree = "<group>";
+		};
+		8729411F295659E10051DF35 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -7338,6 +7350,9 @@
 			dependencies = (
 			);
 			name = 2021.1;
+			packageProductDependencies = (
+				8729411B295659050051DF35 /* Algorithms */,
+			);
 			productName = AdventOfCode2021;
 			productReference = 65D238EC276B5A18000BE890 /* 2021.1 */;
 			productType = "com.apple.product-type.tool";
@@ -7593,6 +7608,9 @@
 			dependencies = (
 			);
 			name = 2016.11;
+			packageProductDependencies = (
+				87294120295659E10051DF35 /* Algorithms */,
+			);
 			productName = day3;
 			productReference = 65E95B372788B5D7005E1AE4 /* 2016.11 */;
 			productType = "com.apple.product-type.tool";
@@ -8369,6 +8387,9 @@
 				Base,
 			);
 			mainGroup = 65E46129276A34670006ACC9;
+			packageReferences = (
+				8729411A295659050051DF35 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+			);
 			productRefGroup = 65E46133276A34680006ACC9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -12916,7 +12937,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BPG2MP9FVQ;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -14950,6 +14971,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8729411A295659050051DF35 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8729411B295659050051DF35 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8729411A295659050051DF35 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+		87294120295659E10051DF35 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8729411A295659050051DF35 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 65E4612A276A34670006ACC9 /* Project object */;
 }
