@@ -1,6 +1,10 @@
 import Foundation
 
-class Valve: Hashable {
+class Valve: Hashable, CustomStringConvertible, NSCopying {
+    func copy(with zone: NSZone? = nil) -> Any {
+        return Valve(name: self.name, flowRate: self.flowRate, destinations: self.destinations, isOpen: self.isOpen)
+    }
+
     static func == (lhs: Valve, rhs: Valve) -> Bool {
         lhs.name == rhs.name
     }
@@ -9,6 +13,7 @@ class Valve: Hashable {
         hasher.combine(name)
         hasher.combine(flowRate)
         hasher.combine(destinations)
+        hasher.combine(isOpen)
     }
 
     let name: String
@@ -16,137 +21,15 @@ class Valve: Hashable {
     let destinations: Set<String>
     var isOpen: Bool = false
 
-    init(name: String, flowRate: Int, destinations: Set<String>) {
+    var description: String {
+        name
+    }
+
+    init(name: String, flowRate: Int, destinations: Set<String>, isOpen: Bool = false) {
         self.name = name
         self.flowRate = flowRate
         self.destinations = destinations
-    }
-}
-
-class Cave {
-    let valves: Set<Valve>
-    let distancesBetweenValves: [[Valve]: Int]
-    let shortestPathsBetweenValves: [[Valve]: [Valve]]
-    var pressureReleased: Int = 0
-    var totalFlowRate: Int = 0
-    var timeRemaining: Int = 30 {
-        didSet {
-            pressureReleased += totalFlowRate
-            print(timeRemaining, pressureReleased)
-        }
-    }
-    lazy var populatedValve: Valve = {
-        getValveWithName("AA")!
-    }()
-
-    var openValves: Set<Valve> {
-        valves.filter { $0.isOpen }
-    }
-
-    init(valves: Set<Valve>, distanceBetweenValves: [[Valve]: Int], shortestPathsBetweenValves: [[Valve]: [Valve]]) {
-        self.valves = valves
-        self.distancesBetweenValves = distanceBetweenValves
-        self.shortestPathsBetweenValves = shortestPathsBetweenValves
-    }
-
-    func run() {
-        // THE BELOW JUST USES FLOW RATE TO GET NEXT VALUE
-//        while timeRemaining > 0 {
-//            let nextValve = getNextValve()
-//            // Get the path to the next valve
-//            let path = shortestPathsBetweenValves[[populatedValve, nextValve]]!
-//            // Traverse path, opening valves with positive flow rate
-//            if path.count == 0 {
-//                // Do not move, time drops by one
-//                timeRemaining -= 1
-//                continue
-//            }
-//            for nextValveInPath in path[1..<path.count] {
-//                populatedValve = nextValveInPath
-//                timeRemaining -= 1
-//                if !populatedValve.isOpen && populatedValve.flowRate > 0 {
-//                    populatedValve.isOpen = true
-//                    print("Opened valve \(populatedValve.name) at \(31-timeRemaining)")
-//                    timeRemaining -= 1
-//                    totalFlowRate += populatedValve.flowRate
-//                }
-//            }
-//        }
-
-        while timeRemaining > 0 {
-            let possibleDestinations = valves.filter { !$0.isOpen }
-            let bestDestination = possibleDestinations.max(by: { getValueOfMovingToDestination($0) < getValueOfMovingToDestination($1) })
-            print("Best: ", bestDestination?.name)
-            if let bestDestination = bestDestination {
-                let path = shortestPathsBetweenValves[[populatedValve, bestDestination]]!
-                // Traverse path, opening valves with positive flow rate
-                if path.count == 0 {
-                    // Do not move, time drops by one
-                    timeRemaining -= 1
-                    continue
-                }
-                for nextValveInPath in path[1..<path.count] {
-                    populatedValve = nextValveInPath
-                    print("You move to valve \(populatedValve.name)")
-                    timeRemaining -= 1
-                    if !populatedValve.isOpen && populatedValve == bestDestination {
-
-                        populatedValve.isOpen = true
-                        print("You open valve \(populatedValve.name)")
-                        timeRemaining -= 1
-                        totalFlowRate += populatedValve.flowRate
-                    }
-//                    if !populatedValve.isOpen && populatedValve.flowRate > 0 {
-//                    }
-                }
-            }
-            else {
-                // stick where we are
-                timeRemaining -= 1
-            }
-//            let nextValve = getNextValve()
-//            // Get the path to the next valve
-//            let path = shortestPathsBetweenValves[[populatedValve, nextValve]]!
-//            // Traverse path, opening valves with positive flow rate
-//            if path.count == 0 {
-//                // Do not move, time drops by one
-//                timeRemaining -= 1
-//                continue
-//            }
-//            for nextValveInPath in path[1..<path.count] {
-//                populatedValve = nextValveInPath
-//                timeRemaining -= 1
-//                if !populatedValve.isOpen && populatedValve.flowRate > 0 {
-//                    populatedValve.isOpen = true
-//                    print("Opened valve \(populatedValve.name) at \(31-timeRemaining)")
-//                    timeRemaining -= 1
-//                    totalFlowRate += populatedValve.flowRate
-//                }
-//            }
-        }
-    }
-
-    private func getValveWithName(_ name: String) -> Valve? {
-        valves.first(where: { $0.name == name })
-    }
-
-    private func getNextValve() -> Valve {
-        let closedValves = valves.filter { !$0.isOpen }
-        let valveWithBestRate = closedValves.max(by: { $0.flowRate < $1.flowRate })
-        return valveWithBestRate ?? populatedValve
-    }
-
-    private func getValueOfMovingToDestination(_ destination: Valve) -> Int {
-        let shortestPathToDestination = shortestPathsBetweenValves[[populatedValve, destination]]!
-        if shortestPathToDestination.count == 0 { return 0 }
-        return destination.flowRate / (shortestPathToDestination.count - 1)
-//        var value = 0
-//        if shortestPathToDestination.count == 0 { return 0 }
-//        for (i, valve) in shortestPathToDestination[1..<shortestPathToDestination.count].enumerated() {
-//            value += valve.flowRate / (i+1)
-//        }
-//        print("\(populatedValve.name) -> \(destination.name) value: \(value)")
-//        return value
+        self.isOpen = isOpen
     }
 }
 
@@ -159,14 +42,75 @@ func main() throws {
         return Valve(name: matches[0], flowRate: Int(matches[1])!, destinations: Set(matches[2].components(separatedBy: ", ")))
      })
 
+    let (distances, paths) = getDistancesAndPathsBetweenValves(valves: valves)
+
+
+
+//    for (key, value) in distances {
+//        print(key, value)
+//    }
+    struct CacheItem: Hashable {
+        let start: Valve
+        let valves: Set<Valve>
+        let timeRemaining: Int
+        let flowRate: Int
+        let pressureReleased: Int
+    }
+    var cache: [CacheItem: Int] = [:]
+    func dfs(start: Valve, valves: Set<Valve>, timeRemaining: Int, flowRate: Int, pressureReleased: Int) -> Int {
+//        print(start.name, timeRemaining)
+        if let cached = cache[CacheItem(start: start, valves: valves, timeRemaining: timeRemaining, flowRate: flowRate, pressureReleased: pressureReleased)] {
+            return cached
+        }
+        if areAllPositiveValvesOpen(valves: valves) {
+            return pressureReleased + ((timeRemaining) * flowRate)
+        }
+        if timeRemaining <= 0 {
+            return pressureReleased
+        }
+        let neighbours = start.destinations
+        var best = 0
+        for n in neighbours {
+            let valve = valves.first(where: { $0.name == n })!
+            if valve.flowRate > 0 && timeRemaining > 1 && valve.isOpen == false {
+                // Open it and recurse
+                let valvesCopy = Set(valves.map { $0.copy() as! Valve })
+                let valve = valvesCopy.first(where: { $0.name == n })!
+                valve.isOpen = true
+                let result = dfs(start: valve, valves: Set(valvesCopy.map { $0.copy() as! Valve }), timeRemaining: timeRemaining - 2, flowRate: flowRate + valve.flowRate, pressureReleased: pressureReleased + flowRate + (flowRate + valve.flowRate))
+                best = max(result, best)
+            }
+            // Recurse
+//            let valve = valves.first(where: { $0.name == n })!
+            let result = dfs(start: valve, valves: Set(valves.map { $0.copy() as! Valve }), timeRemaining: timeRemaining - 1, flowRate: flowRate, pressureReleased: pressureReleased + flowRate)
+            best = max(result, best)
+        }
+        cache[CacheItem(start: start, valves: valves, timeRemaining: timeRemaining, flowRate: flowRate, pressureReleased: pressureReleased)] = best
+        return best
+
+    }
+
+    let result = dfs(start: valves.first(where: { $0.name == "AA" })!, valves: Set(valves.map({ $0.copy() as! Valve })), timeRemaining: 29, flowRate: 0, pressureReleased: 0)
+    print(result)
+}
+
+private func areAllPositiveValvesOpen(valves: Set<Valve>) -> Bool {
+    let positiveValves = valves.filter({ $0.flowRate > 0 })
+    if positiveValves.contains(where: { !$0.isOpen }) {
+        return false
+    }
+    return true
+}
+
+private func getDistancesAndPathsBetweenValves(valves: Set<Valve>) -> (distances: [[Valve]: Int], paths: [[Valve]: [Valve]]) {
     var distances: [[Valve]: Int] = [:]
     var paths: [[Valve]: [Valve]] = [:]
 
-    for valve in valves {
+    for valve in valves where valve.flowRate > 0 || valve.name == "AA" {
         distances[[valve, valve]] = 0
         paths[[valve, valve]] = []
 
-        let others = valves.filter({ $0 != valve })
+        let others = valves.filter({ $0 != valve && $0.flowRate > 0 })
         for otherValve in others {
             let result = dijkstra(graph: valves,
                                   source: valve,
@@ -188,8 +132,7 @@ func main() throws {
         }
     }
 
-    let cave = Cave(valves: valves, distanceBetweenValves: distances, shortestPathsBetweenValves: paths)
-    cave.run()
+    return (distances, paths)
 }
 
 Timer.time(main)
