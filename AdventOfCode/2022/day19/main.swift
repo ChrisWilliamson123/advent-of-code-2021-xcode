@@ -8,19 +8,10 @@
 import Foundation
 
 struct Blueprint {
-    let id: Int
-    let oreCost: Int
-    let clayCost: Int
-    let obOreCost: Int
-    let obClayCost: Int
-    let geoOreCost: Int
-    let geoObsCost: Int
+    let id, oreCost, clayCost, obOreCost, obClayCost, geoOreCost, geoObsCost: UInt16
+    let maxOreRequirement, maxClayRequirement, maxObsRequirement: UInt16
 
-    let maxOreRequirement: Int
-    let maxClayRequirement: Int
-    let maxObsRequirement: Int
-
-    init(id: Int, oreCost: Int, clayCost: Int, obOreCost: Int, obClayCost: Int, geoOreCost: Int, geoObsCost: Int) {
+    init(id: UInt16, oreCost: UInt16, clayCost: UInt16, obOreCost: UInt16, obClayCost: UInt16, geoOreCost: UInt16, geoObsCost: UInt16) {
         self.id = id
         self.oreCost = oreCost
         self.clayCost = clayCost
@@ -35,39 +26,27 @@ struct Blueprint {
 
     }
 
-    func getMaxGeodesPossible(in time: Int = 24) -> Int {
-        var cache: [State: Int] = [:]
-        func dfs(state: State) -> Int {
+    func getMaxGeodesPossible(in time: UInt16 = 24) -> UInt16 {
+        var cache: [State: UInt16] = [:]
+        func dfs(state: State) -> UInt16 {
             if let cached = cache[state] { return cached }
             if state.t == time { return state.g }
 
-            var bestGeodesRetrieved = 0
+            var bestGeodesRetrieved: UInt16 = 0
             let nextStates = getNextStates(from: state, using: self, endTime: time)
-            for state in nextStates {
-                let result = dfs(state: state)
-                bestGeodesRetrieved = max(result, bestGeodesRetrieved)
-            }
+            for state in nextStates { bestGeodesRetrieved = max(dfs(state: state), bestGeodesRetrieved) }
             cache[state] = bestGeodesRetrieved
             return bestGeodesRetrieved
         }
 
-        let initialState = State(0, 0, 0, 0, 0, 1, 0, 0, 0)
-        return dfs(state: initialState)
+        return dfs(state: State(0, 0, 0, 0, 0, 1, 0, 0, 0))
     }
 }
 
 struct State: Hashable {
-    let t: Int
-    let o: Int
-    let c: Int
-    let ob: Int
-    let g: Int
-    let oR: Int
-    let cR: Int
-    let obR: Int
-    let gR: Int
+    let t, o, c, ob, g, oR, cR, obR, gR: UInt16
 
-    init(_ t: Int, _ o: Int, _ c: Int, _ ob: Int, _ g: Int, _ oR: Int, _ cR: Int, _ obR: Int, _ gR: Int) {
+    init(_ t: UInt16, _ o: UInt16, _ c: UInt16, _ ob: UInt16, _ g: UInt16, _ oR: UInt16, _ cR: UInt16, _ obR: UInt16, _ gR: UInt16) {
         self.t = t
         self.o = o
         self.c = c
@@ -79,7 +58,8 @@ struct State: Hashable {
         self.gR = gR
     }
 
-    func pruned(for blueprint: Blueprint, endTime: Int) -> State {
+    func pruned(for blueprint: Blueprint, endTime: UInt16) -> State {
+        if endTime == t { return self }
         let timeRemaining = endTime - t - 1
         let maxPossibleOreUse = timeRemaining * blueprint.maxOreRequirement
         let maxPossibleClayUse = timeRemaining * blueprint.maxClayRequirement
@@ -100,13 +80,13 @@ func main() throws {
     let input: [String] = try readInput(fromTestFile: false)
     let blueprints = input.map {
         let regex = Regex("(\\d+)")
-        let ints = regex.getGreedyMatches(in: $0).compactMap(Int.init)
+        let ints = regex.getGreedyMatches(in: $0).compactMap(UInt16.init)
         assert(ints.count == 7)
         return Blueprint(id: ints[0], oreCost: ints[1], clayCost: ints[2], obOreCost: ints[3], obClayCost: ints[4], geoOreCost: ints[5], geoObsCost: ints[6])
     }
 
     let queue = OperationQueue()
-    var results: [Int] = []
+    var results: [UInt16] = []
     for b in blueprints {
         queue.addOperation({
             results.append(b.getMaxGeodesPossible() * b.id)
@@ -125,13 +105,7 @@ func main() throws {
     print(results.multiply())
 }
 
-private func getNextStates(from state: State, using blueprint: Blueprint, endTime: Int) -> Set<State> {
-    /**
-     THERES NO USE IN HAVING MORE OF A MATERIAL THAN WHAT THE GREEDIEST ROBOT CAN USE
-     Therefore if we have excess materials, we can just reduce them down to the maximum needed?
-     THERES ALSO NO USE IN HAVING MORE ROBOTS THAN THE NUMBER OF MATERIALS WE CAN USE
-     */
-//    let (timeElapsed, ore, clay, obs, geo, oreR, clayR, obsR, geoR) = destructureState(state)
+private func getNextStates(from state: State, using blueprint: Blueprint, endTime: UInt16) -> Set<State> {
     let timeElapsed = state.t
     let ore = state.o
     let clay = state.c
@@ -170,10 +144,6 @@ private func getNextStates(from state: State, using blueprint: Blueprint, endTim
     }
 
     return states
-}
-
-private func destructureState(_ state: [Int]) -> (Int, Int, Int, Int, Int, Int, Int, Int, Int) {
-    return (state[0], state[1], state[2], state[3], state[4], state[5], state[6], state[7], state[8])
 }
 
 Timer.time(main)
