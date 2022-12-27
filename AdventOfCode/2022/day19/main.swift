@@ -8,10 +8,10 @@
 import Foundation
 
 struct Blueprint {
-    let id, oreCost, clayCost, obOreCost, obClayCost, geoOreCost, geoObsCost: UInt16
-    let maxOreRequirement, maxClayRequirement, maxObsRequirement: UInt16
+    let id, oreCost, clayCost, obOreCost, obClayCost, geoOreCost, geoObsCost: Int
+    let maxOreRequirement, maxClayRequirement, maxObsRequirement: Int
 
-    init(id: UInt16, oreCost: UInt16, clayCost: UInt16, obOreCost: UInt16, obClayCost: UInt16, geoOreCost: UInt16, geoObsCost: UInt16) {
+    init(id: Int, oreCost: Int, clayCost: Int, obOreCost: Int, obClayCost: Int, geoOreCost: Int, geoObsCost: Int) {
         self.id = id
         self.oreCost = oreCost
         self.clayCost = clayCost
@@ -26,13 +26,13 @@ struct Blueprint {
 
     }
 
-    func getMaxGeodesPossible(in time: UInt16 = 24) -> UInt16 {
-        var cache: [State: UInt16] = [:]
-        func dfs(state: State) -> UInt16 {
+    func getMaxGeodesPossible(in time: Int = 24) -> Int {
+        var cache: [State: Int] = [:]
+        func dfs(state: State) -> Int {
             if let cached = cache[state] { return cached }
             if state.t == time { return state.g }
 
-            var bestGeodesRetrieved: UInt16 = 0
+            var bestGeodesRetrieved: Int = 0
             let nextStates = getNextStates(from: state, using: self, endTime: time)
             for state in nextStates { bestGeodesRetrieved = max(dfs(state: state), bestGeodesRetrieved) }
             cache[state] = bestGeodesRetrieved
@@ -44,9 +44,9 @@ struct Blueprint {
 }
 
 struct State: Hashable {
-    let t, o, c, ob, g, oR, cR, obR, gR: UInt16
+    let t, o, c, ob, g, oR, cR, obR, gR: Int
 
-    init(_ t: UInt16, _ o: UInt16, _ c: UInt16, _ ob: UInt16, _ g: UInt16, _ oR: UInt16, _ cR: UInt16, _ obR: UInt16, _ gR: UInt16) {
+    init(_ t: Int, _ o: Int, _ c: Int, _ ob: Int, _ g: Int, _ oR: Int, _ cR: Int, _ obR: Int, _ gR: Int) {
         self.t = t
         self.o = o
         self.c = c
@@ -58,7 +58,7 @@ struct State: Hashable {
         self.gR = gR
     }
 
-    func pruned(for blueprint: Blueprint, endTime: UInt16) -> State {
+    func pruned(for blueprint: Blueprint, endTime: Int) -> State {
         if endTime == t { return self }
         let timeRemaining = endTime - t - 1
         let maxPossibleOreUse = timeRemaining * blueprint.maxOreRequirement
@@ -80,13 +80,13 @@ func main() throws {
     let input: [String] = try readInput(fromTestFile: false)
     let blueprints = input.map {
         let regex = Regex("(\\d+)")
-        let ints = regex.getGreedyMatches(in: $0).compactMap(UInt16.init)
+        let ints = regex.getGreedyMatches(in: $0).compactMap(Int.init)
         assert(ints.count == 7)
         return Blueprint(id: ints[0], oreCost: ints[1], clayCost: ints[2], obOreCost: ints[3], obClayCost: ints[4], geoOreCost: ints[5], geoObsCost: ints[6])
     }
 
     let queue = OperationQueue()
-    var results: [UInt16] = []
+    var results: [Int] = []
     for b in blueprints {
         queue.addOperation({
             results.append(b.getMaxGeodesPossible() * b.id)
@@ -105,7 +105,7 @@ func main() throws {
     print(results.multiply())
 }
 
-private func getNextStates(from state: State, using blueprint: Blueprint, endTime: UInt16) -> Set<State> {
+private func getNextStates(from state: State, using blueprint: Blueprint, endTime: Int) -> Set<State> {
     let timeElapsed = state.t
     let ore = state.o
     let clay = state.c
