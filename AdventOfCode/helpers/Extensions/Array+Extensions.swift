@@ -18,6 +18,26 @@ extension Array where Element == Int {
     }
 }
 
+extension Array where Element == UInt8 {
+    func sum() -> UInt8 {
+        self.reduce(0, +)
+    }
+
+    func multiply() -> UInt8 {
+        self.reduce(1, *)
+    }
+}
+
+extension Array where Element == UInt16 {
+    func sum() -> UInt16 {
+        self.reduce(0, +)
+    }
+
+    func multiply() -> UInt16 {
+        self.reduce(1, *)
+    }
+}
+
 extension Array where Element: Equatable {
     func combinations(count: Int) -> [[Element]] {
         if count == 0 { return [[]] }
