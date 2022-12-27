@@ -8,9 +8,9 @@ extension String {
         return self[i ..< i + 1]
     }
 
-//    subscript (i: Int) -> Character {
-//        return [Character](self[i ..< i + 1])[0]
-//    }
+    subscript (i: Int) -> Character {
+        return [Character](self[i ..< i + 1])[0]
+    }
 
     func substring(fromIndex: Int) -> String {
         return self[min(fromIndex, length) ..< length]
