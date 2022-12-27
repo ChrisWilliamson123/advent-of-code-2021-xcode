@@ -26,6 +26,15 @@ struct Rock: Hashable {
     }
 }
 
+struct Slice: Hashable {
+    let rocks: Set<Rock>
+    let origin: Coordinate
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(rocks)
+    }
+}
+
 class Cave {
     private let gasJets: [GasJet]
     private let rockShapes: [Set<Coordinate>] = [
@@ -39,7 +48,13 @@ class Cave {
     private var fallenRocks: [Rock] = []
     private var currentlyFallingRock: Rock
     private var attemptedJetMovements = 0
-    private var lastTwenty: [Rock] = []
+    private var lastTwenty: [Rock] = [] {
+        didSet {
+            cacheCheck = true
+        }
+    }
+    private var rockCoords: Set<Coordinate> = []
+    private var cacheCheck = false
 
     init(gasJets: [GasJet]) {
         self.gasJets = gasJets
@@ -49,13 +64,58 @@ class Cave {
 //        printCave()
     }
 
+    struct CacheItem: Hashable {
+        let grid: [[Character]]
+//        let rocksFallen: Int
+
+        func hash(into hasher: inout Hasher) {
+            hasher.combine(grid)
+        }
+    }
+
     func simulateRocks() {
         /**
          On each tick, use a jet to try and move the rock, then try to move the rock down
          */
-        while rocksFallen < 200000 {
-            if rocksFallen % 10000 == 0 { print (rocksFallen) }
+//        seen =
+        var grids: Set<CacheItem> = []
+        while 1 == 1 {
+//            if rocksFallen %  == 0 { print (rocksFallen) }
 //            print(rocksFallen)
+            // Get the last twenty to get maxY
+            if cacheCheck, let maxY = lastTwenty.last?.origin.y {
+//                let rockCoords = fallenRocks.reduce(into: Set<Coordinate>(), { (partial, rock) in rock.coords.forEach({ coord in partial.insert(coord) }) })
+                // build a grid of last twenty
+                var grid = [[Character]]()
+                for y in stride(from: maxY, to: maxY-40, by: -1) {
+                    var gridRow: [Character] = []
+                    for x in 0..<7 {
+                        let coord = Coordinate(x, y)
+                        if rockCoords.contains(coord) {
+                            gridRow.append("#")
+                        } else {
+                            gridRow.append(".")
+                        }
+                    }
+                    grid.append(gridRow)
+                }
+                let item = CacheItem(grid: grid)
+                cacheCheck = false
+                if grids.contains(item) {
+                    print("Found pattern")
+                    print("TopOfFallen:", lastTwenty.last!.origin.y)
+                    print("Number of fallen:", rocksFallen)
+                    if 1000000000000 % rocksFallen == 0 {
+                        print("HERE!")
+                        break
+                    }
+                    grids.removeAll()
+                    grids.insert(item)
+//                    break
+                } else {
+                    grids.insert(item)
+                }
+            }
             let jet = gasJets[attemptedJetMovements % gasJets.count]
             if jetCanMoveRock(jet) {
                 currentlyFallingRock = Rock(shape: currentlyFallingRock.shape, origin: currentlyFallingRock.origin + jet.movement)
@@ -71,6 +131,7 @@ class Cave {
                 // we can't move rock down, so it must settle and spawn new rock
                 fallenRocks.append(currentlyFallingRock)
                 lastTwenty.append(currentlyFallingRock)
+                currentlyFallingRock.coords.forEach({ rockCoords.insert($0) })
                 rocksFallen += 1
                 if rocksFallen > 20 {
                     lastTwenty.removeFirst()
@@ -88,7 +149,7 @@ class Cave {
         }
         let maxY = lastTwenty.last!.origin.y
         print(maxY + 1)
-        printCave()
+//        printCave()
     }
 
     private func jetCanMoveRock(_ jet: GasJet) -> Bool {
