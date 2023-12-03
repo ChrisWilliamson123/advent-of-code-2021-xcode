@@ -51,7 +51,6 @@ func aStar<T: Hashable>(graph: Set<T>,
                         getNeighbours: (T) -> Set<T>,
                         getDistanceBetween: (T, T) -> Int,
                         heuristicFunction: (T) -> Int) -> (distances: [T: Int], chain: [T: T?]) {
-    var minutesElapsed = -1
     var prev: [T: T?] = [:]
     var dist: [T: Int] = [:]
 
