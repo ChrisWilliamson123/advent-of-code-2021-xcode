@@ -26,3 +26,5 @@ DerivedData/
 /*.gcno
 
 .DS_Store
+
+**/*input.txt
