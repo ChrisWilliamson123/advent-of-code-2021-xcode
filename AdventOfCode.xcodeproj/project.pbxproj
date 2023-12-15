@@ -1740,6 +1740,9 @@
 		83C2F8022B2C517300448C5E /* input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 83C2F7E32B2C515D00448C5E /* input.txt */; };
 		83C2F8032B2C517300448C5E /* test_input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 83C2F7E22B2C515D00448C5E /* test_input.txt */; };
 		83C2F8042B2C519800448C5E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C2F7E12B2C515D00448C5E /* main.swift */; };
+		83C2F8142B2C9C8500448C5E /* RangeSplitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C2F8132B2C9C8500448C5E /* RangeSplitter.swift */; };
+		83C2F8152B2C9DAC00448C5E /* AdventOfCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C2F80D2B2C9C5F00448C5E /* AdventOfCodeTests.swift */; };
+		83C2F8162B2C9DFD00448C5E /* RangeSplitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C2F8132B2C9C8500448C5E /* RangeSplitter.swift */; };
 		8711150F294741DD009FD7AC /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711150E294741DD009FD7AC /* Timer.swift */; };
 		87111510294741DD009FD7AC /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711150E294741DD009FD7AC /* Timer.swift */; };
 		87111511294741DD009FD7AC /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711150E294741DD009FD7AC /* Timer.swift */; };
@@ -4467,6 +4470,9 @@
 		83C2F7E22B2C515D00448C5E /* test_input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = test_input.txt; sourceTree = "<group>"; };
 		83C2F7E32B2C515D00448C5E /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 		83C2F8012B2C515F00448C5E /* 2023.15 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 2023.15; sourceTree = BUILT_PRODUCTS_DIR; };
+		83C2F80B2B2C9C5F00448C5E /* AdventOfCodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdventOfCodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		83C2F80D2B2C9C5F00448C5E /* AdventOfCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventOfCodeTests.swift; sourceTree = "<group>"; };
+		83C2F8132B2C9C8500448C5E /* RangeSplitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSplitter.swift; sourceTree = "<group>"; };
 		8711150E294741DD009FD7AC /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		87258CD829389FAE00418B26 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		87258CDE2938A00900418B26 /* 2022.1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 2022.1; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -5316,6 +5322,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				83C2F7FA2B2C515F00448C5E /* Algorithms in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83C2F8082B2C9C5F00448C5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6455,6 +6468,7 @@
 			isa = PBXGroup;
 			children = (
 				65E46134276A34680006ACC9 /* AdventOfCode */,
+				83C2F80C2B2C9C5F00448C5E /* AdventOfCodeTests */,
 				65E46133276A34680006ACC9 /* Products */,
 				8729411F295659E10051DF35 /* Frameworks */,
 			);
@@ -6596,6 +6610,7 @@
 				8351846B2B2A4F5B00436A72 /* 2023.13 */,
 				835184912B2B67D800436A72 /* 2023.14 */,
 				83C2F8012B2C515F00448C5E /* 2023.15 */,
+				83C2F80B2B2C9C5F00448C5E /* AdventOfCodeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -6963,9 +6978,11 @@
 		8381D8BF2B24A51F00B25C4D /* day5 */ = {
 			isa = PBXGroup;
 			children = (
+				83C2F80D2B2C9C5F00448C5E /* AdventOfCodeTests.swift */,
 				8381D8C02B24A53800B25C4D /* input.txt */,
 				8381D8C12B24A53800B25C4D /* main.swift */,
 				8381D8C22B24A53800B25C4D /* test_input.txt */,
+				83C2F8132B2C9C8500448C5E /* RangeSplitter.swift */,
 			);
 			path = day5;
 			sourceTree = "<group>";
@@ -7028,6 +7045,13 @@
 				83C2F7E22B2C515D00448C5E /* test_input.txt */,
 			);
 			path = day15;
+			sourceTree = "<group>";
+		};
+		83C2F80C2B2C9C5F00448C5E /* AdventOfCodeTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AdventOfCodeTests;
 			sourceTree = "<group>";
 		};
 		87258CD729389F8100418B26 /* 2022 */ = {
@@ -9129,6 +9153,23 @@
 			productReference = 83C2F8012B2C515F00448C5E /* 2023.15 */;
 			productType = "com.apple.product-type.tool";
 		};
+		83C2F80A2B2C9C5F00448C5E /* AdventOfCodeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83C2F80F2B2C9C5F00448C5E /* Build configuration list for PBXNativeTarget "AdventOfCodeTests" */;
+			buildPhases = (
+				83C2F8072B2C9C5F00448C5E /* Sources */,
+				83C2F8082B2C9C5F00448C5E /* Frameworks */,
+				83C2F8092B2C9C5F00448C5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AdventOfCodeTests;
+			productName = AdventOfCodeTests;
+			productReference = 83C2F80B2B2C9C5F00448C5E /* AdventOfCodeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		87258CDD2938A00900418B26 /* 2022.1 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87258CE22938A00900418B26 /* Build configuration list for PBXNativeTarget "2022.1" */;
@@ -9612,9 +9653,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1400;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					83C2F80A2B2C9C5F00448C5E = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
 					87258CDD2938A00900418B26 = {
 						CreatedOnToolsVersion = 14.0.1;
 					};
@@ -9769,9 +9813,20 @@
 				8351844E2B2A4F5B00436A72 /* 2023.13 */,
 				835184742B2B67D800436A72 /* 2023.14 */,
 				83C2F7E42B2C515F00448C5E /* 2023.15 */,
+				83C2F80A2B2C9C5F00448C5E /* AdventOfCodeTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		83C2F8092B2C9C5F00448C5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		653DB342276B8B2400BC53DF /* Sources */ = {
@@ -12147,6 +12202,7 @@
 				8381D8D22B24A55200B25C4D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				8381D8D32B24A55200B25C4D /* Coordinate.swift in Sources */,
 				8381D8D42B24A55200B25C4D /* Input.swift in Sources */,
+				83C2F8142B2C9C8500448C5E /* RangeSplitter.swift in Sources */,
 				8381D8D52B24A55200B25C4D /* Regex.swift in Sources */,
 				8381D8D62B24A55200B25C4D /* BFS.swift in Sources */,
 			);
@@ -12293,6 +12349,15 @@
 				83C2F7F62B2C515F00448C5E /* Input.swift in Sources */,
 				83C2F7F72B2C515F00448C5E /* Regex.swift in Sources */,
 				83C2F7F82B2C515F00448C5E /* BFS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83C2F8072B2C9C5F00448C5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83C2F8162B2C9DFD00448C5E /* RangeSplitter.swift in Sources */,
+				83C2F8152B2C9DAC00448C5E /* AdventOfCodeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -15610,6 +15675,47 @@
 			};
 			name = Release;
 		};
+		83C2F8102B2C9C5F00448C5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T3S4B78JWS;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cjw.AdventOfCodeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		83C2F8112B2C9C5F00448C5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T3S4B78JWS;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cjw.AdventOfCodeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		87258CE32938A00900418B26 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -17235,6 +17341,15 @@
 			buildConfigurations = (
 				83C2F7FF2B2C515F00448C5E /* Debug */,
 				83C2F8002B2C515F00448C5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83C2F80F2B2C9C5F00448C5E /* Build configuration list for PBXNativeTarget "AdventOfCodeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83C2F8102B2C9C5F00448C5E /* Debug */,
+				83C2F8112B2C9C5F00448C5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
