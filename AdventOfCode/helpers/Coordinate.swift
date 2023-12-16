@@ -87,12 +87,12 @@ struct Coordinate: Hashable, CustomStringConvertible {
      */
     func getAxialAdjacents<T>(in grid: [[T]], includingSelf: Bool = false) -> Set<Coordinate> {
 //        print(grid.count)
-        var toReturn: Set<Coordinate> = [
+        var toReturn: Set<Coordinate> = Set([
             Coordinate(max(0, x-1), y),
             Coordinate(min(grid[0].count-1, x+1), y),
             Coordinate(x, max(0, y-1)),
             Coordinate(x, min(grid.count-1, y+1))
-        ]
+        ].filter({ $0 != self }))
         if includingSelf {
             toReturn.insert(self)
         }
@@ -161,4 +161,21 @@ struct Coordinate: Hashable, CustomStringConvertible {
         print("Got coords within distance")
         return set
     }
+    
+    func isIn<T>(_ grid: [[T]]) -> Bool {
+        return self.x >= 0 && self.x < grid[0].count
+            && self.y >= 0 && self.y < grid.count
+    }
+}
+
+extension Coordinate {
+    static let right = Coordinate(1, 0)
+    static let left = Coordinate(-1, 0)
+    static let down = Coordinate(0, 1)
+    static let up = Coordinate(0, -1)
+    
+    static let east = Coordinate(1, 0)
+    static let west = Coordinate(-1, 0)
+    static let south = Coordinate(0, 1)
+    static let north = Coordinate(0, -1)
 }

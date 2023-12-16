@@ -1,130 +1,128 @@
 import Foundation
 
-func main() throws {
-    let input: [String] = try readInput(fromTestFile: true, separator: "\n")
-    // Find the loop coords
+enum PipePiece: Character, Hashable {
+    case horiz = "-"
+    case vert = "|"
+    case ne = "L"
+    case nw = "J"
+    case sw = "7"
+    case se = "F"
+    case start = "S"
     
-    var coordsToChars: [Coordinate: Character] = [:]
-    var grid: [[Character]] = []
-    
-    for (y, line) in input.enumerated() {
-        var row: [Character] = []
-        for (x, char) in line.enumerated() {
-            let coord = Coordinate(x, y)
-            coordsToChars[coord] = char
-            row.append(char)
-        }
-        grid.append(row)
+    var validConnections: [[PipePiece]?] {
+        let westFacing: [PipePiece] = [.horiz, .nw, .sw, .start]
+        let northFacing: [PipePiece] = [.vert, .nw, .ne, .start]
+        let southFacing: [PipePiece] = [.vert, .se, .sw, .start]
+        let eastFacing: [PipePiece] = [.horiz, .ne, .se, .start]
+        // piece: [N, E, S, W]
+        let mapping: [PipePiece: [[PipePiece]?]] = [
+            .horiz: [nil, westFacing, nil, eastFacing],
+            .vert:  [southFacing, nil, northFacing, nil],
+            .ne:    [southFacing, westFacing, nil, nil],
+            .nw:    [southFacing, nil, nil, eastFacing],
+            .sw:    [nil, nil, northFacing, eastFacing],
+            .se:    [nil, westFacing, northFacing, nil],
+            .start: [southFacing, westFacing, northFacing, eastFacing]
+        ]
+        return mapping[self]!
     }
-    
-    let startLoopCoord = coordsToChars.first(where: { $0.value == "S" })!.key
-    let coords = Set(coordsToChars.keys)
-    print(startLoopCoord)
-    
-    let path = dijkstra(graph: coords,
-                        source: startLoopCoord,
-                        target: Coordinate(0, 0)) { currentCoord in
-//        print("CC: \(coordsToChars[currentCoord])")
-        var neighbours = Set<Coordinate>()
-        let adjacents = currentCoord.getAdjacents(in: grid).compactMap({ ($0, coordsToChars[$0]) })
-        for a in adjacents {
-            let upCoord = currentCoord + Coordinate(0, -1)
-            if a.0 == upCoord && ["|", "7", "F"].contains(a.1) && ["|", "J", "L", "S"].contains(coordsToChars[currentCoord]) {
-                neighbours.insert(a.0)
-            }
-            let downCoord = currentCoord + Coordinate(0, 1)
-            if a.0 == downCoord && ["|", "L", "J"].contains(a.1) && ["|", "F", "7", "S"].contains(coordsToChars[currentCoord]) {
-                neighbours.insert(a.0)
-            }
-            let rightCoord = currentCoord + Coordinate(1, 0)
-            if a.0 == rightCoord && ["-", "7", "J"].contains(a.1) && ["-", "L", "F", "S"].contains(coordsToChars[currentCoord]) {
-                neighbours.insert(a.0)
-            }
-            let leftCoord = currentCoord + Coordinate(-1, 0)
-            if a.0 == leftCoord && ["-", "L", "F"].contains(a.1) && ["-", "J", "7", "S"].contains(coordsToChars[currentCoord]) {
-                neighbours.insert(a.0)
-            }
-        }
-        return neighbours
-        
-    } getDistanceBetween: { _, _ in
-        1
-    }
-    
-    print(path.distances.values.filter( { $0 != Int.max } ).max()!)
-//    exit(0)
-    
-    let visitable = Set(Set(Array(path.chain.keys)).union(Set(path.chain.values)).compactMap({ $0 }))
-    
-    for (y, row) in grid.enumerated() {
-        var rowString = ""
-        for (x, char) in row.enumerated() {
-            let coord = Coordinate(x, y)
-            rowString += "\(visitable.contains(coord) ? "#" : ".")"
-        }
-        print(rowString)
-    }
-    exit(0)
-    print(visitable.count)
-    var maxDistance = 0
-    var contained: [Coordinate] = []
-    var done = 0
-    let toLoop = coords.filter({ coordsToChars[$0] != "S" && !visitable.contains($0) })
-    print(toLoop.count)
-    var index = 0
-    for c in toLoop {
-        print(c, index)
-//        print(done)
-//        print(v)
-        let path = dijkstra(graph: coords,
-                            source: c,
-                            target: Coordinate(0, 0)) { currentCoord in
-//            var neighbours = Set<Coordinate>()
-            let adjacents = Set(currentCoord.getAdjacents(xBounds: -1...grid[0].count, yBounds: -1...grid.count))
-            if c == Coordinate(3, 2) {
-                
-                print(c, adjacents.subtracting(visitable))
-            }
-            return adjacents.subtracting(visitable)
-//            let adjacents = currentCoord.getAxialAdjacents(in: grid).compactMap({ ($0, coordsToChars[$0]) })
-//            for a in adjacents {
-//                let upCoord = currentCoord + Coordinate(0, -1)
-//                if a.0 == upCoord && ["|", "7", "F"].contains(a.1) && ["|", "J", "L", "S"].contains(coordsToChars[currentCoord]) {
-//                    neighbours.insert(a.0)
-//                }
-//                let downCoord = currentCoord + Coordinate(0, 1)
-//                if a.0 == downCoord && ["|", "L", "J"].contains(a.1) && ["|", "F", "7", "S"].contains(coordsToChars[currentCoord]) {
-//                    neighbours.insert(a.0)
-//                }
-//                let rightCoord = currentCoord + Coordinate(1, 0)
-//                if a.0 == rightCoord && ["-", "7", "J"].contains(a.1) && ["-", "L", "F", "S"].contains(coordsToChars[currentCoord]) {
-//                    neighbours.insert(a.0)
-//                }
-//                let leftCoord = currentCoord + Coordinate(-1, 0)
-//                if a.0 == leftCoord && ["-", "L", "F"].contains(a.1) && ["-", "J", "7", "S"].contains(coordsToChars[currentCoord]) {
-//                    neighbours.insert(a.0)
-//                }
-//            }
-//            return neighbours
-            
-        } getDistanceBetween: { _, _ in
-            1
-        }
-//        print(c, path.distances[Coordinate(0, 0)])
-        if path.distances[Coordinate(0, 0)] == Int.max {
-//            print("hello")
-//            print(c)
-            print("Adding \(c)")
-            contained.append(c)
-        }
-        done += 1
-        index += 1
-    }
-    
-//    print(maxDistance)
-    print("p2", contained.filter({ !visitable.contains($0) }).count)
-    print(contained)
-
 }
 
+struct PipeMaze {
+    let grid: [[Character]]
+    let startPosition: Coordinate
+    let coordsToPipes: [Coordinate: PipePiece]
+    let coordsToChars: [Coordinate: Character]
+    
+    init(grid: [[Character]], startPosition: Coordinate) {
+        self.grid = grid
+        self.startPosition = startPosition
+        
+        var coordsToPipes: [Coordinate: PipePiece] = [:]
+        var coordsToChars: [Coordinate: Character] = [:]
+        for (yIndex, row) in grid.enumerated() {
+            for (xIndex, character) in row.enumerated() {
+                let coord = Coordinate(xIndex, yIndex)
+                if let pipePiece = PipePiece(rawValue: character) {
+                    coordsToPipes[coord] = pipePiece
+                }
+                coordsToChars[coord] = character
+            }
+        }
+        self.coordsToPipes = coordsToPipes
+        self.coordsToChars = coordsToChars
+    }
+    
+    func getPipeConnections(at coordinate: Coordinate) -> Set<Coordinate> {
+        guard let sourcePipePiece = coordsToPipes[coordinate] else { assert(false, "Could not get pipe at coord \(coordinate)") }
+
+        let inRangeNeighbourCoords = coordinate.getAxialAdjacents(in: grid)
+        return inRangeNeighbourCoords.reduce(into: Set<Coordinate>(), { currentSet, potentialNeighbour in
+            let diff = potentialNeighbour - coordinate
+            let connectionsIndexes = [
+                Coordinate(0, -1): 0,
+                Coordinate(-1, 0): 3,
+                Coordinate(0, 1): 2,
+                Coordinate(1, 0): 1,
+            ]
+            let validConnections = sourcePipePiece.validConnections
+            if let neighbourPipePiece = coordsToPipes[potentialNeighbour] {
+                let validConnectionsForSourceToAttachTo = validConnections[connectionsIndexes[diff]!] ?? []
+                if validConnectionsForSourceToAttachTo.contains(neighbourPipePiece) {
+                    currentSet.insert(potentialNeighbour)
+                }
+            }
+        })
+    }
+}
+
+func main() throws {
+    let input: [String] = try readInput(fromTestFile: false, separator: "\n")
+    
+    var start: Coordinate!
+    let grid = input.enumerated().map({ (yIndex, line) in
+        if let xIndex = line.firstIndex(of: "S") {
+            start = Coordinate(line.distance(from: line.startIndex, to: xIndex), yIndex)
+        }
+        return [Character](line)
+    })
+    
+    let pipeMaze = PipeMaze(grid: grid, startPosition: start)
+    
+    // Follow pipes until back at source
+    var current = pipeMaze.getPipeConnections(at: pipeMaze.startPosition).first!
+    var path = [pipeMaze.startPosition, current]
+    while current != pipeMaze.startPosition {
+        let next = pipeMaze.getPipeConnections(at: current).filter({ $0 != path[path.count - 2] })
+        current = next.first!
+        path.append(current)
+    }
+    print((path.count - 1) / 2)
+    
+    // PART 2
+    let loopCoords = Set(path)
+    var inLoop = 0
+    for (yIndex, row) in pipeMaze.grid.enumerated() {
+        if yIndex == 0 || yIndex == grid.count - 1 {
+            continue
+        }
+        var count = 0
+        var inGrid = false
+        for (xIndex, _) in row.enumerated() {
+            let coord = Coordinate(xIndex, yIndex)
+            if loopCoords.contains(coord) && [PipePiece.vert, PipePiece.nw, PipePiece.ne, PipePiece.start].contains(pipeMaze.coordsToPipes[coord]) {
+                inGrid.toggle()
+            }
+            if !loopCoords.contains(coord) {
+                if inGrid {
+                    count += 1
+                }
+            }
+        }
+        inLoop += count
+    }
+    print(inLoop)
+}
+
+// 615 too high
 Timer.time(main)

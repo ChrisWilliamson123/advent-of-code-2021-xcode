@@ -66,6 +66,7 @@ func bfs<T: Hashable>(graph: Set<T>,
 
         if let target = target, target.contains(coord) { return (distances, prev) }
         let neighbours = getNeighbours(coord).filter({ !visited.contains($0) })
+
         neighbours.forEach { neighbour in
             let newDistance = distance + getDistanceBetween(coord, neighbour)
             queue.insert((neighbour, newDistance), at: 0)
