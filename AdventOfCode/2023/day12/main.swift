@@ -1,127 +1,146 @@
 import Foundation
 import Algorithms
 
-enum SpringCondition: String, CustomStringConvertible {
-    case operational = "."
-    case damaged = "#"
-    case unknown = "?"
-    
-    var description: String { self.rawValue }
+func replaceInString(string: String, new: Character, location: Int) -> String {
+    var toReturn = [Character](string)
+    toReturn[location] = new
+    return String(toReturn)
 }
 
-struct Record {
-    let springs: [SpringCondition]
-    let damagedSpringGroups: [Int]
+// Returns num
+private func solve(line: String, index: Int, groups: [Int], groupIndex: Int) -> Set<String> {
+//    print(line, index, groups)
+    let hasFinishedLine = index >= line.count
     
-    var numberOfDamagedSprings: Int {
-        damagedSpringGroups.sum()
+    if hasFinishedLine {
+        return groups.isEmpty ? [line] : []
     }
     
-    var numberOfOperationalSprings: Int {
-        springs.count - numberOfDamagedSprings
-    }
+    let currentCharacter: Character = line[index]
     
-    var numberOfUnknownDamagedSprings: Int {
-        numberOfDamagedSprings - (springs.counts[.damaged] ?? 0)
-    }
+    if currentCharacter == "." { return solve(line: line, index: index + 1, groups: groups, groupIndex: groupIndex) }
     
-    var numberOfUnknownOperationalSprings: Int {
-        numberOfUnknownConditions - numberOfUnknownDamagedSprings
-    }
-    
-    var numberOfUnknownConditions: Int {
-        springs.counts[.unknown] ?? 0
-    }
-    
-    var unknownSpringIndexes: [Int] {
-        springs.indexed().filter({ $1 == .unknown }).map({ $0.index })
-    }
-}
-
-struct KnownRecord {
-    let springs: [SpringCondition]
-    let damagedSpringGroups: [Int]
-    
-    var isValid: Bool {
-        // Create regex
-        let regex = self.regex
-        let springsString = springs.map({ $0.rawValue }).joined()
-        return !regex.getGreedyMatches(in: springsString).isEmpty
-    }
-    
-    private var regex: Regex {
-        var regexString = "\\.*"
-        for (index, group) in damagedSpringGroups.enumerated() {
-            if index == damagedSpringGroups.count - 1 {
-                regexString += "#{\(group)}\\.*"
-            } else {
-                regexString += "#{\(group)}\\.+"
-            }
+    if currentCharacter == "#" {
+        if groups.isEmpty {
+            return []
         }
-        return Regex(regexString)
-    }
-}
-
-/**
- . operational
- # damaged
- ? unknown
- */
-
-// 4721 too low
-// 7339 too low
-// 7920 too low
-func main() throws {
-    let input: [String] = try readInput(fromTestFile: true, separator: "\n")
-//    let input = [""]
-    
-    let records = input.map { line in
-        let split = line.split(separator: " ")
-        let springs = split[0].compactMap({ SpringCondition(rawValue: String($0)) })
-        let damagedSpringGroups = split[1].split(separator: ",").compactMap({ Int($0) })
-        return Record(springs: springs, damagedSpringGroups: damagedSpringGroups)
-    }
-    var total = 0
-    var index = 0
-    for test in records {
-        print("\(index)/\(records.count)")
-
-        let seedString = Array.init(repeating: SpringCondition.damaged, count: test.numberOfUnknownDamagedSprings) + Array.init(repeating: SpringCondition.operational, count: test.numberOfUnknownOperationalSprings)
-        let combinations = Set(seedString.uniquePermutations(ofCount: test.numberOfUnknownConditions))
-        let zipped = zip(combinations, Array.init(repeating: test.unknownSpringIndexes, count: combinations.count))
         
-        var count = 0
-        let unknownSpringIndexes = test.unknownSpringIndexes
-        for replacement in zipped {
-            var newRecord: [SpringCondition] = test.springs
-            for i in 0..<replacement.0.count {
-                let newChar = replacement.0[i]
-                let indexOfNewChar = replacement.1[i]
-                newRecord[indexOfNewChar] = newChar
-            }
-            let knownRecord = KnownRecord(springs: newRecord, damagedSpringGroups: test.damagedSpringGroups)
-            
-            if knownRecord.isValid {
-                count += 1
+        var newGroups = groups
+        newGroups[groupIndex] -= 1
+        let hashesLeftInGroup = newGroups[groupIndex]
+        if hashesLeftInGroup > 0 {
+            return solve(line: line, index: index + 1, groups: newGroups, groupIndex: groupIndex)
+        } else {
+            // Finished a group, check next char
+            newGroups.remove(at: 0)
+            let nextIndex = index + 1
+            if nextIndex >= line.count {
+                return solve(line: line, index: nextIndex, groups: newGroups, groupIndex: groupIndex)
+            } else {
+                // Next char is in line
+                let nextChar: Character = line[nextIndex]
+                if nextChar == "#" { return [] }
+                if nextChar == "?" {
+                    // skip over the ? as it needs to be treated as a dot
+                    return solve(line: replaceInString(string: line, new: ".", location: nextIndex), index: nextIndex + 1, groups: newGroups, groupIndex: groupIndex)
+                }
+                return solve(line: line, index: nextIndex, groups: newGroups, groupIndex: groupIndex)
             }
         }
-        total += count
-        index += 1
     }
     
-    print(total)
+    if currentCharacter == "?" {
+        // If groups are done, treat as a dot
+        if groups.isEmpty {
+            return solve(line: replaceInString(string: line, new: ".", location: index), index: index + 1, groups: groups, groupIndex: groupIndex)
+        }
+        
+        // if prev is hash, and group is not done, use hash
+        if index > 0 {
+            let prevChar: Character = line[index-1]
+            if prevChar == "#" && groups[0] > 0 {
+                var newGroups = groups
+                newGroups[groupIndex] -= 1
+                let hashesLeftInGroup = newGroups[groupIndex]
+                if hashesLeftInGroup > 0 {
+                    return solve(line: replaceInString(string: line, new: "#", location: index), index: index + 1, groups: newGroups, groupIndex: groupIndex)
+                } else {
+                    // Finished a group, check next char
+                    newGroups.remove(at: 0)
+                    let nextIndex = index + 1
+                    if nextIndex >= line.count {
+                        return solve(line: replaceInString(string: line, new: "#", location: index), index: nextIndex, groups: newGroups, groupIndex: groupIndex)
+                    } else {
+                        // Next char is in line
+                        let nextChar: Character = line[nextIndex]
+                        if nextChar == "#" { }
+                        else if nextChar == "?" {
+                            // skip over the ? as it needs to be treated as a dot
+                            var newString = replaceInString(string: line, new: "#", location: index)
+                            newString = replaceInString(string: newString, new: ".", location: nextIndex)
+                            return solve(line: newString, index: nextIndex + 1, groups: newGroups, groupIndex: groupIndex)
+                            
+                        } else {
+                            return solve(line: replaceInString(string: line, new: "#", location: index), index: nextIndex, groups: newGroups, groupIndex: groupIndex)
+                        }
+                    }
+                }
+            }
+        }
+        
+        // groups are not done, treat as hash and dot
+        var total: Set<String> = []
+        
+        var newGroups = groups
+        newGroups[groupIndex] -= 1
+        let hashesLeftInGroup = newGroups[groupIndex]
+        if hashesLeftInGroup > 0 {
+            total = total.union(solve(line: replaceInString(string: line, new: "#", location: index), index: index + 1, groups: newGroups, groupIndex: groupIndex))
+        } else {
+            // Finished a group, check next char
+            newGroups.remove(at: 0)
+            let nextIndex = index + 1
+            if nextIndex >= line.count {
+                total = total.union(solve(line: replaceInString(string: line, new: "#", location: index), index: nextIndex, groups: newGroups, groupIndex: groupIndex))
+            } else {
+                // Next char is in line
+                let nextChar: Character = line[nextIndex]
+                if nextChar == "#" { }
+                else if nextChar == "?" {
+                    // skip over the ? as it needs to be treated as a dot
+                    var newString = replaceInString(string: line, new: "#", location: index)
+                    newString = replaceInString(string: newString, new: ".", location: nextIndex)
+                    total = total.union(solve(line: newString, index: nextIndex + 1, groups: newGroups, groupIndex: groupIndex))
+                    
+                } else {
+                    total = total.union(solve(line: replaceInString(string: line, new: "#", location: index), index: nextIndex, groups: newGroups, groupIndex: groupIndex))
+                }
+            }
+        }
+        
+        total = total.union(solve(line: replaceInString(string: line, new: ".", location: index), index: index + 1, groups: groups, groupIndex: groupIndex))
+        
+        return total
+        
+    }
+    
+    assert(false, "unknown char found")
 }
 
-/*
- (#, 1) return 1
- (., 1) return error
- (?, 1) return 1 as it has to be (#, 1)
- 
- (##, 1) return error (grouping != record length)
- (.., 1) return error (no damaged present)
- (??, 1) return 2 (#. or .#)
- (?., 1) return 1 (#.)
- (.?, 1) return 1 (.#)
- */
+func main() throws {
+    let input: [String] = try readInput(fromTestFile: false, separator: "\n")
+    var tot = 0
+    for line in input {
+        let split = line.split(separator: " ")
+        let record = split[0]
+        let groups = split[1].split(separator: ",").map({ Int($0)! })
+//        print(record, groups)
+        let result = solve(line: String(record), index: 0, groups: groups, groupIndex: 0)
+        tot += result.count
+    }
+    
+    print(tot)
+}
+
 
 Timer.time(main)
