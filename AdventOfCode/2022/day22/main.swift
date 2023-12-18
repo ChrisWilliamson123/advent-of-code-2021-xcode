@@ -284,7 +284,7 @@ class Board {
             move(using: i)
         }
     }
-    
+
     // swiftlint:disable:next cyclomatic_complexity
     func move(using instruction: Instruction) {
         /**

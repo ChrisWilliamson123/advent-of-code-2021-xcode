@@ -1,7 +1,8 @@
 disabled_rules: # rule identifiers to exclude from running
-  - identifier_name
+  - identifier_name 
   - nesting
   - function_parameter_count
+  - force_cast
 opt_in_rules: # some rules are only opt-in
   - control_statement
   - empty_count
@@ -16,16 +17,16 @@ excluded: # paths to ignore during linting. Takes precedence over `included`.
   - Pods
   - Project/R.generated.swift
 
-# configurable rules can be customized from this configuration file
-# binary rules can set their severity level
-force_cast: warning # implicitly. Give warning only for force casting
-
 force_try:
   severity: warning # explicitly. Give warning only for force try
 
 type_body_length:
   - 300 # warning
   - 400 # error
+
+function_body_length:
+  - 100 # warning
+  - 150 # error
 
 # or they can set both explicitly
 file_length:

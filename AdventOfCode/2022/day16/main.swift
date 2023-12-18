@@ -108,54 +108,10 @@ func main() throws {
             best = max(result.0, best)
 
         }
-//        nodeCache[NodeCacheItem(timeRemaining: timeRemaining, currentNode: start, openValves: Set(valves.filter({ $0.isOpen })), flowRate: flowRate)] = best
+
         cache[CacheItem(start: start, valves: valves, timeElapsed: timeElapsed, flowRate: flowRate, pressureReleased: pressureReleased)] = best
         return (best, bestValves)
     }
-
-//    func dfs(start: Valve, valves: Set<Valve>, timeElapsed: Int, flowRate: Int, pressureReleased: Int, target: Int = 30) -> (Int, Set<Valve>) {
-//        if let cached = cache[CacheItem(start: start, valves: valves, timeElapsed: timeElapsed, flowRate: flowRate, pressureReleased: pressureReleased)] {
-//            return (cached, valves)
-//        }
-//        if areAllPositiveValvesOpen(valves: valves) {
-////            for i in stride(from: timeRemaining, to: 0, by: -1) {
-////                nodeCache[NodeCacheItem(timeRemaining: i, currentNode: start, openValves: Set(valves.filter({ $0.isOpen })), flowRate: flowRate)] = pressureReleased + ((timeRemaining-i) * flowRate)
-////            }
-//            return (pressureReleased + ((target - timeElapsed) * flowRate), valves)
-//        }
-//        if timeElapsed >= target {
-//            nodeCache[NodeCacheItem(timeElapsed: timeElapsed, currentNode: start, openValves: Set(valves.filter({ $0.isOpen })), flowRate: flowRate)] = pressureReleased
-//            return (pressureReleased, valves)
-//        }
-//        let nonOpenedPositiveValves = valves.filter { !$0.isOpen && $0.flowRate > 0 }
-//        let valvesWithinDistance = nonOpenedPositiveValves.filter { distances[[start.name, $0.name]]! < target - (timeElapsed - 1) }
-////        print(valvesWithinDistance)
-//        if valvesWithinDistance.isEmpty {
-////            for i in stride(from: timeRemaining, to: 0, by: -1) {
-////                nodeCache[NodeCacheItem(timeRemaining: i, currentNode: start, openValves: Set(valves.filter({ $0.isOpen })), flowRate: flowRate)] = pressureReleased + ((timeRemaining-i) * flowRate)
-////            }
-//            return (pressureReleased + ((target - timeElapsed) * flowRate), valves)
-//        }
-//        var best = 0
-//        var bestValves = valves
-//        for destination in valvesWithinDistance {
-//            let distanceToValve = distances[[start.name, destination.name]]!
-//            // Go to it and open it
-//            let valvesCopy = Set(valves.map { $0.copy() as! Valve })
-//            let valve = valvesCopy.first(where: { $0.name == destination.name })!
-//            valve.isOpen = true
-//            let result = dfs(start: valve, valves: Set(valvesCopy.map { $0.copy() as! Valve }), timeElapsed: timeElapsed + 1 + distanceToValve, flowRate: flowRate + valve.flowRate, pressureReleased: pressureReleased + (flowRate * distanceToValve) + (flowRate + valve.flowRate), target: target)
-//            if result.0 > best {
-//                bestValves = result.1
-//            }
-//            best = max(result.0, best)
-//
-//        }
-////        nodeCache[NodeCacheItem(timeRemaining: timeRemaining, currentNode: start, openValves: Set(valves.filter({ $0.isOpen })), flowRate: flowRate)] = best
-//        cache[CacheItem(start: start, valves: valves, timeElapsed: timeElapsed, flowRate: flowRate, pressureReleased: pressureReleased)] = best
-//        return (best, bestValves)
-//
-//    }
 
     nodeCache.removeAll()
     let partOne = dfs(start: valves.first(where: { $0.name == "AA" })!,

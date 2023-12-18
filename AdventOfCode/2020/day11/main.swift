@@ -43,7 +43,9 @@ func main() throws {
             for x in 0..<grid[y].count {
                 let current = grid[y][x]
                 let coordinate = Coordinate(x: x, y: y)
-                let visibleSeats = [(0, 1), (1, 1), (1, 0), (1, -1), (0, -1), (-1, -1), (-1, 0), (-1, 1)].map({ Coordinate(x: $0.0, y: $0.1) }).compactMap({ getFirstVisibleSeat(from: coordinate, in: grid, direction: $0) })
+                let visibleSeats = [(0, 1), (1, 1), (1, 0), (1, -1), (0, -1), (-1, -1), (-1, 0), (-1, 1)]
+                    .map({ Coordinate(x: $0.0, y: $0.1) })
+                    .compactMap({ getFirstVisibleSeat(from: coordinate, in: grid, direction: $0) })
                 let occupiedVisibles = visibleSeats.filter({ grid[$0.y][$0.x] == OCCUPIED })
 
                 if current == EMPTY && occupiedVisibles.isEmpty {
