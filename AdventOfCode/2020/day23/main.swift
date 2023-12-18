@@ -59,7 +59,7 @@ class CrabCups {
 
     class Node: CustomStringConvertible {
         let value: Int
-        var next: Node? = nil
+        var next: Node?
 
         var description: String { "Value: \(value)" }
 

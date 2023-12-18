@@ -98,7 +98,6 @@ class Effect: CustomStringConvertible {
         duration -= 1
     }
 
-
 }
 
 enum EffectType {
@@ -148,7 +147,7 @@ enum Spell {
             return 4
         case .drain:
             return 2
-        case .effect(_):
+        case .effect:
             return 0
         }
     }
@@ -160,8 +159,6 @@ enum Spell {
         return 0
     }
 }
-
-
 
 class Wizard {
     var health: Int = 50

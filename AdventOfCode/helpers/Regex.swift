@@ -32,7 +32,7 @@ struct Regex {
         let results = regex.matches(in: text, range: NSRange(text.startIndex..., in: text))
         return results.map { String(text[Range($0.range, in: text)!]) }
     }
-    
+
     func getGreedyMatchesWithRanges(in text: String) -> [(String, ClosedRange<Int>)] {
         let results = regex.matches(in: text, range: NSRange(text.startIndex..., in: text))
         return results.map {

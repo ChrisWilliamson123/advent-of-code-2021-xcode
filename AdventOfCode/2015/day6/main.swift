@@ -24,7 +24,7 @@ private func buildInstructions(from input: [String]) -> [LightGrid.Instruction] 
         case "turn off": action = .turnOff
         default: action = .turnOn
         }
-        return .init(action: action, p1: Coordinate(Int(matches[1])!, Int(matches[2])!), p2: Coordinate(Int(matches[3])!,Int(matches[4])!))
+        return .init(action: action, p1: Coordinate(Int(matches[1])!, Int(matches[2])!), p2: Coordinate(Int(matches[3])!, Int(matches[4])!))
     })
 }
 

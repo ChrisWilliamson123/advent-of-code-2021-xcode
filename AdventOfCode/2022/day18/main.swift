@@ -27,7 +27,7 @@ func main() throws {
     let maxDimension = cubes.flatMap({ $0 }).max()! + 2
     let minDimension = cubes.flatMap({ $0 }).min()! - 2
 
-    var queue = [[0,0,0]]
+    var queue = [[0, 0, 0]]
     var visited: Set<[Int]> = []
     while !queue.isEmpty {
         let current = queue.popLast()!
@@ -52,7 +52,7 @@ private func getAdjacents(_ cube: [Int]) -> [[Int]] {
         [0 + cube[0], -1 + cube[1], 0 + cube[2]],
 
         [1 + cube[0], 0 + cube[1], 0 + cube[2]],
-        [-1 + cube[0], 0 + cube[1], 0 + cube[2]],
+        [-1 + cube[0], 0 + cube[1], 0 + cube[2]]
     ]
 }
 

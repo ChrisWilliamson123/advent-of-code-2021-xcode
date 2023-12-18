@@ -8,8 +8,7 @@ func readInput<T: StringInitialisable>(fromTestFile: Bool, separator: String = "
     do {
         let contents = try String(contentsOfFile: url.path, encoding: .utf8)
         return Array(contents.components(separatedBy: separator).filter({ !($0 == "") })).map({ T(String($0))! })
-    }
-    catch let error {
+    } catch let error {
         print("Input parsing failed: \(error)")
         throw error
     }
@@ -23,8 +22,7 @@ func readInput<T: StringInitialisable>(fileName: String, separator: String = "\n
     do {
         let contents = try String(contentsOfFile: url.path, encoding: .utf8)
         return Array(contents.components(separatedBy: separator).filter({ !($0 == "") })).map({ T(String($0))! })
-    }
-    catch let error {
+    } catch let error {
         print("Input parsing failed: \(error)")
         throw error
     }

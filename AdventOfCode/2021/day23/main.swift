@@ -218,4 +218,3 @@ struct Game: Hashable {
 }
 
 Timer.time(main)
-

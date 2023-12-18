@@ -6,7 +6,7 @@ private typealias WeightedGraph = [String: [String: Int]]
 func main() throws {
     let isTestMode = CommandLine.arguments.contains("test")
     let input: [String] = try readInput(fromTestFile: isTestMode)
-    
+
     let invertedGraph = buildInvertedGraph(input)
     var visited: Set<String> = []
     print(traverse(invertedGraph, "shiny gold", &visited) - 1)
@@ -42,7 +42,7 @@ private func traverse(_ graph: Graph, _ node: String, _ visited: inout Set<Strin
 
 private func buildGraph(_ input: [String]) -> WeightedGraph {
     var graph: WeightedGraph = [:]
-    
+
     let regex = Regex("^(\\w+ \\w+) bags contain (.+)\\.$")
 
     for inputLine in input {
@@ -71,7 +71,7 @@ private func buildGraph(_ input: [String]) -> WeightedGraph {
 
 private func buildInvertedGraph(_ input: [String]) -> Graph {
     var graph: Graph = [:]
-    
+
     let regex = Regex("^(\\w+ \\w+) bags contain (.+)\\.$")
 
     for inputLine in input {
@@ -88,7 +88,7 @@ private func buildInvertedGraph(_ input: [String]) -> Graph {
             for source in sources {
                 let regex = Regex("(\\d+) (\\w+ \\w+) bags?")
                 let matches = regex.getMatches(in: source)
-                
+
                 if graph[matches[1]] == nil {
                     graph[matches[1]] = [destination]
                 } else {

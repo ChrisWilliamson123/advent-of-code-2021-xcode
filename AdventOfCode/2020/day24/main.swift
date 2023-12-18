@@ -9,7 +9,7 @@ func main() throws {
     for dList in tileDirections {
         let directions = matches(for: "(e)|(se)|(sw)|(w)|(nw)|(ne)", in: dList)
 
-        var current = (0,0)
+        var current = (0, 0)
         for d in directions {
             let m = modifier(for: d)
             current.0 += m.x
@@ -115,4 +115,3 @@ private func matches(for regex: String, in text: String) -> [String] {
 }
 
 Timer.time(main)
-

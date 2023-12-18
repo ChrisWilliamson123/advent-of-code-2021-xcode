@@ -27,8 +27,8 @@ func main() throws {
         assert(false)
     }
 
-    print(bfs(start: start, destination: Coordinate(31,39)))
-    print(bfs(start: start, destination: Coordinate(1000,1000), stopAt: 50))
+    print(bfs(start: start, destination: Coordinate(31, 39)))
+    print(bfs(start: start, destination: Coordinate(1000, 1000), stopAt: 50))
 }
 
 private func isOpenSpace(_ coord: Coordinate, input: Int) -> Bool {

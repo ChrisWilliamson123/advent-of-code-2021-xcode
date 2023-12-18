@@ -3,7 +3,7 @@ import Foundation
 func main() throws {
     let isTestMode = CommandLine.arguments.contains("test")
     let input: [String] = try readInput(fromTestFile: isTestMode)
-    
+
     var ship = Ship(input)
     ship.navigate()
     print("Part 1:", abs(ship.currentPosition.x) + abs(ship.currentPosition.y))
@@ -39,7 +39,7 @@ class Ship {
                         "N": Coordinate(0, 1),
                         "S": Coordinate(0, -1),
                         "E": Coordinate(1, 0),
-                        "W": Coordinate(-1, 0),
+                        "W": Coordinate(-1, 0)
                     ][i.action]!
                     currentPosition = Coordinate(currentPosition.x + (modifier.x * i.value), currentPosition.y + (modifier.y * i.value))
                 case "L":
@@ -63,7 +63,7 @@ class Ship {
                         "N": Coordinate(0, 1),
                         "S": Coordinate(0, -1),
                         "E": Coordinate(1, 0),
-                        "W": Coordinate(-1, 0),
+                        "W": Coordinate(-1, 0)
                     ][i.action]!
                     relativeWaypointPosition = Coordinate(relativeWaypointPosition.x + (modifier.x * i.value), relativeWaypointPosition.y + (modifier.y * i.value))
                 case "L":

@@ -58,7 +58,7 @@ struct HeightMap {
         getHeight(for: coordinate) + 1
     }
 
-    private func isLowPoint(_ coordinate: Coordinate) -> Bool  {
+    private func isLowPoint(_ coordinate: Coordinate) -> Bool {
         let adjacents = coordinate.getAdjacents(in: map)
         let adjacentValues = adjacents.map({ getHeight(for: $0) })
         let coordinateValue = getHeight(for: coordinate)

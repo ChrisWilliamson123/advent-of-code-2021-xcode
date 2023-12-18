@@ -5,7 +5,7 @@ class Grove {
         [.init(0, -1), .init(-1, -1), .init(1, -1)], // N, NE, NW
         [.init(0, 1), .init(-1, 1), .init(1, 1)], // S, SE, SW
         [.init(-1, 0), .init(-1, -1), .init(-1, 1)], // W, NW, SW
-        [.init(1, 0), .init(1, -1), .init(1, 1)], // E, NE, SE
+        [.init(1, 0), .init(1, -1), .init(1, 1)] // E, NE, SE
     ]
     private var elfCoords: Set<Coordinate>
 

@@ -3,7 +3,7 @@ import Foundation
 func main() throws {
     let isTestMode = CommandLine.arguments.contains("test")
     let input: [String] = try readInput(fromTestFile: isTestMode)
-    
+
     var numberOfOutputDigitsThatUseUniqueNumberOfSegments = 0
     let uniqueSegmentAmounts = [2, 4, 3, 7]
 
@@ -21,7 +21,7 @@ func main() throws {
         outputs.append(output)
     }
     print("Part 2: \(outputs.sum())")
-    
+
 }
 
 class SegmentDecoder {
@@ -86,7 +86,7 @@ class SegmentDecoder {
             // Loop through the segments in common whose definitive value still haven't been determined
             for s in segmentsInCommon where segmentsWithPossibleLetters[s].count > 1 {
                 let possibleValuesForSegment = segmentsWithPossibleLetters[s]
-                
+
                 // Get the possible values which appear in all matching signal patterns
                 var valuesThatAppearInAllSignals: [Character] = []
                 for v in possibleValuesForSegment {
@@ -101,13 +101,12 @@ class SegmentDecoder {
                     segmentsWithPossibleLetters[s] = [valuesThatAppearInAllSignals[0]]
 
                     // Remove the value as a possibility from other segments
-                    for i in 0..<segmentsWithPossibleLetters.count where segmentsWithPossibleLetters[i].contains(valuesThatAppearInAllSignals[0]) && segmentsWithPossibleLetters[i].count > 1  {
+                    for i in 0..<segmentsWithPossibleLetters.count where segmentsWithPossibleLetters[i].contains(valuesThatAppearInAllSignals[0]) && segmentsWithPossibleLetters[i].count > 1 {
                         segmentsWithPossibleLetters[i] = segmentsWithPossibleLetters[i].filter({ $0 != valuesThatAppearInAllSignals[0] })
                     }
                 }
             }
         }
-
 
         // Using the segments with their definitive letter values, loop through the output strings and get the number for them
         var outputValueNumbers: [Int] = []
@@ -116,7 +115,7 @@ class SegmentDecoder {
                 let letter = segmentsWithPossibleLetters[$0][0]
                 return o.contains(letter)
             })
-            
+
             let associatedDigit = digitsToSegmentIndexes.flatMap({ $0 }).filter({
                 $0.1.sorted() == segmentsLitUp.sorted()
             })[0].0

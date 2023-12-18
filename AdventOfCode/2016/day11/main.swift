@@ -23,7 +23,6 @@ enum Entity: Hashable, CustomStringConvertible {
         }
     }
 
-
 }
 
 struct Floor: Hashable, CustomStringConvertible {
@@ -34,11 +33,11 @@ struct Floor: Hashable, CustomStringConvertible {
     }
 
     var generators: Set<Entity> {
-        entities.reduce(into: [], { if case .generator(_) = $1 { $0.insert($1) } })
+        entities.reduce(into: [], { if case .generator = $1 { $0.insert($1) } })
     }
 
     var chips: Set<Entity> {
-        entities.reduce(into: [], { if case .chip(_) = $1 { $0.insert($1) } })
+        entities.reduce(into: [], { if case .chip = $1 { $0.insert($1) } })
     }
 }
 

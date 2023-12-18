@@ -12,12 +12,12 @@ func main() throws {
     // Part 2
     var oxygenRatings = input
     var scrubberRatings = input
-    
+
     var columnIndex = 0
     while (oxygenRatings.count > 1 || scrubberRatings.count > 1) && columnIndex < input[0].count {
         oxygenRatings = filterRatings(oxygenRatings, underColumn: columnIndex, defaultBit: "1")
         scrubberRatings = filterRatings(scrubberRatings, underColumn: columnIndex, defaultBit: "0")
-        
+
         columnIndex += 1
     }
 
@@ -30,7 +30,7 @@ func main() throws {
 private func filterRatings(_ ratings: [String], underColumn columnIndex: Int, defaultBit: Character) -> [String] {
     if ratings.count == 1 { return ratings }
     let binaryColumn = getColumn(from: ratings, at: columnIndex)
-        
+
     /// -1 if 0 is most common, 0 if equal commonality, 1 if 1 is most common
     let mostCommonSumResult = binaryColumn.reduce(0, { currentSum, bit in
         let modifier = bit == "0" ? -1 : 1
@@ -71,7 +71,7 @@ private func flipBits(of input: UInt, numberOfBitsToFlip: Int) -> UInt {
 
 private func getColumn(from stringArray: [String], at index: Int) -> [Character] {
     stringArray.map({ $0[$0.index($0.startIndex, offsetBy: index)] })
-} 
+}
 
 private func getMostCommonCharacter(from characters: [Character]) -> Character {
     let countedSet = NSCountedSet(array: characters)

@@ -90,7 +90,7 @@ struct Coordinate: Hashable {
     var adjacents: [Coordinate] {
         var adjacents: [Coordinate] = []
         for x in x-1...x+1 {
-            for y in y-1...y+1  {
+            for y in y-1...y+1 {
                 if x == self.x && y == self.y { continue }
                 adjacents.append(Coordinate(x: x, y: y))
             }

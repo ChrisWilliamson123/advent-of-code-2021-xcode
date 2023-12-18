@@ -58,7 +58,7 @@ func bfs<T: Hashable>(graph: Set<T>,
     var distances: [T: Int] = [:]
     queue.forEach({ distances[$0.0] = 0 })
     var visited: Set<T> = []
-    var prev: [T:T] = [:]
+    var prev: [T: T] = [:]
     while !queue.isEmpty {
         let (coord, distance) = queue.popLast()!
         if visited.contains(coord) { continue }

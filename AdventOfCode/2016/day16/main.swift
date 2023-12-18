@@ -18,8 +18,7 @@ private extension [Character] {
     var dragonCurve: [Character] {
         var b = self.reversed().map(Character.init)
         for i in 0..<b.count {
-            if b[i] == "1" { b[i] = "0" }
-            else { b[i] = "1" }
+            if b[i] == "1" { b[i] = "0" } else { b[i] = "1" }
         }
         return self + ["0"] + b
     }

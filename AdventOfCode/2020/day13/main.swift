@@ -3,7 +3,7 @@ import Foundation
 func main() throws {
     let isTestMode = CommandLine.arguments.contains("test")
     let input: [String] = try readInput(fromTestFile: isTestMode)
-    
+
     let earliestDepartureEstimate = Int(input[0])!
     let allBusses = input[1].split(separator: ",").map({String($0)})
     let inServiceBusses = input[1].split(separator: ",").compactMap({ Int($0) })
@@ -17,7 +17,6 @@ func main() throws {
     }).min(by: { $0.1 < $1.1 })!
 
     print("Part 1:", earliestBusCanTake.0 * earliestBusCanTake.1)
-
 
     // Part 2
     var time = 0

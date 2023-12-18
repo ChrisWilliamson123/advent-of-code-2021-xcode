@@ -84,8 +84,6 @@ func main() throws {
                 previousAction = performActions(.split, snailfish: previousAction.0)
             }
 
-
-
             latest = previousAction.0
         }
         let mag = getMagnitude(of: latest)
@@ -196,4 +194,3 @@ extension Array {
 }
 
 Timer.time(main)
-

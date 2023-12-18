@@ -2,7 +2,7 @@ import Foundation
 
 struct Round {
     let cubesPulled: [String: Int]
-    
+
     func isPossible(bag: Bag) -> Bool {
         for (key, value) in bag.contents {
             if let pulled = cubesPulled[key], pulled > value {
@@ -16,7 +16,7 @@ struct Round {
 struct Game {
     let id: Int
     let rounds: [Round]
-    
+
     func isPossible(bag: Bag) -> Bool {
         for r in rounds {
             if !r.isPossible(bag: bag) {
@@ -25,7 +25,7 @@ struct Game {
         }
         return true
     }
-    
+
     var maxPulls: [String: Int] {
         rounds.reduce(into: [:], { (current, round) in
             round.cubesPulled.forEach({ (colour, count) in
@@ -57,20 +57,20 @@ func main() throws {
         let game = Game(id: index + 1, rounds: rounds)
         games.append(game)
     }
-    
+
     let bag = Bag(contents: [
         "red": 12,
         "green": 13,
         "blue": 14
     ])
-    
+
     var total = 0
     var power = 0
     games.forEach {
         if $0.isPossible(bag: bag) { total += $0.id }
         power += $0.maxPulls.values.reduce(1, *)
     }
-    
+
     print(total, power)
 }
 

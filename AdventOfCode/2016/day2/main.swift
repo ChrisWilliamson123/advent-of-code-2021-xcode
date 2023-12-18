@@ -13,7 +13,7 @@ let partTwoCoords = [
     Coordinate(1, 3): "A",
     Coordinate(2, 3): "B",
     Coordinate(3, 3): "C",
-    Coordinate(2, 4): "D",
+    Coordinate(2, 4): "D"
 ]
 
 func main() throws {
@@ -23,7 +23,7 @@ func main() throws {
         "U": (0, -1),
         "R": (1, 0),
         "D": (0, 1),
-        "L": (-1, 0),
+        "L": (-1, 0)
     ]
     var position = (1, 1)
 

@@ -122,4 +122,3 @@ private func getBoundsToConsider(for componentIndex: Int, activeCubes: Set<Multi
 
 try main(dimensions: 3, cycles: 6, part: 1)
 try main(dimensions: 4, cycles: 6, part: 2)
-

@@ -4,7 +4,6 @@ func main() throws {
     let isTestMode = CommandLine.arguments.contains("test")
     let input: [String] = try readInput(fromTestFile: isTestMode)
 
-
     let seatIDs: [Int] = input.map(getSeatID)
 
     print("Part 1: \(seatIDs.max()!)")

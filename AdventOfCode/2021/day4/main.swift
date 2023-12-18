@@ -64,7 +64,7 @@ class BingoBoard {
     private var allRows: [Row] { (0..<board.count).map(getRow) }
     private var allColumns: [Row] { (0..<board[0].count).map(getColumn) }
     private var allRowsAndAllColumns: [[BoardPosition]] { allRows + allColumns }
-    
+
     var hasWon: Bool { allRowsAndAllColumns.contains(where: isWinningCollection) }
 
     init(board: [[Int]]) {

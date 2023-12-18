@@ -23,7 +23,6 @@ func main() throws {
 
     print("Part 1:", errorRate)
 
-
     /// PART TWO
 
     let fieldCount = fields.count
@@ -80,4 +79,3 @@ struct Field {
 }
 
 Timer.time(main)
-

@@ -48,11 +48,11 @@ extension Array where Element: Collection, Element.Index == Int {
     func rotatedRight() -> [[Element.Iterator.Element]] {
 
         typealias InnerElement = Element.Iterator.Element
-        
+
         // in the case of an empty array, simply return an empty array
         if self.isEmpty { return [] }
         let length = self[0].count
-        
+
         return (0..<length).map { index in
             self.map({ $0[index] }).reversed()
         }

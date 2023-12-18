@@ -8,7 +8,7 @@ func main() throws {
         "U": Coordinate(0, -1),
         "D": Coordinate(0, 1),
         "L": Coordinate(-1, 0),
-        "R": Coordinate(1, 0),
+        "R": Coordinate(1, 0)
     ]
 
     let rope = Rope()

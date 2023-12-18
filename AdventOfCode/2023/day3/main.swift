@@ -7,9 +7,9 @@ struct Number {
 
 func main() throws {
     let input: [String] = try readInput(fromTestFile: false, separator: "\n")
-    
+
     var numbers: [Number] = []
-    
+
     for (y, line) in input.enumerated() {
         let regex = Regex("\\d+")
         let matches = regex.getGreedyMatchesWithRanges(in: line)
@@ -17,9 +17,9 @@ func main() throws {
             numbers.append(Number(value: Int(numberString)!, positions: range.reduce(into: Set<Coordinate>(), { $0.insert(Coordinate($1, y)) })))
         }
     }
-    
+
     let grid: [[String]] = input.map { $0.split(separator: "").map({ String($0) }) }
-    
+
     var total = 0
     var total2 = 0
     for (y, row) in grid.enumerated() {
@@ -36,7 +36,7 @@ func main() throws {
                         total += n.value
                     }
                 }
-                
+
                 if character == "*" {
                     // it is a gear, find out if it has exactly two numbers
                     var neighbours: [Number] = []
@@ -45,7 +45,7 @@ func main() throws {
                             neighbours.append(n)
                         }
                     }
-                    
+
                     if neighbours.count == 2 {
                         total2 += neighbours.reduce(1, { $0 * $1.value })
                     }

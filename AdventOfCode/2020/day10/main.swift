@@ -14,12 +14,11 @@ func main() throws {
         if differenceCounts[difference] != nil {
             differenceCounts[difference]! += 1
         } else {
-            differenceCounts[difference] = 1            
+            differenceCounts[difference] = 1
         }
     }
 
     print("Part 1:", differenceCounts[1]! * differenceCounts[3]!)
-
 
     // Part 2
     var memo: [Int: Int] = [:]

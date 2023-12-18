@@ -169,7 +169,7 @@ final class RealCube: Cube {
                     .init(face: .top, direction: .init(1, 0)): .init(face: .front, direction: .init(0, -1)),  // top going right
                     .init(face: .top, direction: .init(-1, 0)): .init(face: .back, direction: .init(0, 1)), // top going left
                     .init(face: .top, direction: .init(0, 1)): .init(face: .right, direction: .init(0, 1)),  // top going down
-                    .init(face: .top, direction: .init(0, -1)): .init(face: .left, direction: .init(0, -1)), // top going up
+                    .init(face: .top, direction: .init(0, -1)): .init(face: .left, direction: .init(0, -1)) // top going up
                 ], faces: [
                     .top: [150...199, 0...49],
                     .left: [100...149, 0...49],

@@ -28,9 +28,9 @@ func main() throws {
     let input: [String] = try readInput(fromTestFile: false, separator: "\n")
     let grid: [[Character]] = input.map { [Character]($0) }
     let columns = (0..<grid[0].count).map({ colIndex in grid.map({ row in row[colIndex] }) })
-    
+
     var total = 0
-    
+
     for col in columns {
         var newColumn: [Character] = col
         let rockIndexes = newColumn.indices.filter({ newColumn[$0] == "O" })
@@ -45,12 +45,12 @@ func main() throws {
                 moveUp = canMoveUp(rockIndex: currentIndex, column: newColumn)
             }
         }
-        
+
         let load = newColumn.indices.filter({ newColumn[$0] == "O" }).map({ newColumn.count - $0 }).sum()
         total += load
     }
     print(total)
-    
+
     var newGrid = grid
     let cycles = 1000000000
     var seen: [[[Character]]: (Int, Int)] = [:]
@@ -76,7 +76,7 @@ func main() throws {
             newCols.append(newColumn)
         }
         newGrid = newCols.reversed().rotatedRight()
-        
+
         // Move west
         var newRows: [[Character]] = []
         for row in newGrid {
@@ -96,9 +96,9 @@ func main() throws {
 
             newRows.append(newRow)
         }
-        
+
         newGrid = newRows
-        
+
         // Move south
         columns = (0..<newGrid[0].count).map({ colIndex in newGrid.map({ row in row[colIndex] }) })
         newCols = []
@@ -120,7 +120,7 @@ func main() throws {
             newCols.append(newColumn)
         }
         newGrid = Array(newCols.reversed()).rotatedRight()
-        
+
         // Move east
         newRows = []
         for row in newGrid {
@@ -140,7 +140,7 @@ func main() throws {
 
             newRows.append(newRow)
         }
-        
+
         newGrid = newRows
 
         if let seenCycle = seen[newGrid] {

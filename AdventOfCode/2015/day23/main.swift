@@ -37,19 +37,15 @@ func main() throws {
             ip += Int(split[1])!
         case "jie":
             if split[1] == "a," {
-                if a % 2 == 0 { ip += Int(split[2])! }
-                else { ip += 1 }
+                if a % 2 == 0 { ip += Int(split[2])! } else { ip += 1 }
             } else {
-                if b % 2 == 0 { ip += Int(split[2])! }
-                else { ip += 1 }
+                if b % 2 == 0 { ip += Int(split[2])! } else { ip += 1 }
             }
         case "jio":
             if split[1] == "a," {
-                if a == 1 { ip += Int(split[2])! }
-                else { ip += 1 }
+                if a == 1 { ip += Int(split[2])! } else { ip += 1 }
             } else {
-                if b == 1 { ip += Int(split[2])! }
-                else { ip += 1 }
+                if b == 1 { ip += Int(split[2])! } else { ip += 1 }
             }
         default:
             assert(false)

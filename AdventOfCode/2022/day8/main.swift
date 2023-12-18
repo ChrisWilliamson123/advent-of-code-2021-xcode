@@ -12,7 +12,7 @@ func main() throws {
             let previousX: [Int] = (0..<x).map({ grid[y][$0] }).reversed()
             let nextX = (x+1..<grid.count).map { grid[y][$0] }
             let allDirections = [previousY, previousX, nextY, nextX]
-            
+
             if allDirections.first(where: { value > $0.max() ?? 0 }) != nil {
                 visible += 1
                 let scenicScore = allDirections.map({ viewingDistance(value, blockers: $0) }).multiply()

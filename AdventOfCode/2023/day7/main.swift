@@ -13,7 +13,7 @@ enum HandType: Int {
 struct Hand {
     let cards: [Int]
     let bid: Int
-    
+
     var type: HandType {
         let counts = cards.counts
         print(counts)
@@ -22,7 +22,7 @@ struct Hand {
         if maxCount == 5 {
             return .fiveOfAKind
         }
-        
+
         if maxCount == 4 {
             if numberOfJokers == 1 {
                 return .fiveOfAKind
@@ -32,7 +32,7 @@ struct Hand {
             }
             return .fourOfAKind
         }
-        
+
         if maxCount == 3 {
             // JJJXX == fioak
             if counts.values.contains(2) && numberOfJokers == 3 {
@@ -58,7 +58,7 @@ struct Hand {
             // Three of a kind
             return .threeOfAKind
         }
-        
+
         // XXYYZ
         if counts.values.filter({ $0 == 2 }).count == 2 {
             // Can make up a four of a kind as one of the pairs is jokers
@@ -73,7 +73,7 @@ struct Hand {
             }
             return .twoPair
         }
-        
+
         // XXABC
         if counts.values.filter({ $0 == 2 }).count == 1 {
             // JJABC
@@ -87,11 +87,11 @@ struct Hand {
             }
             return .onePair
         }
-        
+
         if numberOfJokers == 1 {
             return .onePair
         }
-        
+
         return .highCard
     }
 }
@@ -103,9 +103,9 @@ func main() throws {
         "K": 13,
         "Q": 12,
         "J": 1,
-        "T": 10,
+        "T": 10
     ]
-    
+
     let hands = input.map { line in
         let split = line.split(separator: " ")
         let bid = Int(split[1])!
@@ -114,26 +114,21 @@ func main() throws {
         }
         return Hand(cards: cards, bid: bid)
     }
-    
+
     for h in hands {
         print(h.cards, h.type)
     }
-    
-    let ordered = hands.sorted(by: { $0.type.rawValue < $1.type.rawValue },
-                               { $0.cards[0] > $1.cards[0] },
-                               { $0.cards[1] > $1.cards[1] },
-                               { $0.cards[2] > $1.cards[2] },
-                               { $0.cards[3] > $1.cards[3] },
-                               { $0.cards[4] > $1.cards[4] })
-    
+
+    let ordered = hands.sorted(by: { $0.type.rawValue < $1.type.rawValue }, { $0.cards[0] > $1.cards[0] }, { $0.cards[1] > $1.cards[1] }, { $0.cards[2] > $1.cards[2] }, { $0.cards[3] > $1.cards[3] }, { $0.cards[4] > $1.cards[4] })
+
     print(ordered)
-    
+
     var total = 0
-    
+
     for (index, hand) in ordered.enumerated() {
         total += (hand.bid * (ordered.count - index))
     }
-    
+
     print(total)
 }
 

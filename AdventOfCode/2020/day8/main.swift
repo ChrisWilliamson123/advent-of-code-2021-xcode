@@ -4,7 +4,7 @@ func main() throws {
     let isTestMode = CommandLine.arguments.contains("test")
     let input: [String] = try readInput(fromTestFile: isTestMode)
     let instructions = buildInstructions(from: input)
-    
+
     let processor = Processor()
     try? processor.execute(instructions)
     print("Part 1:", processor.accumulator)
@@ -49,7 +49,7 @@ class Processor {
             }
 
             let nextInstruction = instructions[instructionPointer]
-            
+
             instructionsExecuted.insert(instructionPointer)
 
             switch nextInstruction.operation {
@@ -67,7 +67,6 @@ class Processor {
             }
         }
     }
-
 
     func reset() {
         accumulator = 0

@@ -7,16 +7,16 @@ enum Direction: String {
 
 final class Node {
     let value: String
-    
+
     var left: Node?
     var right: Node?
-    
+
     init(value: String, left: Node? = nil, right: Node? = nil) {
         self.value = value
         self.left = left
         self.right = right
     }
-    
+
 //    static func build(from line: String) -> Node {
 //        let regex = Regex("\\w+")
 //        let words = regex.getGreedyMatches(in: line)
@@ -27,14 +27,14 @@ final class Node {
 func main() throws {
     let input: [String] = try readInput(fromTestFile: false, separator: "\n")
     var directions = input[0].map { Direction(rawValue: String($0)) }
-    
+
     var nodes: [String: Node] = [:]
     for line in input[1..<input.count] {
         let regex = Regex("\\w+")
         let words = regex.getGreedyMatches(in: line)
         nodes[words[0]] = Node(value: words[0])
     }
-    
+
     for line in input[1..<input.count] {
 //        print(line)
         let regex = Regex("\\w+")
@@ -43,7 +43,6 @@ func main() throws {
         nodes[words[0]]?.right = nodes[words[2]]
     }
     print(nodes)
-    
 
 //    var currentNode = nodes["AAA"]!
 //    var steps = 0
@@ -117,7 +116,7 @@ func findGCD(_ num1: Int, _ num2: Int) -> Int {
 }
 
 // Function to find lcm of two numbers
-func findLCM(n1: Int, n2: Int)->Int{
+func findLCM(n1: Int, n2: Int) -> Int {
    return (n1 * n2/findGCD(n1, n2))
 }
 

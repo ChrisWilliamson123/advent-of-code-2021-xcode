@@ -24,8 +24,7 @@ func main() throws {
                 position = Coordinate(position.x + velocity.x, position.y + velocity.y)
 
                 var xVel = velocity.x
-                if velocity.x > 0 { xVel -= 1 }
-                else if velocity.x < 0 { xVel += 1 }
+                if velocity.x > 0 { xVel -= 1 } else if velocity.x < 0 { xVel += 1 }
 
                 velocity = Coordinate(xVel, velocity.y - 1)
                 ticks += 1
@@ -42,4 +41,3 @@ func main() throws {
 }
 
 Timer.time(main)
-

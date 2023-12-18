@@ -12,14 +12,11 @@ func main() throws {
             let previousThree = [previousRow[x], previousRow[x+1], previousRow[x+2]]
             if previousThree == [true, true, false] {
                 traps.insert(cur)
-            }
-            else if previousThree == [false, true, true] {
+            } else if previousThree == [false, true, true] {
                 traps.insert(cur)
-            }
-            else if previousThree == [true, false, false] {
+            } else if previousThree == [true, false, false] {
                 traps.insert(cur)
-            }
-            else if previousThree == [false, false, true] {
+            } else if previousThree == [false, false, true] {
                 traps.insert(cur)
             }
         }

@@ -1,6 +1,6 @@
-//import Foundation
+// import Foundation
 //
-//func main() throws {
+// func main() throws {
 //    let input: [String] = try readInput(fromTestFile: true, separator: "\n")
 //    // Find the loop coords
 //    
@@ -125,6 +125,6 @@
 //    print("p2", contained.filter({ !visitable.contains($0) }).count)
 //    print(contained)
 //
-//}
+// }
 //
-//Timer.time(main)
+// Timer.time(main)

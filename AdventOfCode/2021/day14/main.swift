@@ -30,7 +30,7 @@ private func getExpansionResult(for inputPairs: [String], ticks: Int, insertionR
 
             newCounts[firstNewPair] = newCounts[firstNewPair, default: 0] + currentPairCount
             newCounts[secondNewPair] = newCounts[secondNewPair, default: 0] + currentPairCount
-        } 
+        }
         pairCounts = newCounts
     }
     var finalCounts: [Character: Int] = pairCounts.reduce(into: [:], { $0[$1.0[1]] = $0[$1.0[1], default: 0] + $1.1 })

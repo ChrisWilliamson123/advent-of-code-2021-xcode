@@ -29,7 +29,7 @@ private func processSeedRangeToMap(_ seedRange: Range<Int>, map: Map) -> (proces
 private func processSeedRanges(_ seedRanges: [Range<Int>], maps: [Map]) -> [Range<Int>] {
     var processedRanges: [Range<Int>] = []
     var unprocessedRanges: [Range<Int>] = seedRanges
-    
+
     for m in maps {
         guard !unprocessedRanges.isEmpty else { continue }
         var newlyUnprocessed: [Range<Int>] = []
@@ -40,7 +40,7 @@ private func processSeedRanges(_ seedRanges: [Range<Int>], maps: [Map]) -> [Rang
         }
         unprocessedRanges = newlyUnprocessed
     }
-    
+
     return processedRanges + unprocessedRanges
 }
 
@@ -48,7 +48,7 @@ func main() throws {
     let input: [String] = try readInput(fromTestFile: false, separator: "\n\n")
     let seedNumbers = Regex("\\d+").getGreedyMatches(in: input[0]).compactMap({ Int($0) })
     let seedRanges = stride(from: 0, to: seedNumbers.count, by: 2).map({ seedNumbers[$0]..<seedNumbers[$0]+seedNumbers[$0+1] })
-    
+
     let maps = input[1..<input.count].map({
         let ranges = $0.split(separator: "\n")[1...]
         return ranges.map {
@@ -56,12 +56,12 @@ func main() throws {
             return Map(source: ints[1], destination: ints[0], length: ints[2])
         }
     })
-    
+
     let part1 = seedNumbers.map({ seedNumber in
         maps.reduce(seedNumber, { processSeed($0, maps: $1) })
     })
     print(part1.min()!)
-    
+
     let part2 = maps.reduce(seedRanges, { processSeedRanges($0, maps: $1) }).map({ $0.lowerBound }).min()!
     print(part2)
 }

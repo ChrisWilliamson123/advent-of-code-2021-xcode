@@ -29,7 +29,7 @@ struct Cuboid: Hashable {
         let yRangeIntersection = self.yRange.intersect(cuboid2.yRange)
         let zRangeIntersection = self.zRange.intersect(cuboid2.zRange)
 
-        if let xRangeIntersection = xRangeIntersection, let yRangeIntersection = yRangeIntersection, let zRangeIntersection = zRangeIntersection  {
+        if let xRangeIntersection = xRangeIntersection, let yRangeIntersection = yRangeIntersection, let zRangeIntersection = zRangeIntersection {
             return Cuboid(xRange: xRangeIntersection, yRange: yRangeIntersection, zRange: zRangeIntersection)
         }
         return nil
@@ -91,7 +91,6 @@ private func buildInstructions(from input: [String]) -> [Instruction] {
         instrs.append(.init(turnOn: turnOn, xRange: xRange, yRange: yRange, zRange: zRange))
     }
 
-
     return instrs
 }
 
@@ -103,4 +102,3 @@ struct Instruction {
 }
 
 Timer.time(main)
-

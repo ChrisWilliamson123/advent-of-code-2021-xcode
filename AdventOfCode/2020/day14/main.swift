@@ -28,7 +28,6 @@ func main() throws {
     }
 
     print("Part 1:", memory.values.map({ $0 }).sum())
-    
 
     // Part 2
     memory = [:]

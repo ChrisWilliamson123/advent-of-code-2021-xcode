@@ -3,7 +3,7 @@ import CryptoKit
 
 func main() throws {
     let input = "udskfozm"
-    let start = Coordinate(0,0)
+    let start = Coordinate(0, 0)
     let end = Coordinate(3, 3)
     let hash = getHash(input: input, path: "")
 

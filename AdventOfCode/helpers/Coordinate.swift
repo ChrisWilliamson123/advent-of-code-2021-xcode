@@ -27,8 +27,8 @@ struct Coordinate: Hashable, CustomStringConvertible {
     var adjacents: [Coordinate] {
         return [
             Coordinate(-1, -1), Coordinate(0, -1), Coordinate(1, -1),
-            Coordinate(-1, 0),                     Coordinate(1, 0),
-            Coordinate(-1, 1),   Coordinate(0, 1), Coordinate(1, 1),
+            Coordinate(-1, 0), Coordinate(1, 0),
+            Coordinate(-1, 1), Coordinate(0, 1), Coordinate(1, 1)
         ].map { $0 + self }
     }
 
@@ -122,7 +122,7 @@ struct Coordinate: Hashable, CustomStringConvertible {
     static func -(lhs: Coordinate, rhs: Coordinate) -> Coordinate {
         Coordinate(lhs.x - rhs.x, lhs.y - rhs.y)
     }
-    
+
     static func *(lhs: Coordinate, rhs: Int) -> Coordinate {
         Coordinate(lhs.x * rhs, lhs.y * rhs)
     }
@@ -165,7 +165,7 @@ struct Coordinate: Hashable, CustomStringConvertible {
         print("Got coords within distance")
         return set
     }
-    
+
     func isIn<T>(_ grid: [[T]]) -> Bool {
         return self.x >= 0 && self.x < grid[0].count
             && self.y >= 0 && self.y < grid.count
@@ -177,11 +177,11 @@ extension Coordinate {
     static let left = Coordinate(-1, 0)
     static let down = Coordinate(0, 1)
     static let up = Coordinate(0, -1)
-    
+
     static let east = Coordinate(1, 0)
     static let west = Coordinate(-1, 0)
     static let south = Coordinate(0, 1)
     static let north = Coordinate(0, -1)
-    
+
     static let zero = Coordinate(0, 0)
 }

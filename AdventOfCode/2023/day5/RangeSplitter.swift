@@ -11,9 +11,9 @@ struct RangeSplitter {
     let firstRange: Range<Int>
     let secondRange: Range<Int>
     let modifier: Int
-    
+
     // modify the first range elements that are included in the second range
-    
+
     func split() -> (modified: Range<Int>?, unmodified: [Range<Int>]) {
         if firstRange.upperBound < secondRange.lowerBound {
             return (nil, [firstRange])
@@ -21,7 +21,7 @@ struct RangeSplitter {
         if firstRange.lowerBound > secondRange.upperBound {
             return (nil, [firstRange])
         }
-        
+
         if firstRange.lowerBound < secondRange.lowerBound
             && firstRange.upperBound >= secondRange.lowerBound
             && firstRange.upperBound < secondRange.upperBound {
@@ -30,11 +30,11 @@ struct RangeSplitter {
                 [firstRange.lowerBound..<secondRange.lowerBound]
             )
         }
-        
+
         if secondRange.lowerBound <= firstRange.lowerBound && secondRange.upperBound >= firstRange.upperBound {
             return (firstRange.lowerBound+modifier..<firstRange.upperBound+modifier, [])
         }
-        
+
         if firstRange.lowerBound >= secondRange.lowerBound
             && firstRange.upperBound > secondRange.upperBound {
             return (
@@ -42,7 +42,7 @@ struct RangeSplitter {
                 [secondRange.upperBound..<firstRange.upperBound]
             )
         }
-        
+
         if firstRange.lowerBound <= secondRange.lowerBound && firstRange.upperBound >= secondRange.upperBound {
             return (
                 secondRange.lowerBound + modifier..<secondRange.upperBound + modifier,

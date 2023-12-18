@@ -47,8 +47,7 @@ func main() throws {
             if score1 > score2 {
                 memo[[pos1, score1, pos2, score2]] = [1, 0]
                 return [1, 0]
-            }
-            else {
+            } else {
                 memo[[pos1, score1, pos2, score2]] = [0, 1]
                 return [0, 1]
 
@@ -82,4 +81,3 @@ func main() throws {
 }
 
 Timer.time(main)
-

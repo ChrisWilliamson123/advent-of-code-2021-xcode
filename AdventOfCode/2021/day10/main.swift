@@ -37,7 +37,7 @@ func main() throws {
     }
 
     print("Part 1:", illegals.reduce(0, { $0 + getPointsForIllegal($1) }))
-    
+
     let incompleteChunkPoints: [Int] = closingsNeeded.map({ c in
         c.reduce(0, { ($0 * 5) + getPointsForCloser($1) })
     })

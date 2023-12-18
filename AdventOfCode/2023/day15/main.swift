@@ -8,7 +8,7 @@ private func getHashValue(_ input: String) -> Int {
         current *= 17
         current %= 256
     }
-    
+
     return current
 }
 
@@ -16,7 +16,7 @@ struct Instruction {
     enum Operation: CustomStringConvertible {
         case remove
         case replace(Int)
-        
+
         var description: String {
             switch self {
             case .remove:
@@ -35,7 +35,7 @@ func main() throws {
     let initialisationSequence = input[0].split(separator: ",")
     let part1 = initialisationSequence.reduce(0, { $0 + getHashValue(String($1)) })
     print(part1)
-    
+
     /*
      Part 2
      256 boxes in total
@@ -51,10 +51,10 @@ func main() throws {
         let operation: Instruction.Operation = matches.count == 3 ? .replace(Int(matches[2])!) : .remove
         return Instruction(id: matches[0], operation: operation)
     })
-        
+
     typealias Lens = (id: String, focalLength: Int)
     var boxes: [Int: [Lens]] = [:]
-    
+
     instructions.forEach({ instruction in
         let boxId = getHashValue(instruction.id)
         let lensId = instruction.id
@@ -74,14 +74,14 @@ func main() throws {
             }
         }
     })
-    
+
     var focussingPower = 0
     for (boxId, lenses) in boxes {
         for (i, l) in lenses.enumerated() {
             focussingPower += (1 + boxId) * (i + 1) * l.focalLength
         }
     }
-    
+
     print(focussingPower)
 }
 

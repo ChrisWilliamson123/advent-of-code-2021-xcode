@@ -18,7 +18,7 @@ func main() throws {
     }
 
     let valuesUnderFirstInvalid = Array(input.filter({ $0 < firstInvalid }).reversed())
-    
+
     for i in 0..<valuesUnderFirstInvalid.count {
         var total = 0
         var items: [Int] = []

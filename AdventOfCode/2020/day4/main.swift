@@ -54,7 +54,7 @@ struct Passport {
 
     init(_ passportString: String) {
         let split = passportString.split(separator: "\n").map({ $0.split(separator: " ") }).flatMap({ $0 })
-        
+
         var fields: [String: String] = [:]
         split.forEach({
             let split = $0.split(separator: ":")
@@ -64,6 +64,5 @@ struct Passport {
         self.fields = fields
     }
 }
-
 
 Timer.time(main)

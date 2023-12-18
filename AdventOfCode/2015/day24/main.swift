@@ -13,7 +13,6 @@ func main() throws {
     let partOne = smallest.multiply()
     print(partOne)
 
-
 }
 
 Timer.time(main)

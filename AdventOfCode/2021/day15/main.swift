@@ -53,7 +53,6 @@ private func buildCave(from input: [String], multiplier: Int = 1) -> (cave: [[In
     return (cave, coords)
 }
 
-
 func euclidianDistance(source: Coordinate, end: Coordinate) -> Double {
     let dx = end.x - source.x
     let dy = end.y - source.y

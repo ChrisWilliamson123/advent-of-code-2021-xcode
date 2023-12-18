@@ -10,8 +10,7 @@ func main() throws {
     for y in 0..<input.count {
         for x in 0..<input[y].count {
             let char: Character = input[y][x]
-            if char == ">" { rights.insert(Coordinate(x, y))}
-            else if char == "v" { downs.insert(Coordinate(x, y))}
+            if char == ">" { rights.insert(Coordinate(x, y))} else if char == "v" { downs.insert(Coordinate(x, y))}
         }
     }
 //    var grid = input.map({ [Character]($0) })
@@ -65,9 +64,7 @@ private func printGrid(rights: Set<Coordinate>, downs: Set<Coordinate>, maxX: In
         var toPrint = ""
         for x in 0..<maxX {
             let c = Coordinate(x, y)
-            if rights.contains(c) { toPrint += ">" }
-            else if downs.contains(c) { toPrint += "v" }
-            else { toPrint += "." }
+            if rights.contains(c) { toPrint += ">" } else if downs.contains(c) { toPrint += "v" } else { toPrint += "." }
         }
         print(toPrint)
     }
@@ -91,4 +88,3 @@ private func getDirection(for char: Character) -> Coordinate {
 }
 
 Timer.time(main)
-

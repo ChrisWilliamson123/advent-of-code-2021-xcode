@@ -17,7 +17,7 @@ func main() throws {
 
     grid = foldGrid(grid, along: foldLines[0])
     print("Part 1:", grid.flatMap({ $0 }).filter({ $0 == "#" }).count)
-    
+
     for f in foldLines[1..<foldLines.count] {
         grid = foldGrid(grid, along: f)
     }

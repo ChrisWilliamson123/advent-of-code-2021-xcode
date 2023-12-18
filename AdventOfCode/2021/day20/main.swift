@@ -52,7 +52,7 @@ struct Image {
         let sortedByX = container.sorted(by: { $0.x < $1.x })
         let sortedByY = container.sorted(by: { $0.y < $1.y })
 
-        return ((sortedByY[0].y-1)...(sortedByY.last!.y+1),(sortedByX[0].x-1)...(sortedByX.last!.x+1))
+        return ((sortedByY[0].y-1)...(sortedByY.last!.y+1), (sortedByX[0].x-1)...(sortedByX.last!.x+1))
     }
 
     private func getBinaryChar(for coord: Coordinate) -> String {
@@ -94,8 +94,7 @@ private func getBoundsToCheck(from litPixels: Set<Coordinate>) -> (yBounds: Clos
     let minY = sortedByY[0].y
     let maxY = sortedByY.last!.y
 
-    return ((minY-1)...(maxY+1),(minX-1)...(maxX+1))
+    return ((minY-1)...(maxY+1), (minX-1)...(maxX+1))
 }
 
 Timer.time(main)
-

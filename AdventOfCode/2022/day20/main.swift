@@ -90,7 +90,6 @@ func main() throws {
     }
     print(groves.sum())
 
-
 }
 
 private func printNodes(_ node: Node) {

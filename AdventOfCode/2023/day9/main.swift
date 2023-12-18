@@ -8,13 +8,13 @@ func main() throws {
     let input: [String] = try readInput(fromTestFile: false, separator: "\n")
     var sequences = input.map({ $0.split(separator: " ").compactMap({ Int($0) }) })
 //    print(sequences)
-    
+
     for j in 0..<sequences.count {
         var differences = [sequences[j], getDifferenceSequence(sequences[j])]
         while differences.last!.contains(where: { $0 != 0 }) {
             differences.append(getDifferenceSequence(differences.last!))
         }
-        
+
         print(differences)
         for i in stride(from: differences.count-2, through: 0, by: -1) {
 //            differences[i].append(differences[i].last! + differences[i+1].last!)
@@ -26,7 +26,7 @@ func main() throws {
     }
 //    print(sequences)
     print(sequences.map({ $0.first! }).sum())
-    
+
 }
 
 Timer.time(main)

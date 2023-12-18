@@ -2,7 +2,7 @@ import Foundation
 
 func main() throws {
     let input: [String] = try readInput(fromTestFile: false)
-    
+
     let vents = buildVents(from: input)
     print("Part 1: \(getOverlappedCoordCount(from: vents, onlyCheckAxialVents: true))")
     print("Part 2: \(getOverlappedCoordCount(from: vents))")

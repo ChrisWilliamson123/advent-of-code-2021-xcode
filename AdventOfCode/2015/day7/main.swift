@@ -4,7 +4,7 @@ func main() throws {
     let input: [String] = try readInput(fromTestFile: false)
     var instructions = Set(buildInstructions(from: input))
     let literals = instructions.filter({
-        if case .literal(_) = $0.op {
+        if case .literal = $0.op {
             return true
         }
         return false
@@ -95,7 +95,7 @@ struct Instruction: Hashable {
         var inputGates: Set<String> {
             switch self {
             case .wire(let input): return [input]
-            case .literal(_):
+            case .literal:
                 return []
             case .not(let input):
                 return [input]

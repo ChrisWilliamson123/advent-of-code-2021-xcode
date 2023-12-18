@@ -1,25 +1,25 @@
-//import Foundation
+// import Foundation
 //
-//enum Material: String, CaseIterable {
+// enum Material: String, CaseIterable {
 //    case ore
 //    case clay
 //    case obsidian
 //    case geode
-//}
+// }
 //
-//struct Robot: Hashable {
+// struct Robot: Hashable {
 //    let buildMaterial: Material?
 //    let buildMaterialRequirement: Int?
 //    let oreRequirement: Int
 //    let miningMaterial: Material
-//}
+// }
 //
-//struct Blueprint {
+// struct Blueprint {
 //    let id: Int
 //    let robots: [Material: Robot]
-//}
+// }
 //
-//class RobotFactory {
+// class RobotFactory {
 //    struct State: Hashable {
 //        var materialsAtEnd: [Material: Int]
 //        var robotsAtEnd: [Material: Int]
@@ -143,9 +143,9 @@
 //        print("\(blueprint.id), \(result)")
 //        return result
 //    }
-//}
+// }
 //
-//func main() throws {
+// func main() throws {
 //    let input: [String] = try readInput(fromTestFile: false)
 //    let blueprints = input.enumerated().map { (index, line) in createBlueprint(from: line, index: index) }
 //    let queue = OperationQueue()
@@ -161,9 +161,9 @@
 //    queue.waitUntilAllOperationsAreFinished()
 //
 //    print(results.multiply())
-//}
+// }
 //
-//private func createBlueprint(from line: String, index: Int) -> Blueprint {
+// private func createBlueprint(from line: String, index: Int) -> Blueprint {
 //    let oreRegex = Regex("Each ore robot costs (\\d+) ore")
 //    let clayRegex = Regex("Each clay robot costs (\\d+) ore")
 //    let obsidianRegex = Regex("Each obsidian robot costs (\\d+) ore and (\\d+) (clay)")
@@ -180,15 +180,15 @@
 //        .obsidian: obsidianRobot,
 //        .geode: geodeRobot
 //    ])
-//}
+// }
 //
-//private func getRobotFromRegex(_ regex: Regex, line: String, miningMaterial: Material) -> Robot {
+// private func getRobotFromRegex(_ regex: Regex, line: String, miningMaterial: Material) -> Robot {
 //    let matches = regex.getMatches(in: line)
 //    if matches.count > 3 {
 //        return Robot(buildMaterial: Material.init(rawValue: matches[3]), buildMaterialRequirement: Int(matches[2])!, oreRequirement: Int(matches[1])!, miningMaterial: miningMaterial)
 //    } else {
 //        return Robot(buildMaterial: nil, buildMaterialRequirement: nil, oreRequirement: Int(matches[1])!, miningMaterial: miningMaterial)
 //    }
-//}
+// }
 //
-//Timer.time(main)
+// Timer.time(main)

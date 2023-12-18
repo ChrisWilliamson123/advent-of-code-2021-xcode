@@ -10,7 +10,7 @@ func main() throws {
         .init(x: 1, y: 1),
         .init(x: 5, y: 1),
         .init(x: 7, y: 1),
-        .init(x: 1, y: 2),
+        .init(x: 1, y: 2)
     ]
 
     let partOne = calculateNumberOfTreesHit(through: forest, usingSlope: slopesToCheck[0])

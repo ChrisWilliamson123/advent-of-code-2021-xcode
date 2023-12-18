@@ -51,7 +51,6 @@ private extension String {
     }
 }
 
-
 func MD5(string: String) -> String {
     Insecure.MD5.hash(data: string.data(using: .utf8) ?? Data()).description[12..<44]
 }

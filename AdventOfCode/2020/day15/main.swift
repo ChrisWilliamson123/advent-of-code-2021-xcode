@@ -41,4 +41,3 @@ func main(turns: Int, part: Int) throws {
 
 try main(turns: 2020, part: 1)
 try main(turns: 30000000, part: 1)
-

@@ -40,7 +40,7 @@ private func getPaths(graph: Graph, node: String, visitedSmalls: [String: Int], 
     if node == "end" { return [[node]] }
 
     var visitedSmalls = visitedSmalls
-    
+
     var paths: [[String]] = []
     if node.isSmallCave {
         visitedSmalls[node] = visitedSmalls[node, default: 0] + 1

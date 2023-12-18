@@ -2,7 +2,7 @@ import Foundation
 
 func main() throws {
     let input: [String] = try readInput(fromTestFile: false, separator: "\n")
-    
+
     let regex = Regex("\\d+")
     let times = regex.getGreedyMatches(in: input[0]).compactMap({ Int($0) })
     let distances = regex.getGreedyMatches(in: input[1]).compactMap({ Int($0) })

@@ -42,7 +42,6 @@ func main() throws {
         1
     } heuristicFunction: { source, _ in source.count }
 
-
     print(partTwo.distances["e"])
 }
 
@@ -69,8 +68,7 @@ extension String {
 
         while searchStartIndex < self.endIndex,
             let range = self.range(of: string, range: searchStartIndex..<self.endIndex),
-            !range.isEmpty
-        {
+            !range.isEmpty {
             let index = distance(from: self.startIndex, to: range.lowerBound)
             indices.append(index)
             searchStartIndex = range.upperBound

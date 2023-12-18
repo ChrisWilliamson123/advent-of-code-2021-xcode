@@ -111,17 +111,17 @@ private func buildGrid(tiles: Set<Tile>) {
     let newEdges = findMatchesForEdges(of: tile1889, allTiles: tiles)
 
     let matchings: [Edge: Edge] = [
-        .top:    .bottom,
-        .right:  .left,
+        .top: .bottom,
+        .right: .left,
         .bottom: .top,
-        .left:   .right
+        .left: .right
     ]
 
     let indexChange: [Edge: (x: Int, y: Int)] = [
-        .top:    (0, -1),
-        .right:  (1, 0),
+        .top: (0, -1),
+        .right: (1, 0),
         .bottom: (0, 1),
-        .left:   (-1, 0)
+        .left: (-1, 0)
     ]
 
     func matchEdge(_ edge: Edge, to edgeChars: [Character], tile: Tile) -> Tile {
@@ -246,7 +246,7 @@ struct Tile: CustomStringConvertible, Hashable {
             .top: top,
             .right: right,
             .bottom: bottom,
-            .left: left,
+            .left: left
         ]
     }
 
@@ -322,4 +322,3 @@ enum Edge: String, CustomStringConvertible {
 }
 
 Timer.time(main)
-

@@ -1,7 +1,7 @@
 import Foundation
 
 func main() throws {
-    var currentSequence: [Int] = [1,3,2,1,1,3,1,1,1,2]
+    var currentSequence: [Int] = [1, 3, 2, 1, 1, 3, 1, 1, 1, 2]
 
     for i in 0..<50 {
         currentSequence = tick(seq: currentSequence)

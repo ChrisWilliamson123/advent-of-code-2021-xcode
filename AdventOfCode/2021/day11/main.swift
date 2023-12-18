@@ -3,7 +3,7 @@ import Foundation
 func main() throws {
     let isTestMode = CommandLine.arguments.contains("test")
     let input: [String] = try readInput(fromTestFile: isTestMode)
-    
+
     var game = Game(input)
     for _ in 0..<100 { game.tick() }
     print("Part 1:", game.flashesPerformed)
@@ -22,12 +22,11 @@ class Game {
     private var board: [[Int]]
     private var prevFlashed: Set<Coordinate> = []
 
-    var flashesPerformed = 0    
+    var flashesPerformed = 0
 
     var allPositionFlashedOnPreviousTick: Bool {
         prevFlashed.count == (board.count * board[0].count)
     }
-
 
     init(_ startingBoard: [String]) {
         board = startingBoard.map({ [Character]($0).map({ Int($0)! }) })

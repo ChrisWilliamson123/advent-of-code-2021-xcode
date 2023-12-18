@@ -67,7 +67,7 @@ func aStar<T: Hashable>(graph: Set<T>,
     fScore[source] = heuristicFunction(source)
     var queue = Heap(elements: [], priorityFunction: { fScore[$0]! < fScore[$1]! })
     queue.enqueue(source)
-    
+
     while !queue.isEmpty {
         let current = queue.dequeue()!
         if current == target { return (dist, prev) }
