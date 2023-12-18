@@ -9133,6 +9133,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				83E36AAA2B30D1990008829A /* PBXTargetDependency */,
 			);
 			name = 2023.12;
 			packageProductDependencies = (
@@ -9903,6 +9904,7 @@
 			mainGroup = 65E46129276A34670006ACC9;
 			packageReferences = (
 				8729411A295659050051DF35 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				83E36AA82B30D16D0008829A /* XCRemoteSwiftPackageReference "SwiftLintPlugin" */,
 			);
 			productRefGroup = 65E46133276A34680006ACC9 /* Products */;
 			projectDirPath = "";
@@ -13338,6 +13340,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		83E36AAA2B30D1990008829A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 83E36AA92B30D1990008829A /* SwiftLint */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		653DB34F276B8B2400BC53DF /* Debug */ = {
@@ -18068,6 +18077,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		83E36AA82B30D16D0008829A /* XCRemoteSwiftPackageReference "SwiftLintPlugin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lukepistrol/SwiftLintPlugin";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.54.0;
+			};
+		};
 		8729411A295659050051DF35 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-algorithms.git";
@@ -18118,6 +18135,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 83D403E42B2F025600629EAB /* XCRemoteSwiftPackageReference "swift-algorithms" */;
 			productName = Algorithms;
+		};
+		83E36AA92B30D1990008829A /* SwiftLint */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83E36AA82B30D16D0008829A /* XCRemoteSwiftPackageReference "SwiftLintPlugin" */;
+			productName = "plugin:SwiftLint";
 		};
 		8729411B295659050051DF35 /* Algorithms */ = {
 			isa = XCSwiftPackageProductDependency;
