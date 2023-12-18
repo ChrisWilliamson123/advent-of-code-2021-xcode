@@ -7,136 +7,138 @@ func replaceInString(string: String, new: Character, location: Int) -> String {
     return String(toReturn)
 }
 
-// Returns num
-private func solve(line: String, index: Int, groups: [Int], groupIndex: Int) -> Set<String> {
-//    print(line, index, groups)
-    let hasFinishedLine = index >= line.count
-    
-    if hasFinishedLine {
-        return groups.isEmpty ? [line] : []
+func replaceInString(string: String, new: Character, range: Range<Int>) -> String {
+    var toReturn = [Character](string)
+    for i in range {
+        toReturn[i] = new
     }
+    return String(toReturn)
+}
+
+var cache: [State: Int] = [:]
+
+struct State: Hashable {
+    let line: String
+    let index: Int
+    let groups: [Int]
     
-    let currentCharacter: Character = line[index]
+    var currentCharacter: Character { line[index] }
     
-    if currentCharacter == "." { return solve(line: line, index: index + 1, groups: groups, groupIndex: groupIndex) }
-    
-    if currentCharacter == "#" {
-        if groups.isEmpty {
-            return []
+    var nextStates: Set<State> {
+        // If a group has just ended
+        if groups.first == 0 {
+            var newGroups = groups
+            _ = newGroups.remove(at: 0)
+            if currentCharacter == "#" {
+                return []
+            }
+            if index == line.count - 1 {
+                return [State(line: line, index: index + 1, groups: newGroups)]
+            }
+            if currentCharacter == "." || currentCharacter == "?" {
+                return [State(line: line, index: index + 1, groups: newGroups)]
+            }
+        }
+        // If we're a '.', continue to next character
+        if currentCharacter == "." {
+            return [State(line: line, index: index + 1, groups: groups)]
         }
         
-        var newGroups = groups
-        newGroups[groupIndex] -= 1
-        let hashesLeftInGroup = newGroups[groupIndex]
-        if hashesLeftInGroup > 0 {
-            return solve(line: line, index: index + 1, groups: newGroups, groupIndex: groupIndex)
-        } else {
-            // Finished a group, check next char
-            newGroups.remove(at: 0)
-            let nextIndex = index + 1
-            if nextIndex >= line.count {
-                return solve(line: line, index: nextIndex, groups: newGroups, groupIndex: groupIndex)
+        // If we're a '#', remove one from group
+        if currentCharacter == "#" {
+            if groups.first == nil {
+                return []
+            }
+            let leftInGroup = groups[0]
+            let substring = line[index..<index+leftInGroup]
+            if substring.count != leftInGroup {
+                return []
+            }
+            if substring.contains(where: { $0 != "#" && $0 != "?" }) {
+                return []
+            }
+            // Can remove one from group
+            var groupsCopy = groups
+            groupsCopy[0] = 0
+            return [State(line: line, index: index + leftInGroup, groups: groupsCopy)]
+        }
+        
+        // If we're a '?' character
+        if currentCharacter == "?" {
+            // treat as dot
+            if groups.isEmpty {
+                return [State(line: line, index: index + 1, groups: groups)]
+            }
+            // Treat as hash and dot
+            var total: Set<State> = []
+            
+            // Hash
+            let leftInGroup = groups[0]
+            let substring = line[index..<index+leftInGroup]
+            if substring.count != leftInGroup {
+                
+            } else if substring.contains(where: { $0 != "#" && $0 != "?" }) {
+                
             } else {
-                // Next char is in line
-                let nextChar: Character = line[nextIndex]
-                if nextChar == "#" { return [] }
-                if nextChar == "?" {
-                    // skip over the ? as it needs to be treated as a dot
-                    return solve(line: replaceInString(string: line, new: ".", location: nextIndex), index: nextIndex + 1, groups: newGroups, groupIndex: groupIndex)
-                }
-                return solve(line: line, index: nextIndex, groups: newGroups, groupIndex: groupIndex)
+                // Can remove one from group
+                var groupsCopy = groups
+                groupsCopy[0] = 0
+                total.insert(State(line: line, index: index + leftInGroup, groups: groupsCopy))
             }
+            
+            // Dot
+            total.insert(State(line: line, index: index + 1, groups: groups))
+            return total
         }
+        
+        assert(false, "Shouldn't reach here")
+    }
+}
+
+//var all: Set<String> = []
+
+private func solve(state: State) -> Int {
+    if let existing = cache[state] {
+        return existing
     }
     
-    if currentCharacter == "?" {
-        // If groups are done, treat as a dot
-        if groups.isEmpty {
-            return solve(line: replaceInString(string: line, new: ".", location: index), index: index + 1, groups: groups, groupIndex: groupIndex)
-        }
-        
-        // if prev is hash, and group is not done, use hash
-        if index > 0 {
-            let prevChar: Character = line[index-1]
-            if prevChar == "#" && groups[0] > 0 {
-                var newGroups = groups
-                newGroups[groupIndex] -= 1
-                let hashesLeftInGroup = newGroups[groupIndex]
-                if hashesLeftInGroup > 0 {
-                    return solve(line: replaceInString(string: line, new: "#", location: index), index: index + 1, groups: newGroups, groupIndex: groupIndex)
-                } else {
-                    // Finished a group, check next char
-                    newGroups.remove(at: 0)
-                    let nextIndex = index + 1
-                    if nextIndex >= line.count {
-                        return solve(line: replaceInString(string: line, new: "#", location: index), index: nextIndex, groups: newGroups, groupIndex: groupIndex)
-                    } else {
-                        // Next char is in line
-                        let nextChar: Character = line[nextIndex]
-                        if nextChar == "#" { }
-                        else if nextChar == "?" {
-                            // skip over the ? as it needs to be treated as a dot
-                            var newString = replaceInString(string: line, new: "#", location: index)
-                            newString = replaceInString(string: newString, new: ".", location: nextIndex)
-                            return solve(line: newString, index: nextIndex + 1, groups: newGroups, groupIndex: groupIndex)
-                            
-                        } else {
-                            return solve(line: replaceInString(string: line, new: "#", location: index), index: nextIndex, groups: newGroups, groupIndex: groupIndex)
-                        }
-                    }
-                }
-            }
-        }
-        
-        // groups are not done, treat as hash and dot
-        var total: Set<String> = []
-        
-        var newGroups = groups
-        newGroups[groupIndex] -= 1
-        let hashesLeftInGroup = newGroups[groupIndex]
-        if hashesLeftInGroup > 0 {
-            total = total.union(solve(line: replaceInString(string: line, new: "#", location: index), index: index + 1, groups: newGroups, groupIndex: groupIndex))
+    let line = state.line
+    let index = state.index
+    let groups = state.groups
+    
+    // Always going to trying to focus on the group at index 0
+    
+    // If we're at the end of a line and no groups, we have a valid solution, if still groups, no soltution
+    if index >= line.count {
+        if (groups.isEmpty || (groups.count == 1 && groups[0] == 0)) {
+            cache[state] = 1
+            return 1
         } else {
-            // Finished a group, check next char
-            newGroups.remove(at: 0)
-            let nextIndex = index + 1
-            if nextIndex >= line.count {
-                total = total.union(solve(line: replaceInString(string: line, new: "#", location: index), index: nextIndex, groups: newGroups, groupIndex: groupIndex))
-            } else {
-                // Next char is in line
-                let nextChar: Character = line[nextIndex]
-                if nextChar == "#" { }
-                else if nextChar == "?" {
-                    // skip over the ? as it needs to be treated as a dot
-                    var newString = replaceInString(string: line, new: "#", location: index)
-                    newString = replaceInString(string: newString, new: ".", location: nextIndex)
-                    total = total.union(solve(line: newString, index: nextIndex + 1, groups: newGroups, groupIndex: groupIndex))
-                    
-                } else {
-                    total = total.union(solve(line: replaceInString(string: line, new: "#", location: index), index: nextIndex, groups: newGroups, groupIndex: groupIndex))
-                }
-            }
+            cache[state] = 0
+            return 0
         }
-        
-        total = total.union(solve(line: replaceInString(string: line, new: ".", location: index), index: index + 1, groups: groups, groupIndex: groupIndex))
-        
-        return total
-        
     }
     
-    assert(false, "unknown char found")
+    // Now we need to get next states
+    var total = 0
+    let next = state.nextStates
+    for n in next {
+        total += solve(state: n)
+    }
+    cache[state] = total
+    return total
 }
 
 func main() throws {
     let input: [String] = try readInput(fromTestFile: false, separator: "\n")
     var tot = 0
+    
     for line in input {
         let split = line.split(separator: " ")
-        let record = split[0]
-        let groups = split[1].split(separator: ",").map({ Int($0)! })
-//        print(record, groups)
-        let result = solve(line: String(record), index: 0, groups: groups, groupIndex: 0)
-        tot += result.count
+        let record = String([split[0], split[0], split[0], split[0], split[0]].joined(by: "?"))
+        let groups = Array(repeating: split[1].split(separator: ",").map({ Int($0)! }), count: 5).flatMap(({ $0 }))
+        let result = solve(state: State(line: String(record), index: 0, groups: groups))
+        tot += result
     }
     
     print(tot)
