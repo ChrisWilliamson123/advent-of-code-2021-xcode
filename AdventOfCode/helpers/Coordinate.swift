@@ -122,6 +122,10 @@ struct Coordinate: Hashable, CustomStringConvertible {
     static func -(lhs: Coordinate, rhs: Coordinate) -> Coordinate {
         Coordinate(lhs.x - rhs.x, lhs.y - rhs.y)
     }
+    
+    static func *(lhs: Coordinate, rhs: Int) -> Coordinate {
+        Coordinate(lhs.x * rhs, lhs.y * rhs)
+    }
 
     func getLineTo(_ other: Coordinate, includeEnds: Bool = true) -> Set<Coordinate>? {
         let diff = other - self
@@ -178,4 +182,6 @@ extension Coordinate {
     static let west = Coordinate(-1, 0)
     static let south = Coordinate(0, 1)
     static let north = Coordinate(0, -1)
+    
+    static let zero = Coordinate(0, 0)
 }
