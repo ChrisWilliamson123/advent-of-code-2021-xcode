@@ -40,7 +40,7 @@ func main() throws {
         let doorStatusses = getDoorStatuses(from: hash)
         let axials = [(Direction.up, Coordinate(0, -1) + start), (Direction.down, Coordinate(0, 1) + start), (Direction.left, Coordinate(-1, 0) + start), (Direction.right, Coordinate(1, 0) + start)]
             .filter({ (0...3).contains($0.1.x) && (0...3).contains($0.1.y) }).filter({ axial in doorStatusses.first(where: { $0.1 == axial.0 })!.0 })
-        if axials.count == 0 {
+        if axials.isEmpty {
             return -1
         }
         var best = 0

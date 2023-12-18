@@ -1,23 +1,7 @@
 import Foundation
 
 func main() throws {
-//    let input: [String] = try readInput(fromTestFile: true, separator: "\n\n")
-//    var tiles: Set<Tile> = []
-//    input.forEach({
-//        let lineSplit = $0.split(separator: "\n")
-//        let id = lineSplit[0].split(separator: " ")[1].prefix(4)
-//        tiles.insert(.init(grid: lineSplit[1..<lineSplit.count].map({ [Character]($0) }), id: Int(id)!))
-//    })
-//
-//    print(tiles.count)
     print(try findSeaMonsters(gridFileName: "full-grid.txt"))
-
-//    var cornerTileIDs: Set<Int> = []
-//    var edgeTileIDs: Set<Int> = []
-//    var middleTileIDs: Set<Int> = []
-//    let cornerTileIDs: Set<Int> = [1789, 1187, 1889, 3121]
-//    let edgeTileIDs: Set<Int> = [2053, 2647, 2221, 2789, 1861, 3673, 1009, 1427, 1051, 1129, 1453, 1481, 3347, 2549, 2593, 1583, 2297, 1381, 3331, 1523, 1993, 3319, 1741, 3877, 1201, 3803, 3253, 2699, 1571, 1847, 1607, 3361, 2213, 3671, 1321, 2467, 1747, 2861, 3307, 3967]
-//    let middleTileIDs: Set<Int> = [2683, 3719, 1097, 2711, 2503, 3797, 1913, 1487, 2017, 2081, 1061, 2381, 2833, 2137, 1597, 2851, 1033, 2113, 3637, 2671, 2677, 3119, 3019, 3491, 3697, 3529, 2243, 2963, 3943, 1933, 2857, 3299, 3821, 1493, 1181, 2129, 1979, 1931, 3499, 2083, 1013, 2557, 2069, 2389, 1543, 3617, 1217, 1039, 1579, 3079, 1901, 3511, 3163, 1277, 2417, 1231, 2311, 2801, 2281, 3631, 1721, 1283, 3181, 1613, 3643, 2357, 2609, 3761, 2819, 2207, 1237, 3041, 1787, 3931, 3623, 3659, 2879, 2777, 3989, 1327, 2803, 2729, 1091, 2099, 1103, 3049, 3301, 1213, 2437, 2351, 1451, 2161, 2339, 3259, 2011, 3727, 1877, 3929, 3691, 2287]
 }
 
 private func findSeaMonsters(gridFileName: String) throws -> Int {

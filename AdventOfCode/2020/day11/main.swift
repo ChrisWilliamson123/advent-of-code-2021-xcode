@@ -19,7 +19,7 @@ func main() throws {
                 let adjacents = coordinate.adjacents.filter({ ($0.x >= 0 && $0.x < grid[y].count) && ($0.y >= 0 && $0.y < grid.count) })
                 let occupiedAdjacents = adjacents.filter({ grid[$0.y][$0.x] == OCCUPIED })
 
-                if current == EMPTY && occupiedAdjacents.count == 0 {
+                if current == EMPTY && occupiedAdjacents.isEmpty {
                     newState[y][x] = OCCUPIED
                 } else if current == OCCUPIED && occupiedAdjacents.count >= 4 {
                     newState[y][x] = EMPTY
@@ -46,7 +46,7 @@ func main() throws {
                 let visibleSeats = [(0, 1), (1, 1), (1, 0), (1, -1), (0, -1), (-1, -1), (-1, 0), (-1, 1)].map({ Coordinate(x: $0.0, y: $0.1) }).compactMap({ getFirstVisibleSeat(from: coordinate, in: grid, direction: $0) })
                 let occupiedVisibles = visibleSeats.filter({ grid[$0.y][$0.x] == OCCUPIED })
 
-                if current == EMPTY && occupiedVisibles.count == 0 {
+                if current == EMPTY && occupiedVisibles.isEmpty {
                     newState[y][x] = OCCUPIED
                 } else if current == OCCUPIED && occupiedVisibles.count >= 5 {
                     newState[y][x] = EMPTY

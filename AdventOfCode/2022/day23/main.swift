@@ -36,7 +36,7 @@ class Grove {
             let adjacentElves = adjacentCoords.intersection(elfCoords)
 
             // No adjacent elves so move on to next elf
-            if adjacentElves.count == 0 {
+            if adjacentElves.isEmpty {
                 continue
             }
 
@@ -44,7 +44,7 @@ class Grove {
             for i in 0..<4 {
                 let proposalCoords = Self.PROPOSALS[(proposalStartIndex + i) % 4]
                 let adjacentCoordsToCheck = proposalCoords.map({ $0 + elf })
-                if adjacentElves.intersection(adjacentCoordsToCheck).count == 0 {
+                if adjacentElves.intersection(adjacentCoordsToCheck).isEmpty {
                     propositions[elf] = elf + proposalCoords[0]
                     break
                 }
@@ -82,10 +82,8 @@ func main() throws {
     let input: [String] = try readInput(fromTestFile: false)
     var elfCoords: Set<Coordinate> = []
     for y in 0..<input.count {
-        for x in 0..<input[y].count {
-            if input[y][x] == "#" {
-                elfCoords.insert(Coordinate(x, y))
-            }
+        for x in 0..<input[y].count where input[y][x] == "#" {
+            elfCoords.insert(Coordinate(x, y))
         }
     }
 

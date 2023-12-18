@@ -27,7 +27,7 @@ func main() throws {
         while (time + i) % busId != 0 {
             time += stepSize
         }
-        stepSize = stepSize * busId
+        stepSize *= busId
     }
     print("Part 2:", time)
 }

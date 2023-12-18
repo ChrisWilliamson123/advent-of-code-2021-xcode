@@ -1,5 +1,6 @@
 import Foundation
 
+// swiftlint:disable:next function_body_length
 func main() throws {
     let input: [String] = [
         "sjdivfriyaaqa\u{d2}v\"k\"mpcu\"yyu\"en",

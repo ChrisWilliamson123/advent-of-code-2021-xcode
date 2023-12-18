@@ -34,7 +34,7 @@ func main() throws {
         for (k, v) in plusResults.sorted(by: { $0.key.count > $1.key.count }) { mutable = mutable.replacingOccurrences(of: k, with: "\(v)") }
 
         let timesExpressions = getSignedMatches(from: mutable, sign: "*")
-        if timesExpressions.count == 0 {
+        if timesExpressions.isEmpty {
             return Int(mutable)!
         }
         let timesResults = getExpressionResults(from: timesExpressions, char: "*")

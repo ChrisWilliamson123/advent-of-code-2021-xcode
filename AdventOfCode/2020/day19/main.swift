@@ -42,7 +42,7 @@ func main() throws {
         let ruleValue = tree[rule]!
         let numberRegex = Regex("\\d+")
         let matches = numberRegex.getMatches(in: ruleValue)
-        if matches.count == 0 { return ruleValue }
+        if matches.isEmpty { return ruleValue }
 
         var result = ""
         var index = 0

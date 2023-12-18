@@ -28,7 +28,7 @@ class BingoGame {
     }
 
     func play() {
-        while let numberToPlay = numbersToDraw.popLast(), winners.count == 0 {
+        while let numberToPlay = numbersToDraw.popLast(), winners.isEmpty {
             playNumber(numberToPlay)
         }
     }

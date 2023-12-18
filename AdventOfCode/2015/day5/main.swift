@@ -56,7 +56,7 @@ struct NString2 {
         }
 
         let validPairs = indexesOfPairs.filter({ $0.value.count > 1 && ($0.value.last! - $0.value.first!) > 1 })
-        return validPairs.count > 0
+        return !validPairs.isEmpty
     }
     var isNice: Bool { containsRepeatedPair && containsRepeatWithCharBetween }
 

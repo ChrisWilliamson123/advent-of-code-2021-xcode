@@ -36,7 +36,7 @@ struct Game {
                     monkey.itemsInspected += 1
                     // adjust
                     if makeAdjustment {
-                        monkey.items[0] = monkey.items[0] / 3
+                        monkey.items[0] /= 3
                     }
                     // throw
                     let result = monkey.test(monkey.items[0])

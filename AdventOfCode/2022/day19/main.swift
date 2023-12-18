@@ -118,28 +118,68 @@ private func getNextStates(from state: State, using blueprint: Blueprint, endTim
     var states: Set<State> = []
     // Try to build a geode robot, use only this state if we can build one
     if ore >= blueprint.geoOreCost && obs >= blueprint.geoObsCost {
-        let state = State(timeElapsed + 1, ore + oreR - blueprint.geoOreCost, clay + clayR, obs + obsR - blueprint.geoObsCost, geo + geoR, oreR, clayR, obsR, geoR + 1).pruned(for: blueprint, endTime: endTime)
+        let state = State(timeElapsed + 1,
+                          ore + oreR - blueprint.geoOreCost,
+                          clay + clayR,
+                          obs + obsR - blueprint.geoObsCost,
+                          geo + geoR,
+                          oreR,
+                          clayR,
+                          obsR,
+                          geoR + 1).pruned(for: blueprint, endTime: endTime)
         return [state]
     }
     // Try to build an obsidian robot, use only this state if we can build one
     if obsR < blueprint.maxObsRequirement && ore >= blueprint.obOreCost && clay >= blueprint.obClayCost {
-        let state = State(timeElapsed + 1, ore + oreR - blueprint.obOreCost, clay + clayR - blueprint.obClayCost, obs + obsR, geo + geoR, oreR, clayR, obsR + 1, geoR).pruned(for: blueprint, endTime: endTime)
+        let state = State(timeElapsed + 1,
+                          ore + oreR - blueprint.obOreCost,
+                          clay + clayR - blueprint.obClayCost,
+                          obs + obsR,
+                          geo + geoR,
+                          oreR,
+                          clayR,
+                          obsR + 1,
+                          geoR).pruned(for: blueprint, endTime: endTime)
         return [state]
     }
 
     // Just gather ore, no building
-    let state = State(timeElapsed + 1, ore + oreR, clay + clayR, obs + obsR, geo + geoR, oreR, clayR, obsR, geoR).pruned(for: blueprint, endTime: endTime)
+    let state = State(timeElapsed + 1,
+                      ore + oreR,
+                      clay + clayR,
+                      obs + obsR,
+                      geo + geoR,
+                      oreR,
+                      clayR,
+                      obsR,
+                      geoR).pruned(for: blueprint, endTime: endTime)
     states.insert(state)
 
     // Try to build a clay robot
     if clayR < blueprint.maxClayRequirement && ore >= blueprint.clayCost {
-        let state = State(timeElapsed + 1, ore + oreR - blueprint.clayCost, clay + clayR, obs + obsR, geo + geoR, oreR, clayR + 1, obsR, geoR).pruned(for: blueprint, endTime: endTime)
+        let state = State(timeElapsed + 1,
+                          ore + oreR - blueprint.clayCost,
+                          clay + clayR,
+                          obs + obsR,
+                          geo + geoR,
+                          oreR,
+                          clayR + 1,
+                          obsR,
+                          geoR).pruned(for: blueprint, endTime: endTime)
         states.insert(state)
     }
 
     // Try to build an ore robot
     if oreR < blueprint.maxOreRequirement && ore >= blueprint.oreCost {
-        let state = State(timeElapsed + 1, ore + oreR - blueprint.oreCost, clay + clayR, obs + obsR, geo + geoR, oreR + 1, clayR, obsR, geoR).pruned(for: blueprint, endTime: endTime)
+        let state = State(timeElapsed + 1,
+                          ore + oreR - blueprint.oreCost,
+                          clay + clayR,
+                          obs + obsR,
+                          geo + geoR,
+                          oreR + 1,
+                          clayR,
+                          obsR,
+                          geoR).pruned(for: blueprint, endTime: endTime)
         states.insert(state)
     }
 

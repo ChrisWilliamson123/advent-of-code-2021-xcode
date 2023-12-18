@@ -33,10 +33,10 @@ struct Santa {
 
     mutating func move(direction: Character) {
         switch direction {
-        case "^": currentPosition = currentPosition + Coordinate(0, 1)
-        case ">": currentPosition = currentPosition + Coordinate(1, 0)
-        case "v": currentPosition = currentPosition + Coordinate(0, -1)
-        case "<": currentPosition = currentPosition + Coordinate(-1, 0)
+        case "^": currentPosition += Coordinate(0, 1)
+        case ">": currentPosition += Coordinate(1, 0)
+        case "v": currentPosition += Coordinate(0, -1)
+        case "<": currentPosition += Coordinate(-1, 0)
         default: assert(false)
         }
         locationsVisited[currentPosition] = (locationsVisited[currentPosition] ?? 0) + 1

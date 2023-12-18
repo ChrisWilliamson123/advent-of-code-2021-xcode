@@ -17,7 +17,7 @@ func main() throws {
         }
     }
 
-    while instructions.count > 0 {
+    while !instructions.isEmpty {
         // Get the next bot which has two chips
         let bot = bots.first(where: { $0.value.count == 2 })!
         // Get the instruction for that bot

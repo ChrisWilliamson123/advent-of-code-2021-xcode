@@ -4644,7 +4644,6 @@
 		87258D432938A47700418B26 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		87258D452938A47700418B26 /* test_input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = test_input.txt; sourceTree = "<group>"; };
 		87258D462938A47700418B26 /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
-		87258D472938A47700418B26 /* main_bak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main_bak.swift; sourceTree = "<group>"; };
 		87258D492938A47800418B26 /* test_input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = test_input.txt; sourceTree = "<group>"; };
 		87258D4A2938A47800418B26 /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 		87258D4B2938A47800418B26 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -7459,7 +7458,6 @@
 			children = (
 				87258D452938A47700418B26 /* test_input.txt */,
 				87258D462938A47700418B26 /* input.txt */,
-				87258D472938A47700418B26 /* main_bak.swift */,
 				87864867295B28C2002E9CF7 /* main.swift */,
 			);
 			path = day19;

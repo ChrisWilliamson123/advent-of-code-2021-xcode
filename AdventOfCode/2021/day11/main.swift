@@ -44,7 +44,7 @@ class Game {
         // Perform the flashing
         var flashedCoords = Set<Coordinate>()
         var flashableCoords = getFlashableCoords(flashed: flashedCoords)
-        while flashableCoords.count > 0 {
+        while !flashableCoords.isEmpty {
             for f in flashableCoords {
                 flashedCoords.insert(f)
                 flashesPerformed += 1

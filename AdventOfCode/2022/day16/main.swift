@@ -96,7 +96,12 @@ func main() throws {
             let valvesCopy = Set(valves.map { $0.copy() as! Valve })
             let valve = valvesCopy.first(where: { $0.name == destination.name })!
             valve.isOpen = true
-            let result = dfs(start: valve, valves: Set(valvesCopy.map { $0.copy() as! Valve }), timeElapsed: timeElapsed + 1 + distanceToValve, flowRate: flowRate + valve.flowRate, pressureReleased: pressureReleased + (flowRate * distanceToValve) + (flowRate + valve.flowRate), endTime: endTime)
+            let result = dfs(start: valve,
+                             valves: Set(valvesCopy.map { $0.copy() as! Valve }),
+                             timeElapsed: timeElapsed + 1 + distanceToValve,
+                             flowRate: flowRate + valve.flowRate,
+                             pressureReleased: pressureReleased + (flowRate * distanceToValve) + (flowRate + valve.flowRate),
+                             endTime: endTime)
             if result.0 > best {
                 bestValves = result.1
             }

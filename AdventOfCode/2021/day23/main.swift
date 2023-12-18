@@ -40,7 +40,7 @@ func main() throws {
 
         // Get all possible moves
         let possibleMoves = game.possibleMoves
-        if possibleMoves.count == 0 { memo[game] = nil; return nil }
+        if possibleMoves.isEmpty { memo[game] = nil; return nil }
         for m in possibleMoves {
             if let nextResult = playGame(game: game.executeMove(m), energyUsed: energyUsed + m.2, memo: &memo) {
                 if nextResult == 0 {
@@ -49,7 +49,7 @@ func main() throws {
                 energyNeededForMoves.append(m.2 + nextResult)
             }
         }
-        if energyNeededForMoves.count == 0 { memo[game] = nil; return nil }
+        if energyNeededForMoves.isEmpty { memo[game] = nil; return nil }
 
         let minimum = energyNeededForMoves.min()!
         memo[game] = minimum
@@ -90,7 +90,7 @@ struct Game: Hashable {
         var moves: [Move] = []
         // First, do the corridor, want to move an item in the corridor into a room
         moves.append(contentsOf: possibleMovesFromCorridor)
-        if moves.count > 0 { return moves }
+        if !moves.isEmpty > 0 { return moves }
         // Next, move from rooms to corridor
         moves.append(contentsOf: possibleMovesFromRooms)
 
@@ -128,10 +128,8 @@ struct Game: Hashable {
             // Find which cols you can move to
             // first, left
             var availableCols: [Int] = []
-            for col in possibleCorridorStopColumns {
-                if canMoveFrom(columnIndex: roomColumnIndex, to: col) {
-                    availableCols.append(col)
-                }
+            for col in possibleCorridorStopColumns where canMoveFrom(columnIndex: roomColumnIndex, to: col) {
+                availableCols.append(col)
             }
             //            print(availableColumns, availableCols)
             moves.append(contentsOf: availableCols.map({ buildMove(origin: origin, destination: Coordinate($0, 0)) }))
@@ -172,7 +170,7 @@ struct Game: Hashable {
         let colsToMoveBetween = Set(stride(from: columnIndex + direction, to: destinationColumnIndex + direction, by: direction))
         let populatedCols = populatedCorridorIndexes
 
-        return colsToMoveBetween.intersection(populatedCols).count == 0
+        return colsToMoveBetween.intersection(populatedCols).isEmpty
     }
 
     private func isRoomFull(_ room: [Character]) -> Bool {
