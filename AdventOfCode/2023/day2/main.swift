@@ -18,10 +18,8 @@ struct Game {
     let rounds: [Round]
 
     func isPossible(bag: Bag) -> Bool {
-        for r in rounds {
-            if !r.isPossible(bag: bag) {
-                return false
-            }
+        for r in rounds where !r.isPossible(bag: bag) {
+            return false
         }
         return true
     }

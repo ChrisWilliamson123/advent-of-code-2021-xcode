@@ -28,10 +28,8 @@ struct PointsRace: Race {
         for i in 1...time {
             let distances = reindeers.map({ $0.getDistanceTravelled(in: i) })
             let max = distances.max()!
-            for index in 0..<distances.count {
-                if distances[index] == max {
-                    reindeers[index].score += 1
-                }
+            for index in 0..<distances.count where distances[index] == max {
+                reindeers[index].score += 1
             }
         }
         return reindeers.max(by: { $0.score < $1.score })!.score

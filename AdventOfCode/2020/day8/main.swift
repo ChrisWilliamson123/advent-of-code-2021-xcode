@@ -53,17 +53,17 @@ class Processor {
             instructionsExecuted.insert(instructionPointer)
 
             switch nextInstruction.operation {
-                case "nop":
-                    nopsExecuted.append(instructionPointer)
-                    instructionPointer += 1
-                case "acc":
-                    accumulator += nextInstruction.value
-                    instructionPointer += 1
-                case "jmp":
-                    jmpsExecuted.append(instructionPointer)
-                    instructionPointer += nextInstruction.value
-                default:
-                    throw ProcessorError.invalidOperation
+            case "nop":
+                nopsExecuted.append(instructionPointer)
+                instructionPointer += 1
+            case "acc":
+                accumulator += nextInstruction.value
+                instructionPointer += 1
+            case "jmp":
+                jmpsExecuted.append(instructionPointer)
+                instructionPointer += nextInstruction.value
+            default:
+                throw ProcessorError.invalidOperation
             }
         }
     }

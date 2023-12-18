@@ -21,10 +21,8 @@ struct Triangle {
     var isValid: Bool {
         let combinations = [(0, 1, 2), (0, 2, 1), (1, 2, 0)]
 
-        for c in combinations {
-            if !(sides[c.0] + sides[c.1] > sides[c.2]) {
-                return false
-            }
+        for c in combinations where !(sides[c.0] + sides[c.1] > sides[c.2]) {
+            return false
         }
 
         return true

@@ -10,11 +10,9 @@ func main() throws {
 
     let sortedSeatIDs = seatIDs.sorted()
 
-    for i in 1..<sortedSeatIDs.count {
-        if sortedSeatIDs[i] + 1 != sortedSeatIDs[i+1] {
-            print("Part 2: \(sortedSeatIDs[i] + 1 + 1)")
-            break
-        }
+    for i in 1..<sortedSeatIDs.count where sortedSeatIDs[i] + 1 != sortedSeatIDs[i+1] {
+        print("Part 2: \(sortedSeatIDs[i] + 1 + 1)")
+        break
     }
 }
 

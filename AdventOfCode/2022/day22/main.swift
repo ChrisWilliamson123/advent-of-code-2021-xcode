@@ -180,6 +180,7 @@ final class RealCube: Cube {
                 ])
     }
 
+    // swiftlint:disable:next cyclomatic_complexity
     override func translateFrom(currentFace: Face, destinationFace: Face, change: Coordinate) {
         switch (currentFace, destinationFace) {
         case (.top, .back):

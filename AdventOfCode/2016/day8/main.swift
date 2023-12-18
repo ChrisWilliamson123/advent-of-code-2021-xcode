@@ -14,10 +14,8 @@ struct Screen {
     private var litPixels: Set<Coordinate> {
         var lit = Set<Coordinate>()
         for y in 0..<pixels.count {
-            for x in 0..<pixels[0].count {
-                if pixels[y][x] {
-                    lit.insert(Coordinate(x, y))
-                }
+            for x in 0..<pixels[0].count where pixels[y][x] {
+                lit.insert(Coordinate(x, y))
             }
         }
 

@@ -24,6 +24,7 @@ private func canMoveRight(rockIndex: Int, row: [Character]) -> Bool {
     return false
 }
 
+// swiftlint:disable:next cyclomatic_complexity function_body_length
 func main() throws {
     let input: [String] = try readInput(fromTestFile: false, separator: "\n")
     let grid: [[Character]] = input.map { [Character]($0) }

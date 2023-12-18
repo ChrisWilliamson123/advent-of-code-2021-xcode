@@ -20,7 +20,8 @@ func main() throws {
         for otherScanner in 0..<scanners.count where otherScanner != nextScannerToCheck.key && !scannerToBeaconsMap.keys.contains(otherScanner) {
             defer { scannersCheckedForOverlaps.insert(nextScannerToCheck.key) }
 
-            guard let matching = getMatchingBeaconsBetween(baseScanner: nextScannerToCheck.value, nonBaseScanner: Set(scanners[otherScanner])) else { continue }
+            guard let matching = getMatchingBeaconsBetween(baseScanner: nextScannerToCheck.value,
+                                                           nonBaseScanner: Set(scanners[otherScanner])) else { continue }
 
             scannerToBeaconsMap[otherScanner] = matching.allTransformedNonBaseCoordsIntoBaseSpace
             scannerPositions.insert(matching.scannerPosition)
@@ -33,7 +34,8 @@ func main() throws {
     print("Part 1:", allBeacons.count)
 
     let scannerPairs = Array(scannerPositions).combinations(count: 2)
-    let maxDistanceBetweenScanners: Float = scannerPairs.reduce(0, { max($0, abs($1[0].x - $1[1].x) + abs($1[0].y - $1[1].y) + abs($1[0].z - $1[1].z)) })
+    let maxDistanceBetweenScanners: Float = scannerPairs
+        .reduce(0, { max($0, abs($1[0].x - $1[1].x) + abs($1[0].y - $1[1].y) + abs($1[0].z - $1[1].z)) })
     print("Part 2:", Int(maxDistanceBetweenScanners))
 }
 
@@ -42,8 +44,8 @@ func main() throws {
     item 0 is the relative scanners position from the base
     item 1 is a set containing all of the relative scanner's beacons translated to the base scanner's coordinate space
  */
-private func getMatchingBeaconsBetween(baseScanner: Set<simd_float4>, nonBaseScanner: Set<simd_float4>) -> (scannerPosition: simd_float4,
-                                                                                                            allTransformedNonBaseCoordsIntoBaseSpace: Set<simd_float4>)? {
+// swiftlint:disable:next line_length
+private func getMatchingBeaconsBetween(baseScanner: Set<simd_float4>, nonBaseScanner: Set<simd_float4>) -> (scannerPosition: simd_float4, allTransformedNonBaseCoordsIntoBaseSpace: Set<simd_float4>)? {
     // Loop through all possible orientations that a scanner can have
     for rotationMatrix in RotationMatrixStore.allRotationMatrices {
         let rotatedBeacons: Set<simd_float4> = nonBaseScanner.reduce(into: [], { $0.insert(rotationMatrix * $1) })

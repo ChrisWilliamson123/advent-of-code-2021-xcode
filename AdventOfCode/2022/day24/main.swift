@@ -56,6 +56,7 @@ struct Valley: Hashable {
         }
     }
 
+    // swiftlint:disable:next cyclomatic_complexity
     func getNextState() -> Valley {
         var newDirections = [Coordinate: [Direction]]()
         for (coordinate, ds) in directions {
@@ -66,7 +67,7 @@ struct Valley: Hashable {
                     if nextY > grid.count - 2 {
                         nextY = 1
                     }
-                    if let _ = newDirections[Coordinate(coordinate.x, nextY)] {
+                    if newDirections[Coordinate(coordinate.x, nextY)] != nil {
                         newDirections[Coordinate(coordinate.x, nextY)]!.append(direction)
                     } else {
                         newDirections[Coordinate(coordinate.x, nextY)] = [direction]
@@ -76,7 +77,7 @@ struct Valley: Hashable {
                     if nextY < 1 {
                         nextY = grid.count-2
                     }
-                    if let _ = newDirections[Coordinate(coordinate.x, nextY)] {
+                    if  newDirections[Coordinate(coordinate.x, nextY)] != nil {
                         newDirections[Coordinate(coordinate.x, nextY)]!.append(direction)
                     } else {
                         newDirections[Coordinate(coordinate.x, nextY)] = [direction]
@@ -86,7 +87,7 @@ struct Valley: Hashable {
                     if nextX > grid[0].count - 2 {
                         nextX = 1
                     }
-                    if let _ = newDirections[Coordinate(nextX, coordinate.y)] {
+                    if newDirections[Coordinate(nextX, coordinate.y)] != nil {
                         newDirections[Coordinate(nextX, coordinate.y)]!.append(direction)
                     } else {
                         newDirections[Coordinate(nextX, coordinate.y)] = [direction]
@@ -96,7 +97,7 @@ struct Valley: Hashable {
                     if nextX < 1 {
                         nextX = grid[0].count - 2
                     }
-                    if let _ = newDirections[Coordinate(nextX, coordinate.y)] {
+                    if newDirections[Coordinate(nextX, coordinate.y)] != nil {
                         newDirections[Coordinate(nextX, coordinate.y)]!.append(direction)
                     } else {
                         newDirections[Coordinate(nextX, coordinate.y)] = [direction]

@@ -171,8 +171,12 @@ private func getNextStates(from currentState: State, seen: Set<State>) -> Set<St
 
 private func buildFloors(input: [String]) -> [Floor] {
     input.map({
-        let chips = Regex("(\\w+)-compatible").getGreedyMatches(in: $0).map { chip in Entity.chip(element: chip.components(separatedBy: "-")[0][0].uppercased()) }
-        let generators = Regex("\\w+ generator").getGreedyMatches(in: $0).map { generator in Entity.generator(element: generator.components(separatedBy: " ")[0][0].uppercased()) }
+        let chips = Regex("(\\w+)-compatible").getGreedyMatches(in: $0).map { chip in
+            Entity.chip(element: chip.components(separatedBy: "-")[0][0].uppercased())
+        }
+        let generators = Regex("\\w+ generator").getGreedyMatches(in: $0).map { generator in
+            Entity.generator(element: generator.components(separatedBy: " ")[0][0].uppercased())
+        }
         return Floor(entities: Set(chips + generators))
     })
 }

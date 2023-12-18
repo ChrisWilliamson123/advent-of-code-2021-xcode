@@ -110,10 +110,8 @@ private func buildGrid(tiles: Set<Tile>) {
 
     func matchEdge(_ edge: Edge, to edgeChars: [Character], tile: Tile) -> Tile {
         // Lazy, try all orientations
-        for orientation in tile.allOrientations {
-            if orientation.allEdges[edge] == edgeChars {
-                return orientation
-            }
+        for orientation in tile.allOrientations where orientation.allEdges[edge] == edgeChars {
+            return orientation
         }
         return tile
     }
@@ -192,10 +190,8 @@ private func findMatchingTileAndEdge(for tile: Tile, with edge: [Character], all
     for otherTile in otherTiles where otherTile.id != tile.id {
         for otherTileOrientation in otherTile.allOrientations {
             let otherTileEdges = otherTileOrientation.allEdges
-            for otherTileEdge in otherTileEdges {
-                if otherTileEdge.value == edge {
-                    return (otherTileOrientation, otherTileEdge.key)
-                }
+            for otherTileEdge in otherTileEdges where otherTileEdge.value == edge {
+                return (otherTileOrientation, otherTileEdge.key)
             }
         }
     }

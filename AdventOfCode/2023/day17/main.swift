@@ -17,13 +17,16 @@ private func getNeighboursPart1(current: PositionWithDirectionCount, heatMap: [[
     let currentPosition = current.position
     // If we have no current direction, must be at start, so return right and down position
     guard let currentDirection = current.direction else {
-        return Set([Coordinate.right, Coordinate.down].map({ PositionWithDirectionCount(position: currentPosition + $0, direction: $0, directionAmount: 1) }))
+        return Set([Coordinate.right, Coordinate.down]
+            .map({ PositionWithDirectionCount(position: currentPosition + $0, direction: $0, directionAmount: 1) }))
     }
 
     // Do left, right, straight
     let neighbours = leftRights[currentDirection]!
         .map({ PositionWithDirectionCount(position: currentPosition + $0, direction: $0, directionAmount: 1) })
-    + [PositionWithDirectionCount(position: currentPosition + currentDirection, direction: currentDirection, directionAmount: current.directionAmount + 1)]
+    + [PositionWithDirectionCount(position: currentPosition + currentDirection,
+                                  direction: currentDirection,
+                                  directionAmount: current.directionAmount + 1)]
 
     // Filter out neighbours whose direction is <=3 and who do not have in-bounds coord
     return Set(neighbours.filter({
@@ -35,24 +38,30 @@ private func getNeighboursPart2(current: PositionWithDirectionCount, heatMap: [[
     let currentPosition = current.position
     // If we have no current direction, must be at start, so return right and down position
     guard let currentDirection = current.direction else {
-        return Set([Coordinate.right, Coordinate.down].map({ PositionWithDirectionCount(position: currentPosition + $0, direction: $0, directionAmount: 1) }))
+        return Set([Coordinate.right, Coordinate.down]
+            .map({ PositionWithDirectionCount(position: currentPosition + $0, direction: $0, directionAmount: 1) }))
     }
 
     // Build all neighbour arrays and then filter out bad ones
     var potentialNeighbours = [PositionWithDirectionCount]()
     // Can only move forward
     if current.directionAmount < 4 {
-        potentialNeighbours.append(.init(position: currentPosition + currentDirection, direction: currentDirection, directionAmount: current.directionAmount + 1))
+        potentialNeighbours.append(.init(position: currentPosition + currentDirection,
+                                         direction: currentDirection,
+                                         directionAmount: current.directionAmount + 1))
     }
     // Can only move left, right
     else if current.directionAmount == 10 {
-        potentialNeighbours.append(contentsOf: leftRights[currentDirection]!.map({ PositionWithDirectionCount(position: currentPosition + $0, direction: $0, directionAmount: 1) }))
+        potentialNeighbours.append(contentsOf: leftRights[currentDirection]!
+            .map({ PositionWithDirectionCount(position: currentPosition + $0, direction: $0, directionAmount: 1) }))
     }
     // Can move straight, left, right
     else {
         potentialNeighbours.append(contentsOf: leftRights[currentDirection]!
             .map({ PositionWithDirectionCount(position: currentPosition + $0, direction: $0, directionAmount: 1) })
-                                   + [PositionWithDirectionCount(position: currentPosition + currentDirection, direction: currentDirection, directionAmount: current.directionAmount + 1)]
+                                   + [PositionWithDirectionCount(position: currentPosition + currentDirection,
+                                                                 direction: currentDirection,
+                                                                 directionAmount: current.directionAmount + 1)]
         )
     }
 
@@ -101,7 +110,7 @@ func main() throws {
 private func dijkstra2(source: PositionWithDirectionCount,
                        target: Coordinate?,
                        getNeighbours: (PositionWithDirectionCount) -> Set<PositionWithDirectionCount>,
-                       getDistanceBetween: (Coordinate, Coordinate) -> Int) -> (distances: [PositionWithDirectionCount: Int], chain: [PositionWithDirectionCount: PositionWithDirectionCount?]) {
+                       getDistanceBetween: (Coordinate, Coordinate) -> Int) -> (distances: [PositionWithDirectionCount: Int], chain: [PositionWithDirectionCount: PositionWithDirectionCount?]) { // swiftlint:disable:this line_length
     var dist: [PositionWithDirectionCount: Int] = [:]
     var prev: [PositionWithDirectionCount: PositionWithDirectionCount?] = [:]
     var visited: Set<PositionWithDirectionCount> = []

@@ -44,7 +44,7 @@ class Grove {
             for i in 0..<4 {
                 let proposalCoords = Self.PROPOSALS[(proposalStartIndex + i) % 4]
                 let adjacentCoordsToCheck = proposalCoords.map({ $0 + elf })
-                if adjacentElves.intersection(adjacentCoordsToCheck).isEmpty {
+                if adjacentElves.isDisjoint(with: adjacentCoordsToCheck) {
                     propositions[elf] = elf + proposalCoords[0]
                     break
                 }

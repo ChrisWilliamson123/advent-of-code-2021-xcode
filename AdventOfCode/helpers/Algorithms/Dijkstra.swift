@@ -10,11 +10,9 @@ func dijkstra<T: Hashable>(graph: Set<T>,
 
     var heap = Heap<T>(priorityFunction: { dist[$0]! < dist[$1]! })
 
-    for vertex in graph {
-        if vertex != source {
-            dist[vertex] = Int.max
-            prev[vertex] = nil
-        }
+    for vertex in graph where vertex != source {
+        dist[vertex] = Int.max
+        prev[vertex] = nil
     }
     heap.enqueue(source)
 

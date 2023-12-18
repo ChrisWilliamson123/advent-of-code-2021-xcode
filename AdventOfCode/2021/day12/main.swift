@@ -73,10 +73,8 @@ extension String {
     }
 
     var isUppercase: Bool {
-        for c in self {
-            if c.isLowercase {
-                return false
-            }
+        for c in self where c.isLowercase {
+            return false
         }
         return true
     }

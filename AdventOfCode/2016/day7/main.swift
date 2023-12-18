@@ -34,10 +34,8 @@ struct IPAddress {
 
         let ABAList = nonSquareContents.map({ getABAList($0) }).flatMap({ $0 })
         for sbc in squareBracketsContents {
-            for aba in ABAList {
-                if sbc.contains(aba[1] + aba[0] + aba[1]) {
-                    return true
-                }
+            for aba in ABAList where sbc.contains(aba[1] + aba[0] + aba[1]) {
+                return true
             }
         }
 
@@ -46,8 +44,8 @@ struct IPAddress {
 
     private func hasABBA(_ input: String) -> Bool {
         for i in 3..<input.count {
-            if input[i] == input[i-2] { continue }
-            if [input[i-3], input[i-2]] == [input[i], input[i-1]] {
+            if input[i] as Character == input[i-2] as Character { continue }
+            if [input[i-3] as Character, input[i-2] as Character] == [input[i] as Character, input[i-1] as Character] {
                 return true
             }
         }
@@ -58,7 +56,7 @@ struct IPAddress {
     private func getABAList(_ input: String) -> [String] {
         var abaList = [String]()
         for i in 2..<input.count {
-            if input[i] == input[i-2] && input[i] != input[i-1] {
+            if input[i] as Character == input[i-2] as Character && input[i] as Character != input[i-1] as Character {
                 abaList.append(input[i-2...i])
             }
         }

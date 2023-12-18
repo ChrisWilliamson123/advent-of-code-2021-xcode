@@ -42,10 +42,8 @@ func main() throws {
 
 private extension String {
     func triple() -> String? {
-        for i in 2..<self.count {
-            if Set([self[i-2], self[i-1], self[i]]).count == 1 {
-                return self[i]
-            }
+        for i in 2..<self.count where Set([self[i-2], self[i-1], self[i]]).count == 1 {
+            return self[i]
         }
         return  nil
     }

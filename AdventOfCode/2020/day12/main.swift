@@ -34,23 +34,23 @@ class Ship {
     func navigate() {
         for i in instructions {
             switch i.action {
-                case "N", "S", "E", "W":
-                    let modifier = [
-                        "N": Coordinate(0, 1),
-                        "S": Coordinate(0, -1),
-                        "E": Coordinate(1, 0),
-                        "W": Coordinate(-1, 0)
-                    ][i.action]!
-                    currentPosition = Coordinate(currentPosition.x + (modifier.x * i.value), currentPosition.y + (modifier.y * i.value))
-                case "L":
-                    let toRotate = i.value / 90
-                    directions.rotateRight(positions: toRotate)
-                case "R":
-                    let toRotate = i.value / 90
-                    directions.rotateLeft(positions: toRotate)
-                case "F":
-                    currentPosition = Coordinate(currentPosition.x + (direction.x * i.value), currentPosition.y + (direction.y * i.value))
-                default: break
+            case "N", "S", "E", "W":
+                let modifier = [
+                    "N": Coordinate(0, 1),
+                    "S": Coordinate(0, -1),
+                    "E": Coordinate(1, 0),
+                    "W": Coordinate(-1, 0)
+                ][i.action]!
+                currentPosition = Coordinate(currentPosition.x + (modifier.x * i.value), currentPosition.y + (modifier.y * i.value))
+            case "L":
+                let toRotate = i.value / 90
+                directions.rotateRight(positions: toRotate)
+            case "R":
+                let toRotate = i.value / 90
+                directions.rotateLeft(positions: toRotate)
+            case "F":
+                currentPosition = Coordinate(currentPosition.x + (direction.x * i.value), currentPosition.y + (direction.y * i.value))
+            default: break
             }
         }
     }
@@ -58,21 +58,25 @@ class Ship {
     func navigateWithWaypoint() {
         for i in instructions {
             switch i.action {
-                case "N", "S", "E", "W":
-                    let modifier = [
-                        "N": Coordinate(0, 1),
-                        "S": Coordinate(0, -1),
-                        "E": Coordinate(1, 0),
-                        "W": Coordinate(-1, 0)
-                    ][i.action]!
-                    relativeWaypointPosition = Coordinate(relativeWaypointPosition.x + (modifier.x * i.value), relativeWaypointPosition.y + (modifier.y * i.value))
-                case "L":
-                    relativeWaypointPosition = relativeWaypointPosition.rotatePoint(aroundOrigin: Coordinate(0, 0), byDegrees: CGFloat(i.value))
-                case "R":
-                    relativeWaypointPosition = relativeWaypointPosition.rotatePoint(aroundOrigin: Coordinate(0, 0), byDegrees: CGFloat(i.value * -1))
-                case "F":
-                    currentPosition = Coordinate(currentPosition.x + (relativeWaypointPosition.x * i.value), currentPosition.y + (relativeWaypointPosition.y * i.value))
-                default: break
+            case "N", "S", "E", "W":
+                let modifier = [
+                    "N": Coordinate(0, 1),
+                    "S": Coordinate(0, -1),
+                    "E": Coordinate(1, 0),
+                    "W": Coordinate(-1, 0)
+                ][i.action]!
+                relativeWaypointPosition = Coordinate(relativeWaypointPosition.x + (modifier.x * i.value),
+                                                      relativeWaypointPosition.y + (modifier.y * i.value))
+            case "L":
+                relativeWaypointPosition = relativeWaypointPosition.rotatePoint(aroundOrigin: Coordinate(0, 0),
+                                                                                byDegrees: CGFloat(i.value))
+            case "R":
+                relativeWaypointPosition = relativeWaypointPosition.rotatePoint(aroundOrigin: Coordinate(0, 0),
+                                                                                byDegrees: CGFloat(i.value * -1))
+            case "F":
+                currentPosition = Coordinate(currentPosition.x + (relativeWaypointPosition.x * i.value),
+                                             currentPosition.y + (relativeWaypointPosition.y * i.value))
+            default: break
             }
         }
     }

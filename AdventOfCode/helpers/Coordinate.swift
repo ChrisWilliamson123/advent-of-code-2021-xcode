@@ -111,19 +111,19 @@ struct Coordinate: Hashable, CustomStringConvertible {
         abs(x - other.x) + abs(y - other.y)
     }
 
-    static func +(lhs: Coordinate, rhs: Coordinate) -> Coordinate {
+    static func + (lhs: Coordinate, rhs: Coordinate) -> Coordinate {
         Coordinate(lhs.x + rhs.x, lhs.y + rhs.y)
     }
 
-    static func +=(lhs: inout Coordinate, rhs: Coordinate) {
+    static func += (lhs: inout Coordinate, rhs: Coordinate) {
         lhs = Coordinate(lhs.x + rhs.x, lhs.y + rhs.y)
     }
 
-    static func -(lhs: Coordinate, rhs: Coordinate) -> Coordinate {
+    static func - (lhs: Coordinate, rhs: Coordinate) -> Coordinate {
         Coordinate(lhs.x - rhs.x, lhs.y - rhs.y)
     }
 
-    static func *(lhs: Coordinate, rhs: Int) -> Coordinate {
+    static func * (lhs: Coordinate, rhs: Int) -> Coordinate {
         Coordinate(lhs.x * rhs, lhs.y * rhs)
     }
 

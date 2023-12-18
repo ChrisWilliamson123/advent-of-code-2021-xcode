@@ -52,6 +52,7 @@ private func getNextMolecules(for start: String, rules: [String: Set<String>], e
         let indices = toReplace.indicesOf(string: molecule)
         for i in indices {
             for r in replacement {
+                // swiftlint:disable:next line_length
                 let range = toReplace.index(toReplace.startIndex, offsetBy: i)...toReplace.index(toReplace.startIndex, offsetBy: i + (molecule.count - 1))
                 molecules.insert(toReplace.replacingCharacters(in: range, with: r))
             }

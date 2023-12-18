@@ -170,7 +170,7 @@ struct Game: Hashable {
         let colsToMoveBetween = Set(stride(from: columnIndex + direction, to: destinationColumnIndex + direction, by: direction))
         let populatedCols = populatedCorridorIndexes
 
-        return colsToMoveBetween.intersection(populatedCols).isEmpty
+        return colsToMoveBetween.isDisjoint(with: populatedCols)
     }
 
     private func isRoomFull(_ room: [Character]) -> Bool {

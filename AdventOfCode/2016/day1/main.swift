@@ -10,7 +10,11 @@ func main() throws {
     for d in directionsText.components(separatedBy: ", ") {
         let matches = Regex("(\\w)(\\d+)").getMatches(in: d)
 
-        matches[0] == "R" ? directions.rotateLeft(positions: 1) : directions.rotateRight(positions: 1)
+        if matches[0] == "R" {
+            directions.rotateLeft(positions: 1)
+        } else {
+            directions.rotateRight(positions: 1)
+        }
 
         let value = Int(matches[1])!
         for _ in 1...value {

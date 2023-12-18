@@ -68,7 +68,10 @@ func main() throws {
 
     // Enter into each dfs call with the pressure released for timeElapsed
     func dfs(start: Valve, valves: Set<Valve>, timeElapsed: Int, flowRate: Int, pressureReleased: Int, endTime: Int = 30) -> (Int, Set<Valve>) {
-        nodeCache[NodeCacheItem(timeElapsed: timeElapsed, currentNode: start, openValves: Set(valves.filter { $0.isOpen }), flowRate: flowRate)] = pressureReleased
+        nodeCache[NodeCacheItem(timeElapsed: timeElapsed,
+                                currentNode: start,
+                                openValves: Set(valves.filter { $0.isOpen }),
+                                flowRate: flowRate)] = pressureReleased
         let timeRemaining = endTime - timeElapsed
         if areAllPositiveValvesOpen(valves: valves) {
             let totalPressureReleased = pressureReleased + (timeRemaining * flowRate)
@@ -184,7 +187,9 @@ private func getDistancesAndPathsBetweenValves(valves: Set<Valve>) -> (distances
             let result = dijkstra(graph: valves,
                                   source: valve,
                                   target: otherValve,
-                                  getNeighbours: { current in Set(current.destinations.compactMap({ destName in valves.first(where: { $0.name == destName }) })) },
+                                  getNeighbours: { current in
+                Set(current.destinations.compactMap({ destName in valves.first(where: { $0.name == destName }) }))
+            },
                                   getDistanceBetween: { _, _ in 1})
             var path = [String]()
             var current = otherValve

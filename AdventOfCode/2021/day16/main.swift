@@ -44,7 +44,10 @@ private func readPacket(_ packet: String, limit: Int? = nil) -> (packets: [Packe
                 index += 15
                 let subPacketsTotalString = packet[index..<index+subPacketsTotalLength]
                 let packet = readPacket(subPacketsTotalString).packets
-                packets.append(.init(version: packetVersion, typeID: typeID, value: getPacketValue(subPackets: packet, id: typeID), subPackets: packet))
+                packets.append(.init(version: packetVersion,
+                                     typeID: typeID,
+                                     value: getPacketValue(subPackets: packet, id: typeID),
+                                     subPackets: packet))
                 index += subPacketsTotalLength
             } else {
                 /// Next 11 bits are a number that represents the number of sub-packets immediately contained by this packet.
@@ -52,7 +55,10 @@ private func readPacket(_ packet: String, limit: Int? = nil) -> (packets: [Packe
                 index += 11
                 let subPacketsString = packet[index..<packet.count]
                 let packet = readPacket(subPacketsString, limit: numberOfSubpackets)
-                packets.append(.init(version: packetVersion, typeID: typeID, value: getPacketValue(subPackets: packet.packets, id: typeID), subPackets: packet.packets))
+                packets.append(.init(version: packetVersion,
+                                     typeID: typeID,
+                                     value: getPacketValue(subPackets: packet.packets, id: typeID),
+                                     subPackets: packet.packets))
                 index += packet.end
             }
         }

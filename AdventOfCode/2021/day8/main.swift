@@ -50,6 +50,7 @@ class SegmentDecoder {
         outputValue = input.split(separator: "|")[1].split(separator: " ").map({ String($0) })
     }
 
+    // swiftlint:disable:next cyclomatic_complexity
     func decodeSegments() -> Int {
         for sameLengthCluster in digitsToSegmentIndexes where sameLengthCluster.count == 1 {
             for (_, segmentIndexes) in sameLengthCluster {
@@ -58,12 +59,14 @@ class SegmentDecoder {
                 // Remove values from other segments that aren't the ones for this digit
                 let unusedSegmentIndexes = [0, 1, 2, 3, 4, 5, 6].filter({ !segmentIndexes.contains($0) })
                 for unusedSegmentIndex in unusedSegmentIndexes {
-                    segmentsWithPossibleLetters[unusedSegmentIndex] = segmentsWithPossibleLetters[unusedSegmentIndex].filter({ !matchingSignalPattern.contains($0) })
+                    segmentsWithPossibleLetters[unusedSegmentIndex] = segmentsWithPossibleLetters[unusedSegmentIndex]
+                        .filter({ !matchingSignalPattern.contains($0) })
                 }
 
                 // For each segment of the digit, keep letters that exist within the signal pattern
                 for segmentIndex in segmentIndexes {
-                    segmentsWithPossibleLetters[segmentIndex] = segmentsWithPossibleLetters[segmentIndex].filter({ matchingSignalPattern.contains($0) })
+                    segmentsWithPossibleLetters[segmentIndex] = segmentsWithPossibleLetters[segmentIndex]
+                        .filter({ matchingSignalPattern.contains($0) })
                 }
             }
         }
@@ -74,6 +77,7 @@ class SegmentDecoder {
             var segmentsInCommon: [Int] = []
             [0, 1, 2, 3, 4, 5, 6].forEach { s in
                 for (_, indexes) in sameLengthCluster {
+                    // swiftlint:disable:next for_where
                     if !indexes.contains(s) { return }
                 }
                 segmentsInCommon.append(s)
@@ -89,10 +93,8 @@ class SegmentDecoder {
 
                 // Get the possible values which appear in all matching signal patterns
                 var valuesThatAppearInAllSignals: [Character] = []
-                for v in possibleValuesForSegment {
-                    if matchingSignalPatterns.filter({ $0.contains(v) }).count == matchingSignalPatterns.count {
-                        valuesThatAppearInAllSignals.append(v)
-                    }
+                for v in possibleValuesForSegment where if matchingSignalPatterns.filter({ $0.contains(v) }).count == matchingSignalPatterns.count {
+                    valuesThatAppearInAllSignals.append(v)
                 }
 
                 // If one value was found for the segment...
@@ -101,6 +103,7 @@ class SegmentDecoder {
                     segmentsWithPossibleLetters[s] = [valuesThatAppearInAllSignals[0]]
 
                     // Remove the value as a possibility from other segments
+                    // swiftlint:disable:next line_length
                     for i in 0..<segmentsWithPossibleLetters.count where segmentsWithPossibleLetters[i].contains(valuesThatAppearInAllSignals[0]) && segmentsWithPossibleLetters[i].count > 1 {
                         segmentsWithPossibleLetters[i] = segmentsWithPossibleLetters[i].filter({ $0 != valuesThatAppearInAllSignals[0] })
                     }

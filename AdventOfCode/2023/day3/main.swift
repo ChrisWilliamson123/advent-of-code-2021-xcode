@@ -31,19 +31,15 @@ func main() throws {
             if matches.isEmpty {
                 // It is a symbol
                 let adjacents = coord.getAdjacents(in: grid)
-                for n in numbers {
-                    if !n.positions.intersection(adjacents).isEmpty {
-                        total += n.value
-                    }
+                for n in numbers where !n.positions.isDisjoint(with: adjacents) {
+                    total += n.value
                 }
 
                 if character == "*" {
                     // it is a gear, find out if it has exactly two numbers
                     var neighbours: [Number] = []
-                    for n in numbers {
-                        if !n.positions.intersection(adjacents).isEmpty {
-                            neighbours.append(n)
-                        }
+                    for n in numbers where !n.positions.isDisjoint(with: adjacents) {
+                        neighbours.append(n)
                     }
 
                     if neighbours.count == 2 {

@@ -16,7 +16,11 @@ func bfs<T: Hashable>(graph: Set<T>,
                       target: T?,
                       getNeighbours: (T) -> Set<T>,
                       getDistanceBetween: (T, T) -> Int) -> (distances: [T: Int], prev: [T: T]) {
-    bfs(graph: graph, source: [source], target: target.map { [$0] }, getNeighbours: getNeighbours, getDistanceBetween: getDistanceBetween)
+    bfs(graph: graph,
+        source: [source],
+        target: target.map { [$0] },
+        getNeighbours: getNeighbours,
+        getDistanceBetween: getDistanceBetween)
 }
 
 /**

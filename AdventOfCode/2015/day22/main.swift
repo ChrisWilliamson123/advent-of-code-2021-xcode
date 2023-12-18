@@ -1,5 +1,6 @@
 import Foundation
 
+// swiftlint:disable:next cyclomatic_complexity
 func main() throws {
     let boss = Boss()
     let wizard = Wizard()

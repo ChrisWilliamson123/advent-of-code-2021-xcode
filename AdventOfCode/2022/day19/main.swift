@@ -82,7 +82,13 @@ func main() throws {
         let regex = Regex("(\\d+)")
         let ints = regex.getGreedyMatches(in: $0).compactMap(Int.init)
         assert(ints.count == 7)
-        return Blueprint(id: ints[0], oreCost: ints[1], clayCost: ints[2], obOreCost: ints[3], obClayCost: ints[4], geoOreCost: ints[5], geoObsCost: ints[6])
+        return Blueprint(id: ints[0],
+                         oreCost: ints[1],
+                         clayCost: ints[2],
+                         obOreCost: ints[3],
+                         obClayCost: ints[4],
+                         geoOreCost: ints[5],
+                         geoObsCost: ints[6])
     }
 
     let queue = OperationQueue()

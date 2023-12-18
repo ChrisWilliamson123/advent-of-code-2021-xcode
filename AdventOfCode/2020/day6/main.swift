@@ -33,11 +33,9 @@ class Group {
         for p in people {
             for c in p {
                 var includeChar = true
-                for p2 in people {
-                    if !p2.contains(c) {
-                        includeChar = false
-                        break
-                    }
+                for p2 in people where !p2.contains(c) {
+                    includeChar = false
+                    break
                 }
                 if includeChar { result.insert(c) }
             }

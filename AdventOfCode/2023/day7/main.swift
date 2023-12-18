@@ -119,12 +119,8 @@ func main() throws {
         print(h.cards, h.type)
     }
 
-    let ordered = hands.sorted(by: { $0.type.rawValue < $1.type.rawValue },
-                               { $0.cards[0] > $1.cards[0] },
-                               { $0.cards[1] > $1.cards[1] },
-                               { $0.cards[2] > $1.cards[2] },
-                               { $0.cards[3] > $1.cards[3] },
-                               { $0.cards[4] > $1.cards[4] })
+    // swiftlint:disable:next line_length
+    let ordered = hands.sorted(by: { $0.type.rawValue < $1.type.rawValue }, { $0.cards[0] > $1.cards[0] }, { $0.cards[1] > $1.cards[1] }, { $0.cards[2] > $1.cards[2] }, { $0.cards[3] > $1.cards[3] }, { $0.cards[4] > $1.cards[4] })
 
     print(ordered)
 

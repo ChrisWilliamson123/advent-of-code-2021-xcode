@@ -14,14 +14,10 @@ func main() throws {
 
             let axialAdjacents = currentPos.getAxialAdjacents().filter({ $0.x >= 0 && $0.y >= 0 })
 
-            for a in axialAdjacents {
-                if !explored.contains(a) {
-                    if isOpenSpace(a, input: input) {
-                        if distance == stopAt { return explored.count }
-                        frontier.insert((a, distance + 1), at: 0)
-                        explored.insert(a)
-                    }
-                }
+            for a in axialAdjacents where !explored.contains(a) && isOpenSpace(a, input: input) {
+                if distance == stopAt { return explored.count }
+                frontier.insert((a, distance + 1), at: 0)
+                explored.insert(a)
             }
         }
         assert(false)

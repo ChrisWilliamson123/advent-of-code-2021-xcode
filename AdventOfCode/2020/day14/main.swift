@@ -76,9 +76,9 @@ func applyMemoryMask(_ mask: String, to input: String) -> [String] {
 
     let masked: [Character] = (0..<mask.count).map({
         switch Character(mask[$0]) {
-            case "0": return input[$0]
-            case "1": return "1"
-            default: return "X"
+        case "0": return input[$0]
+        case "1": return "1"
+        default: return "X"
         }
     })
 
@@ -88,7 +88,7 @@ func applyMemoryMask(_ mask: String, to input: String) -> [String] {
     if xCount == 0 { return [String(masked)] }
 
     var result: [String] = []
-    let combinations = power(2, xCount)
+    let combinations = pow(2, xCount)
     let binStrings = (0..<combinations).map({ String($0, radix: 2).padded(toSize: xCount) })
 
     for binaryString in binStrings {

@@ -74,7 +74,7 @@ class Cave {
     }
 
     func simulateRocks() {
-        /**
+        /*
          On each tick, use a jet to try and move the rock, then try to move the rock down
          */
 //        seen =
@@ -84,7 +84,6 @@ class Cave {
 //            print(rocksFallen)
             // Get the last twenty to get maxY
             if cacheCheck, let maxY = lastTwenty.last?.origin.y {
-//                let rockCoords = fallenRocks.reduce(into: Set<Coordinate>(), { (partial, rock) in rock.coords.forEach({ coord in partial.insert(coord) }) })
                 // build a grid of last twenty
                 var grid = [[Character]]()
                 for y in stride(from: maxY, to: maxY-40, by: -1) {
@@ -138,7 +137,6 @@ class Cave {
                 }
                 lastTwenty = lastTwenty.sorted(by: { $0.origin.y < $1.origin.y })
 //                if rocksFallen > 20 {
-//                    fallenRocks = fallenRocks[0..<fallenRocks.count - 20] + fallenRocks[fallenRocks.count - 20..<fallenRocks.count].sorted(by: { $0.origin.y < $1.origin.y })
 //                } else {
 //                    fallenRocks = fallenRocks.sorted(by: { $0.origin.y < $1.origin.y })
 //                }
@@ -157,17 +155,13 @@ class Cave {
         let postMoveCoords = currentRockPositions.map { $0 + jet.movement }
         // If new positions are out of x bounds, return false
         let xBounds = 0..<7
-        for c in postMoveCoords {
-            if !xBounds.contains(c.x) {
-                return false
-            }
+        for c in postMoveCoords where !xBounds.contains(c.x) {
+            return false
         }
         // If new positions collide with existing fallen rock, return false
         for rock in lastTwenty {
-            for c in rock.coords {
-                if postMoveCoords.contains(c) {
-                    return false
-                }
+            for c in rock.coords where postMoveCoords.contains(c) {
+                return false
             }
         }
         return true
@@ -181,10 +175,8 @@ class Cave {
         }
         // If new positions collide with existing fallen rock, return false
         for rock in lastTwenty {
-            for c in rock.coords {
-                if postMoveCoords.contains(c) {
-                    return false
-                }
+            for c in rock.coords where postMoveCoords.contains(c) {
+                return false
             }
         }
         return true

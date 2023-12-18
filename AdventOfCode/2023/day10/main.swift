@@ -108,7 +108,7 @@ func main() throws {
         }
         var count = 0
         var inGrid = false
-        for (xIndex, _) in row.enumerated() {
+        for xIndex in row.indices {
             let coord = Coordinate(xIndex, yIndex)
             if loopCoords.contains(coord) && [PipePiece.vert, PipePiece.nw, PipePiece.ne, PipePiece.start].contains(pipeMaze.coordsToPipes[coord]) {
                 inGrid.toggle()

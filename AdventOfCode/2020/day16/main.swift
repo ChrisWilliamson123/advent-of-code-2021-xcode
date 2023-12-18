@@ -3,7 +3,10 @@ import Foundation
 func main() throws {
     let input: [String] = try readInput(fromTestFile: false, separator: "\n\n")
     assert(input.count == 3, "input has too many sections.")
-    let fields: [String: Set<Int>] = input[0].split(separator: "\n").map({decodeField(String($0))}).reduce(into: [:], { $0[$1.name] = $1.validValues })
+    let fields: [String: Set<Int>] = input[0]
+        .split(separator: "\n")
+        .map({decodeField(String($0))})
+        .reduce(into: [:], { $0[$1.name] = $1.validValues })
     let yourTicket = input[1].split(separator: "\n")[1].split(separator: ",").map({Int($0)!})
     let nearbyTickets = input[2].split(separator: "\n").suffix(from: 1)
 
@@ -12,11 +15,9 @@ func main() throws {
 
     let validNearbyTickets = nearbyTickets.filter({ ticket in
         let values = ticket.split(separator: ",").map({Int($0)!})
-        for v in values {
-            if !allValidValues.contains(v) {
-                errorRate += v
-                return false
-            }
+        for v in values where !allValidValues.contains(v) {
+            errorRate += v
+            return false
         }
         return true
     }).map({ $0.split(separator: ",").map({ Int($0)! }) })

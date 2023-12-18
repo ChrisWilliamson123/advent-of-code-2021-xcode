@@ -6,11 +6,11 @@ func main() throws {
     let forest = Forest(input)
 
     let slopesToCheck: [Coordinate] = [
-        .init(x: 3, y: 1),
-        .init(x: 1, y: 1),
-        .init(x: 5, y: 1),
-        .init(x: 7, y: 1),
-        .init(x: 1, y: 2)
+        .init(3, 1),
+        .init(1, 1),
+        .init(5, 1),
+        .init(7, 1),
+        .init(1, 2)
     ]
 
     let partOne = calculateNumberOfTreesHit(through: forest, usingSlope: slopesToCheck[0])
@@ -21,10 +21,10 @@ func main() throws {
 }
 
 private func calculateNumberOfTreesHit(through forest: Forest, usingSlope slope: Coordinate) -> Int {
-    var tobogganPosition = Coordinate(x: 0, y: 0)
+    var tobogganPosition = Coordinate(0, 0)
     var treesHit = 0
     while tobogganPosition.y < forest.maxY {
-        tobogganPosition = Coordinate(x: tobogganPosition.x + slope.x, y: tobogganPosition.y + slope.y)
+        tobogganPosition = Coordinate(tobogganPosition.x + slope.x, tobogganPosition.y + slope.y)
         if forest.doesTreeExist(at: tobogganPosition) {
             treesHit += 1
         }
@@ -43,10 +43,8 @@ struct Forest {
         let maxY = forestMap.count - 1
         let maxX = forestMap[0].count - 1
         for y in (0...maxY) {
-            for x in (0...maxX) {
-                if forestMap[y][x] == "#" {
-                    trees.insert(Coordinate(x: x, y: y))
-                }
+            for x in (0...maxX) where forestMap[y][x] == "#" {
+                trees.insert(Coordinate(x, y))
             }
 
         }
@@ -57,13 +55,8 @@ struct Forest {
 
     func doesTreeExist(at coordinate: Coordinate) -> Bool {
         let x = coordinate.x % (maxX + 1)
-        return trees.contains(Coordinate(x: x, y: coordinate.y))
+        return trees.contains(Coordinate(x, coordinate.y))
     }
-}
-
-struct Coordinate: Hashable {
-    let x: Int
-    let y: Int
 }
 
 Timer.time(main)

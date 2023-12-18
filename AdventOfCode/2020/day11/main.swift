@@ -4,6 +4,7 @@ let EMPTY: Character = "L"
 let OCCUPIED: Character = "#"
 let FLOOR: Character = "."
 
+// swiftlint:disable:next cyclomatic_complexity
 func main() throws {
     let isTestMode = CommandLine.arguments.contains("test")
     let input: [String] = try readInput(fromTestFile: isTestMode)

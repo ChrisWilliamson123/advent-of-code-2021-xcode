@@ -7,11 +7,9 @@ func aStar<T: Hashable>(graph: Set<T>,
     var prev: [T: T?] = [:]
     var dist: [T: Int] = [:]
 
-    for vertex in graph {
-        if vertex != source {
-            dist[vertex] = Int.max
-            prev[vertex] = nil
-        }
+    for vertex in graph where vertex != source {
+        dist[vertex] = Int.max
+        prev[vertex] = nil
     }
 
     dist[source] = 0
@@ -54,11 +52,9 @@ func aStar<T: Hashable>(graph: Set<T>,
     var prev: [T: T?] = [:]
     var dist: [T: Int] = [:]
 
-    for vertex in graph {
-        if vertex != source {
-            dist[vertex] = Int.max
-            prev[vertex] = nil
-        }
+    for vertex in graph where vertex != source {
+        dist[vertex] = Int.max
+        prev[vertex] = nil
     }
 
     dist[source] = 0

@@ -18,8 +18,12 @@ func main() throws {
             let (pos, dis, path) = frontier.popLast()!
             let hash = getHash(input: input, path: path)
             let doorStatusses = getDoorStatuses(from: hash)
-            let axials = [(Direction.up, Coordinate(0, -1) + pos), (Direction.down, Coordinate(0, 1) + pos), (Direction.left, Coordinate(-1, 0) + pos), (Direction.right, Coordinate(1, 0) + pos)]
-                .filter({ (0...3).contains($0.1.x) && (0...3).contains($0.1.y) }).filter({ axial in doorStatusses.first(where: { $0.1 == axial.0 })!.0 })
+            let axials = [(Direction.up, Coordinate(0, -1) + pos),
+                          (Direction.down, Coordinate(0, 1) + pos),
+                          (Direction.left, Coordinate(-1, 0) + pos),
+                          (Direction.right, Coordinate(1, 0) + pos)]
+                .filter({ (0...3).contains($0.1.x) && (0...3).contains($0.1.y) })
+                .filter({ axial in doorStatusses.first(where: { $0.1 == axial.0 })!.0 })
             for a in axials {
                 if a.1 == target { return path + a.0.rawValue }
                 let ex = Explored(pos: a.1, path: path + a.0.rawValue)
@@ -38,7 +42,10 @@ func main() throws {
         }
         let hash = getHash(input: input, path: path)
         let doorStatusses = getDoorStatuses(from: hash)
-        let axials = [(Direction.up, Coordinate(0, -1) + start), (Direction.down, Coordinate(0, 1) + start), (Direction.left, Coordinate(-1, 0) + start), (Direction.right, Coordinate(1, 0) + start)]
+        let axials = [(Direction.up, Coordinate(0, -1) + start),
+                      (Direction.down, Coordinate(0, 1) + start),
+                      (Direction.left, Coordinate(-1, 0) + start),
+                      (Direction.right, Coordinate(1, 0) + start)]
             .filter({ (0...3).contains($0.1.x) && (0...3).contains($0.1.y) }).filter({ axial in doorStatusses.first(where: { $0.1 == axial.0 })!.0 })
         if axials.isEmpty {
             return -1

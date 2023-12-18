@@ -13,7 +13,7 @@ enum Packet: Comparable, Decodable {
         }
     }
 
-    static func <(_ lhs: Packet, _ rhs: Packet) -> Bool {
+    static func < (_ lhs: Packet, _ rhs: Packet) -> Bool {
         switch (lhs, rhs) {
         case (.value(let value1), .value(let value2)):
             return value1 < value2

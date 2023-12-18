@@ -5,7 +5,9 @@ func main() throws {
     let part1 = rucksacks.reduce(0) { $0 + getDuplicateValue(in: $1) }
     print(part1)
 
-    let part2 = stride(from: 0, to: rucksacks.count-1, by: 3).reduce(0, { $0 + getCommonValue(in: [ rucksacks[$1], rucksacks[$1+1], rucksacks[$1+2] ]) })
+    let part2 = stride(from: 0, to: rucksacks.count-1, by: 3)
+        .reduce(0, { $0 + getCommonValue(in: [ rucksacks[$1], rucksacks[$1+1], rucksacks[$1+2] ]) })
+
     print(part2)
 }
 

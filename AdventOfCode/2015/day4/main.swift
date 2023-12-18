@@ -10,7 +10,8 @@ func MD5(string: String) -> Data {
 
     _ = digestData.withUnsafeMutableBytes { digestBytes -> UInt8 in
         messageData.withUnsafeBytes { messageBytes -> UInt8 in
-            if let messageBytesBaseAddress = messageBytes.baseAddress, let digestBytesBlindMemory = digestBytes.bindMemory(to: UInt8.self).baseAddress {
+            if let messageBytesBaseAddress = messageBytes.baseAddress,
+               let digestBytesBlindMemory = digestBytes.bindMemory(to: UInt8.self).baseAddress {
                 let messageLength = CC_LONG(messageData.count)
                 CC_MD5(messageBytesBaseAddress, messageLength, digestBytesBlindMemory)
             }

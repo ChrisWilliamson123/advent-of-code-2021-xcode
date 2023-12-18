@@ -63,10 +63,8 @@ struct HeightMap {
         let adjacentValues = adjacents.map({ getHeight(for: $0) })
         let coordinateValue = getHeight(for: coordinate)
 
-        for av in adjacentValues {
-            if av <= coordinateValue {
-                return false
-            }
+        for av in adjacentValues where av <= coordinateValue {
+            return false
         }
 
         return true

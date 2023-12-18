@@ -75,10 +75,8 @@ class BingoBoard {
 
     func checkNumber(_ number: Int) {
         for i in (0..<board.count) {
-            for j in (0..<board[i].count) {
-                if board[i][j].value == number {
-                    board[i][j].marked = true
-                }
+            for j in (0..<board[i].count) where board[i][j].value == number {
+                board[i][j].marked = true
             }
         }
     }

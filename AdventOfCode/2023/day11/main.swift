@@ -56,10 +56,8 @@ struct Universe {
     var galaxyCoordinates: Set<Coordinate> {
         var coordinates = Set<Coordinate>()
         for (y, row) in grid.enumerated() {
-            for(x, character) in row.enumerated() {
-                if character == "#" {
-                    coordinates.insert(Coordinate(x, y))
-                }
+            for(x, character) in row.enumerated() where character == "#" {
+                coordinates.insert(Coordinate(x, y))
             }
         }
         return coordinates
@@ -68,7 +66,7 @@ struct Universe {
     var allCoords: Set<Coordinate> {
         var coordinates = Set<Coordinate>()
         for (y, row) in grid.enumerated() {
-            for(x, _) in row.enumerated() {
+            for x in row.indices {
                 coordinates.insert(Coordinate(x, y))
             }
         }
@@ -120,17 +118,13 @@ func main() throws {
         let xRange = lowX...maxX
 
         var yDistance = yRange.count-1
-        for i in yRange {
-            if expandedRows.contains(i) {
-                yDistance += expansionFactor
-            }
+        for i in yRange where expandedRows.contains(i) {
+            yDistance += expansionFactor
         }
 
         var xDistance = xRange.count-1
-        for i in xRange {
-            if expandedColumns.contains(i) {
-                xDistance += expansionFactor
-            }
+        for i in xRange where expandedColumns.contains(i) {
+            xDistance += expansionFactor
         }
 
         print(source, destination, xRange, xDistance, yDistance)

@@ -57,17 +57,17 @@ class Submarine {
 
             var aimModifier: Int {
                 switch self {
-                    case .down:    return 1
-                    case .forward: return 0
-                    case .up:      return -1
+                case .down:    return 1
+                case .forward: return 0
+                case .up:      return -1
                 }
             }
 
             var positionModifier: Position {
                 switch self {
-                    case .down:    return Position(x: 0, y: 1)
-                    case .forward: return Position(x: 1, y: 0)
-                    case .up:      return Position(x: 0, y: -1)
+                case .down:    return Position(x: 0, y: 1)
+                case .forward: return Position(x: 1, y: 0)
+                case .up:      return Position(x: 0, y: -1)
                 }
             }
         }

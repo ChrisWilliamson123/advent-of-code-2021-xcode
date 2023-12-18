@@ -5,12 +5,9 @@ func main() throws {
     let grid = input.map({ [Character]($0) })
     var onLights: Set<Coordinate> = []
     for y in 0..<input.count {
-        for x in 0..<input[0].count {
-            if grid[y][x] == "#" {
-
-                let coord = Coordinate(x, y)
-                onLights.insert(coord)
-            }
+        for x in 0..<input[0].count where grid[y][x] == "#" {
+            let coord = Coordinate(x, y)
+            onLights.insert(coord)
         }
     }
     onLights.insert(Coordinate(0, 99))
