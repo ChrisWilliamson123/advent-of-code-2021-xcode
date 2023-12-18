@@ -15,7 +15,7 @@ func main() throws {
         for y in 0..<grid.count {
             for x in 0..<grid[y].count {
                 let current = grid[y][x]
-                let coordinate = Coordinate(x: x, y: y)
+                let coordinate = Coordinate(x, y)
                 let adjacents = coordinate.adjacents.filter({ ($0.x >= 0 && $0.x < grid[y].count) && ($0.y >= 0 && $0.y < grid.count) })
                 let occupiedAdjacents = adjacents.filter({ grid[$0.y][$0.x] == OCCUPIED })
 
@@ -42,9 +42,9 @@ func main() throws {
         for y in 0..<grid.count {
             for x in 0..<grid[y].count {
                 let current = grid[y][x]
-                let coordinate = Coordinate(x: x, y: y)
+                let coordinate = Coordinate(x, y)
                 let visibleSeats = [(0, 1), (1, 1), (1, 0), (1, -1), (0, -1), (-1, -1), (-1, 0), (-1, 1)]
-                    .map({ Coordinate(x: $0.0, y: $0.1) })
+                    .map({ Coordinate($0.0, $0.1) })
                     .compactMap({ getFirstVisibleSeat(from: coordinate, in: grid, direction: $0) })
                 let occupiedVisibles = visibleSeats.filter({ grid[$0.y][$0.x] == OCCUPIED })
 
@@ -71,7 +71,7 @@ private func printLayout(_ layout: [[Character]]) {
 }
 
 private func getFirstVisibleSeat(from coordinate: Coordinate, in graph: [[Character]], direction: Coordinate) -> Coordinate? {
-    var currentCoord = Coordinate(x: coordinate.x + direction.x, y: coordinate.y + direction.y)
+    var currentCoord = Coordinate(coordinate.x + direction.x, coordinate.y + direction.y)
 
     while (currentCoord.x >= 0 && currentCoord.x < graph[0].count) && (currentCoord.y >= 0 && currentCoord.y < graph.count) {
         let currentCharacter = graph[currentCoord.y][currentCoord.x]
@@ -79,26 +79,10 @@ private func getFirstVisibleSeat(from coordinate: Coordinate, in graph: [[Charac
             return currentCoord
         }
 
-        currentCoord = Coordinate(x: currentCoord.x + direction.x, y: currentCoord.y + direction.y)
+        currentCoord = Coordinate(currentCoord.x + direction.x, currentCoord.y + direction.y)
     }
 
     return nil
-}
-
-struct Coordinate: Hashable {
-    let x: Int
-    let y: Int
-
-    var adjacents: [Coordinate] {
-        var adjacents: [Coordinate] = []
-        for x in x-1...x+1 {
-            for y in y-1...y+1 {
-                if x == self.x && y == self.y { continue }
-                adjacents.append(Coordinate(x: x, y: y))
-            }
-        }
-        return adjacents
-    }
 }
 
 Timer.time(main)
