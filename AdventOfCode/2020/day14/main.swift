@@ -90,7 +90,8 @@ func applyMemoryMask(_ mask: String, to input: String) -> [String] {
 
     var result: [String] = []
     let combinations = pow(2, xCount)
-    let binStrings = (0..<(combinations as NSDecimalNumber).intValue).map({ String(String(String($0, radix: 2).reversed()).padding(toLength: xCount, withPad: "0", startingAt: 0).reversed()) })
+    let binStrings = (0..<(combinations as NSDecimalNumber).intValue)
+        .map({ String(String(String($0, radix: 2).reversed()).padding(toLength: xCount, withPad: "0", startingAt: 0).reversed()) })
 
     for binaryString in binStrings {
         var thisMasked = [Character](masked)
