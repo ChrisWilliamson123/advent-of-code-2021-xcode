@@ -21,7 +21,8 @@ func main() throws {
         let inst: MemoryInstruction = (Int(groups[0])!, Int(groups[1])!)
 
         // let valueBinString = pad(string: String(inst.value, radix: 2), toSize: 36)
-        let valueBinString = String(inst.value, radix: 2).padded(toSize: 36)
+        let valueBinString = String(String(String(inst.value, radix: 2).reversed()).padding(toLength: 36, withPad: "0", startingAt: 0).reversed())
+
         let masked = applyMask(mask, to: valueBinString)
         let maskedDecimal = Int(masked, radix: 2)!
         memory[inst.index] = maskedDecimal
@@ -41,7 +42,7 @@ func main() throws {
         let groups = memRegex.getMatches(in: line)
         let inst: MemoryInstruction = (Int(groups[0])!, Int(groups[1])!)
 
-        let memoryBinString = String(inst.index, radix: 2).padded(toSize: 36)
+        let memoryBinString = String(String(String(inst.index, radix: 2).reversed()).padding(toLength: 36, withPad: "0", startingAt: 0).reversed())
         let maskedResults = applyMemoryMask(mask, to: memoryBinString)
 
         for addr in maskedResults {
@@ -89,7 +90,7 @@ func applyMemoryMask(_ mask: String, to input: String) -> [String] {
 
     var result: [String] = []
     let combinations = pow(2, xCount)
-    let binStrings = (0..<combinations).map({ String($0, radix: 2).padded(toSize: xCount) })
+    let binStrings = (0..<(combinations as NSDecimalNumber).intValue).map({ String(String(String($0, radix: 2).reversed()).padding(toLength: xCount, withPad: "0", startingAt: 0).reversed()) })
 
     for binaryString in binStrings {
         var thisMasked = [Character](masked)
