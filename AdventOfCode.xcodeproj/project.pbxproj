@@ -1740,6 +1740,149 @@
 		835184922B2B67E200436A72 /* input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 835184722B2B67D500436A72 /* input.txt */; };
 		835184932B2B67E200436A72 /* test_input.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 835184712B2B67D500436A72 /* test_input.txt */; };
 		835184942B2B67F800436A72 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835184702B2B67D500436A72 /* main.swift */; };
+		8381D3A72B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3A82B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3A92B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3AA2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3AB2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3AC2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3AD2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3AE2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3AF2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3B02B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3B12B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3B22B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3B32B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3B42B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3B52B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3B62B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3B72B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3B82B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3B92B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3BA2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3BB2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3BC2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3BD2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3BE2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3BF2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3C02B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3C12B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3C22B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3C32B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3C42B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3C52B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3C62B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3C72B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3C82B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3C92B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3CA2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3CB2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3CC2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3CD2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3CE2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3CF2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3D02B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3D12B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3D22B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3D32B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3D42B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3D52B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3D62B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3D72B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3D82B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3D92B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3DA2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3DB2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3DC2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3DD2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3DE2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3DF2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3E02B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3E12B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3E22B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3E32B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3E42B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3E52B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3E62B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3E72B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3E82B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3E92B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3EA2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3EB2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3EC2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3ED2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3EE2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3EF2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3F02B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3F12B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3F22B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3F32B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3F42B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3F52B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3F62B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3F72B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3F82B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3F92B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3FA2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3FB2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3FC2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3FD2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3FE2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D3FF2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4002B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4012B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4022B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4032B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4042B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4052B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4062B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4072B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4082B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4092B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D40A2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D40B2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D40C2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D40D2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D40E2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D40F2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4102B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4112B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4122B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4132B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4142B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4152B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4162B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4172B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4182B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4192B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D41A2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D41B2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D41C2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D41D2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D41E2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D41F2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4202B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4212B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4222B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4232B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4242B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4252B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4262B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4272B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4282B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4292B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D42A2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D42B2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D42C2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D42D2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D42E2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D42F2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4302B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4312B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4322B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4332B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4342B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
+		8381D4352B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */; };
 		8381D8A02B1DBC0900B25C4D /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D635B527791F3A00BCC565 /* Heap.swift */; };
 		8381D8A12B1DBC0900B25C4D /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD79CD27790CC3002D5096 /* Stack.swift */; };
 		8381D8A32B1DBC0900B25C4D /* Permutations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65215E2B2781FC4B002A082F /* Permutations.swift */; };
@@ -4790,6 +4933,7 @@
 		835184712B2B67D500436A72 /* test_input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_input.txt; sourceTree = "<group>"; };
 		835184722B2B67D500436A72 /* input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 		835184912B2B67D800436A72 /* 2023.14 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 2023.14; sourceTree = BUILT_PRODUCTS_DIR; };
+		8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharGrid+Extensions.swift"; sourceTree = "<group>"; };
 		8381D8B82B1DBC0900B25C4D /* 2023.4 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 2023.4; sourceTree = BUILT_PRODUCTS_DIR; };
 		8381D8B92B1DBC1B00B25C4D /* test_input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_input.txt; sourceTree = "<group>"; };
 		8381D8BA2B1DBC1B00B25C4D /* input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
@@ -7080,6 +7224,7 @@
 				65E46145276A37100006ACC9 /* Input.swift */,
 				65E46196276A3EBA0006ACC9 /* Regex.swift */,
 				8711150E294741DD009FD7AC /* Timer.swift */,
+				8381D3A62B36EA3D005F3E8D /* CharGrid+Extensions.swift */,
 			);
 			path = helpers;
 			sourceTree = "<group>";
@@ -10606,6 +10751,7 @@
 				653DB343276B8B2400BC53DF /* Coordinate.swift in Sources */,
 				653DB344276B8B2400BC53DF /* Array+Extensions.swift in Sources */,
 				65215E452781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3C02B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635CF27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4E32786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A342E293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -10630,6 +10776,7 @@
 				653DB354276B8B2600BC53DF /* Coordinate.swift in Sources */,
 				653DB355276B8B2600BC53DF /* Array+Extensions.swift in Sources */,
 				65215E462781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3C12B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635D027791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4E42786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A342F293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -10654,6 +10801,7 @@
 				653DB365276B8B2600BC53DF /* Coordinate.swift in Sources */,
 				653DB366276B8B2600BC53DF /* Array+Extensions.swift in Sources */,
 				65215E472781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3C22B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635D127791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4E52786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3430293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -10678,6 +10826,7 @@
 				653DB376276B8B2700BC53DF /* Coordinate.swift in Sources */,
 				653DB377276B8B2700BC53DF /* Array+Extensions.swift in Sources */,
 				65215E482781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3C32B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635D227791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4E62786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3431293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -10702,6 +10851,7 @@
 				653DB387276B8B2700BC53DF /* Coordinate.swift in Sources */,
 				653DB388276B8B2700BC53DF /* Array+Extensions.swift in Sources */,
 				65215E492781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3C42B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635D327791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4E72786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3432293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -10726,6 +10876,7 @@
 				653DB398276B8B2800BC53DF /* Coordinate.swift in Sources */,
 				653DB399276B8B2800BC53DF /* Array+Extensions.swift in Sources */,
 				65215E4A2781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3C52B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635D427791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4E82786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3433293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -10750,6 +10901,7 @@
 				653DB3A9276B8B2800BC53DF /* Coordinate.swift in Sources */,
 				653DB3AA276B8B2800BC53DF /* Array+Extensions.swift in Sources */,
 				65215E4B2781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3C62B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635D527791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4E92786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3434293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -10774,6 +10926,7 @@
 				653DB3BA276B8B2900BC53DF /* Coordinate.swift in Sources */,
 				653DB3BB276B8B2900BC53DF /* Array+Extensions.swift in Sources */,
 				65215E4C2781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3C72B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635D627791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4EA2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3435293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -10798,6 +10951,7 @@
 				653DB3CB276B8B2900BC53DF /* Coordinate.swift in Sources */,
 				653DB3CC276B8B2900BC53DF /* Array+Extensions.swift in Sources */,
 				65215E4D2781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3C82B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635D727791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4EB2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3436293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -10822,6 +10976,7 @@
 				653DB3DC276B8B2900BC53DF /* Coordinate.swift in Sources */,
 				653DB3DD276B8B2900BC53DF /* Array+Extensions.swift in Sources */,
 				65215E4E2781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3C92B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635D827791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4EC2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3437293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -10846,6 +11001,7 @@
 				653DB3ED276B8B2A00BC53DF /* Coordinate.swift in Sources */,
 				653DB3EE276B8B2A00BC53DF /* Array+Extensions.swift in Sources */,
 				65215E4F2781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3CA2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635D927791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4ED2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3438293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -10870,6 +11026,7 @@
 				653DB3FE276B8B2A00BC53DF /* Coordinate.swift in Sources */,
 				653DB3FF276B8B2A00BC53DF /* Array+Extensions.swift in Sources */,
 				65215E502781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3CB2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635DA27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4EE2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3439293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -10894,6 +11051,7 @@
 				653DB40F276B8B2B00BC53DF /* Coordinate.swift in Sources */,
 				653DB410276B8B2B00BC53DF /* Array+Extensions.swift in Sources */,
 				65215E512781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3CC2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635DB27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4EF2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A343A293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -10918,6 +11076,7 @@
 				653DB420276B8B2B00BC53DF /* Coordinate.swift in Sources */,
 				653DB421276B8B2B00BC53DF /* Array+Extensions.swift in Sources */,
 				65215E522781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3CD2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635DC27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4F02786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A343B293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -10942,6 +11101,7 @@
 				653DB431276B8B2C00BC53DF /* Coordinate.swift in Sources */,
 				653DB432276B8B2C00BC53DF /* Array+Extensions.swift in Sources */,
 				65215E532781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3CE2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635DD27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4F12786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A343C293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -10966,6 +11126,7 @@
 				653DB442276B8B2C00BC53DF /* Coordinate.swift in Sources */,
 				653DB443276B8B2C00BC53DF /* Array+Extensions.swift in Sources */,
 				65215E542781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3CF2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635DE27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4F22786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A343D293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -10990,6 +11151,7 @@
 				653DB453276B8B2D00BC53DF /* Coordinate.swift in Sources */,
 				653DB454276B8B2D00BC53DF /* Array+Extensions.swift in Sources */,
 				65215E552781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3D02B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635DF27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4F32786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A343E293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11014,6 +11176,7 @@
 				653DB464276B8B2D00BC53DF /* Coordinate.swift in Sources */,
 				653DB465276B8B2D00BC53DF /* Array+Extensions.swift in Sources */,
 				65215E562781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3D12B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635E027791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4F42786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A343F293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11038,6 +11201,7 @@
 				653DB475276B8B2E00BC53DF /* Coordinate.swift in Sources */,
 				653DB476276B8B2E00BC53DF /* Array+Extensions.swift in Sources */,
 				65215E572781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3D22B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635E127791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4F52786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3440293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11062,6 +11226,7 @@
 				653DB486276B8B2E00BC53DF /* Coordinate.swift in Sources */,
 				653DB487276B8B2E00BC53DF /* Array+Extensions.swift in Sources */,
 				65215E582781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3D32B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635E227791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4F62786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3441293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11086,6 +11251,7 @@
 				653DB497276B8B2F00BC53DF /* Coordinate.swift in Sources */,
 				653DB498276B8B2F00BC53DF /* Array+Extensions.swift in Sources */,
 				65215E592781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3D42B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635E327791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4F72786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3442293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11110,6 +11276,7 @@
 				653DB4A8276B8B2F00BC53DF /* Coordinate.swift in Sources */,
 				653DB4A9276B8B2F00BC53DF /* Array+Extensions.swift in Sources */,
 				65215E5A2781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3D52B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635E427791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4F82786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3443293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11134,6 +11301,7 @@
 				653DB4B9276B8B3000BC53DF /* Coordinate.swift in Sources */,
 				6573A67F277B4A8800964570 /* main.swift in Sources */,
 				65215E5B2781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3D62B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				653DB4BA276B8B3000BC53DF /* Array+Extensions.swift in Sources */,
 				657CF4F92786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3444293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11158,6 +11326,7 @@
 				653DB4CA276B8B3000BC53DF /* Coordinate.swift in Sources */,
 				653DB4CB276B8B3000BC53DF /* Array+Extensions.swift in Sources */,
 				65215E5C2781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3D72B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635E627791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4FA2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3445293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11182,6 +11351,7 @@
 				653DB4DB276B8B3100BC53DF /* Coordinate.swift in Sources */,
 				653DB4DC276B8B3100BC53DF /* Array+Extensions.swift in Sources */,
 				65215E5D2781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3D82B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635E727791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4FB2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3446293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11206,6 +11376,7 @@
 				6573A688277BAB6400964570 /* Coordinate.swift in Sources */,
 				6573A689277BAB6400964570 /* Array+Extensions.swift in Sources */,
 				65215E5E2781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3D92B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				6573A68A277BAB6400964570 /* Heap.swift in Sources */,
 				657CF4FC2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3447293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11230,6 +11401,7 @@
 				6573A701277BAC5800964570 /* Coordinate.swift in Sources */,
 				6573A702277BAC5800964570 /* Array+Extensions.swift in Sources */,
 				65215E5F2781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3DA2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				6573A703277BAC5800964570 /* Heap.swift in Sources */,
 				657CF4FD2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3448293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11254,6 +11426,7 @@
 				6573A717277BAC5800964570 /* Coordinate.swift in Sources */,
 				6573A718277BAC5800964570 /* Array+Extensions.swift in Sources */,
 				65215E602781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3DB2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				6573A719277BAC5800964570 /* Heap.swift in Sources */,
 				657CF4FE2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3449293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11278,6 +11451,7 @@
 				6573A72D277BAC5900964570 /* Coordinate.swift in Sources */,
 				6573A72E277BAC5900964570 /* Array+Extensions.swift in Sources */,
 				65215E612781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3DC2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				6573A72F277BAC5900964570 /* Heap.swift in Sources */,
 				657CF4FF2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A344A293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11302,6 +11476,7 @@
 				6573A743277BAC5A00964570 /* Coordinate.swift in Sources */,
 				6573A744277BAC5A00964570 /* Array+Extensions.swift in Sources */,
 				65215E622781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3DD2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				6573A745277BAC5A00964570 /* Heap.swift in Sources */,
 				657CF5002786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A344B293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11326,6 +11501,7 @@
 				6573A759277BAC5A00964570 /* Coordinate.swift in Sources */,
 				6573A75A277BAC5A00964570 /* Array+Extensions.swift in Sources */,
 				65215E632781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3DE2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				6573A75B277BAC5A00964570 /* Heap.swift in Sources */,
 				657CF5012786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A344C293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11350,6 +11526,7 @@
 				6573A76F277BAC5A00964570 /* Coordinate.swift in Sources */,
 				6573A770277BAC5A00964570 /* Array+Extensions.swift in Sources */,
 				65215E642781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3DF2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				6573A771277BAC5A00964570 /* Heap.swift in Sources */,
 				657CF5022786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A344D293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11374,6 +11551,7 @@
 				6573A785277BAC5B00964570 /* Coordinate.swift in Sources */,
 				6573A786277BAC5B00964570 /* Array+Extensions.swift in Sources */,
 				65215E652781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3E02B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				6573A787277BAC5B00964570 /* Heap.swift in Sources */,
 				657CF5032786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A344E293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11398,6 +11576,7 @@
 				6573A79B277BAC5C00964570 /* Coordinate.swift in Sources */,
 				6573A79C277BAC5C00964570 /* Array+Extensions.swift in Sources */,
 				65215E662781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3E12B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				6573A79D277BAC5C00964570 /* Heap.swift in Sources */,
 				657CF5042786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A344F293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11422,6 +11601,7 @@
 				6573A7B1277BAC5C00964570 /* Coordinate.swift in Sources */,
 				6573A7B2277BAC5C00964570 /* Array+Extensions.swift in Sources */,
 				65215E672781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3E22B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				6573A7B3277BAC5C00964570 /* Heap.swift in Sources */,
 				657CF5052786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3450293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11446,6 +11626,7 @@
 				657CF3C72786F6DB00A8C23D /* Coordinate.swift in Sources */,
 				657CF3C82786F6DB00A8C23D /* Array+Extensions.swift in Sources */,
 				657CF3C92786F6DB00A8C23D /* Permutations.swift in Sources */,
+				8381D3F22B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				657CF3CA2786F6DB00A8C23D /* Heap.swift in Sources */,
 				657CF5152786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3460293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11470,6 +11651,7 @@
 				657CF3DE2786F6DC00A8C23D /* Coordinate.swift in Sources */,
 				657CF3DF2786F6DC00A8C23D /* Array+Extensions.swift in Sources */,
 				657CF3E02786F6DC00A8C23D /* Permutations.swift in Sources */,
+				8381D3F32B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				657CF3E12786F6DC00A8C23D /* Heap.swift in Sources */,
 				657CF5162786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3461293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11494,6 +11676,7 @@
 				657CF3F52786F6DC00A8C23D /* Coordinate.swift in Sources */,
 				657CF3F62786F6DC00A8C23D /* Array+Extensions.swift in Sources */,
 				657CF3F72786F6DC00A8C23D /* Permutations.swift in Sources */,
+				8381D3F42B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				657CF3F82786F6DC00A8C23D /* Heap.swift in Sources */,
 				657CF5172786F89600A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3462293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11518,6 +11701,7 @@
 				657CF40C2786F6DD00A8C23D /* Coordinate.swift in Sources */,
 				657CF40D2786F6DD00A8C23D /* Array+Extensions.swift in Sources */,
 				657CF40E2786F6DD00A8C23D /* Permutations.swift in Sources */,
+				8381D3F52B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				657CF40F2786F6DD00A8C23D /* Heap.swift in Sources */,
 				657CF5182786F89600A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3463293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11542,6 +11726,7 @@
 				657CF4232786F6DD00A8C23D /* Coordinate.swift in Sources */,
 				657CF4242786F6DD00A8C23D /* Array+Extensions.swift in Sources */,
 				657CF4252786F6DD00A8C23D /* Permutations.swift in Sources */,
+				8381D3F62B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				657CF4262786F6DD00A8C23D /* Heap.swift in Sources */,
 				657CF5192786F89600A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3464293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11566,6 +11751,7 @@
 				657CF43A2786F6DE00A8C23D /* Coordinate.swift in Sources */,
 				657CF43B2786F6DE00A8C23D /* Array+Extensions.swift in Sources */,
 				657CF43C2786F6DE00A8C23D /* Permutations.swift in Sources */,
+				8381D3F72B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				657CF43D2786F6DE00A8C23D /* Heap.swift in Sources */,
 				657CF51A2786F89600A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3465293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11590,6 +11776,7 @@
 				657CF4512786F6DE00A8C23D /* Coordinate.swift in Sources */,
 				657CF4522786F6DE00A8C23D /* Array+Extensions.swift in Sources */,
 				657CF4532786F6DE00A8C23D /* Permutations.swift in Sources */,
+				8381D3F82B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				657CF4542786F6DE00A8C23D /* Heap.swift in Sources */,
 				657CF51B2786F89600A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3466293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11614,6 +11801,7 @@
 				657CF4682786F6DE00A8C23D /* Coordinate.swift in Sources */,
 				657CF4692786F6DE00A8C23D /* Array+Extensions.swift in Sources */,
 				657CF46A2786F6DE00A8C23D /* Permutations.swift in Sources */,
+				8381D3F92B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				657CF46B2786F6DE00A8C23D /* Heap.swift in Sources */,
 				657CF51C2786F89600A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3467293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11638,6 +11826,7 @@
 				657CF47F2786F6DF00A8C23D /* Coordinate.swift in Sources */,
 				657CF4802786F6DF00A8C23D /* Array+Extensions.swift in Sources */,
 				657CF4812786F6DF00A8C23D /* Permutations.swift in Sources */,
+				8381D3FA2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				657CF4822786F6DF00A8C23D /* Heap.swift in Sources */,
 				657CF51D2786F89600A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3468293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11662,6 +11851,7 @@
 				657CF4962786F6DF00A8C23D /* Coordinate.swift in Sources */,
 				657CF4972786F6DF00A8C23D /* Array+Extensions.swift in Sources */,
 				657CF4982786F6DF00A8C23D /* Permutations.swift in Sources */,
+				8381D3FB2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				657CF4992786F6DF00A8C23D /* Heap.swift in Sources */,
 				657CF51E2786F89600A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3469293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11686,6 +11876,7 @@
 				65A7541D2780B6E800D26B92 /* Coordinate.swift in Sources */,
 				65A7541E2780B6E800D26B92 /* Array+Extensions.swift in Sources */,
 				65215E682781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3E32B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65A7541F2780B6E800D26B92 /* Heap.swift in Sources */,
 				657CF5062786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3451293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11710,6 +11901,7 @@
 				65A754FC2780B75B00D26B92 /* main.swift in Sources */,
 				65A754332780B6E900D26B92 /* Coordinate.swift in Sources */,
 				65215E692781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3E42B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65A754342780B6E900D26B92 /* Array+Extensions.swift in Sources */,
 				657CF5072786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3452293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11734,6 +11926,7 @@
 				65A754492780B6E900D26B92 /* Coordinate.swift in Sources */,
 				65A7544A2780B6E900D26B92 /* Array+Extensions.swift in Sources */,
 				65215E6A2781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3E52B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65A7544B2780B6E900D26B92 /* Heap.swift in Sources */,
 				657CF5082786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3453293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11758,6 +11951,7 @@
 				65A7545F2780B6EA00D26B92 /* Coordinate.swift in Sources */,
 				65A754602780B6EA00D26B92 /* Array+Extensions.swift in Sources */,
 				65215E6B2781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3E62B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65A754612780B6EA00D26B92 /* Heap.swift in Sources */,
 				657CF5092786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3454293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11782,6 +11976,7 @@
 				65A754752780B6EA00D26B92 /* Coordinate.swift in Sources */,
 				65A754762780B6EA00D26B92 /* Array+Extensions.swift in Sources */,
 				65215E6C2781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3E72B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65A754772780B6EA00D26B92 /* Heap.swift in Sources */,
 				657CF50A2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3455293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11806,6 +12001,7 @@
 				65A7548B2780B6F000D26B92 /* Coordinate.swift in Sources */,
 				65A7548C2780B6F000D26B92 /* Array+Extensions.swift in Sources */,
 				65215E6D2781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3E82B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65A7548D2780B6F000D26B92 /* Heap.swift in Sources */,
 				657CF50B2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3456293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11830,6 +12026,7 @@
 				65A754A12780B6F000D26B92 /* Coordinate.swift in Sources */,
 				65A754A22780B6F000D26B92 /* Array+Extensions.swift in Sources */,
 				65215E6E2781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3E92B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65A754A32780B6F000D26B92 /* Heap.swift in Sources */,
 				657CF50C2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3457293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11854,6 +12051,7 @@
 				65A754B72780B6F000D26B92 /* Coordinate.swift in Sources */,
 				65A754B82780B6F000D26B92 /* Array+Extensions.swift in Sources */,
 				65215E6F2781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3EA2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65A754B92780B6F000D26B92 /* Heap.swift in Sources */,
 				657CF50D2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3458293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11878,6 +12076,7 @@
 				65A754CD2780B6F100D26B92 /* Coordinate.swift in Sources */,
 				65A754CE2780B6F100D26B92 /* Array+Extensions.swift in Sources */,
 				65215E702781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3EB2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65A754CF2780B6F100D26B92 /* Heap.swift in Sources */,
 				657CF50E2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3459293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11902,6 +12101,7 @@
 				65A754E32780B6F100D26B92 /* Coordinate.swift in Sources */,
 				65A754E42780B6F100D26B92 /* Array+Extensions.swift in Sources */,
 				65215E712781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3EC2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65A754E52780B6F100D26B92 /* Heap.swift in Sources */,
 				657CF50F2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A345A293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11923,6 +12123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8381D3A72B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D238DF276B5A18000BE890 /* String+Extensions.swift in Sources */,
 				65D238E0276B5A18000BE890 /* Array+Extensions.swift in Sources */,
 				835184732B2B67D500436A72 /* main.swift in Sources */,
@@ -11951,6 +12152,7 @@
 				65D238F5276B5B8C000BE890 /* String+Extensions.swift in Sources */,
 				65D238F6276B5B8C000BE890 /* Array+Extensions.swift in Sources */,
 				65215E2E2781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3A92B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635B827791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4CC2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3417293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11975,6 +12177,7 @@
 				65E4617B276A3C000006ACC9 /* Coordinate.swift in Sources */,
 				65E4618B276A3C9D0006ACC9 /* main.swift in Sources */,
 				65215E2F2781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3AA2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635B927791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4CD2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3418293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -11999,6 +12202,7 @@
 				65E461B1276A3F000006ACC9 /* main.swift in Sources */,
 				65E461A2276A3EEF0006ACC9 /* Coordinate.swift in Sources */,
 				65215E302781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3AB2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635BA27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4CE2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3419293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12023,6 +12227,7 @@
 				65E461CB276A3FE60006ACC9 /* main.swift in Sources */,
 				65E461BD276A3FDA0006ACC9 /* Coordinate.swift in Sources */,
 				65215E312781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3AC2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635BB27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4CF2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A341A293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12047,6 +12252,7 @@
 				65E461F5276A40520006ACC9 /* Coordinate.swift in Sources */,
 				65E461F6276A40520006ACC9 /* Array+Extensions.swift in Sources */,
 				65215E322781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3AD2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635BC27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4D02786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A341B293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12071,6 +12277,7 @@
 				65E46206276A40530006ACC9 /* Coordinate.swift in Sources */,
 				65E46207276A40530006ACC9 /* Array+Extensions.swift in Sources */,
 				65215E332781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3AE2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635BD27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4D12786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A341C293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12095,6 +12302,7 @@
 				65E46217276A40530006ACC9 /* Coordinate.swift in Sources */,
 				65E46218276A40530006ACC9 /* Array+Extensions.swift in Sources */,
 				65215E342781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3AF2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635BE27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4D22786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A341D293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12119,6 +12327,7 @@
 				65E46228276A40540006ACC9 /* Coordinate.swift in Sources */,
 				65E46229276A40540006ACC9 /* Array+Extensions.swift in Sources */,
 				65215E352781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3B02B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635BF27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4D32786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A341E293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12143,6 +12352,7 @@
 				65E46239276A40540006ACC9 /* Coordinate.swift in Sources */,
 				65E4623A276A40540006ACC9 /* Array+Extensions.swift in Sources */,
 				65215E362781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3B12B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635C027791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4D42786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A341F293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12167,6 +12377,7 @@
 				65E4624A276A40540006ACC9 /* Coordinate.swift in Sources */,
 				65E4624B276A40540006ACC9 /* Array+Extensions.swift in Sources */,
 				65215E372781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3B22B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635C127791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4D52786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3420293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12191,6 +12402,7 @@
 				65E4625B276A40550006ACC9 /* Coordinate.swift in Sources */,
 				65E4625C276A40550006ACC9 /* Array+Extensions.swift in Sources */,
 				65215E382781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3B32B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635C227791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4D62786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3421293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12215,6 +12427,7 @@
 				65E4626C276A40550006ACC9 /* Coordinate.swift in Sources */,
 				65E4626D276A40550006ACC9 /* Array+Extensions.swift in Sources */,
 				65215E392781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3B42B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635C327791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4D72786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3422293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12239,6 +12452,7 @@
 				65E4627D276A40550006ACC9 /* Coordinate.swift in Sources */,
 				65E4627E276A40550006ACC9 /* Array+Extensions.swift in Sources */,
 				65215E3A2781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3B52B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635C427791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4D82786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3423293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12263,6 +12477,7 @@
 				65E462AD276A41460006ACC9 /* String+Extensions.swift in Sources */,
 				65E462AE276A41460006ACC9 /* Array+Extensions.swift in Sources */,
 				65215E2D2781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3A82B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635B727791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4CB2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3416293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12287,6 +12502,7 @@
 				65E95B222788B5D7005E1AE4 /* Coordinate.swift in Sources */,
 				65E95B232788B5D7005E1AE4 /* Array+Extensions.swift in Sources */,
 				65E95B242788B5D7005E1AE4 /* Permutations.swift in Sources */,
+				8381D3FC2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65E95B252788B5D7005E1AE4 /* Heap.swift in Sources */,
 				65E95B262788B5D7005E1AE4 /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A346A293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12311,6 +12527,7 @@
 				65E95B3A2788B5D7005E1AE4 /* Coordinate.swift in Sources */,
 				65E95B3B2788B5D7005E1AE4 /* Array+Extensions.swift in Sources */,
 				65E95B3C2788B5D7005E1AE4 /* Permutations.swift in Sources */,
+				8381D3FD2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65E95B3D2788B5D7005E1AE4 /* Heap.swift in Sources */,
 				65E95B3E2788B5D7005E1AE4 /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A346B293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12335,6 +12552,7 @@
 				65E95B522788B5D8005E1AE4 /* Coordinate.swift in Sources */,
 				65E95B532788B5D8005E1AE4 /* Array+Extensions.swift in Sources */,
 				65E95B542788B5D8005E1AE4 /* Permutations.swift in Sources */,
+				8381D3FE2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65E95B552788B5D8005E1AE4 /* Heap.swift in Sources */,
 				65E95B562788B5D8005E1AE4 /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A346C293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12359,6 +12577,7 @@
 				65E95B6A2788B5D8005E1AE4 /* Coordinate.swift in Sources */,
 				65E95B6B2788B5D8005E1AE4 /* Array+Extensions.swift in Sources */,
 				65E95B6C2788B5D8005E1AE4 /* Permutations.swift in Sources */,
+				8381D3FF2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65E95B6D2788B5D8005E1AE4 /* Heap.swift in Sources */,
 				65E95BA32788B610005E1AE4 /* main.swift in Sources */,
 				872A346D293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12383,6 +12602,7 @@
 				65E95B822788B5D9005E1AE4 /* Coordinate.swift in Sources */,
 				65E95B832788B5D9005E1AE4 /* Array+Extensions.swift in Sources */,
 				65E95B842788B5D9005E1AE4 /* Permutations.swift in Sources */,
+				8381D4002B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65E95B852788B5D9005E1AE4 /* Heap.swift in Sources */,
 				65E95B862788B5D9005E1AE4 /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A346E293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12407,6 +12627,7 @@
 				65F66662278495F2004AAB5F /* Coordinate.swift in Sources */,
 				65F66663278495F2004AAB5F /* Array+Extensions.swift in Sources */,
 				65F66664278495F2004AAB5F /* Permutations.swift in Sources */,
+				8381D3ED2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65F66665278495F2004AAB5F /* Heap.swift in Sources */,
 				657CF5102786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A345B293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12431,6 +12652,7 @@
 				65F6667A278495F2004AAB5F /* Coordinate.swift in Sources */,
 				65F6667B278495F2004AAB5F /* Array+Extensions.swift in Sources */,
 				65F6667C278495F2004AAB5F /* Permutations.swift in Sources */,
+				8381D3EE2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65F6667D278495F2004AAB5F /* Heap.swift in Sources */,
 				657CF5112786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A345C293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12455,6 +12677,7 @@
 				65F66692278495F3004AAB5F /* Coordinate.swift in Sources */,
 				65F66693278495F3004AAB5F /* Array+Extensions.swift in Sources */,
 				65F66694278495F3004AAB5F /* Permutations.swift in Sources */,
+				8381D3EF2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65F66695278495F3004AAB5F /* Heap.swift in Sources */,
 				657CF5122786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A345D293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12479,6 +12702,7 @@
 				65F666AA278495F3004AAB5F /* Coordinate.swift in Sources */,
 				65F666AB278495F3004AAB5F /* Array+Extensions.swift in Sources */,
 				65F666AC278495F3004AAB5F /* Permutations.swift in Sources */,
+				8381D3F02B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65F666AD278495F3004AAB5F /* Heap.swift in Sources */,
 				657CF5132786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A345E293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12503,6 +12727,7 @@
 				65F666C2278495F4004AAB5F /* Coordinate.swift in Sources */,
 				65F666C3278495F4004AAB5F /* Array+Extensions.swift in Sources */,
 				65F666C4278495F4004AAB5F /* Permutations.swift in Sources */,
+				8381D3F12B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65F666C5278495F4004AAB5F /* Heap.swift in Sources */,
 				657CF5142786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A345F293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12527,6 +12752,7 @@
 				65F90C16276B289F00F6C466 /* Coordinate.swift in Sources */,
 				65F90C17276B289F00F6C466 /* Array+Extensions.swift in Sources */,
 				65215E3B2781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3B62B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635C527791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4D92786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3424293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12551,6 +12777,7 @@
 				65F90C51276B511F00F6C466 /* Coordinate.swift in Sources */,
 				65F90C52276B511F00F6C466 /* Array+Extensions.swift in Sources */,
 				65215E3C2781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3B72B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635C627791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4DA2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3425293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12575,6 +12802,7 @@
 				65F90C62276B512000F6C466 /* Coordinate.swift in Sources */,
 				65F90C63276B512000F6C466 /* Array+Extensions.swift in Sources */,
 				65215E3D2781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3B82B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635C727791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4DB2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3426293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12596,6 +12824,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8381D3B92B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65C779E5277904FD00C72EDA /* Sorted+Extensions.swift in Sources */,
 				657CF4DC2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				65F90C73276B512100F6C466 /* Coordinate.swift in Sources */,
@@ -12624,6 +12853,7 @@
 				65F90C84276B512500F6C466 /* Coordinate.swift in Sources */,
 				65F90C85276B512500F6C466 /* Array+Extensions.swift in Sources */,
 				65215E3F2781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3BA2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635C927791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4DD2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3428293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12648,6 +12878,7 @@
 				65F90C95276B512500F6C466 /* Coordinate.swift in Sources */,
 				65F90C96276B512500F6C466 /* Array+Extensions.swift in Sources */,
 				65215E402781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3BB2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635CA27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4DE2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A3429293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12672,6 +12903,7 @@
 				65F90CA6276B512600F6C466 /* Coordinate.swift in Sources */,
 				65F90CA7276B512600F6C466 /* Array+Extensions.swift in Sources */,
 				65215E412781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3BC2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635CB27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4DF2786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A342A293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12696,6 +12928,7 @@
 				65F90CB7276B512700F6C466 /* Coordinate.swift in Sources */,
 				65F90CB8276B512700F6C466 /* Array+Extensions.swift in Sources */,
 				65215E422781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3BD2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635CC27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4E02786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A342B293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12720,6 +12953,7 @@
 				65F90CC8276B512700F6C466 /* Coordinate.swift in Sources */,
 				65F90CC9276B512700F6C466 /* Array+Extensions.swift in Sources */,
 				65215E432781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3BE2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635CD27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4E12786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A342C293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12744,6 +12978,7 @@
 				65F90CD9276B512700F6C466 /* Coordinate.swift in Sources */,
 				65F90CDA276B512700F6C466 /* Array+Extensions.swift in Sources */,
 				65215E442781FC4B002A082F /* Permutations.swift in Sources */,
+				8381D3BF2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				65D635CE27791F3A00BCC565 /* Heap.swift in Sources */,
 				657CF4E22786F89500A8C23D /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				872A342D293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -12768,6 +13003,7 @@
 				83166EBB2B319D6800B9A03B /* Heap.swift in Sources */,
 				83166EBC2B319D6800B9A03B /* Stack.swift in Sources */,
 				83166F932B31A04300B9A03B /* main.swift in Sources */,
+				8381D42F2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				83166EBE2B319D6800B9A03B /* Permutations.swift in Sources */,
 				83166EBF2B319D6800B9A03B /* AStar.swift in Sources */,
 				83166EC02B319D6800B9A03B /* Dijkstra.swift in Sources */,
@@ -12792,6 +13028,7 @@
 				83166EDC2B319D8C00B9A03B /* Heap.swift in Sources */,
 				83166EDD2B319D8C00B9A03B /* Stack.swift in Sources */,
 				83166F922B31A04000B9A03B /* main.swift in Sources */,
+				8381D4302B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				83166EDE2B319D8C00B9A03B /* Permutations.swift in Sources */,
 				83166EDF2B319D8C00B9A03B /* AStar.swift in Sources */,
 				83166EE02B319D8C00B9A03B /* Dijkstra.swift in Sources */,
@@ -12816,6 +13053,7 @@
 				83166EF82B319D8D00B9A03B /* Heap.swift in Sources */,
 				83166EF92B319D8D00B9A03B /* Stack.swift in Sources */,
 				83166F912B31A03D00B9A03B /* main.swift in Sources */,
+				8381D4312B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				83166EFA2B319D8D00B9A03B /* Permutations.swift in Sources */,
 				83166EFB2B319D8D00B9A03B /* AStar.swift in Sources */,
 				83166EFC2B319D8D00B9A03B /* Dijkstra.swift in Sources */,
@@ -12840,6 +13078,7 @@
 				83166F142B319D8E00B9A03B /* Heap.swift in Sources */,
 				83166F152B319D8E00B9A03B /* Stack.swift in Sources */,
 				83166F902B31A03B00B9A03B /* main.swift in Sources */,
+				8381D4322B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				83166F162B319D8E00B9A03B /* Permutations.swift in Sources */,
 				83166F172B319D8E00B9A03B /* AStar.swift in Sources */,
 				83166F182B319D8E00B9A03B /* Dijkstra.swift in Sources */,
@@ -12864,6 +13103,7 @@
 				83166F302B319D8E00B9A03B /* Heap.swift in Sources */,
 				83166F312B319D8E00B9A03B /* Stack.swift in Sources */,
 				83166F8F2B31A03800B9A03B /* main.swift in Sources */,
+				8381D4332B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				83166F322B319D8E00B9A03B /* Permutations.swift in Sources */,
 				83166F332B319D8E00B9A03B /* AStar.swift in Sources */,
 				83166F342B319D8E00B9A03B /* Dijkstra.swift in Sources */,
@@ -12888,6 +13128,7 @@
 				83166F4C2B319D8F00B9A03B /* Heap.swift in Sources */,
 				83166F4D2B319D8F00B9A03B /* Stack.swift in Sources */,
 				83166F8E2B31A03600B9A03B /* main.swift in Sources */,
+				8381D4342B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				83166F4E2B319D8F00B9A03B /* Permutations.swift in Sources */,
 				83166F4F2B319D8F00B9A03B /* AStar.swift in Sources */,
 				83166F502B319D8F00B9A03B /* Dijkstra.swift in Sources */,
@@ -12912,6 +13153,7 @@
 				83166F682B319D9000B9A03B /* Heap.swift in Sources */,
 				83166F692B319D9000B9A03B /* Stack.swift in Sources */,
 				83166F8D2B31A03300B9A03B /* main.swift in Sources */,
+				8381D4352B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				83166F6A2B319D9000B9A03B /* Permutations.swift in Sources */,
 				83166F6B2B319D9000B9A03B /* AStar.swift in Sources */,
 				83166F6C2B319D9000B9A03B /* Dijkstra.swift in Sources */,
@@ -12933,6 +13175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8381D4262B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				832FCFF82B25B028002E390A /* Heap.swift in Sources */,
 				832FCFF92B25B028002E390A /* Stack.swift in Sources */,
 				832FD0142B25B03E002E390A /* main.swift in Sources */,
@@ -12961,6 +13204,7 @@
 				833B565B2B1BA24A000423BD /* Heap.swift in Sources */,
 				833B565C2B1BA24A000423BD /* Stack.swift in Sources */,
 				833B56A02B1BD67B000423BD /* main.swift in Sources */,
+				8381D41D2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				833B565D2B1BA24A000423BD /* Permutations.swift in Sources */,
 				833B565E2B1BA24A000423BD /* AStar.swift in Sources */,
 				833B565F2B1BA24A000423BD /* Dijkstra.swift in Sources */,
@@ -12985,6 +13229,7 @@
 				833B567E2B1BD5D8000423BD /* Heap.swift in Sources */,
 				833B567F2B1BD5D8000423BD /* Stack.swift in Sources */,
 				833B569C2B1BD62E000423BD /* main.swift in Sources */,
+				8381D41E2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				833B56812B1BD5D8000423BD /* Permutations.swift in Sources */,
 				833B56822B1BD5D8000423BD /* AStar.swift in Sources */,
 				833B56832B1BD5D8000423BD /* Dijkstra.swift in Sources */,
@@ -13009,6 +13254,7 @@
 				835184072B28CD1A00436A72 /* Heap.swift in Sources */,
 				835184082B28CD1A00436A72 /* Stack.swift in Sources */,
 				835184222B28CD3D00436A72 /* main.swift in Sources */,
+				8381D4272B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				8351840A2B28CD1A00436A72 /* Permutations.swift in Sources */,
 				8351840B2B28CD1A00436A72 /* AStar.swift in Sources */,
 				8351840C2B28CD1A00436A72 /* Dijkstra.swift in Sources */,
@@ -13033,6 +13279,7 @@
 				8351842D2B2A160300436A72 /* Heap.swift in Sources */,
 				8351842E2B2A160300436A72 /* Stack.swift in Sources */,
 				835184492B2A161D00436A72 /* main.swift in Sources */,
+				8381D4282B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				835184302B2A160300436A72 /* Permutations.swift in Sources */,
 				835184312B2A160300436A72 /* AStar.swift in Sources */,
 				835184322B2A160300436A72 /* Dijkstra.swift in Sources */,
@@ -13057,6 +13304,7 @@
 				835184522B2A4F5B00436A72 /* Heap.swift in Sources */,
 				835184532B2A4F5B00436A72 /* Stack.swift in Sources */,
 				8351846E2B2A4F8500436A72 /* main.swift in Sources */,
+				8381D4292B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				835184552B2A4F5B00436A72 /* Permutations.swift in Sources */,
 				835184562B2A4F5B00436A72 /* AStar.swift in Sources */,
 				835184572B2A4F5B00436A72 /* Dijkstra.swift in Sources */,
@@ -13081,6 +13329,7 @@
 				835184782B2B67D800436A72 /* Heap.swift in Sources */,
 				835184792B2B67D800436A72 /* Stack.swift in Sources */,
 				835184942B2B67F800436A72 /* main.swift in Sources */,
+				8381D42A2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				8351847B2B2B67D800436A72 /* Permutations.swift in Sources */,
 				8351847C2B2B67D800436A72 /* AStar.swift in Sources */,
 				8351847D2B2B67D800436A72 /* Dijkstra.swift in Sources */,
@@ -13105,6 +13354,7 @@
 				8381D8A02B1DBC0900B25C4D /* Heap.swift in Sources */,
 				8381D8A12B1DBC0900B25C4D /* Stack.swift in Sources */,
 				8381D8E22B24A5C300B25C4D /* main.swift in Sources */,
+				8381D4202B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				8381D8A32B1DBC0900B25C4D /* Permutations.swift in Sources */,
 				8381D8A42B1DBC0900B25C4D /* AStar.swift in Sources */,
 				8381D8A52B1DBC0900B25C4D /* Dijkstra.swift in Sources */,
@@ -13126,6 +13376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8381D4212B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				8381D8C62B24A55200B25C4D /* Heap.swift in Sources */,
 				8381D8C72B24A55200B25C4D /* Stack.swift in Sources */,
 				8381D8E12B24A59F00B25C4D /* main.swift in Sources */,
@@ -13154,6 +13405,7 @@
 				8381D8E92B24A67D00B25C4D /* Heap.swift in Sources */,
 				8381D8EA2B24A67D00B25C4D /* Stack.swift in Sources */,
 				832FCFE12B24A80F002E390A /* main.swift in Sources */,
+				8381D4222B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				8381D8EC2B24A67D00B25C4D /* Permutations.swift in Sources */,
 				8381D8ED2B24A67D00B25C4D /* AStar.swift in Sources */,
 				8381D8EE2B24A67D00B25C4D /* Dijkstra.swift in Sources */,
@@ -13178,6 +13430,7 @@
 				8381D9042B24A67E00B25C4D /* Heap.swift in Sources */,
 				8381D9052B24A67E00B25C4D /* Stack.swift in Sources */,
 				832FCFE02B24A808002E390A /* main.swift in Sources */,
+				8381D4232B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				8381D9072B24A67E00B25C4D /* Permutations.swift in Sources */,
 				8381D9082B24A67E00B25C4D /* AStar.swift in Sources */,
 				8381D9092B24A67E00B25C4D /* Dijkstra.swift in Sources */,
@@ -13202,6 +13455,7 @@
 				8381D91F2B24A67E00B25C4D /* Heap.swift in Sources */,
 				8381D9202B24A67E00B25C4D /* Stack.swift in Sources */,
 				832FCFF02B24CE04002E390A /* main.swift in Sources */,
+				8381D4242B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				8381D9222B24A67E00B25C4D /* Permutations.swift in Sources */,
 				8381D9232B24A67E00B25C4D /* AStar.swift in Sources */,
 				8381D9242B24A67E00B25C4D /* Dijkstra.swift in Sources */,
@@ -13226,6 +13480,7 @@
 				8381D93A2B24A67F00B25C4D /* Heap.swift in Sources */,
 				8381D93B2B24A67F00B25C4D /* Stack.swift in Sources */,
 				832FCFF12B24DF6B002E390A /* main.swift in Sources */,
+				8381D4252B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				8381D93D2B24A67F00B25C4D /* Permutations.swift in Sources */,
 				8381D93E2B24A67F00B25C4D /* AStar.swift in Sources */,
 				8381D93F2B24A67F00B25C4D /* Dijkstra.swift in Sources */,
@@ -13250,6 +13505,7 @@
 				839DA7482B1C8EA900383279 /* Heap.swift in Sources */,
 				839DA7492B1C8EA900383279 /* Stack.swift in Sources */,
 				839DA7642B1C8EC000383279 /* main.swift in Sources */,
+				8381D41F2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				839DA74B2B1C8EA900383279 /* Permutations.swift in Sources */,
 				839DA74C2B1C8EA900383279 /* AStar.swift in Sources */,
 				839DA74D2B1C8EA900383279 /* Dijkstra.swift in Sources */,
@@ -13274,6 +13530,7 @@
 				83A2257E2B30324400069B1A /* Heap.swift in Sources */,
 				83A2257F2B30324400069B1A /* Stack.swift in Sources */,
 				83A2259A2B30326400069B1A /* main.swift in Sources */,
+				8381D42E2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				83A225812B30324400069B1A /* Permutations.swift in Sources */,
 				83A225822B30324400069B1A /* AStar.swift in Sources */,
 				83A225832B30324400069B1A /* Dijkstra.swift in Sources */,
@@ -13298,6 +13555,7 @@
 				83C2D6812B2DA5CD0052D4C4 /* Heap.swift in Sources */,
 				83C2D6822B2DA5CD0052D4C4 /* Stack.swift in Sources */,
 				83C2D69D2B2DA62A0052D4C4 /* main.swift in Sources */,
+				8381D42C2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				83C2D6842B2DA5CD0052D4C4 /* Permutations.swift in Sources */,
 				83C2D6852B2DA5CD0052D4C4 /* AStar.swift in Sources */,
 				83C2D6862B2DA5CD0052D4C4 /* Dijkstra.swift in Sources */,
@@ -13322,6 +13580,7 @@
 				83C2F7E82B2C515F00448C5E /* Heap.swift in Sources */,
 				83C2F7E92B2C515F00448C5E /* Stack.swift in Sources */,
 				83C2F8042B2C519800448C5E /* main.swift in Sources */,
+				8381D42B2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				83C2F7EB2B2C515F00448C5E /* Permutations.swift in Sources */,
 				83C2F7EC2B2C515F00448C5E /* AStar.swift in Sources */,
 				83C2F7ED2B2C515F00448C5E /* Dijkstra.swift in Sources */,
@@ -13355,6 +13614,7 @@
 				83D403E62B2F025600629EAB /* Heap.swift in Sources */,
 				83D403E72B2F025600629EAB /* Stack.swift in Sources */,
 				83D404022B2F027600629EAB /* main.swift in Sources */,
+				8381D42D2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				83D403E92B2F025600629EAB /* Permutations.swift in Sources */,
 				83D403EA2B2F025600629EAB /* AStar.swift in Sources */,
 				83D403EB2B2F025600629EAB /* Dijkstra.swift in Sources */,
@@ -13379,6 +13639,7 @@
 				87258CE92938A1AB00418B26 /* Heap.swift in Sources */,
 				87258CEA2938A1AB00418B26 /* Stack.swift in Sources */,
 				87258CEB2938A1AB00418B26 /* Permutations.swift in Sources */,
+				8381D4042B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				87258CEC2938A1AB00418B26 /* AStar.swift in Sources */,
 				87258CED2938A1AB00418B26 /* Dijkstra.swift in Sources */,
 				872A346F293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -13403,6 +13664,7 @@
 				87258D5A2938A4C600418B26 /* Heap.swift in Sources */,
 				87258D5B2938A4C600418B26 /* Stack.swift in Sources */,
 				87258D5C2938A4C600418B26 /* Permutations.swift in Sources */,
+				8381D4052B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				87258D5D2938A4C600418B26 /* AStar.swift in Sources */,
 				87258D5E2938A4C600418B26 /* Dijkstra.swift in Sources */,
 				872A3470293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -13427,6 +13689,7 @@
 				87258D722938A4CE00418B26 /* Heap.swift in Sources */,
 				87258D732938A4CE00418B26 /* Stack.swift in Sources */,
 				87258D742938A4CE00418B26 /* Permutations.swift in Sources */,
+				8381D4062B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				87258D752938A4CE00418B26 /* AStar.swift in Sources */,
 				87258D762938A4CE00418B26 /* Dijkstra.swift in Sources */,
 				872A3471293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -13451,6 +13714,7 @@
 				87258D8A2938A4D700418B26 /* Heap.swift in Sources */,
 				87258D8B2938A4D700418B26 /* Stack.swift in Sources */,
 				87258D8C2938A4D700418B26 /* Permutations.swift in Sources */,
+				8381D4072B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				87258D8D2938A4D700418B26 /* AStar.swift in Sources */,
 				87258D8E2938A4D700418B26 /* Dijkstra.swift in Sources */,
 				872A3472293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -13475,6 +13739,7 @@
 				87258DA22938A4DC00418B26 /* Heap.swift in Sources */,
 				87258DA32938A4DC00418B26 /* Stack.swift in Sources */,
 				87258DA42938A4DC00418B26 /* Permutations.swift in Sources */,
+				8381D4082B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				87258DA52938A4DC00418B26 /* AStar.swift in Sources */,
 				87258DA62938A4DC00418B26 /* Dijkstra.swift in Sources */,
 				872A3473293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -13499,6 +13764,7 @@
 				87258DBA2938A4E000418B26 /* Heap.swift in Sources */,
 				87258DBB2938A4E000418B26 /* Stack.swift in Sources */,
 				87258DBC2938A4E000418B26 /* Permutations.swift in Sources */,
+				8381D4092B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				87258DBD2938A4E000418B26 /* AStar.swift in Sources */,
 				87258DBE2938A4E000418B26 /* Dijkstra.swift in Sources */,
 				872A3474293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -13523,6 +13789,7 @@
 				87258DD22938A4E500418B26 /* Heap.swift in Sources */,
 				87258DD32938A4E500418B26 /* Stack.swift in Sources */,
 				87258DD42938A4E500418B26 /* Permutations.swift in Sources */,
+				8381D40A2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				87258DD52938A4E500418B26 /* AStar.swift in Sources */,
 				87258DD62938A4E500418B26 /* Dijkstra.swift in Sources */,
 				872A3475293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -13547,6 +13814,7 @@
 				87258DEA2938A4EA00418B26 /* Heap.swift in Sources */,
 				87258DEB2938A4EA00418B26 /* Stack.swift in Sources */,
 				87258DEC2938A4EA00418B26 /* Permutations.swift in Sources */,
+				8381D40B2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				87258DED2938A4EA00418B26 /* AStar.swift in Sources */,
 				87258DEE2938A4EA00418B26 /* Dijkstra.swift in Sources */,
 				872A3476293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -13571,6 +13839,7 @@
 				87258E022938A4EF00418B26 /* Heap.swift in Sources */,
 				87258E032938A4EF00418B26 /* Stack.swift in Sources */,
 				87258E042938A4EF00418B26 /* Permutations.swift in Sources */,
+				8381D40C2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				87258E052938A4EF00418B26 /* AStar.swift in Sources */,
 				87258E062938A4EF00418B26 /* Dijkstra.swift in Sources */,
 				872A3477293B3C530004FB78 /* StringProtocol+Extensions.swift in Sources */,
@@ -13595,6 +13864,7 @@
 				8742B28929448AC300F6F49F /* main.swift in Sources */,
 				87258E1A2938A4F400418B26 /* Heap.swift in Sources */,
 				87258E1B2938A4F400418B26 /* Stack.swift in Sources */,
+				8381D40D2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				87258E1C2938A4F400418B26 /* Permutations.swift in Sources */,
 				87258E1D2938A4F400418B26 /* AStar.swift in Sources */,
 				87258E1E2938A4F400418B26 /* Dijkstra.swift in Sources */,
@@ -13619,6 +13889,7 @@
 				8742B28D2944E58500F6F49F /* Heap.swift in Sources */,
 				8742B28E2944E58500F6F49F /* Stack.swift in Sources */,
 				8742B28F2944E58500F6F49F /* Permutations.swift in Sources */,
+				8381D40E2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				8742B2902944E58500F6F49F /* AStar.swift in Sources */,
 				8742B2912944E58500F6F49F /* Dijkstra.swift in Sources */,
 				8742B2922944E58500F6F49F /* StringProtocol+Extensions.swift in Sources */,
@@ -13643,6 +13914,7 @@
 				8742B4042944E64A00F6F49F /* main.swift in Sources */,
 				8742B2A62944E59100F6F49F /* Heap.swift in Sources */,
 				8742B2A72944E59100F6F49F /* Stack.swift in Sources */,
+				8381D40F2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				8742B2A82944E59100F6F49F /* Permutations.swift in Sources */,
 				8742B2A92944E59100F6F49F /* AStar.swift in Sources */,
 				8742B2AA2944E59100F6F49F /* Dijkstra.swift in Sources */,
@@ -13667,6 +13939,7 @@
 				8742B4072944E65300F6F49F /* main.swift in Sources */,
 				8742B2BF2944E59500F6F49F /* Heap.swift in Sources */,
 				8742B2C02944E59500F6F49F /* Stack.swift in Sources */,
+				8381D4102B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				8742B2C12944E59500F6F49F /* Permutations.swift in Sources */,
 				8742B2C22944E59500F6F49F /* AStar.swift in Sources */,
 				8742B2C32944E59500F6F49F /* Dijkstra.swift in Sources */,
@@ -13691,6 +13964,7 @@
 				8742B2D82944E59900F6F49F /* Heap.swift in Sources */,
 				8742B2D92944E59900F6F49F /* Stack.swift in Sources */,
 				8742B2DA2944E59900F6F49F /* Permutations.swift in Sources */,
+				8381D4112B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				8742B2DB2944E59900F6F49F /* AStar.swift in Sources */,
 				8742B2DC2944E59900F6F49F /* Dijkstra.swift in Sources */,
 				8742B2DD2944E59900F6F49F /* StringProtocol+Extensions.swift in Sources */,
@@ -13715,6 +13989,7 @@
 				8742B2F12944E59E00F6F49F /* Heap.swift in Sources */,
 				8742B2F22944E59E00F6F49F /* Stack.swift in Sources */,
 				8742B2F32944E59E00F6F49F /* Permutations.swift in Sources */,
+				8381D4122B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				8742B2F42944E59E00F6F49F /* AStar.swift in Sources */,
 				8742B2F52944E59E00F6F49F /* Dijkstra.swift in Sources */,
 				8742B2F62944E59E00F6F49F /* StringProtocol+Extensions.swift in Sources */,
@@ -13739,6 +14014,7 @@
 				8742B30A2944E5A200F6F49F /* Heap.swift in Sources */,
 				8742B30B2944E5A200F6F49F /* Stack.swift in Sources */,
 				8742B30C2944E5A200F6F49F /* Permutations.swift in Sources */,
+				8381D4132B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				8742B30D2944E5A200F6F49F /* AStar.swift in Sources */,
 				8742B30E2944E5A200F6F49F /* Dijkstra.swift in Sources */,
 				8742B30F2944E5A200F6F49F /* StringProtocol+Extensions.swift in Sources */,
@@ -13763,6 +14039,7 @@
 				8742B3232944E5A900F6F49F /* Heap.swift in Sources */,
 				8742B3242944E5A900F6F49F /* Stack.swift in Sources */,
 				8742B3252944E5A900F6F49F /* Permutations.swift in Sources */,
+				8381D4142B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				8742B3262944E5A900F6F49F /* AStar.swift in Sources */,
 				8742B3272944E5A900F6F49F /* Dijkstra.swift in Sources */,
 				8742B3282944E5A900F6F49F /* StringProtocol+Extensions.swift in Sources */,
@@ -13787,6 +14064,7 @@
 				8742B33C2944E5B000F6F49F /* Heap.swift in Sources */,
 				8742B33D2944E5B000F6F49F /* Stack.swift in Sources */,
 				8742B33E2944E5B000F6F49F /* Permutations.swift in Sources */,
+				8381D4152B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				8742B33F2944E5B000F6F49F /* AStar.swift in Sources */,
 				8742B3402944E5B000F6F49F /* Dijkstra.swift in Sources */,
 				8742B3412944E5B000F6F49F /* StringProtocol+Extensions.swift in Sources */,
@@ -13811,6 +14089,7 @@
 				8742B3552944E5B700F6F49F /* Heap.swift in Sources */,
 				87864868295B28C2002E9CF7 /* main.swift in Sources */,
 				8742B3562944E5B700F6F49F /* Stack.swift in Sources */,
+				8381D4162B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				8742B3572944E5B700F6F49F /* Permutations.swift in Sources */,
 				8742B3582944E5B700F6F49F /* AStar.swift in Sources */,
 				8742B3592944E5B700F6F49F /* Dijkstra.swift in Sources */,
@@ -13835,6 +14114,7 @@
 				8742B36E2944E5BE00F6F49F /* Heap.swift in Sources */,
 				8742B36F2944E5BE00F6F49F /* Stack.swift in Sources */,
 				8742B3702944E5BE00F6F49F /* Permutations.swift in Sources */,
+				8381D4172B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				8742B3712944E5BE00F6F49F /* AStar.swift in Sources */,
 				8742B3722944E5BE00F6F49F /* Dijkstra.swift in Sources */,
 				8742B3732944E5BE00F6F49F /* StringProtocol+Extensions.swift in Sources */,
@@ -13859,6 +14139,7 @@
 				8742B3872944E5C600F6F49F /* Heap.swift in Sources */,
 				8742B3882944E5C600F6F49F /* Stack.swift in Sources */,
 				8742B3892944E5C600F6F49F /* Permutations.swift in Sources */,
+				8381D4182B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				8742B38A2944E5C600F6F49F /* AStar.swift in Sources */,
 				8742B38B2944E5C600F6F49F /* Dijkstra.swift in Sources */,
 				8742B38C2944E5C600F6F49F /* StringProtocol+Extensions.swift in Sources */,
@@ -13883,6 +14164,7 @@
 				8742B3A02944E5CB00F6F49F /* Heap.swift in Sources */,
 				8742B3A12944E5CB00F6F49F /* Stack.swift in Sources */,
 				8742B3A22944E5CB00F6F49F /* Permutations.swift in Sources */,
+				8381D4192B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				8742B3A32944E5CB00F6F49F /* AStar.swift in Sources */,
 				8742B3A42944E5CB00F6F49F /* Dijkstra.swift in Sources */,
 				8742B3A52944E5CB00F6F49F /* StringProtocol+Extensions.swift in Sources */,
@@ -13907,6 +14189,7 @@
 				8742B3B92944E5D100F6F49F /* Heap.swift in Sources */,
 				8742B3BA2944E5D100F6F49F /* Stack.swift in Sources */,
 				8742B3BB2944E5D100F6F49F /* Permutations.swift in Sources */,
+				8381D41A2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				8742B3BC2944E5D100F6F49F /* AStar.swift in Sources */,
 				8742B3BD2944E5D100F6F49F /* Dijkstra.swift in Sources */,
 				8742B3BE2944E5D100F6F49F /* StringProtocol+Extensions.swift in Sources */,
@@ -13931,6 +14214,7 @@
 				8742B3D22944E5D900F6F49F /* Heap.swift in Sources */,
 				8742B3D32944E5D900F6F49F /* Stack.swift in Sources */,
 				8742B3D42944E5D900F6F49F /* Permutations.swift in Sources */,
+				8381D41B2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				8742B3D52944E5D900F6F49F /* AStar.swift in Sources */,
 				8742B3D62944E5D900F6F49F /* Dijkstra.swift in Sources */,
 				8742B3D72944E5D900F6F49F /* StringProtocol+Extensions.swift in Sources */,
@@ -13955,6 +14239,7 @@
 				8742B3EB2944E5DF00F6F49F /* Heap.swift in Sources */,
 				8742B3EC2944E5DF00F6F49F /* Stack.swift in Sources */,
 				8742B3ED2944E5DF00F6F49F /* Permutations.swift in Sources */,
+				8381D41C2B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				8742B3EE2944E5DF00F6F49F /* AStar.swift in Sources */,
 				8742B3EF2944E5DF00F6F49F /* Dijkstra.swift in Sources */,
 				8742B3F02944E5DF00F6F49F /* StringProtocol+Extensions.swift in Sources */,
@@ -13979,6 +14264,7 @@
 				8786486B295B6A83002E9CF7 /* Coordinate.swift in Sources */,
 				8786486C295B6A83002E9CF7 /* Array+Extensions.swift in Sources */,
 				8786486D295B6A83002E9CF7 /* Permutations.swift in Sources */,
+				8381D4012B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				8786486E295B6A83002E9CF7 /* Heap.swift in Sources */,
 				8786486F295B6A83002E9CF7 /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				87864870295B6A83002E9CF7 /* StringProtocol+Extensions.swift in Sources */,
@@ -14003,6 +14289,7 @@
 				87864887295B7280002E9CF7 /* Coordinate.swift in Sources */,
 				87864888295B7280002E9CF7 /* Array+Extensions.swift in Sources */,
 				87864889295B7280002E9CF7 /* Permutations.swift in Sources */,
+				8381D4022B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				8786488A295B7280002E9CF7 /* Heap.swift in Sources */,
 				8786488B295B7280002E9CF7 /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				8786488C295B7280002E9CF7 /* StringProtocol+Extensions.swift in Sources */,
@@ -14027,6 +14314,7 @@
 				878648A1295B9163002E9CF7 /* Coordinate.swift in Sources */,
 				878648A2295B9163002E9CF7 /* Array+Extensions.swift in Sources */,
 				878648A3295B9163002E9CF7 /* Permutations.swift in Sources */,
+				8381D4032B36EA3D005F3E8D /* CharGrid+Extensions.swift in Sources */,
 				878648A4295B9163002E9CF7 /* Heap.swift in Sources */,
 				878648A5295B9163002E9CF7 /* RangeReplaceableCollection+Extensions.swift in Sources */,
 				878648A6295B9163002E9CF7 /* StringProtocol+Extensions.swift in Sources */,
