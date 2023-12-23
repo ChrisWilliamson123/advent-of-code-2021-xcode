@@ -20,50 +20,19 @@ class HikingTrail {
     let grid: [[Character]]
     let coordsToChars: [Coordinate: Character]
     let allCoords: Set<Coordinate>
-    var neighbours: [Coordinate: Set<Coordinate>] = [:]
+    let neighbours: [Coordinate: Set<Coordinate>]
     let nonWallCoords: Set<Coordinate>
+    var junctionCoordinates: Set<Coordinate>
+    var junctionDistances: [JunctionPair: Int] = [:]
+    var junctionNeighbours: [Coordinate: Set<Coordinate>] = [:]
 
-    var trailStartLocation: Coordinate {
+    lazy var trailStartLocation: Coordinate = {
         Coordinate(grid[0].firstIndex(of: ".")!, 0)
-    }
+    }()
 
-    var trailEndLocation: Coordinate {
+    lazy var trailEndLocation: Coordinate = {
         Coordinate(grid[grid.count-1].firstIndex(of: ".")!, grid.count - 1)
-    }
-
-    var topologicallySorted: [Coordinate] {
-        var visited: Set<Coordinate> = []
-        var sortedNodes: [Coordinate] = []
-
-        func visit(_ coord: Coordinate) {
-            if !visited.contains(coord) {
-                print(coord)
-                visited.insert(coord)
-                
-                let nonWallAdjacents = coord.getAxialAdjacents(in: grid).filter({ coordsToChars[$0] != "#" })
-                var neighbours: Set<Coordinate> = []
-                for adjacent in nonWallAdjacents {
-                    let char = coordsToChars[adjacent]!
-                    if let slope = Slope(rawValue: char) {
-                        neighbours.insert(adjacent + slope.pushDirection)
-                    } else {
-                        neighbours.insert(adjacent)
-                    }
-                }
-
-                for n in neighbours {
-                    visit(n)
-                }
-                sortedNodes.append(coord)
-            }
-        }
-
-        for coord in allCoords.filter({ coordsToChars[$0] == "." }).sorted(by: { $0.y < $1.y }, { $0.x < $1.x }) {
-            visit(coord)
-        }
-
-        return sortedNodes
-    }
+    }()
 
     init(grid: [[Character]]) {
         self.grid = grid
@@ -71,7 +40,17 @@ class HikingTrail {
         self.coordsToChars = coordsToChars
         self.allCoords = Set(coordsToChars.keys)
 
-        self.nonWallCoords = allCoords.filter({ coordsToChars[$0] != "#" })
+        let nonWallCoords = allCoords.filter({ coordsToChars[$0] != "#" })
+        self.nonWallCoords = nonWallCoords
+        var neighbours: [Coordinate: Set<Coordinate>] = [:]
+        for c in nonWallCoords {
+            neighbours[c] = c.getAxialAdjacents(in: grid).filter({ nonWallCoords.contains($0) })
+        }
+        self.neighbours = neighbours
+        self.junctionCoordinates = Set(neighbours.filter({ $0.value.count > 2 }).keys)
+
+        junctionCoordinates.insert(self.trailStartLocation)
+        junctionCoordinates.insert(self.trailEndLocation)
     }
 
     struct Node: Hashable {
@@ -80,88 +59,79 @@ class HikingTrail {
         let previous: Set<Coordinate>
     }
 
-//    struct CurrentAndPrevious: Hashable {
-//        let coordinate:
-//    }
-    func findLongestDistanceToEnd() -> Node {
+    struct JunctionPair: Hashable {
+        let juncOne: Coordinate
+        let juncTwo: Coordinate
+    }
+
+    func getJunctionDistances() -> [JunctionPair: Int] {
+        var distances: [JunctionPair: Int] = [:]
+        for j in junctionCoordinates {
+            for j2 in junctionCoordinates where j2 != j {
+                let result = dijkstra(graph: allCoords, source: j, target: j2) { current in
+                    var neighbours = self.neighbours[current]!
+                    if let toRemove = neighbours.first(where: { self.junctionCoordinates.contains($0) && $0 != j2 }) {
+                        neighbours.remove(toRemove)
+                    }
+                    return neighbours
+                } getDistanceBetween: { _, _ in
+                    1
+                }
+                if let distance = result.distances[j2], distance < Int.max {
+                    distances[.init(juncOne: j, juncTwo: j2)] = distance
+                    distances[.init(juncOne: j2, juncTwo: j)] = distance
+                    junctionNeighbours[j, default: []].insert(j2)
+                    junctionNeighbours[j2, default: []].insert(j)
+                }
+
+            }
+        }
+        self.junctionDistances = distances
+        return distances
+    }
+
+    func findLongestDistanceToEnd() -> Int {
+        var maxDepth = 0
 
         var visited: Set<Node> = []
         var queue: [Node] = []
 
         queue.append(Node(coordinate: trailStartLocation, depth: 0, previous: []))
         visited.insert(Node(coordinate: trailStartLocation, depth: 0, previous: []))
-        var prevDepth = -1
-        while !queue.isEmpty {
-            // clear up the visited nodes
-            for v in visited {
-                if v.previous.count == self.nonWallCoords.count - 1 {
-                    print("here")
-                }
-            }
+        var index = 0
+        var count = 1
+        while index < count {
+            let current = queue[index]
 
-            let current = queue.removeFirst()
-//            print(current.depth)
-            if current.depth != prevDepth {
-                prevDepth = current.depth
-                print(prevDepth)
-            }
-
-            var neighbours: Set<Coordinate> = []
-            if let cached = self.neighbours[current.coordinate] {
-                neighbours = cached
-            } else {
-                neighbours = current.coordinate.getAxialAdjacents(in: grid).intersection(self.nonWallCoords)
-//                for adjacent in nonWallAdjacents {
-//                    let char = coordsToChars[adjacent]!
-//                    if let slope = Slope(rawValue: char) {
-//                        neighbours.insert(adjacent + slope.pushDirection)
-//                    } else {
-//                        neighbours.insert(adjacent)
-//                    }
-//                }
-                self.neighbours[current.coordinate] = neighbours
-            }
+            let neighbours = self.junctionNeighbours[current.coordinate]!
 
             for n in neighbours where !current.previous.contains(n) {
                 let newNode = Node(coordinate: n,
-                                   depth: current.depth + 1,
+                                   depth: current.depth + junctionDistances[.init(juncOne: current.coordinate, juncTwo: n)]!,
                                    previous: current.previous.union([current.coordinate]))
+
                 if !visited.contains(newNode) {
                     queue.append(newNode)
+                    count += 1
                     visited.insert(newNode)
+                    maxDepth = max(maxDepth, newNode.depth)
                 }
             }
+            index += 1
         }
 
-        return visited.filter({ $0.coordinate == trailEndLocation }).max(by: { $0.previous.count < $1.previous.count })!
+        return maxDepth
     }
 }
 
 func main() throws {
-    let input: [String] = try readInput(fromTestFile: false, separator: "\n")
+    let input: [String] = try readInput(fromTestFile: true, separator: "\n")
     let grid = input.map({ [Character]($0) })
     let hikingTrail = HikingTrail(grid: grid)
-
+    _ = hikingTrail.getJunctionDistances()
     let r = hikingTrail.findLongestDistanceToEnd()
-    print(r.depth)
-    print(r.previous.count)
 
-//    for y in 0..<hikingTrail.grid.count {
-//        var row = ""
-//        for x in 0..<hikingTrail.grid[0].count {
-//            let coord = Coordinate(x, y)
-//            if r.previous.contains(coord) {
-//                row += "O"
-//            } else if hikingTrail.nonWallCoords.contains(coord) {
-//                row += "."
-//            } else {
-//                row += "#"
-//            }
-//        }
-//        print(row)
-//    }
+    print(r)
 }
-
-// 1638 too low
 
 Timer.time(main)
