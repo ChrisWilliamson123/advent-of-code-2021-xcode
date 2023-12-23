@@ -22,24 +22,6 @@ enum Rule: Hashable {
         case moreThan = ">"
     }
 
-    var isRejectedDestination: Bool {
-        switch self {
-        case .comparison(_, _, _, let destination):
-            return destination == "R"
-        case .destination(let destination):
-            return destination == "R"
-        }
-    }
-
-    var isAcceptedDestination: Bool {
-        switch self {
-        case .comparison(_, _, _, let destination):
-            return destination == "A"
-        case .destination(let destination):
-            return destination == "A"
-        }
-    }
-
     func process(_ part: Part) -> String? {
         switch self {
         case .comparison(let property, let comparator, let value, let destination):
@@ -115,18 +97,16 @@ struct Node {
 }
 private func dfs(graph: [String: [Rule]], node: Node) -> Int {
     var stack = Stack<Node>()
-    var visited = Set<String>()
     stack.push(node)
+
     var total = 0
-    while stack.peek() != nil {
-        let current = stack.pop()!
-        visited.insert(current.id)
+    while let current = stack.pop() {
         if current.id == "A" {
             total += Array(current.ranges.values).map({ $0.count }).multiply()
             continue
         }
-        var continuingRanges = current.ranges
         guard let neighbours = graph[current.id] else { continue }
+        var continuingRanges = current.ranges
         for neighbour in neighbours {
             switch neighbour {
             case .destination(let destination):
