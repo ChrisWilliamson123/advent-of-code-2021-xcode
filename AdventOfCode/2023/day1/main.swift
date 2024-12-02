@@ -5,8 +5,6 @@ func main() throws {
     var total = 0
     for line in input {
         var l = line
-//        print(line)
-//        print(numbers)
         let mapping = [
             ("oneight", "18"),
             ("threeight", "38"),
@@ -28,17 +26,10 @@ func main() throws {
         for (key, value) in mapping {
             l = l.replacingOccurrences(of: key, with: value)
         }
-        print(l)
         var numbers = Regex("\\d").getGreedyMatches(in: l)
-        print(numbers)
-//        numbers = numbers.map({
-//            mapping[$0] ?? $0
-//        })
         let numberString = "\(numbers[0])\(numbers.last!)"
-        print(numberString)
-//        print(numberString)
-//        print(numberString)
         total += Int(numberString)!
+        print(line, total)
     }
     print(total)
 }
